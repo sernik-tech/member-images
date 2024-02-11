@@ -199,6 +199,34 @@ Our folder/file structure is built like this (exclusing `example` since that's *
 
 The `example` configuration should hopefully be *clear enough* to explain how things work. You can also check the [GitHub Actions](https://github.com/sernik-tech/member-images/actions/workflows/build.yml) to see what it does when being built.
 
+Once you have your configuration all set up and ensured that there are no errors with your configuration, navigate into `.github/workflows` and edit `build.yml`. You should see a section like so within the file:
+```
+# !!!
+        # Add recipes for all the images you want to build here.
+        # Don't add module configuration files, you will get errors.
+        recipe:
+          # Example images. Just building here to make sure they're valid.
+          - recipes/example/recipe-kinoite.yml
+          - recipes/example/recipe-silverblue.yml
+          # User images.
+          - recipes/sneexy/recipe.yml
+          <etc etc>
+# !!!
+```
+
+Add your image underneath the `User images.` section, under the last user's recipe file. Ensure that it's above the `!!!`. If it's correct, it should look like `- recipes/<your_preferred_username>/recipe.yml`! Save the file and GitHub should be running a build action as soon as changes are detected! If not, just navigate to the [correct action](https://github.com/sernik-tech/member-images/actions/workflows/build.yml) and manually start it by clicking `Run workflow` for `Branch: live`.
+
+If you want to add your image to the ISO, edit the file `boot_menu.yml` located on the root directory and just add 2 lines to the bottom of the file:
+```
+- label: image-name-here
+  info: Description of my image
+```
+
+> ![IMPORTANT]
+> Make sure that it's properly indented with the rest of them or it *WILL* fail.
+
+After you've modified the file, manually run the [release-iso](https://github.com/sernik-tech/member-images/actions/workflows/release-iso.yml) action, preferably after the `build-ublue` action has finished.
+
 If you have any questions, refer to the [documentation](https://universal-blue.org/tinker/modification/), original [`startingpoint`](https://github.com/ublue-os/startingpoint) repository, or ask any other members (maybe [@sneexy_boi](https://github.com/sneexy_boi) would be your best shot) if you have any questions about something!
 
 ## Modifying the README
