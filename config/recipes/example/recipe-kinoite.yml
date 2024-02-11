@@ -1,7 +1,7 @@
 # image will be published to ghcr.io/sernik-tech/<name>
 name: sernik-kinoite
 # description will be included in the image's metadata
-description: Small description of your image, can be a single character if you don't want to fill this out
+description: Sernik's Kinoite Template Image
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/kinoite-main
