@@ -1,0 +1,12 @@
+# configure what to pull in from ublue-os/bling
+type: bling
+install:
+    # custom update helper script(s)
+    # https://github.com/ublue-os/ublue-update
+    - ublue-update
+
+    # a service unit that updates the dconf db on boot
+    - dconf-update-service
+
+    # installs TLP and configures your system for laptop usage
+    - laptop

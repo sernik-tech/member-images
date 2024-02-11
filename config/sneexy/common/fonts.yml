@@ -1,0 +1,21 @@
+# fonts. grabbed from nerd-fonts repo and google fonts.
+type: fonts
+fonts:
+    nerd-fonts:
+        - FiraCode
+        - Hack
+        - SourceCodePro
+        - Terminus
+        - JetBrainsMono
+        - NerdFontsSymbolsOnly
+    google-fonts:
+        - Lexend
+        - Noto Sans
+        - Roboto
+        - Noto Color Emoji
+        - Open Sans
+        - Source Serif 4
+        - Source Sans 3
+        - IBM Plex Sans
+        - IBM Plex Serif
+        - EB Garamond

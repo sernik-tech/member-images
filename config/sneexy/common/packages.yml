@@ -1,0 +1,63 @@
+type: rpm-ostree
+repos:
+  # starship prompt
+  - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+
+  # bibata cursors
+  - https://copr.fedorainfracloud.org/coprs/peterwu/rendezvous/repo/fedora-%OS_VERSION%/peterwu-rendezvous-fedora-%OS_VERSION%.repo
+
+  # kwin theme
+  - https://download.opensuse.org/repositories/home:paul4us/Fedora_%OS_VERSION%/home:paul4us.repo
+install:
+  # console
+  - bat
+  - duf
+  - fastfetch
+  - fd-find
+  - fzf
+  - git-delta
+  - lsd
+  - neovim
+  - ripgrep
+  - sd
+  - starship
+  - tldr
+  - zoxide
+  - zsh
+  
+  # audio
+  - playerctl
+  - pavucontrol-qt
+
+  # applications
+  - ark
+  - dolphin
+  - dolphin-plugins
+  - gwenview
+  - kalk
+  - kate
+  - kitty
+  - ksystemlog
+  - merkuro
+  - mpv
+  - okular
+
+  # libraries
+  - qt5-qtwayland
+  - qt6-qtwayland
+  - gnome-themes-extra
+  - lzip
+
+  # themes
+  - papirus-icon-theme
+  - bibata-cursor-themes
+  - lightly
+  - klassy
+  - kvantum
+
+  # performance/userspace utilities
+  - gamemode
+  - gamescope
+remove:
+  - firefox # default firefox removed in favor of flatpak
+  - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems

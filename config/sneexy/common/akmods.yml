@@ -1,0 +1,7 @@
+# akmods. from ublue. drivers and stuff or something like that idk
+type: akmods
+install:
+    - v4l2loopback
+    - winesync
+    - xone
+    - xpadneo

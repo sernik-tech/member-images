@@ -1,0 +1,200 @@
+title: Sernik
+properties:
+  mode: "run-on-change"
+screens:
+  first-screen:
+    source: yafti.screen.title
+    values:
+      title: "Welcome to your Sernik image"
+      icon: "/usr/share/ublue-os/firstboot/sernik.png"
+      description: |
+        This installer will let you choose any extra applications you'd want to install onto your new system. Make sure you're connected to the internet before continuing.
+  can-we-modify-your-flatpaks:
+    source: yafti.screen.consent
+    values:
+      title: Welcome, Sernik enjoyers!
+      condition:
+        run: flatpak remotes --columns=name | grep fedora
+      description: |
+        We have detected the limited, Fedora-provided Flatpak remote on your system, whose applications are usually missing important codecs and other features. This step will therefore remove all basic Fedora Flatpaks from your system! We will instead switch all core Flatpak applications over to the vastly superior, unfiltered Flathub. If you don't want to do this, simply exit this installer.
+      actions:
+        - run: flatpak remote-delete --system --force fedora
+        - run: flatpak remote-delete --user --force fedora
+        - run: flatpak remove --system --noninteractive --all
+        - run: flatpak remote-add --if-not-exists --system flathub https://flathub.org/repo/flathub.flatpakrepo
+        - run: flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+  check-system-flathub:
+    source: yafti.screen.consent
+    values:
+      title: Missing Flathub Repository (System)
+      condition:
+        run: flatpak remotes --system --columns=name | grep flathub | wc -l | grep '^0$'
+      description: |
+        We have detected that you don't have Flathub's repository on your system. We will now add that repository to your system-wide list.
+      actions:
+        - run: flatpak remote-add --if-not-exists --system flathub https://flathub.org/repo/flathub.flatpakrepo
+  check-user-flathub:
+    source: yafti.screen.consent
+    values:
+      title: Missing Flathub Repository (User)
+      condition:
+        run: flatpak remotes --user --columns=name | grep flathub | wc -l | grep '^0$'
+      description: |
+        We have detected that you don't have Flathub's repository on your current user account. We will now add that repository to your account.
+      actions:
+        - run: flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+  applications:
+    source: yafti.screen.package
+    values:
+      title: applications
+      show_terminal: true
+      package_manager: yafti.plugin.flatpak
+      package_manager_defaults:
+        user: false
+        system: true
+      groups:
+        KDE apps:
+          description: Extra KDE applications that aren't included by default.
+          default: false
+          packages:
+            - Clock: org.kde.kclock
+            - Filelight: org.kde.filelight
+            - Kamoso: org.kde.kamoso
+            - KFind: org.kde.kfind
+            - Koko: org.kde.koko
+            - Kompare: org.kde.kompare
+            - KRDC: org.kde.krdc
+            - KWrite: org.kde.kwrite
+            - Okular: org.kde.okular
+            - Skanpage: org.kde.skanpage
+            - Weather: org.kde.kweather
+        GNOME apps:
+          description: Apps from the GNOME suite/circle. Some people may prefer these.
+          default: false
+          packages:
+            - Calculator: org.gnome.Calculator
+            - Calendar: org.gnome.Calendar
+            - Camera: org.gnome.Snapshot
+            - Characters: org.gnome.Characters
+            - Clocks: org.gnome.clocks
+            - Connections: org.gnome.Connections
+            - Contacts: org.gnome.Contacts
+            - Disk Usage Analyzer: org.gnome.baobab
+            - Document Scanner: org.gnome.SimpleScan
+            - Document Viewer: org.gnome.Evince
+            - Font Viewer: org.gnome.font-viewer
+            - Image Viewer: org.gnome.Loupe
+            - Logs: org.gnome.Logs
+            - Maps: org.gnome.Maps
+            - Photos (Organizer): org.gnome.Photos
+            - Sushi (Nautilus Previewer): org.gnome.NautilusPreviewer
+            - Text Editor: org.gnome.TextEditor
+            - Videos (Player): org.gnome.Totem
+            - Weather: org.gnome.Weather
+        System:
+          description: System applications and utilities, for most types of system management.
+          default: true
+          packages:
+            - Deja Dup Backups: org.gnome.DejaDup
+            - Fedora Media Writer: org.fedoraproject.MediaWriter
+            - Flatseal (Permission Manager): com.github.tchx84.Flatseal
+            - Font Downloader: org.gustavoperedo.FontDownloader
+        Internet:
+          description: Browsers, explorers, utilities and the such for the internet.
+          default: false
+          packages:
+            - Akregator: org.kde.akregator
+            - Brave: com.brave.Browser
+            - FileZilla: org.filezillaproject.Filezilla
+            - Floorp: one.ablaze.floorp
+            - Fragments: de.haeckerfelix.Fragments
+            - GNOME Web: org.gnome.Epiphany
+            - Google Chrome: com.google.Chrome
+            - KGet: org.kde.kget
+            - LibreWolf: io.gitlab.librewolf-community
+            - NewsFlash: io.gitlab.news_flash.NewsFlash
+            - Nicotine+: org.nicotine_plus.Nicotine
+            - Parsec: com.parsecgaming.parsec
+            - qBittorrent: org.qbittorrent.qBittorrent
+            - Transmission: com.transmissionbt.Transmission
+            - ungoogled-chromium: com.github.Eloston.UngoogledChromium
+            - Video Downloader: com.github.unrud.VideoDownloader
+            - Wireshark: org.wireshark.Wireshark
+        Chat:
+          description: Applications for different platforms to connect with friends.
+          default: false
+          packages:
+            - Cinny: in.cinny.Cinny
+            - Dino: im.dino.Dino
+            - Element: im.riot.Riot
+            - Fluffychat: im.fluffychat.Fluffychat
+            - Fractal: org.gnome.Fractal
+            - Gajim: org.gajim.Gajim
+            - Kaidan: im.kaidan.kaidan
+            - nheko: io.github.NhekoReborn.Nheko
+            - Revolt: chat.revolt.RevoltDesktop
+            - SchildiChat: chat.schildi.desktop
+            - Signal Desktop: org.signal.Signal
+            - Telegram Desktop: org.telegram.desktop
+            - Vesktop (Discord): dev.vencord.Vesktop
+        Gaming:
+          description: Distracting yourself from The Horrors with some gaming.
+          default: false
+          packages:
+            - Citra: org.citra_emu.citra
+            - Dolphin Emulator: org.DolphinEmu.dolphin-emu
+            - DOSBox Staging: io.github.dosbox-staging
+            - Gamescope (Utility): org.freedesktop.Platform.VulkanLayer.gamescope
+            - Heroic Games Launcher: com.heroicgameslauncher.hgl
+            - MangoHUD (Utility): org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
+            - PPSSPP: org.ppsspp.PPSSPP
+            - Prism Launcher (Minecraft): org.prismlauncher.PrismLauncher
+            - ProtonUp-Qt: net.davidotek.pupgui2
+            - RetroArch: org.libretro.RetroArch
+            - RPCS3: net.rpcs3.RPCS3
+            - Steam: com.valvesoftware.Steam
+            - SteamTinkerLaunch (Utility): com.valvesoftware.Steam.Utility.steamtinkerlaunch
+            - Vinegar (Roblox): org.vinegarhq.Vinegar
+            - xemu: app.xemu.xemu
+            - yuzu: org.yuzu_emu.yuzu
+        Office:
+          description: We love capitalism here at the company!
+          default: false
+          packages:
+            - LibreOffice: org.libreoffice.LibreOffice
+            - OnlyOffice: org.onlyoffice.desktopeditors
+            - Obsidian: md.obsidian.Obsidian
+            - Slack: com.slack.Slack
+            - Standard Notes: org.standardnotes.standardnotes
+        Utilities:
+          description: Fun utilities you may or may not need, stuff like screen recorders and file editors.
+          default: false
+          packages:
+            - Bitwarden: com.bitwarden.desktop
+            - Boatswain for Streamdeck: com.feaneron.Boatswain
+            - Bottles: com.usebottles.bottles
+            - Gradience: com.github.GradienceTeam.Gradience
+            - Gstreamer for OBS: com.obsproject.Studio.Plugin.Gstreamer
+            - Gstreamer VAAPI for OBS: com.obsproject.Studio.Plugin.GStreamerVaapi
+            - GtkStressTesting: com.leinardi.gst
+            - HandBrake: fr.handbrake.ghb
+            - KeePassXC: org.keepassxc.KeePassXC
+            - Kooha: io.github.seadve.Kooha
+            - OBS Studio: com.obsproject.Studio
+            - Okteta: org.kde.okteta
+            - VkCapture for OBS: com.obsproject.Studio.OBSVkCapture
+
+  final-screen:
+    source: yafti.screen.title
+    values:
+      title: "All done!"
+      icon: "/usr/share/ublue-os/firstboot/sernik.png"
+      links:
+        - "Check out Universal Blue":
+            run: /usr/bin/xdg-open https://universal-blue.org/
+        - "Member Images' GitHub":
+            run: /usr/bin/xdg-open https://github.com/sernik-tech/member-images
+        - "Refer to extra notes":
+            run: /usr/bin/xdg-open https://github.com/sernik-tech/member-images/blob/live/sernik/README.md
+      description: |
+        It's recommended to reboot your system after finishing this setup. Enjoy your image!
