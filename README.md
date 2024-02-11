@@ -11,7 +11,7 @@
 
 Custom [Universal Blue](https://universal-blue.org/) Images. Built by Sernik members for their own use-cases.
 
-This repository by default also supports signing.
+This repository by default supports signing.
 
 ###### Repository ran and maintained by [@sneexy-boi](https://github.com/sneexy-boi), owned by [@Rexogamer](https://github.com/Rexogamer).
 
