@@ -25,6 +25,7 @@ Some documentation for our images. If you're looking for actual documentation re
     - [Installing OBS Studio another way](#installing-obs-studio-another-way)
     - [Colored papirus icons](#colored-papirus-icons)
 - [Sernik member's guide to participating](#sernik-members-guide-to-participating)
+    - [How do I access this repository and modify things?](#how-do-i-access-this-repository-and-modify-things)
     - [Managing the repository](#managing-the-repository)
     - [Making your own custom image](#making-your-own-custom-image)
     - [Modifying the README](#modifying-the-readme)
@@ -155,6 +156,10 @@ chmod +x /tmp/papirus-colors/places_icons_mod.sh
 Once it's done, just go into your System Settings and set the new "Papirus Colors" pack!
 
 ## Sernik member's guide to participating
+
+## How do I access this repository and modify things?
+
+Ask another Sernik Member who has activity on this repository. Someone like [@sneexy_boi](https://github.com/Sneexy) or [@Rexogamer](https://github.com/Rexogamer).
 
 ## Managing the repository
 
