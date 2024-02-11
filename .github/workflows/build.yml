@@ -36,11 +36,14 @@ jobs:
 
       matrix:
 # !!!
-        # Example images. Just building here to make sure they're valid.
-        - example/kinoite/recipe.yml
-        - example/silverblue/recipe.yml
-        # User images.
-        - sneexy/recipe.yml
+        # Add recipes for all the images you want to build here.
+        # Don't add module configuration files, you will get errors.
+        recipe:
+          # Example images. Just building here to make sure they're valid.
+          - example/kinoite/recipe.yml
+          - example/silverblue/recipe.yml
+          # User images.
+          - sneexy/recipe.yml
 # !!!
 
     steps:
