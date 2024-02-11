@@ -40,10 +40,10 @@ jobs:
         # Don't add module configuration files, you will get errors.
         recipe:
           # Example images. Just building here to make sure they're valid.
-          - example/kinoite/recipe.yml
-          - example/silverblue/recipe.yml
+          - recipes/example/recipe-kinoite.yml
+          - recipes/example/recipe-silverblue.yml
           # User images.
-          - sneexy/recipe.yml
+          - recipes/sneexy/recipe.yml
 # !!!
 
     steps:
