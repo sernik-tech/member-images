@@ -12,33 +12,33 @@ image-version: 39 # latest is also supported if you want new updates ASAP
 
 # Refer to https://universal-blue.org/tinker/modules/ to know more about these.
 #
-# Note that this reads directly from the `config` folder. So the file structure here should be "your_username/<other_folder_if_required>/common.yml"
+# Note that this reads directly from the `config` folder. So the file structure here should be "common/<your_username>/<common>.yml"
 modules:
   # Put files inside of the image
-  - from-file: example/silverblue/common/files.yml
+  - from-file: common/example/silverblue/files.yml
 
   # Installs default repositories and rpm-ostree packages
-  - from-file: example/silverblue/rpm-ostree.yml
+  - from-file: common/example/silverblue/rpm-ostree.yml
 
   # Installs default repositories and Flatpak packages
-  - from-file: example/silverblue/common/flatpaks.yml
+  - from-file: common/example/silverblue/flatpaks.yml
 
   # Configure what to pull in from ublue-os/bling
   # Optional. Can be removed from here if preferred.
-  - from-file: example/silverblue/common/bling.yml
+  - from-file: common/example/silverblue/bling.yml
 
   # Install fonts
   # Optional. Can be removed from here if preferred.
-  - from-file: example/silverblue/common/fonts.yml
+  - from-file: common/example/silverblue/fonts.yml
 
   # uBlue akmods. Includes custom drivers and stuff
   # Optional. Can be removed from here if preferred.
-  - from-file: example/silverblue/common/akmods.yml
+  - from-file: common/example/silverblue/akmods.yml
 
   # Post setup/Application installer helper GUI
   # Optional. Can be removed from here if preferred.
-  - from-file: example/silverblue/common/yafti.yml
+  - from-file: common/example/silverblue/yafti.yml
 
   # Scripts to run post-image creation
   # WARNING: Should not be removed. A required script is ran for image creation.
-  - from-file: example/silverblue/common/script.yml
+  - from-file: common/example/silverblue/script.yml

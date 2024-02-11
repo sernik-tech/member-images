@@ -1,7 +1,7 @@
 # https://github.com/ublue-os/bling/tree/main/modules/files
 type: files
 files:
-    - example/kinoite/files/usr: /usr # copy static configurations
+    - example/usr: /usr # copy static configurations
                                       #
                                       # copies config/files/usr into your image's /usr
                                       #
