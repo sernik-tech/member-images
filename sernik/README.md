@@ -22,8 +22,12 @@ Some documentation for our images. If you're looking for actual documentation re
 - [Tips](#tips)
     - [Setting up Distrobox and having some fun](#setting-up-distrobox-and-having-some-fun)
     - [ThinkPad T480 Fingerprint Setup](#thinkpad-t480-fingerprint-setup)
+    - [Installing OBS Studio another way](#installing-obs-studio-another-way)
     - [Colored papirus icons](#colored-papirus-icons)
 - [Sernik member's guide to participating](#sernik-members-guide-to-participating)
+    - [Managing the repository](#managing-the-repository)
+    - [Making your own custom image](#making-your-own-custom-image)
+    - [Modifying the README](#modifying-the-readme)
 
 
 ## Tips
@@ -114,6 +118,23 @@ sudo authselect current
 sudo authselect enable-feature with-fingerprint
 sudo authselect apply-changes
 ```
+
+## Installing OBS Studio another way
+
+The people at Universal Blue have made a [custom Distrobox image that comes preconfigured with OBS Studio](https://github.com/ublue-os/obs-studio-portable) and a bunch of extra goodies, along with some extra patches and stuff that should hopefully make it decently reliable!
+
+First, we'll need to fetch it:
+```bash
+distrobox create --image ghcr.io/ublue-os/obs-studio-portable:latest --name obs --pull
+```
+
+And of course, enter the container and export the app:
+```bash
+distrobox enter obs
+distrobox-export --app /opt/obs-portable/obs-portable
+```
+
+And done! You now have OBS with a bunch of stuff. You *may* consider it bloat, and if that's the case there's still the [Flatpak version](https://flathub.org/apps/com.obsproject.Studio) or even something like [GPU Screen Recorder](https://flathub.org/apps/com.dec05eba.gpu_screen_recorder).
 
 ## Colored papirus icons
 
