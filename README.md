@@ -54,45 +54,44 @@ what this includes:
   - forced systemd-resolved dns settings *(due to personal internet issues)*
   - uBlue's `laptop` bling
 
-<details>
-<summary>
+</details>
 
-## Installation for Sneexy's slice
+## Installation
 
-</summary>
+> ![WARNING]   
+> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable) and should not be used in production, try it in a VM for a while!
 
-<b><i>This image is included in the ISO.</i></b>
+> ![IMPORTANT]   
+> Replace `$IMAGE_NAME` in these commands with the appropriate image name in [packages](https://github.com/orgs/sernik-tech/packages?repo_name=member-images) (Alternatively found in the [recipes](https://github.com/sernik-tech/member-images/tree/live/config/recipes)).
 
-to rebase an existing Silverblue/Kinoite installation to the latest build:
+To rebase an existing Silverblue/Kinoite installation to the latest build:
 
-- first rebase to the unsigned image, to get the proper signing keys and policies installed:
+- First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/sernik-tech/sneexys-slice:latest
+  rpm-ostree rebase ostree-unverified-registry:ghcr.io/sernik-tech/$IMAGE_NAME:latest
   ```
-- reboot to complete the rebase:
+- Reboot to complete the rebase:
   ```
   systemctl reboot
   ```
-- then rebase to the signed image, like so:
+- Then rebase to the signed image, like so:
   ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/sernik-tech/sneexys-slice:latest
+  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/sernik-tech/$IMAGE_NAME:latest
   ```
-- reboot again to complete the installation
+- Reboot again to complete the installation
   ```
   systemctl reboot
   ```
 
-this repository builds date tags as well, so if you want to rebase to a particular day's build:
+This repository builds date tags as well, so if you want to rebase to a particular day's build:
 
 ```
-rpm-ostree rebase ostree-image-signed:docker://ghcr.io/sernik-tech/sneexys-slice:20230403
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/sernik-tech/$IMAGE_NAME:20230403
 ```
 
-the `latest` tag will automatically point to the latest build. that build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+This repository by default also supports signing.
 
-</details>
-
-</details>
+The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
 
 ### ISO
 
