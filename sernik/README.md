@@ -199,6 +199,38 @@ Our folder/file structure is built like this (exclusing `example` since that's *
 
 The `example` configuration should hopefully be *clear enough* to explain how things work. You can also check the [GitHub Actions](https://github.com/sernik-tech/member-images/actions/workflows/build.yml) to see what it does when being built.
 
+> [!NOTE]  
+> If you're planning to make multiple images for yourself, then feel free to use a folder structure like so:
+> ```
+>  config
+> ├──  common
+> │   └──  <your_preferred_username>
+> │       ├──  <your_image_name>
+> │       │   ├──  akmods.yml
+> │       │   ├──  bling.yml
+> │       │   └── <etc. etc.>
+> │       └──  <your_image_name>
+> │           ├──  akmods.yml
+> │           ├──  bling.yml
+> │           └── <etc. etc.>
+> ├──  files
+> │   └──  <your_preferred_username>
+> │       ├──  <your_image_name>
+> │       │   └──  usr
+> │       │       └──  <etc>
+> │       └──  <your_image_name>
+> │           └──  usr
+> │               └──  <etc>
+> ├──  recipes
+> │   └──  <your_preferred_username>
+> │       ├──  recipe-<image_name>.yml
+> │       └──  recipe-<image_name>.yml
+> └──  scripts
+>     ├──  example.sh
+>     ├──  signing.sh
+>     └── <left unchanged here but if you want, you can make a new folder>
+> ```
+
 Once you have your configuration all set up and ensured that there are no errors with your configuration, navigate into `.github/workflows` and edit `build.yml`. You should see a section like so within the file:
 ```
 # !!!
@@ -222,8 +254,8 @@ If you want to add your image to the ISO, edit the file `boot_menu.yml` located 
   info: Description of my image
 ```
 
-> ![IMPORTANT]
-> Make sure that it's properly indented with the rest of them or it *WILL* fail.
+> [!IMPORTANT]
+> Make sure that it's properly indented with the rest of them or it <i>WILL</i> fail.
 
 After you've modified the file, manually run the [release-iso](https://github.com/sernik-tech/member-images/actions/workflows/release-iso.yml) action, preferably after the `build-ublue` action has finished.
 
