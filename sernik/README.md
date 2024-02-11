@@ -161,11 +161,43 @@ Once it's done, just go into your System Settings and set the new "Papirus Color
 > [!IMPORTANT]
 > Do <b><i>NOT</i></b> modify the `template` branch. The way forked custom Universal Blue images work is that all modifications done by us should be done via the `live` branch, the `template` branch stays vanilla and gets synced with upstream, so we can cleanly rebase the `live` branch onto the `template` branch and keep it up to date!
 
+When making commits, we prefer that you simply just make the message something like "(`either your preferred username OR image name`) `actual message/fix/addition/whatever`". Of course, this doesn't really matter. It just Makes Things Look Nicer And Clean™️
+
 ## Making your own custom image
 
 Refer to "[The Tinkerer's Guide](https://universal-blue.org/tinker/make-your-own/)" on Universal Blue's website to learn how to (<i>properly</i>) customize your image.
 
-We have an (...I'll admit, *poorly* documented) example configuration over under [`recipes/example`](https://github.com/sernik-tech/member-images/tree/live/config/recipes/example) for both Kinoite (KDE Plasma) and Silverblue (GNOME) based customizations/image. All of the files should link back to each other and have been properly linked so it *should* make following them and learning what they do much easier.
+We have an example configuration over under [`recipes/example`](https://github.com/sernik-tech/member-images/tree/live/config/recipes/example) for both Kinoite (KDE Plasma) and Silverblue (GNOME) based customizations/image.
+
+Our folder/file structure is built like this (exclusing `example` since that's *slightly* different, and the focus here is user-built images):
+```
+ config
+├──  common
+│   └──  <your_preferred_username>
+│       ├──  akmods.yml
+│       ├──  bling.yml
+│       └── <etc. etc.>
+├──  files
+│   └──  <your_preferred_username>
+│       └──  usr
+│           └──  share
+│               └── <default files which you can include in your image>
+├──  recipes
+│   └──  <your_preferred_username>
+│       └──  recipe.yml
+└──  scripts
+    ├──  example.sh
+    ├──  signing.sh
+    └── <all scripts you want to include can just be dumped directly into here,
+        we recommending using example.sh as a base>
+```
+
+- `common` is where you put their modules that configure the image to their liking.
+- `files` is where you put any system/configuration related files to be put inside of your image.
+- `recipes` is where you put the entire brain of your image. This specifies what should be run, done, what to call it, etc.
+- `scripts` is where you can dump any scripts you made to be run during the creation of your image. we recommend using `example.sh` as a base.
+
+The `example` configuration should hopefully be *clear enough* to explain how things work. You can also check the [GitHub Actions](https://github.com/sernik-tech/member-images/actions/workflows/build.yml) to see what it does when being built.
 
 If you have any questions, refer to the [documentation](https://universal-blue.org/tinker/modification/), original [`startingpoint`](https://github.com/ublue-os/startingpoint) repository, or ask any other members (maybe [@sneexy_boi](https://github.com/sneexy_boi) would be your best shot) if you have any questions about something!
 
