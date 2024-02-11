@@ -58,10 +58,10 @@ what this includes:
 
 ## Installation
 
-> ![WARNING]   
+> [!WARNING]  
 > [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable) and should not be used in production, try it in a VM for a while!
 
-> ![IMPORTANT]   
+> [!IMPORTANT]  
 > Replace `$IMAGE_NAME` in these commands with the appropriate image name in [packages](https://github.com/orgs/sernik-tech/packages?repo_name=member-images) (Alternatively found in the [recipes](https://github.com/sernik-tech/member-images/tree/live/config/recipes)).
 
 To rebase an existing Silverblue/Kinoite installation to the latest build:
