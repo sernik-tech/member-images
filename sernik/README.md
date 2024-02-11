@@ -267,7 +267,7 @@ If you want to add any extra info to the README's or anything, such as this docu
 
 If you want to add your own image to the list on the main README, feel free to use the template provided below by seeing the entire raw thing and copy pasting it then modifying it to fit your needs. It doesn't have to be the template, it can really be anything, but it serves as a decent starting point to add it.
 
-> ![NOTE]
+> [!NOTE]  
 > You <i>don't have to</i> add your image to the README if you don't want to.
 
 <details>
