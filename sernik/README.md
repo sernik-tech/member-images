@@ -195,7 +195,7 @@ Our folder/file structure is built like this (exclusing `example` since that's *
 - `common` is where you put their modules that configure the image to their liking.
 - `files` is where you put any system/configuration related files to be put inside of your image.
 - `recipes` is where you put the entire brain of your image. This specifies what should be run, done, what to call it, etc.
-- `scripts` is where you can dump any scripts you made to be run during the creation of your image. we recommend using `example.sh` as a base.
+- `scripts` is where you can dump any scripts you made to be run during the creation of your image. We recommend using `example.sh` as a base.
 
 The `example` configuration should hopefully be *clear enough* to explain how things work. You can also check the [GitHub Actions](https://github.com/sernik-tech/member-images/actions/workflows/build.yml) to see what it does when being built.
 
