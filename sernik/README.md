@@ -172,6 +172,9 @@ When making commits, we prefer that you simply just make the message something l
 
 Refer to "[The Tinkerer's Guide](https://universal-blue.org/tinker/make-your-own/)" on Universal Blue's website to learn how to (<i>properly</i>) customize your image.
 
+> [!NOTE]  
+> Currently, it seems like their documentation is broken for `modules`. Refer to their [`modules` repository here](https://github.com/ublue-os/bling/tree/main/modules) to see the documentation and examples for each available module.
+
 We have an example configuration over under [`recipes/example`](https://github.com/sernik-tech/member-images/tree/live/config/recipes/example) for both Kinoite (KDE Plasma) and Silverblue (GNOME) based customizations/image.
 
 Our folder/file structure is built like this (exclusing `example` since that's *slightly* different, and the focus here is user-built images):
@@ -306,7 +309,9 @@ What this totally real image includes:
 
 ## Installation for dummy
 
-<!--- You don't have to, but we'd prefer if you included the name of your image in the "Installation" header *just* so it's easier to tell a difference between which section is which. --->
+<!--- You don't have to, but we'd prefer if you included the name of your image in the "Installation" header *just* so it's easier to tell a difference between which section is which. 
+
+Alternatively, just don't include installation instructions if you don't want to. --->
 
 </summary>
 
