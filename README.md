@@ -1,52 +1,165 @@
-# Starting point
+<div align="center">
+    <h1>Images</h1>
+    <h3>By members of Sernik</h3>
+</div>
 
-> **Warning**
-> Startingpoint was recently rewritten, and this version is considered a "1.0" *semi-*stable release.
-> There are breaking changes between this and the previous version.
-> If you are merging changes from the previous (v0) version, please refer to [the heads-up blog post](https://universal-blue.org/blog/2023/09/02/startingpoint-rewrite-heads-up-what-you-need-to-know/).
+<div align="center">
 
-[![build-ublue](https://github.com/ublue-os/startingpoint/actions/workflows/build.yml/badge.svg)](https://github.com/ublue-os/startingpoint/actions/workflows/build.yml)
+[![build-ublue](https://github.com/sernik-tech/member-images/actions/workflows/build.yml/badge.svg)](https://github.com/sernik-tech/member-images/actions/workflows/build.yml)
 
-This is a constantly updating template repository for creating [a native container image](https://fedoraproject.org/wiki/Changes/OstreeNativeContainerStable) designed to be customized however you want. GitHub will build your image for you, and then host it for you on [ghcr.io](https://github.com/features/packages). You then just tell your computer to boot off of that image. GitHub keeps 90 days worth image backups for you, thanks Microsoft!
+</div>
 
-For more info, check out the [uBlue homepage](https://universal-blue.org/) and the [main uBlue repo](https://github.com/ublue-os/main/)
+Custom [Universal Blue](https://universal-blue.org/) Images. Built by Sernik members for their own use-cases.
 
-## Getting started
+This repository by default also supports signing.
 
-See the [Make Your Own-page in the documentation](https://universal-blue.org/tinker/make-your-own/) for quick setup instructions for setting up your own repository based on this template.
+###### Repo owned by [@sneexy-boi](https://github.com/sneexy-boi).
 
-Don't worry, it only requires some basic knowledge about using the terminal and git.
+## Images
 
-After setup, it is recommended you update this README to describe your custom image.
+<details>
+<summary>
 
-> **Note**
-> Everywhere in this repository, make sure to replace `ublue-os/startingpoint` with the details of your own repository. Unless you used one of the automatic repository setup tools in which case the previous repo identifier should already be your repo's details.
+### Sneexy's slice
 
-> **Warning**
-> To start, you *must* create a branch called `live` which is exclusively for your customizations. That is the **only** branch the GitHub workflow will deploy to your container registry. Don't make any changes to the original "template" branch. It should remain untouched. By using this branch structure, you ensure a clear separation between your own "published image" branch, your development branches, and the original upstream "template" branch. Periodically sync and fast-forward the upstream "template" branch to the most recent revision. Then, simply rebase your `live` branch onto the updated template to effortlessly incorporate the latest improvements into your own repository, without the need for any messy, manual "merge commits".
+</summary>
 
-## Customization
+custom image for myself, used with my thinkpad t480. a very vanilla kinoite-ublue out of the box install because i do all customizations myself post-install. :bowtie:
 
-The easiest way to start customizing is by looking at and modifying `config/recipe.yml`. It's documented using comments and should be pretty easy to understand.
+what this includes:
 
-If you want to add custom configuration files, you can just add them in the `/usr/etc/` directory, which is the official OSTree "configuration template" directory and will be applied to `/etc/` on boot. `config/files/usr` is copied into your image's `/usr` by default. If you need to add other directories in the root of your image, that can be done using the `files` module. Writing to `/var/` in the image builds of OSTree-based distros isn't supported and will not work, as that is a local user-managed directory!
+- a mostly simple and average Kinoite out of the box experience
+  - some icons and themes preinstalled out of the box
+- customized [yafti](https://github.com/ublue-os/yafti) installer
+  - options to install more kde apps, gnome apps, gaming, internet/chat, utilities, all as flatpaks
+- some [modern unix](https://github.com/ibraheemdev/modern-unix) utilities/replacements and zsh installed
+- some [akmods](https://github.com/ublue-os/akmods)
+  - [v4l2loopback](https://github.com/umlaeute/v4l2loopback)
+  - [winesync](https://repo.or.cz/linux/zf.git/shortlog/refs/heads/winesync4)
+  - [xone](https://github.com/BoukeHaarsma23/xonedo/)
+  - [xpadneo](https://github.com/atar-axis/xpadneo)
+- custom [justfiles](https://github.com/casey/just) scripts
+  - some taken from [bazzite](https://github.com/ublue-os/bazzite)
+    - waydroid cleaning, initialization, and waydroid_script helper scripts
+    - patch 64bit garry mod's
+    - add user to input group
+    - enable virtualization/install qemu and virt-manager
+    - install scrcpy
+    - add and remove virtual audio channels/sinks
+  - some of my own
+    - thinkpad t480 fingerprint setup helper
+    - discord/vesktop rpc fix
+    - fix flatpak theme issues
+- **some personal configurations (you may not want)**
+  - forced systemd-resolved dns settings *(due to personal internet issues)*
+  - uBlue's `laptop` bling
 
-For more information about customization, see [the README in the config directory](config/README.md)
+<details>
+<summary>
 
-Documentation around making custom images exists / should be written in two separate places:
-* [The Tinkerer's Guide on the website](https://universal-blue.org/tinker/make-your-own/) for general documentation around making custom images, best practices, tutorials, and so on.
-* Inside this repository for documentation specific to the ins and outs of the template (like module documentation), and just some essential guidance on how to make custom images.
+## Installation for Sneexy's slice
 
-## Installation
+</summary>
 
-> **Warning**
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable) and should not be used in production, try it in a VM for a while!
+<b><i>This image is included in the ISO.</i></b>
+
+to rebase an existing Silverblue/Kinoite installation to the latest build:
+
+- first rebase to the unsigned image, to get the proper signing keys and policies installed:
+  ```
+  rpm-ostree rebase ostree-unverified-registry:ghcr.io/sernik-tech/sneexys-slice:latest
+  ```
+- reboot to complete the rebase:
+  ```
+  systemctl reboot
+  ```
+- then rebase to the signed image, like so:
+  ```
+  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/sernik-tech/sneexys-slice:latest
+  ```
+- reboot again to complete the installation
+  ```
+  systemctl reboot
+  ```
+
+this repository builds date tags as well, so if you want to rebase to a particular day's build:
+
+```
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/sernik-tech/sneexys-slice:20230403
+```
+
+the `latest` tag will automatically point to the latest build. that build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+
+</details>
+
+</details>
+
+### ISO
+
+This repository makes use of the [`startingpoint`](https://github.com/ublue-os/startingpoint) ISO GitHub Action. Builds are manually ran and an ISO will be produced under the [properly tagged release](https://github.com/sernik-tech/member-images/releases/tag/auto-iso). The ISO will include entries for members custom images (<i>If</i> they prefer that they show up in the ISO).
+
+## Extra notes
+
+Refer to "[The Tinkerer's Guide](https://universal-blue.org/tinker/make-your-own/)" on Universal Blue's website to learn how to (<i>properly</i>) customize your image
+
+We have our own ["documentation"](https://github.com/sneexy-boi/sernik/blob/live/docs.md) if you want to refer to them, maintained by us. They serve more as mini-guides rather than full blown documentation though. Also includes how to modify this Readme yourself if you're a Sernik member.
+
+for more information about the project this custom image is based on, check out the [uBlue homepage](https://universal-blue.org/) and the [main uBlue repo](https://github.com/ublue-os/main/)
+
+You can refer to the main [Universal Blue GitHub](https://github.com/ublue-os/) if you want to see what more than be done.
+
+<details>
+<summary>Template to add your image to the "Images" list</summary>
+
+<b>You don't have to add your own image to the list if you don't want to.</b>
+
+You can use the template below if you wish, or just make anything you want.
+
+<details>
+<summary>
+
+### A members custom image
+
+</summary>
+
+This is a brief introduction about the image. Something about what it does or what it's for. Or not. Anything can be here to be honest.
+
+What this totally real image includes:
+
+- Very generic/Highly customized Silverblue/Kinoite/Whatever install
+- A customized [yafti](https://github.com/ublue-os/yafti) installer
+  - More options of applications to install post-install, all as Flatpaks
+- Some [modern unix](https://github.com/ibraheemdev/modern-unix) utilities
+- Some [akmods](https://github.com/ublue-os/akmods)
+  - [v4l2loopback](https://github.com/umlaeute/v4l2loopback)
+  - [winesync](https://repo.or.cz/linux/zf.git/shortlog/refs/heads/winesync4)
+  - [xone](https://github.com/BoukeHaarsma23/xonedo/)
+  - [xpadneo](https://github.com/atar-axis/xpadneo)
+- Changes from Arch Linux
+  - Free Windows activator
+- **Personal changes**
+  - Paid CatGPT API Key included
+  - Expired cheese
+
+<details>
+<summary>
+
+## Installation for dummy
+
+<!--- You don't have to, but we'd prefer if you included the name of your image in the "Installation" header *just* so it's easier to tell a difference between which section is which. --->
+
+</summary>
+
+<!---
+REMEMBER to change these commands below so they redirect to your image!
+Example: [...]ghcr.io/sernik-tech/NAME_OF_YOUR_IMAGE_HERE[...]
+--->
 
 To rebase an existing Silverblue/Kinoite installation to the latest build:
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/startingpoint:latest
+  rpm-ostree rebase ostree-unverified-registry:ghcr.io/sernik-tech/dummy:latest
   ```
 - Reboot to complete the rebase:
   ```
@@ -54,7 +167,7 @@ To rebase an existing Silverblue/Kinoite installation to the latest build:
   ```
 - Then rebase to the signed image, like so:
   ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/startingpoint:latest
+  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/sernik-tech/dummy:latest
   ```
 - Reboot again to complete the installation
   ```
@@ -64,35 +177,11 @@ To rebase an existing Silverblue/Kinoite installation to the latest build:
 This repository builds date tags as well, so if you want to rebase to a particular day's build:
 
 ```
-rpm-ostree rebase ostree-image-signed:docker://ghcr.io/ublue-os/startingpoint:20230403
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/sernik-tech/dummy:20230403
 ```
-
-This repository by default also supports signing.
 
 The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
 
-## ISO
+</details>
 
-This template includes a simple Github Action to build and release an ISO of your image. 
-
-To run the action, simply edit the `boot_menu.yml` by changing all the references to startingpoint to your repository. This should trigger the action automatically.
-
-The Action uses [isogenerator](https://github.com/ublue-os/isogenerator) and works in a similar manner to the official Universal Blue ISO. If you have any issues, you should first check [the documentation page on installation](https://universal-blue.org/installation/). The ISO is a netinstaller and should always pull the latest version of your image.
-
-Note that this release-iso action is not a replacement for a full-blown release automation like [release-please](https://github.com/googleapis/release-please).
-
-## `just`
-
-The [`just`](https://just.systems/) command runner is included in all `ublue-os/main`-derived images.
-
-You need to have a `~/.justfile` with the following contents and `just` aliased to `just --unstable` (default in posix-compatible shells on ublue) to get started with just locally.
-```
-!include /usr/share/ublue-os/just/main.just
-!include /usr/share/ublue-os/just/nvidia.just
-!include /usr/share/ublue-os/just/custom.just
-```
-Then type `just` to list the just recipes available.
-
-The file `/usr/share/ublue-os/just/custom.just` is intended for the custom just commands (recipes) you wish to include in your image. By default, it includes the justfiles from [`ublue-os/bling`](https://github.com/ublue-os/bling), if you wish to disable that, you need to just remove the line that includes bling.just.
-
-See [the just-page in the Universal Blue documentation](https://universal-blue.org/guide/just/) for more information.
+</details>
