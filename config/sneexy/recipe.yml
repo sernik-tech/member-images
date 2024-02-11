@@ -11,25 +11,25 @@ image-version: 39 # latest is also supported if you want new updates ASAP
 # you can include multiple instances of the same module
 modules:
   # put some files in the image
-  - from-file: common/files.yml
+  - from-file: sneexy/common/files.yml
 
   # installs default repositories and rpm-ostree packages
-  - from-file: common/packages.yml
+  - from-file: sneexy/common/rpm-ostree.yml
 
   # installs default repositories and flatpak packages
-  - from-file: common/flatpaks.yml
+  - from-file: sneexy/common/flatpaks.yml
 
   # configure what to pull in from ublue-os/bling
-  - from-file: common/bling.yml
+  - from-file: sneexy/common/bling.yml
 
   # install fonts
-  - from-file: common/fonts.yml
+  - from-file: sneexy/common/fonts.yml
 
   # uBlue akmods. includes custom drivers and stuff
-  - from-file: common/akmods.yml
+  - from-file: sneexy/common/akmods.yml
 
   # post setup/installer helper gui
-  - from-file: common/yafti.yml
+  - from-file: sneexy/common/yafti.yml
 
   # scripts to run post-image creation
-  - from-file: common/script.yml
+  - from-file: sneexy/common/script.yml
