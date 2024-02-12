@@ -51,7 +51,7 @@ what this includes:
     - discord/vesktop rpc fix
     - fix flatpak theme issues
 - **some personal configurations (you may not want)**
-  - forced systemd-resolved dns settings *(due to personal internet issues)*
+  - forced systemd-resolved dns settings
   - uBlue's `laptop` bling
 
 </details>
