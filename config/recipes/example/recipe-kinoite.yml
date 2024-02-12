@@ -40,9 +40,9 @@ modules:
   - from-file: common/example/kinoite/yafti.yml
 
   # Scripts to run post-image creation
-  # WARNING: Should not be removed. A required script is ran for image creation.
-  # - from-file: common/example/kinoite/script.yml
+  # Commented out because there are no scripts.
+  # - from-file: common/example/silverblue/script.yml
 
   # This sets up the proper policy & signing files for signed images to work fully
-  # It's recommended to *not* touch this or remove it or anything
+  # It's recommended *not* to remove this.
   - type: signing
