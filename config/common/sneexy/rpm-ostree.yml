@@ -42,6 +42,9 @@ install:
   - qt5-qtwayland
   - qt6-qtwayland
   - gnome-themes-extra
+  - kdepim
+  - kdepim-addons
+  - kdepim-runtime
   - lzip
 
   # themes
