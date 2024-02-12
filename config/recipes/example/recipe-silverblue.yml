@@ -41,4 +41,8 @@ modules:
 
   # Scripts to run post-image creation
   # WARNING: Should not be removed. A required script is ran for image creation.
-  - from-file: common/example/silverblue/script.yml
+  # - from-file: common/example/silverblue/script.yml
+
+  # This sets up the proper policy & signing files for signed images to work fully
+  # It's recommended to *not* touch this or remove it or anything
+  - type: signing
