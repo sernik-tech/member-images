@@ -20,11 +20,11 @@ This repository by default supports signing.
 <details>
 <summary>
 
-### Sneexy's Wuzetka
+### Wuzetka
 
 </summary>
 
-custom image for myself, used with my thinkpad t480. a very vanilla kinoite-ublue out of the box install because i do all customizations myself post-install. :bowtie:
+sneexy's custom image for himself, although changes are light enough that anyone else can use it. a very vanilla kinoite-ublue out of the box install because i do all customizations myself post-install. :bowtie:
 
 what this includes:
 
