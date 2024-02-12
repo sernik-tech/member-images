@@ -188,14 +188,11 @@ Our folder/file structure is built like this (exclusing `example` since that's *
 ├──  files
 │   └──  <your_preferred_username>
 │       └──  usr
-│           └──  share
-│               └── <default files which you can include in your image>
+│           └── <default files which you can include in your image>
 ├──  recipes
 │   └──  <your_preferred_username>
 │       └──  recipe.yml
 └──  scripts
-    ├──  example.sh
-    ├──  signing.sh
     └── <all scripts you want to include can just be dumped directly into here,
         we recommending using example.sh as a base>
 ```
@@ -225,17 +222,15 @@ The `example` configuration should hopefully be *clear enough* to explain how th
 > │   └──  <your_preferred_username>
 > │       ├──  <your_image_name>
 > │       │   └──  usr
-> │       │       └──  <etc>
+> │       │       └── <etc>
 > │       └──  <your_image_name>
 > │           └──  usr
-> │               └──  <etc>
+> │               └── <etc>
 > ├──  recipes
 > │   └──  <your_preferred_username>
 > │       ├──  recipe-<image_name>.yml
 > │       └──  recipe-<image_name>.yml
 > └──  scripts
->     ├──  example.sh
->     ├──  signing.sh
 >     └── <left unchanged here but if you want, you can make a new folder>
 > ```
 
