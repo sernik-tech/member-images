@@ -32,4 +32,7 @@ modules:
   - from-file: common/sneexy/yafti.yml
 
   # scripts to run post-image creation
-  - from-file: common/sneexy/script.yml
+  # - from-file: common/sneexy/script.yml
+
+  # sets up proper policy & signing files
+  - type: signing
