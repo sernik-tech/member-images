@@ -6,5 +6,5 @@ ublue_variants:
         info: Example Silverblue image
       - label: sernik-kinoite
         info: Example Kinoite image
-      - label: sneexys-slice
+      - label: wuzetka
         info: Sneexy's Kinoite based image

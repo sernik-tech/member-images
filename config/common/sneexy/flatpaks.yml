@@ -12,10 +12,6 @@ system:
     # useful utilities
     - org.pipewire.Helvum
 
-    # applications that are fine as flatpaks
-    - org.kde.gwenview
-    - org.kde.kcalc
-
 user:
   repo-name: flathub-user
   repo-title: "Flathub (user)"

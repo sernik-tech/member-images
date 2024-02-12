@@ -20,7 +20,7 @@ This repository by default supports signing.
 <details>
 <summary>
 
-### Sneexy's slice
+### Sneexy's Wuzetka
 
 </summary>
 

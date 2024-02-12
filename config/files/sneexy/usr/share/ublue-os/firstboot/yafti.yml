@@ -1,18 +1,18 @@
-title: Sernik
+title: Wuzetka
 properties:
   mode: "run-on-change"
 screens:
   first-screen:
     source: yafti.screen.title
     values:
-      title: "Welcome to your Sernik image"
+      title: "Welcome to your Wuzetka image"
       icon: "/usr/share/ublue-os/firstboot/sernik.png"
       description: |
         This installer will let you choose any extra applications you'd want to install onto your new system. Make sure you're connected to the internet before continuing.
   can-we-modify-your-flatpaks:
     source: yafti.screen.consent
     values:
-      title: Welcome, Sernik enjoyers!
+      title: Welcome, Wuzetka enjoyers!
       condition:
         run: flatpak remotes --columns=name | grep fedora
       description: |
