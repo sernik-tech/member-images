@@ -8,6 +8,15 @@ repos:
 
   # kwin theme
   - https://download.opensuse.org/repositories/home:paul4us/Fedora_%OS_VERSION%/home:paul4us.repo
+
+  # bazzite repo
+  - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
+
+  # bazzite multilib
+  - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-%OS_VERSION%/kylegospo-bazzite-multilib-fedora-%OS_VERSION%.repo
+
+  # rom properties
+  - https://copr.fedorainfracloud.org/coprs/kylegospo/rom-properties/repo/fedora-%OS_VERSION%/kylegospo-rom-properties-fedora-%OS_VERSION%.repo
 install:
   # console
   - bat
@@ -60,6 +69,10 @@ install:
   # performance/userspace utilities
   - gamemode
   - gamescope
+  - mangohud
+  - joystickwake
+  - rom-properties-kf5
+  - xwiimote-ng
 remove:
   - firefox # default firefox removed in favor of flatpak
   - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
