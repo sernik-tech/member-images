@@ -7,6 +7,14 @@
 
 
 name: build-sernik-examples
+on: # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+  push:
+    paths:
+      - 'config/common/example'
+      - 'config/files/example/'
+      - 'config/recipes/example/'
+  pull_request:
+  workflow_dispatch:
 
 env:
   IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
