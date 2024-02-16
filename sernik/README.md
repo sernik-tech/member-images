@@ -249,10 +249,6 @@ Once you have your configuration all set up and ensured that there are no errors
         # Add recipes for all the images you want to build here.
         # Don't add module configuration files, you will get errors.
         recipe:
-          # Example images. Just building here to make sure they're valid.
-          - recipes/example/recipe-kinoite.yml
-          - recipes/example/recipe-silverblue.yml
-          # User images.
           - recipes/sneexy/recipe.yml
           <etc etc>
 # !!!
