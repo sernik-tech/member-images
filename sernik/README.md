@@ -24,12 +24,12 @@ Some documentation for our images. If you're looking for actual documentation re
     - [ThinkPad T480 Fingerprint Setup](#thinkpad-t480-fingerprint-setup)
     - [Installing OBS Studio another way](#installing-obs-studio-another-way)
     - [Colored papirus icons](#colored-papirus-icons)
+- [Extra known resources](#extra-known-resources)
 - [Sernik member's guide to participating](#sernik-members-guide-to-participating)
     - [How do I access this repository and modify things?](#how-do-i-access-this-repository-and-modify-things)
     - [Managing the repository](#managing-the-repository)
     - [Making your own custom image](#making-your-own-custom-image)
     - [Modifying the README](#modifying-the-readme)
-
 
 ## Tips
 
@@ -154,6 +154,15 @@ chmod +x /tmp/papirus-colors/places_icons_mod.sh
 ```
 
 Once it's done, just go into your System Settings and set the new "Papirus Colors" pack!
+
+## Extra known resources
+
+- [boxkit](https://github.com/ublue-os/boxkit) (Make your own custom distrobox container images)
+    - [ubuntu-toolbox](https://github.com/ublue-os/toolboxes/tree/main/toolboxes/ubuntu-toolbox) (Default choice for the Ubuntu distrobox)
+    - [fedora-toolbox](https://github.com/ublue-os/toolboxes/tree/main/toolboxes/fedora-toolbox) (Default choice for the Fedora distrobox)
+    - [bazzite-arch](https://github.com/ublue-os/bazzite-arch) (Arch based distrobox container ready for gaming)
+    - [obs-studio-portable](https://github.com/ublue-os/obs-studio-portable) (Ubuntu distrobox with OBS studio preinstalled with extra plugins)
+    - [davincibox](https://github.com/zelikos/davincibox) (Container with everything set up for running DaVinci Resolve)
 
 ## Sernik member's guide to participating
 
