@@ -28,31 +28,14 @@ sneexy's custom image for himself, although changes are light enough that anyone
 
 what this includes:
 
-- a mostly simple and average Kinoite out of the box experience
-  - some icons and themes preinstalled out of the box
+- custom sddm [config](https://github.com/sernik-tech/member-images/tree/live/config/files/sneexy/usr/etc/sddm.conf.d) and [theme](https://github.com/aczw/sddm-theme-corners/)
 - customized [yafti](https://github.com/ublue-os/yafti) installer
-  - options to install more kde apps, gnome apps, gaming, internet/chat, utilities, all as flatpaks
 - some [modern unix](https://github.com/ibraheemdev/modern-unix) utilities/replacements and zsh installed
-- some [akmods](https://github.com/ublue-os/akmods)
-  - [v4l2loopback](https://github.com/umlaeute/v4l2loopback)
-  - [winesync](https://repo.or.cz/linux/zf.git/shortlog/refs/heads/winesync4)
-  - [xone](https://github.com/BoukeHaarsma23/xonedo/)
-  - [xpadneo](https://github.com/atar-axis/xpadneo)
-- custom [justfiles](https://github.com/casey/just) scripts
+- some [akmods](https://github.com/sernik-tech/member-images/blob/live/config/common/sneexy/akmods.yml)
+- custom [justfiles](https://github.com/sernik-tech/member-images/blob/live/config/files/example/usr/share/ublue-os/just/60-custom.just)
   - some taken from [bazzite](https://github.com/ublue-os/bazzite)
-    - waydroid cleaning, initialization, and waydroid_script helper scripts
-    - patch 64bit garry mod's
-    - add user to input group
-    - enable virtualization/install qemu and virt-manager
-    - install scrcpy
-    - add and remove virtual audio channels/sinks
   - some of my own
-    - thinkpad t480 fingerprint setup helper
-    - discord/vesktop rpc fix
-    - fix flatpak theme issues
-- **some personal configurations (you may not want)**
-  - forced systemd-resolved dns settings
-  - uBlue's `laptop` bling
+- [some personal configurations](https://github.com/sernik-tech/member-images/tree/live/config/files/sneexy/usr/etc/systemd/resolved.conf.d)
 
 </details>
 
