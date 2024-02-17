@@ -1,3 +1,6 @@
+> [!IMPORTANT]  
+> This repository will soon be deprecated in favor of [Blue Build](https://blue-build.org/), which is the rebrand/rewrite of uBlue's startingpoint images.
+
 <div align="center">
     <h1>Images</h1>
     <h3>By members of Sernik</h3>
