@@ -163,6 +163,10 @@ Once it's done, just go into your System Settings and set the new "Papirus Color
     - [bazzite-arch](https://github.com/ublue-os/bazzite-arch) (Arch based distrobox container ready for gaming)
     - [obs-studio-portable](https://github.com/ublue-os/obs-studio-portable) (Ubuntu distrobox with OBS studio preinstalled with extra plugins)
     - [davincibox](https://github.com/zelikos/davincibox) (Container with everything set up for running DaVinci Resolve)
+- [Bazzite](https://github.com/ublue-os/bazzite) (uBlue's container based gaming distro)
+    - [`bazzite` Copr repository](https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/)
+    - [`bazzite-multilib` Copr repository](https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/)
+- [`python-validity` Copr repository](https://copr.fedorainfracloud.org/coprs/sneexy/python-validity/) (Fingerprint reader drivers for some devices)
 
 ## Sernik member's guide to participating
 
