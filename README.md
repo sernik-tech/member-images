@@ -1,5 +1,5 @@
 > [!IMPORTANT]  
-> This repository will soon be deprecated in favor of [Blue Build](https://blue-build.org/), which is the rebrand/rewrite of uBlue's startingpoint images.
+> This repository will soon(?) be deprecated in favor of [Blue Build](https://blue-build.org/), which is the rebrand/rewrite of uBlue's startingpoint images. See the new WIP repository [here](https://github.com/sneexy-boi/member-images/).
 
 <div align="center">
     <h1>Images</h1>
