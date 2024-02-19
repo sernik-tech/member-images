@@ -59,15 +59,19 @@ install:
   # libraries
   - qt5-qtwayland
   - qt6-qtwayland
+  - gnome-themes-extra
+  - lzip
+  - fontconfig
+
+  # kde related extensions
+  - kdepim
+  - kdepim-addons
+  - kaccounts-integration
+  - kaccounts-providers
   - qt5-qtsvg
   - qt5-qtquickcontrols2
   - qt5-qtgraphicaleffects
-  - gnome-themes-extra
-  - kdepim
-  - kdepim-addons
   - translate-shell
-  - lzip
-  - fontconfig
 
   # themes
   - papirus-icon-theme
