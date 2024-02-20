@@ -55,13 +55,7 @@ install:
   - mpv
   - okular
   - waydroid
-
-  # libraries
-  - qt5-qtwayland
-  - qt6-qtwayland
-  - gnome-themes-extra
-  - lzip
-  - fontconfig
+  - merkuro
 
   # kde related extensions
   - kdepim
@@ -72,6 +66,13 @@ install:
   - qt5-qtquickcontrols2
   - qt5-qtgraphicaleffects
   - translate-shell
+
+  # libraries
+  - qt5-qtwayland
+  - qt6-qtwayland
+  - gnome-themes-extra
+  - lzip
+  - fontconfig
 
   # themes
   - papirus-icon-theme
