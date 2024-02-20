@@ -31,17 +31,15 @@ install:
   - lsd
   - neovim
   - nushell
-  - fish
   - ripgrep
   - sd
   - starship
-  - tldr
   - zoxide
   - zsh
   
   # audio
-  - playerctl
   - pavucontrol-qt
+  - playerctl
 
   # applications
   - ark
@@ -52,43 +50,48 @@ install:
   - kate
   - kitty
   - ksystemlog
+  - merkuro
   - mpv
   - okular
   - waydroid
-  - merkuro
 
   # kde related extensions
-  - kdepim
-  - kdepim-addons
   - kaccounts-integration
   - kaccounts-providers
-  - qt5-qtsvg
-  - qt5-qtquickcontrols2
+  - kdepim
+  - kdepim-addons
   - qt5-qtgraphicaleffects
+  - qt5-qtquickcontrols2
+  - qt5-qtsvg
   - translate-shell
 
+  # podman
+  - podman
+  - podman-compose
+  - podman-tui
+
   # libraries
-  - qt5-qtwayland
-  - qt6-qtwayland
+  - fontconfig
   - gnome-themes-extra
   - lzip
-  - fontconfig
+  - qt5-qtwayland
+  - qt6-qtwayland
 
   # themes
-  - papirus-icon-theme
   - bibata-cursor-themes
-  - lightly
   - klassy
   - kvantum
+  - lightly
+  - papirus-icon-theme
 
-  # performance/userspace utilities
+  # utilities
+  - crontabs
   - gamemode
   - gamescope
-  - mangohud
   - joystickwake
+  - mangohud
   - rom-properties-kf5
   - xwiimote-ng
-  - crontabs
 remove:
   - firefox # default firefox removed in favor of flatpak
   - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
