@@ -29,7 +29,7 @@ modules:
   - from-file: common/sneexy/akmods.yml
 
   # post setup/installer helper gui
-  - from-file: common/sneexy/yafti.yml
+  # - from-file: common/sneexy/yafti.yml
 
   # scripts to run post-image creation
   # - from-file: common/sneexy/script.yml

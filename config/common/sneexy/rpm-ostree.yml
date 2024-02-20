@@ -45,14 +45,11 @@ install:
   - ark
   - dolphin
   - dolphin-plugins
-  - gwenview
-  - kalk
   - kate
   - kitty
   - ksystemlog
   - merkuro
   - mpv
-  - okular
   - waydroid
 
   # kde related extensions
