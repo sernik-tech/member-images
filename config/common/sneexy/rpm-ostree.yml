@@ -53,6 +53,7 @@ install:
   - waydroid
 
   # kde related extensions
+  - ffmpegthumbs
   - kaccounts-integration
   - kaccounts-providers
   - kdepim
