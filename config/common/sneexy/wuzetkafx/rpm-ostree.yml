@@ -1,0 +1,66 @@
+type: rpm-ostree
+install:
+# display manager
+  - sddm
+
+# launcher
+  - wofi
+
+# environment
+  - xorg-x11-server-Xwayland
+  - polkit
+  - lxpolkit
+  - xdg-user-dirs
+  - dbus-tools
+  - dbus-daemon
+  - wl-clipboard
+  - gnome-keyring
+  - pavucontrol
+  - playerctl
+  - qt5-qtwayland
+  - qt6-qtwayland
+  - vulkan-validation-layers
+  - google-noto-emoji-fonts
+
+# sound
+  - wireplumber
+  - pipewire
+
+# networking
+  - network-manager-applet
+  - bluez
+  - bluez-tools
+  - blueman
+
+# file manager
+  - thunar
+  - thunar-archive-plugin 
+  - thunar-volman
+  - xarchiver
+
+# screenshot
+  - slurp
+  - grim
+
+# display
+  - wlr-randr
+  - wlsunset
+  - grimshot
+  - light
+  - swaylock
+  - swayidle
+  - kanshi
+
+# terminal
+  - xfce4-terminal
+
+# notifications
+  - dunst
+
+# mpv, since flatpak mpv and celluloid have issues
+  - mpv
+
+# theme and GUI
+  - gnome-themes-extra
+  - gnome-icon-theme
+  - papirus-icon-theme
