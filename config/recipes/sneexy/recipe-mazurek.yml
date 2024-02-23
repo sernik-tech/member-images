@@ -1,5 +1,5 @@
 # image will be published to ghcr.io/<user>/<name>
-name: wuzetkafx
+name: mazurek
 # description will be included in the image's metadata
 description: sneexy's personal image, swayfx edition
 
@@ -10,17 +10,11 @@ image-version: 39 # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - from-file: common-packages.yml
-  - from-file: common-files.yml
-
-# module configuration, executed in order
-# you can include multiple instances of the same module
-modules:
   # put some files in the image
-  - from-file: common/sneexy/wuzetkafx/files.yml
+  - from-file: common/sneexy/mazurek/files.yml
 
   # installs default repositories and rpm-ostree packages
-  - from-file: common/sneexy/wuzetkafx/rpm-ostree.yml
+  - from-file: common/sneexy/mazurek/rpm-ostree.yml
 
   # installs default repositories and flatpak packages
   - from-file: common/sneexy/flatpaks.yml
@@ -38,7 +32,7 @@ modules:
   # - from-file: common/sneexy/yafti.yml
 
   # scripts to run post-image creation
-  - from-file: common/sneexy/wuzetkafx/script.yml
+  - from-file: common/sneexy/mazurek/script.yml
 
   # sets up proper policy & signing files
   - type: signing

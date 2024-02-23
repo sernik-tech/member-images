@@ -10,7 +10,8 @@ wget https://copr.fedorainfracloud.org/coprs/swayfx/swayfx/repo/fedora-${OS_VERS
 # Ensure that needed Mesa packages are installed from bazzite-multilib
 echo "Replacing sway with swayfx"
 
-rpm-ostree override remove sway --install swayfx
+#rpm-ostree override remove sway --install swayfx
+rpm-ostree install swayfx
 
 # Cleanup
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_swayfx-swayfx.repo

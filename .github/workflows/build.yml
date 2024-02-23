@@ -40,7 +40,7 @@ jobs:
         # Don't add module configuration files, you will get errors.
         recipe:
           - recipes/sneexy/recipe.yml
-          - recipes/sneexy/recipe-swayfx.yml
+          - recipes/sneexy/recipe-mazurek.yml
 # !!!
 
     steps:
