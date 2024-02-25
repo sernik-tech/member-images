@@ -1,5 +1,18 @@
 type: rpm-ostree
 install:
+# required system packages. below are packages taken
+# from https://src.fedoraproject.org/rpms/sway-config-fedora/raw/rawhide/f/sway-config-fedora.spec
+# in order to make a functioning image but using swafx instead.
+  - systemd-sway
+  - mesa-dri-drivers
+  - brightnessctl
+  - grimshot
+  - pulseaudio-utils
+  - swaybg
+  - waybar
+  - sddm-wayland-sway
+  - desktop-backgrounds-compat
+
 # display manager
   - sddm
 
@@ -46,7 +59,8 @@ install:
   - wlr-randr
   - wlsunset
   - grimshot
-  - light
+  # - light
+  # - swaylock
   - swayidle
   - kanshi
 
