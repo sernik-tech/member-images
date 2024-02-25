@@ -47,7 +47,6 @@ install:
   - wlsunset
   - grimshot
   - light
-  - swaylock
   - swayidle
   - kanshi
 
