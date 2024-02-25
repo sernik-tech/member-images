@@ -3,7 +3,7 @@ install:
 # required system packages. below are packages taken
 # from https://src.fedoraproject.org/rpms/sway-config-fedora/raw/rawhide/f/sway-config-fedora.spec
 # in order to make a functioning image but using swafx instead.
-  - systemd-sway
+  - sway-systemd
   - mesa-dri-drivers
   - brightnessctl
   - grimshot
