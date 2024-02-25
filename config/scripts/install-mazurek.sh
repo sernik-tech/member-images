@@ -15,9 +15,9 @@ wget https://copr.fedorainfracloud.org/coprs/vrumger/swaylock-effects/repo/fedor
 # install packages
 echo "Installing packages"
 
+#rpm-ostree install swaylock-effects
 rpm-ostree install swayfx
 rpm-ostree install SwayNotificationCenter
-rpm-ostree install swaylock-effects
 
 # disable repos afterwards
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_swayfx-swayfx.repo
