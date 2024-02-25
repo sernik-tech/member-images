@@ -13,6 +13,9 @@ modules:
   # put some files in the image
   - from-file: common/sneexy/mazurek/files.yml
 
+  # scripts to run
+  - from-file: common/sneexy/mazurek/script.yml
+
   # installs default repositories and rpm-ostree packages
   - from-file: common/sneexy/mazurek/rpm-ostree.yml
 
@@ -30,9 +33,6 @@ modules:
 
   # post setup/installer helper gui
   # - from-file: common/sneexy/yafti.yml
-
-  # scripts to run post-image creation
-  - from-file: common/sneexy/mazurek/script.yml
 
   # sets up proper policy & signing files
   - type: signing
