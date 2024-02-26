@@ -18,11 +18,11 @@ wget "https://copr.fedorainfracloud.org/coprs/abn/throttled/repo/fedora-$(rpm -E
 
 # installing the packages
 
-# install tlp, ensuring no conflicts exist first
+# install power related utilities, ensuring no conflicts exist first
 if rpm -qa | grep power-profiles-daemon ; then
-    rpm-ostree override remove power-profiles-daemon --install=tlp --install=tlp-rdw
+    rpm-ostree override remove power-profiles-daemon --install=tlp --install=tlp-rdw --install=throttled
 else
-    rpm-ostree install tlp tlp-rdw
+    rpm-ostree install tlp tlp-rdw throttled
 fi
 
 # console/terminal related packages
