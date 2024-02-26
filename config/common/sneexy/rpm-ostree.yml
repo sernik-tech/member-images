@@ -51,6 +51,7 @@ install:
   - merkuro
   - mpv
   - waydroid
+  - contour-terminal
 
   # kde related extensions
   - ffmpegthumbs
@@ -62,6 +63,7 @@ install:
   - qt5-qtquickcontrols2
   - qt5-qtsvg
   - translate-shell
+  - power-profiles-daemon
 
   # podman
   - podman

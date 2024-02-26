@@ -7,6 +7,3 @@ install:
 
     # a service unit that updates the dconf db on boot
     - dconf-update-service
-
-    # installs TLP and configures your system for laptop usage
-    - laptop
