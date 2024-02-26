@@ -1,55 +1,68 @@
 # So-called "Documentation"
 
-Some documentation for our images. If you're looking for actual documentation related to anything about Universal Blue, Fedora, Immutable desktops, etc. Refer to the following instead:
+Some documentation for our Sernik Members. Sorta like mini-guides, if you will.
+
+**If you're looking for how to participate and make your own custom image as a Sernik member, refer to [sernik.md](https://github.com/sernik-tech/member-images/blob/live/sernik/sernik.md).**
+
+If you're looking for actual documentation related to anything about Universal Blue, Fedora, Immutable desktops, etc. Refer to the following instead:
 
 - [Universal Blue](https://universal-blue.org/)'s homepage
     - [FAQ](https://universal-blue.org/faq/)
     - [Introduction](https://universal-blue.org/introduction/)
-    - [Cheatsheet](https://universal-blue.org/cheatsheet/just/)
 - [Fedora Kinoite](https://fedoraproject.org/kinoite/)'s homepage
     - [Kinoite Community](https://fedoraproject.org/kinoite/community/)
     - [Fedora Kinoite User Guide](https://docs.fedoraproject.org/en-US/fedora-kinoite/)
 - [Fedora Silverblue](https://fedoraproject.org/silverblue/)'s homepage
     - [Silverblue Community](https://fedoraproject.org/silverblue/community/)
     - [Fedora Silverblue User Guide](https://docs.fedoraproject.org/en-US/fedora-silverblue/)
-- [Fedora's Documentation](https://docs.fedoraproject.org/en-US/)
 - [Distrobox](https://distrobox.it/)
-- [KDE Community](https://kde.org/)
-    - [KDE Support](https://kde.org/support/)
 
 ## Contents
 
 - [Tips](#tips)
-    - [Setting up Distrobox and having some fun](#setting-up-distrobox-and-having-some-fun)
+    - [Distrobox](#setting-up-distrobox)
+        - [Ubuntu (with VSCodium)](#ubuntu-with-vscodium)
+        - [Fedora (with some CLI tools)](#fedora-with-some-cli-tools)
+        - [Installing Steam and Lutris](#installing-steam-and-lutris)
+        - [Installing OBS Studio](#installing-obs-studio-another-way)
     - [ThinkPad T480 Fingerprint Setup](#thinkpad-t480-fingerprint-setup)
-    - [Installing OBS Studio another way](#installing-obs-studio-another-way)
-    - [Colored papirus icons](#colored-papirus-icons)
 - [Extra known resources](#extra-known-resources)
-- [Sernik member's guide to participating](#sernik-members-guide-to-participating)
-    - [How do I access this repository and modify things?](#how-do-i-access-this-repository-and-modify-things)
-    - [Managing the repository](#managing-the-repository)
-    - [Making your own custom image](#making-your-own-custom-image)
-    - [Modifying the README](#modifying-the-readme)
 
 ## Tips
 
-## Setting up Distrobox and having some fun
+## Distrobox
 
-[Distrobox](https://distrobox.it/) is a utility that can provide near perfect integration and performance of any Linux distro on your uBlue image! Distroboxes can be used to install pacakges you'd prefer not to layer onto your image, for development or testing purposes, or even gaming.
+[Distrobox](https://distrobox.it/) is a utility that provides containers with near-perfect integration with your host system that lets you install different packages and utilities from different Linux distros on your host. It serves as a great way to install packages when you don't want to layer too many packages with `rpm-ostree` on your system or need a development box can be made temporarily and quickly thrown away when no longer needed, along with many other use cases.
 
-For this, we'll setup an Ubuntu and Fedora distrobox:
+I recommend checking out [their documentation](https://distrobox.it/usage/usage/) (and extra [useful tips](https://distrobox.it/useful_tips/)) as they do give great documentation and examples on how to use Distrobox. Here are just some simple examples that can familiarize yourself with the basics of what you'd most likely do with Distrobox.
+
+If you prefer, you can use a terminal dedicated for containers/Distroboxes such as [Boxi](https://boxi.dev/) or [ptyxis](https://gitlab.gnome.org/chergert/ptyxis).
+
+
+### Ubuntu (with VSCodium and ADB)
+
+We'll set up an Ubuntu container here along with installing [VSCodium](https://vscodium.com/) and ADB, then exporting them to show up natively in your host without much effort.
+
+Now, let's make the container:
 ```bash
-# note: custom optimized ubuntu distrobox image is based on LTS.
-# to fetch latest ubuntu, replace the link with "quay.io/toolbx/ubuntu-toolbox:latest"
-distrobox create --image ghcr.io/ublue-os/ubuntu-toolbox:latest --name ubuntu --pull
-distrobox create --image ghcr.io/ublue-os/fedora-toolbox:latest --name fedora --pull
+distrobox create -i ubuntu -n ubuntu # alternatively, replace the value after `-n` to give the container a different name, for example, `devbox`
+distrobox enter ubuntu # name of your container, this will take a while for the first time to initialize everything
 ```
 
-Now, we'll enter Ubuntu and for this example we'll install and export VSCodium:
+Once you're inside of the container, We'll install ADB, try it, then export it:
 ```bash
-# this will take a short bit if it's the first time you've run this command
-distrobox enter ubuntu
-# average vscodium install setup for ubuntu, taken from https://vscodium.com/
+sudo apt install adb
+# plug in your android device, of course
+adb devices # this should work! and your device should be asking if your computer should get developer access
+distrobox-export --bin /usr/bin/adb # export adb to work in your host CLI without being inside of the container.
+
+# note that `--bin` HAS to point to the absolute location of where the software is installed in, but most of the
+# time, it'll usually (if not always) be in `/usr/bin/<executable name, the one used when launching from CLI>`
+```
+
+Now we'll just follow the VSCodium installation instructions as normally for Ubuntu/Debian installation:
+```bash
+# taken directly from https://vscodium.com/#install-on-debian-ubuntu-deb-package
 wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
     | gpg --dearmor \
     | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
@@ -58,36 +71,95 @@ echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https:/
     | sudo tee /etc/apt/sources.list.d/vscodium.list
 
 sudo apt update && sudo apt install codium
-# of course, we can run the command to launch it and it ✨ magically ✨ integrates with your desktop
-codium
-# ...and we can *export* it and have it integrated within your application launcher for ease of access!
-# this command only works within the distrobox/container it's installed in
-distrobox-export --app codium
 ```
 
-Neat! Now, we'll try installing some fun CLI tools within the Fedora distrobox:
+Once VSCodium is installed, we can try launching it and then exporting it:
 ```bash
-distrobox enter fedora
-# we'll just install fastfetch and cava here
-sudo dnf install fastfetch cava
-# once they're installed, run them, and you can see that they run perfectly fine!
-fastfetch
-cava
-# and of course, like exporting apps, we can export the commands to run on our host!
-distrobox-export --bin /usr/bin/fastfetch
-distrobox-export --bin /usr/bin/cava
-# exit the container and run the commands, they work!
+# of course, assuming we're still inside of the Ubuntu container
+codium # this should work and open vscodium! congrats
+distrobox-export --app codium # exports the desktop entry for vscodium, allowing you to launch it from your application launcher natively
 ```
 
-Refer to [Distrobox's](https://distrobox.it/) homepage for more documentation and info.
+### Fedora (with some CLI applications)
 
-It's recommended to use a terminal dedicated for containers/Distroboxes such as [Boxi](https://boxi.dev/).
+With Fedora, we'll install some command line based tools and export them to our host.
+
+First, create the container:
+```bash
+distrobox create -i fedora -n fedora # again, replace the value after `-n` with anything you'd like as a container name
+distrobox enter fedora
+```
+
+Now we install some of said tools:
+```bash
+sudo dnf install dnf-plugins-core btop tldr yt-dlp cava
+sudo dnf copr enable zeno/scrcpy # optional bit, but we're throwing in scrcpy as well just to show that it works
+sudo dnf install scrcpy
+```
+
+Of course, if you want, you can run them to see that they work! Even `btop`, which also shows all processes on your host system! So now, we're going to export all of them:
+```bash
+distrobox-export --bin /usr/bin/btop
+distrobox-export --bin /usr/bin/cava
+distrobox-export --bin /usr/bin/tldr
+distrobox-export --bin /usr/bin/yt-dlp
+distrobox-export --bin /usr/bin/scrcpy # optional, if you installed scrcpy
+distrobox-export --app scrcpy # also exporting as an app since it does come with a desktop entry
+```
+
+### Installing Steam and Lutris
+
+> [!NOTE]
+> One may not prefer to install Steam in a container, and that's fine, the [Flatpak](https://flathub.org/apps/com.valvesoftware.Steam) option is still a route for this.
+
+For this one, we're going to use [`bazzite-arch`](https://github.com/ublue-os/bazzite-arch), which is a special Arch Linux based container image with a bunch of gaming applications and utilities installed.
+
+We'll just quickly get the container all set up:
+```bash
+distrobox create --unshare-netns --nvidia --image ghcr.io/ublue-os/bazzite-arch --name bazzite-arch -Y
+distrobox enter bazzite-arch
+```
+
+> [!NOTE]
+> If you image uses GNOME instead of KDE Plasma, replace the URL `ghcr.io/ublue-os/bazzite-arch` in the command above with `ghcr.io/ublue-os/bazzite-arch-gnome` which has extra packages to properly work with GNOME.
+
+And since it already comes with everything out of the box, we're just going to export the applications:
+```bash
+distrobox-export --app steam
+distrobox-export --app lutris
+distrobox-export --app protontricks
+mkdir -p ~/.steam && distrobox-export --bin /usr/bin/steamcmd --export-path ~/.steam && mv ~/.steam/steamcmd ~/.steam/steamcmd.sh
+```
+
+### Installing OBS Studio
+
+Yep. There's a container for OBS Studio over at [`obs-studio-portable`](https://github.com/ublue-os/obs-studio-portable).
+
+> [!NOTE]
+> This container comes with OBS Studio and a *lot* of plugins. Although it's curated and not made to just be a giant mess, if you don't prefer this, there's always the [Flatpak](https://flathub.org/apps/com.obsproject.Studio). There's also [GPU Screen Recorder](https://flathub.org/apps/com.dec05eba.gpu_screen_recorder) if you're looking for something light.
+
+> [!WARNING]
+> `bazzite-arch` already comes with OBS Studio, although it's not as customized as this specialized container. Depending on your wants or needs, `bazzite-arch`'s OBS may be good enough for you.
+
+Pull:
+```bash
+distrobox create --image ghcr.io/ublue-os/obs-studio-portable:latest --name obs --pull
+distrobox enter obs
+```
+
+Then export:
+```bash
+distrobox-export --app /opt/obs-portable/obs-portable
+
+# below command only works if you aren't inside of the container
+distrobox enter --name obs -- /opt/obs-portable/obs-portable # use this to execute obs studio manually if there are any issues
+```
 
 ## ThinkPad T480 Fingerprint Setup
 
 Short guide taken and modified from [borcean's gist](https://gist.github.com/borcean/f32c47f6cc52cee33dfc2265ce63f777), using my own Copr repository updated to work with Immutable flavors.
 
-Installing the Copr repository and `python3-validity`
+Installing the Copr repository and `python3-validity`:
 ```bash
 # downloads the copr repo
 cd /etc/yum.repos.d/
@@ -96,7 +168,7 @@ sudo wget https://copr.fedorainfracloud.org/coprs/sneexy/python-validity/repo/fe
 rpm-ostree override remove fprintd fprintd-pam --install open-fprintd --install fprintd-clients --install fprintd-clients-pam --install python3-validity
 ```
 
-Configuring fingerprint reader
+Configuring the fingerprint reader:
 ```bash
 # pre-prep fingerprint reader
 sudo validity-sensors-firmware
@@ -106,54 +178,19 @@ sudo systemctl enable python3-validity open-fprintd-resume open-fprintd-suspend
 sudo systemctl start python3-validity
 ```
 
-Enroll and test your reader
+Enroll and test your reader:
 ```bash
 fprintd-enroll
 fprintd-verify
 ```
 
-Enabling fingerprint authentication
+Enabling fingerprint authentication:
 ```bash
 # configures current authentication methods to use fingerprint and apply
 sudo authselect current
 sudo authselect enable-feature with-fingerprint
 sudo authselect apply-changes
 ```
-
-## Installing OBS Studio another way
-
-The people at Universal Blue have made a [custom Distrobox image that comes preconfigured with OBS Studio](https://github.com/ublue-os/obs-studio-portable) and a bunch of extra goodies, along with some extra patches and stuff that should hopefully make it decently reliable!
-
-First, we'll need to fetch it:
-```bash
-distrobox create --image ghcr.io/ublue-os/obs-studio-portable:latest --name obs --pull
-```
-
-And of course, enter the container and export the app:
-```bash
-distrobox enter obs
-distrobox-export --app /opt/obs-portable/obs-portable
-```
-
-And done! You now have OBS with a bunch of stuff. You *may* consider it bloat, and if that's the case there's still the [Flatpak version](https://flathub.org/apps/com.obsproject.Studio) or even something like [GPU Screen Recorder](https://flathub.org/apps/com.dec05eba.gpu_screen_recorder).
-
-## Colored papirus icons
-
-An alternative way to set up colored papirus icons. This is because custom projects like [catppuccin's papirus-folder](https://github.com/catppuccin/papirus-folders) require that you directly modify the papirus folders (located in `/usr/`, which is read-only) which is both unsupported with Atomic desktops and is also just an incredibly hacky/janky way of doing this.
-
-The method we'll use is [papirus-colors](https://github.com/luisbocanegra/papirus-colors/), which will simply make a recolored version of some icons (such as folders) from your accent color set from your Plasma theme, then installs it as a local icon pack and only applying the custom folders/symbolic icons on top of papirus!
-
-Setup is *very* simple. Just clone and run the script:
-```bash
-# clone the repository to tmp
-git clone https://github.com/luisbocanegra/papirus-colors/ /tmp/papirus-colors
-# make sure it's executable
-chmod +x /tmp/papirus-colors/places_icons_mod.sh
-# run the script
-/tmp/papirus-colors/places_icons_mod.sh
-```
-
-Once it's done, just go into your System Settings and set the new "Papirus Colors" pack!
 
 ## Extra known resources
 
@@ -167,114 +204,3 @@ Once it's done, just go into your System Settings and set the new "Papirus Color
     - [`bazzite` Copr repository](https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/)
     - [`bazzite-multilib` Copr repository](https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/)
 - [`python-validity` Copr repository](https://copr.fedorainfracloud.org/coprs/sneexy/python-validity/) (Fingerprint reader drivers for some devices)
-
-## Sernik member's guide to participating
-
-## How do I access this repository and modify things?
-
-Ask another Sernik Member who has activity on this repository. Someone like [@sneexy_boi](https://github.com/Sneexy) or [@Rexogamer](https://github.com/Rexogamer).
-
-## Managing the repository
-
-> [!IMPORTANT]
-> Do <b><i>NOT</i></b> modify the `template` branch. The way forked custom Universal Blue images work is that all modifications done by us should be done via the `live` branch, the `template` branch stays vanilla and gets synced with upstream, so we can cleanly rebase the `live` branch onto the `template` branch and keep it up to date!
-
-When making commits, we prefer that you simply just make the message something like "(`either your preferred username OR image name`) `actual message/fix/addition/whatever`". Of course, this doesn't really matter. It just Makes Things Look Nicer And Clean™️
-
-## Making your own custom image
-
-Refer to "[The Tinkerer's Guide](https://universal-blue.org/tinker/make-your-own/)" on Universal Blue's website to learn how to (<i>properly</i>) customize your image.
-
-> [!NOTE]  
-> Currently, it seems like their documentation is broken for `modules`. Refer to their [`modules` repository here](https://github.com/ublue-os/bling/tree/main/modules) to see the documentation and examples for each available module.
-
-We have an example configuration over under [`recipes/example`](https://github.com/sernik-tech/member-images/tree/live/config/recipes/example) for both Kinoite (KDE Plasma) and Silverblue (GNOME) based customizations/image.
-
-Our folder/file structure is built like this (exclusing `example` since that's *slightly* different, and the focus here is user-built images):
-```
- config
-├──  common
-│   └──  <your_preferred_username>
-│       ├──  akmods.yml
-│       ├──  bling.yml
-│       └── <etc. etc.>
-├──  files
-│   └──  <your_preferred_username>
-│       └──  usr
-│           └── <default files which you can include in your image>
-├──  recipes
-│   └──  <your_preferred_username>
-│       └──  recipe.yml
-└──  scripts
-    └── <all scripts you want to include can just be dumped directly into here,
-        we recommending using example.sh as a base>
-```
-
-- `common` is where you put their modules that configure the image to their liking.
-- `files` is where you put any system/configuration related files to be put inside of your image.
-- `recipes` is where you put the entire brain of your image. This specifies what should be run, done, what to call it, etc.
-- `scripts` is where you can dump any scripts you made to be run during the creation of your image. We recommend using `example.sh` as a base.
-
-The `example` configuration should hopefully be *clear enough* to explain how things work. You can also check the [GitHub Actions](https://github.com/sernik-tech/member-images/actions/workflows/build.yml) to see what it does when being built.
-
-> [!NOTE]  
-> If you're planning to make multiple images for yourself, then feel free to use a folder structure like so:
-> ```
->  config
-> ├──  common
-> │   └──  <your_preferred_username>
-> │       ├──  <your_image_name>
-> │       │   ├──  akmods.yml
-> │       │   ├──  bling.yml
-> │       │   └── <etc. etc.>
-> │       └──  <your_image_name>
-> │           ├──  akmods.yml
-> │           ├──  bling.yml
-> │           └── <etc. etc.>
-> ├──  files
-> │   └──  <your_preferred_username>
-> │       ├──  <your_image_name>
-> │       │   └──  usr
-> │       │       └── <etc>
-> │       └──  <your_image_name>
-> │           └──  usr
-> │               └── <etc>
-> ├──  recipes
-> │   └──  <your_preferred_username>
-> │       ├──  recipe-<image_name>.yml
-> │       └──  recipe-<image_name>.yml
-> └──  scripts
->     └── <left unchanged here but if you want, you can make a new folder>
-> ```
-
-Once you have your configuration all set up and ensured that there are no errors with your configuration, navigate into `.github/workflows` and edit `build.yml`. You should see a section like so within the file:
-```
-# !!!
-        # Add recipes for all the images you want to build here.
-        # Don't add module configuration files, you will get errors.
-        recipe:
-          - recipes/sneexy/recipe.yml
-          <etc etc>
-# !!!
-```
-
-Add your image underneath the `User images.` section, under the last user's recipe file. Ensure that it's above the `!!!`. If it's correct, it should look like `- recipes/<your_preferred_username>/recipe.yml`! Save the file and GitHub should be running a build action as soon as changes are detected! If not, just navigate to the [correct action](https://github.com/sernik-tech/member-images/actions/workflows/build.yml) and manually start it by clicking `Run workflow` for `Branch: live`.
-
-If you want to add your image to the ISO, edit the file `boot_menu.yml` located on the root directory and just add 2 lines to the bottom of the file:
-```
-- label: image-name-here
-  info: Description of my image
-```
-
-> [!IMPORTANT]
-> Make sure that it's properly indented with the rest of them or it <i>WILL</i> fail.
-
-After you've modified the file, manually run the [release-iso](https://github.com/sernik-tech/member-images/actions/workflows/release-iso.yml) action, preferably after the `build-ublue` action has finished.
-
-If you have any questions, refer to the [documentation](https://universal-blue.org/tinker/modification/), original [`startingpoint`](https://github.com/ublue-os/startingpoint) repository, or ask any other members (maybe [@sneexy_boi](https://github.com/sneexy_boi) would be your best shot) if you have any questions about something!
-
-## Modifying the README
-
-If you want to add any extra info to the README's or anything, such as this documentation, feel free to do so!
-
-<i>If</i> you want to add your own image to the list on the main README, feel free to do so as well. You don't have to follow a format or anything, just a description is fine.
