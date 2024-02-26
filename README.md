@@ -1,6 +1,3 @@
-> [!IMPORTANT]  
-> This repository will soon(?) be deprecated in favor of [Blue Build](https://blue-build.org/), which is the rebrand/rewrite of uBlue's startingpoint images. See the new WIP repository [here](https://github.com/sneexy-boi/member-images/).
-
 <div align="center">
     <h1>Images</h1>
     <h3>By members of Sernik</h3>
@@ -27,17 +24,12 @@ This repository by default supports signing.
 
 </summary>
 
-sneexy's custom image for himself, although changes are light enough that anyone else can use it. a very vanilla kinoite-ublue out of the box install because i do all customizations myself post-install. :bowtie:
-
-what this includes:
+sneexy's custom image for himself. comes with a bunch of applications and stuff preinstalled out of the box.
 
 - custom sddm [config](https://github.com/sernik-tech/member-images/tree/live/config/files/sneexy/usr/etc/sddm.conf.d) and [theme](https://github.com/aczw/sddm-theme-corners/)
 - customized [yafti](https://github.com/ublue-os/yafti) installer
 - some [modern unix](https://github.com/ibraheemdev/modern-unix) utilities/replacements and zsh installed
 - some [akmods](https://github.com/sernik-tech/member-images/blob/live/config/common/sneexy/akmods.yml)
-- custom [justfiles](https://github.com/sernik-tech/member-images/blob/live/config/files/example/usr/share/ublue-os/just/60-custom.just)
-  - some taken from [bazzite](https://github.com/ublue-os/bazzite)
-  - some of my own
 - [some personal configurations](https://github.com/sernik-tech/member-images/tree/live/config/files/sneexy/usr/etc/systemd/resolved.conf.d)
 
 </details>
@@ -45,7 +37,7 @@ what this includes:
 ## Installation
 
 > [!WARNING]  
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable) and should not be used in production, try it in a VM for a while!
+> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
 
 > [!IMPORTANT]  
 > Replace `$IMAGE_NAME` in these commands with the appropriate image name in [packages](https://github.com/orgs/sernik-tech/packages?repo_name=member-images) (Alternatively found in the [recipes](https://github.com/sernik-tech/member-images/tree/live/config/recipes)).
