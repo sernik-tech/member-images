@@ -6,20 +6,11 @@ repos:
   # prompt
   - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
 
-  # bibata cursors
-  - https://copr.fedorainfracloud.org/coprs/peterwu/rendezvous/repo/fedora-%OS_VERSION%/peterwu-rendezvous-fedora-%OS_VERSION%.repo
-
-  # kwin theme
-  - https://download.opensuse.org/repositories/home:paul4us/Fedora_%OS_VERSION%/home:paul4us.repo
-
   # bazzite repo
   - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
 
   # bazzite multilib
   - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-%OS_VERSION%/kylegospo-bazzite-multilib-fedora-%OS_VERSION%.repo
-
-  # rom properties
-  - https://copr.fedorainfracloud.org/coprs/kylegospo/rom-properties/repo/fedora-%OS_VERSION%/kylegospo-rom-properties-fedora-%OS_VERSION%.repo
 install:
   # console
   - bat
@@ -41,19 +32,13 @@ install:
   - pavucontrol-qt
   - playerctl
 
-  # applications
+  # kde
   - ark
   - dolphin
   - dolphin-plugins
   - kate
-  - kitty
   - ksystemlog
   - merkuro
-  - mpv
-  - waydroid
-  - contour-terminal
-
-  # kde related extensions
   - ffmpegthumbs
   - kaccounts-integration
   - kaccounts-providers
@@ -64,6 +49,11 @@ install:
   - qt5-qtsvg
   - translate-shell
   - power-profiles-daemon
+
+  # terminals
+  - kitty
+  - contour-terminal
+  - wezterm
 
   # podman
   - podman
@@ -77,21 +67,10 @@ install:
   - qt5-qtwayland
   - qt6-qtwayland
 
-  # themes
-  - bibata-cursor-themes
-  - klassy
-  - kvantum
-  - lightly
-  - papirus-icon-theme
-
   # utilities
   - crontabs
   - gamemode
   - gamescope
   - joystickwake
   - mangohud
-  - rom-properties-kf5
   - xwiimote-ng
-remove:
-  - firefox # default firefox removed in favor of flatpak
-  - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems

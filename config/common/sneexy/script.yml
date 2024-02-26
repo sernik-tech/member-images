@@ -1,5 +1,0 @@
-# https://github.com/ublue-os/bling/tree/main/modules/script
-type: script
-scripts:
-    # example script. does nothing, replace this with whatever script you want to add
-    - example.sh

@@ -13,8 +13,11 @@ modules:
   # put some files in the image
   - from-file: common/sneexy/files.yml
 
-  # installs default repositories and rpm-ostree packages
-  - from-file: common/sneexy/rpm-ostree.yml
+  # installs system related packages
+  - from-file: common/sneexy/system.yml
+
+  # installs user/userspace related packages
+  - from-file: common/sneexy/user.yml
 
   # installs default repositories and flatpak packages
   - from-file: common/sneexy/flatpaks.yml
@@ -27,12 +30,6 @@ modules:
 
   # uBlue akmods. includes custom drivers and stuff
   - from-file: common/sneexy/akmods.yml
-
-  # post setup/installer helper gui
-  # - from-file: common/sneexy/yafti.yml
-
-  # scripts to run post-image creation
-  # - from-file: common/sneexy/script.yml
 
   # sets up proper policy & signing files
   - type: signing
