@@ -1,5 +1,0 @@
-# https://github.com/ublue-os/bling/tree/main/modules/yafti
-type: yafti
-custom-flatpaks:
-  - Celluloid: io.github.celluloid_player.Celluloid
-  - Krita: org.kde.krita

@@ -1,8 +1,0 @@
-# https://github.com/ublue-os/bling/tree/main/modules/akmods
-# https://github.com/ublue-os/akmods
-type: akmods
-install:
-    - openrazer
-    - openrgb
-    - v4l2loopback
-    - winesync
