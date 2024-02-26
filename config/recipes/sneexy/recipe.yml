@@ -13,11 +13,16 @@ modules:
   # put some files in the image
   - from-file: common/sneexy/files.yml
 
+  # run system packages installer script
+  - type: script
+    scripts:
+        - system-wuzetka.sh
+
   # installs system related packages
-  - from-file: common/sneexy/system.yml
+  # - from-file: common/sneexy/system.yml
 
   # installs user/userspace related packages
-  - from-file: common/sneexy/user.yml
+  - from-file: common/sneexy/rpm-ostree.yml
 
   # installs default repositories and flatpak packages
   - from-file: common/sneexy/flatpaks.yml
