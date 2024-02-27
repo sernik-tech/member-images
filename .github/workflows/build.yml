@@ -10,7 +10,7 @@ on:
   pull_request:
   workflow_dispatch: # allow manually triggering builds
 jobs:
-  bluebuild:
+  sernikbuild:
     name: Build User Images
     runs-on: ubuntu-latest
     permissions:
