@@ -1,0 +1,53 @@
+# Module Documentation: https://blue-build.org/reference/modules/rpm-ostree/
+# Official Fedora packages search: https://packages.fedoraproject.org/
+type: rpm-ostree
+repos:
+    # This `repos` section is used for Copr repositories. You can find some over at the copr
+    # homepage: https://copr.fedorainfracloud.org/
+
+    # To add a copr repo, you need to add the repo file. For example, let's say this is a copr
+    # repo you want to add:
+
+    # https://copr.fedorainfracloud.org/coprs/<username>/<project-name>/
+    #
+    # Append the following to the end:
+    #
+    # repo/fedora-%OS_VERSION%/<username>-<project-name>-rendezvous-fedora-%OS_VERSION%.repo
+    #
+    # And you should get something like this!
+    #
+    # https://copr.fedorainfracloud.org/coprs/<username>/<project-name>/repo/fedora-%OS_VERSION%/<username>-<project-name>-rendezvous-fedora-%OS_VERSION%.repo
+    #
+    # Below are a few example repositories, which if you want to use, just uncomment them.
+
+    # Bibata cursors
+    # - https://copr.fedorainfracloud.org/coprs/peterwu/rendezvous/repo/fedora-%OS_VERSION%/peterwu-rendezvous-fedora-%OS_VERSION%.repo
+
+    # ROM properties for many file managers
+    # - https://copr.fedorainfracloud.org/coprs/kylegospo/rom-properties/repo/fedora-%OS_VERSION%/kylegospo-rom-properties-fedora-%OS_VERSION%.repo
+install:
+    # Everything under install will be installed, even if it already is.
+  - blackbox-terminal
+
+    # List of GNOME extensions that we install as system packages. Only doing this method for the sake of having extensions that is kept up to date
+    # with GNOME inside of Fedora's repositories but if you'd rather not take this method then just remove this entire section.
+    #
+    # You can find a list of extensions in the Fedora repos here: https://packages.fedoraproject.org/search?query=gnome-shell-extension
+  - gnome-shell-extension-unite
+  - gnome-shell-extension-appindicator
+  - gnome-shell-extension-gsconnect
+  - gnome-shell-extension-blur-my-shell
+  - gnome-shell-extension-dash-to-dock
+
+    # Yaru theme
+  - yaru-theme
+remove:
+    # Everything under remove will be uninstalled from the image, if the package exists.
+  - gnome-classic-session
+  - gnome-software-rpm-ostree
+  - gnome-terminal
+  - gnome-terminal-nautilus
+    # We remove Firefox because we use the flatpak in favor. Also removing the langpacks
+    # to prevent dependency problems.
+  - firefox
+  - firefox-langpacks

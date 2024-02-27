@@ -1,0 +1,32 @@
+# Module Documentation: https://blue-build.org/reference/modules/akmods/
+type: akmods
+install:
+    # This list currently holds all of the available akmods you can install. Uncomment any that
+    # you want to install.
+    # See more info about them at the full list here: https://github.com/ublue-os/akmods
+
+    # Note that the `nvidia` akmods aren't really necessary as you can instead swap the base
+    # image used in your recipe with the appropriate `nvidia` based image.
+
+    # - VirtualBox
+    # - ayaneo-platform
+    # - ayn-platform
+    # - bmi160
+    # - bmi260
+    # - bmi323
+    # - evdi
+    # - gasket
+    # - gcadapter_oc
+    # - nct6687d
+    # - openrazer
+    # - openrgb
+    # - rtl8814au
+    # - rtl88xxau
+    # - ryzen-smu
+    # - steamdeck
+    # - v4l2loopback
+    # - winesync
+    # - wl
+    # - xone
+    # - xpadneo
+    # - zenergy

@@ -1,0 +1,47 @@
+# Module Documentation: https://blue-build.org/reference/modules/default-flatpaks/
+# Note that using this module will automatically disable the Fedora flatpak repository and
+# uninstall any default Fedora flatpaks, although considering how Not So Great it is, it
+# probably won't matter to the end user anyways.
+type: default-flatpaks
+notify: true # Send notification after install/uninstall is finished (true/false)
+system:
+    # If no repo information is specified, Flathub will be used by default, which is
+    # why below is commented.
+
+    # repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    # repo-name: flathub
+    # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
+    install:
+        # For the Silverblue image, by default we install a bunch of GNOME applications along with Firefox and others:
+      - org.gnome.Calculator
+      - org.gnome.Calendar
+      - io.github.celluloid_player.Celluloid
+      - org.gnome.Characters
+      - org.gnome.clocks
+      - org.gnome.Contacts
+      - com.vixalien.decibels
+      - org.gnome.baobab
+      - org.gnome.SimpleScan
+      - org.gnome.Evince
+      - org.gnome.font-viewer
+      - org.gnome.Logs
+      - org.gnome.Loupe
+      - org.gnome.Maps
+      - org.gnome.TextEditor
+      - org.gnome.Weather
+      - org.gnome.Epiphany
+      - com.github.tchx84.Flatseal
+      - org.gnome.World.PikaBackup
+        # Below is commented because they're default examples that explain more info.
+        # - org.gnome.Loupe
+        # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
+                                         # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08).
+                                         # Only normal flatpak applications are (like Floorp Lightning web browser in this example).
+                                         # Multiple install of same flatpaks with different branches is not supported.
+    remove:
+      # Any flatpaks you wish to remove can be listed here:
+      # - org.gnome.eog
+    # A flatpak repo can also be added without having to install flatpaks,
+    # as long as one of the repo- fields is present
+    user:
+      repo-name: flathub

@@ -1,0 +1,27 @@
+# Module Documentation: https://blue-build.org/reference/modules/fonts/
+# Google Fonts: https://fonts.google.com/
+# Nerd Fonts: https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file#patched-fonts
+type: fonts
+fonts:
+    nerd-fonts:
+        # Add the name of fonts found in Nerd Fonts below:
+
+        - FiraCode
+        - Hack
+        # - SourceCodePro
+        # - Terminus
+        - JetBrainsMono
+        - NerdFontsSymbolsOnly
+    google-fonts:
+        # Add the name of fonts found in Google Fonts below:
+
+        - Lexend
+        - Noto Sans
+        - Roboto
+        - Noto Color Emoji
+        - Open Sans
+        # - Source Serif 4
+        # - Source Sans 3
+        # - IBM Plex Sans
+        # - IBM Plex Serif
+        # - EB Garamond

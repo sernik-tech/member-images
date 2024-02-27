@@ -1,0 +1,6 @@
+# Module Documentation: https://blue-build.org/reference/modules/files/
+type: files
+files:
+    - rexogamer/usr: /usr
+    # usr: file/folder inside config/files/rexogamer to copy (config/files/usr/ in the repository)
+    # /usr: destination on the final system

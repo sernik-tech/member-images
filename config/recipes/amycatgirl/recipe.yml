@@ -1,0 +1,92 @@
+# This recipe file is based on blue-build's default recipe file for Sericea images.
+# We'll try our best to link to most documentation or explain certain modules.
+# You'll find links back to their original documentation, which are mostly (if not all) found over at:
+# https://blue-build.org/learn/getting-started/
+
+# This recipe file is structured for multiple folders. All configurations done with modules in here
+# are controlled/configured outside of this file and usually done in /common/. This is not necessary
+# If you do not prefer this way. I'd (Sneexy) figured this would probably be the cleanest and also a
+# nice collaborative way of making images, especially if anyone decides to team up with each other
+# for making images(...?)
+
+# If you'd just want to make this by yourself from scratch, or would prefer not to use our customized
+# examples, please refer to the original repository at https://github.com/blue-build/template/
+# and their documentation at https://blue-build.org/learn/getting-started/
+#
+# Their default examples are possibly more updated with information than ours, and also use a more
+# "simpler" recipe where most of the module configuration is done within the file rather than
+# externally sourcing the modules.
+
+# Below is basic image metadata/information.
+# Documentation: https://blue-build.org/reference/recipe/
+
+# - Your image name -
+# Change this to whatever image name you'd like. It cannot be an image that is used by another
+# image that is being built/published.
+# It will be found under ghcr.io/sernik-tech/<name>
+name: sernik-amy
+# - Description -
+# Will be included in the image's metadata, can be whatever.
+description: gay cats meowmeowmeowmeowmeow
+
+# - Base image -
+# The base image to build on top of, and the (Fedora) version tag to use.
+# You can see a full list of available images/bases here: https://universal-blue.org/images/#image-categorization
+# Since this is Sericea based, we're using Sericea:
+base-image: ghcr.io/ublue-os/sericea-nvidia
+# Replace above with `ghcr.io/ublue-os/sericea-nvidia` if you're using a device with Nvidia.
+#
+# Version number, related to the version of Fedora. `latest` is also supported if you
+# want new updates as soon as possible.
+image-version: 39
+
+# - Modules -
+# Module configurations, executed in order.
+# You can include multiple instances of the same module.
+# Documentation: https://blue-build.org/reference/module/
+modules:
+    # Modules here are sourced from files in `/common/amycatgirl` for this specific recipe. If you don't want to rely on
+    # modules being outside of this recipe file, you can refer to the documentation (linked above) to see examples.
+    # Alternatively, use the `recipe-all.yml` recipe instead of this one if you prefer that.
+
+    # - Files -
+    # Determines which files you want to add into the "root" (in heavy air quotes, because it's `/usr/`) of your image.
+    # Documentation: https://blue-build.org/reference/modules/files/
+  - from-file: common/amycatgirl/files.yml
+
+    # - rpm-ostree -
+    # Packages that should be installed on the image. Now, when choosing which packages to install, we recommend
+    # that you don't attempt to just add everything. Preferably, use anything else (e.g VSCode) inside of distrobox
+    # or use flatpaks whenever possible (both preincluded) as alternatives to installing them. Also take note that
+    # packages that attempt to create users or groups *will* cause issues when attempting to create your image, so
+    # it's best to just layer them manually on your booted system afterwards if this is the case.
+    # Documentation: https://blue-build.org/reference/modules/rpm-ostree/
+  - from-file: common/amycatgirl/rpm-ostree.yml
+
+    # - Flatpaks -
+    # Flatpaks that will end up being installed out of the box on the system. Feel free to add anything here you'd
+    # want to be inside of flatpaks on your system.
+    # Documentation: https://blue-build.org/reference/modules/default-flatpaks/
+  - from-file: common/amycatgirl/flatpaks.yml
+
+    # - Fonts -
+    # The fonts module allows you to easily install fonts from both Google Fonts and Nerd Fonts.
+    # Documentation: https://blue-build.org/reference/modules/fonts/
+  - from-file: common/amycatgirl/fonts.yml
+
+    # - Akmods -
+    # Akmods are a neat thing provided by the blue-build people, they're basically easy-to-install kernel modules.
+    # Documentation: https://blue-build.org/reference/modules/akmods/
+    #
+    # Uncomment below *after* modifying the akmods config as all modules are commented by default.
+    # - from-file: common/amycatgirl/akmods.yml
+
+    # this sets up the proper policy & signing files for signed images to work fully.
+    # in *all* cases, this line should NEVER be touched. leave it here as is. there is no need to modify or remove this.
+    # Documentation: https://blue-build.org/reference/modules/signing/
+  - type: signing
+
+    # Note that not all modules are listed here. We only added some that are most utilized by most users, but there are a
+    # lot more modules that can be utilized.
+    # You can find extra modules documented here (this is the first entry of the "modules" list):
+    # https://blue-build.org/reference/modules/akmods/
