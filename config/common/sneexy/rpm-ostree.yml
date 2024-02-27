@@ -21,6 +21,20 @@ install:
   - papirus-icon-theme
 
   # utilities
+  - ark
+  - dolphin-plugins
+  - kate
+  - ksystemlog
+  - merkuro
+  - ffmpegthumbs
+  - kaccounts-integration
+  - kaccounts-providers
+  - kdepim
+  - kdepim-addons
+  - qt5-qtgraphicaleffects
+  - qt5-qtquickcontrols2
+  - qt5-qtsvg
+  - translate-shell
   - rom-properties-kf5
 remove:
   - firefox # default firefox removed in favor of flatpak
