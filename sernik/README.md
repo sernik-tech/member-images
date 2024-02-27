@@ -2,10 +2,12 @@
 
 Some documentation for our Sernik Members. Sorta like mini-guides, if you will.
 
-**If you're looking for how to participate and make your own custom image as a Sernik member, refer to [sernik.md](https://github.com/sernik-tech/member-images/blob/live/sernik/sernik.md).**
+**If you're looking for how to participate and make your own custom image as a Sernik member, refer to the [`examples`](https://github.com/sernik-tech/member-images/tree/examples) branch, which contains templates and documentation about how it all works.**
 
 If you're looking for actual documentation related to anything about Universal Blue, Fedora, Immutable desktops, etc. Refer to the following instead:
 
+- [BlueBuild](https://blue-build.org/)'s homepage
+    - [GitHub](https://github.com/blue-build/)
 - [Universal Blue](https://universal-blue.org/)'s homepage
     - [FAQ](https://universal-blue.org/faq/)
     - [Introduction](https://universal-blue.org/introduction/)
@@ -43,9 +45,12 @@ If you prefer, you can use a terminal dedicated for containers/Distroboxes such 
 
 We'll set up an Ubuntu container here along with installing [VSCodium](https://vscodium.com/) and ADB, then exporting them to show up natively in your host without much effort.
 
+> ![NOTE]
+> The commands below uses uBlue's special customized toolbox images which have been heavily optimized specifically for Distrobox usage. For the Ubuntu image, it's based on the latest available version of Ubuntu LTS. If you don't want this, just specifies `ubuntu` instead of `ubuntu-toolbox` for the image.
+
 Now, let's make the container:
 ```bash
-distrobox create -i ubuntu -n ubuntu # alternatively, replace the value after `-n` to give the container a different name, for example, `devbox`
+distrobox create -i ubuntu-toolbox -n ubuntu # alternatively, replace the value after `-n` to give the container a different name, for example, `devbox`
 distrobox enter ubuntu # name of your container, this will take a while for the first time to initialize everything
 ```
 
@@ -86,7 +91,7 @@ With Fedora, we'll install some command line based tools and export them to our 
 
 First, create the container:
 ```bash
-distrobox create -i fedora -n fedora # again, replace the value after `-n` with anything you'd like as a container name
+distrobox create -i fedora-toolbox -n fedora # again, replace the value after `-n` with anything you'd like as a container name
 distrobox enter fedora
 ```
 
