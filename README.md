@@ -9,7 +9,7 @@
 
 </div>
 
-Custom [Universal Blue](https://universal-blue.org/) Images. Built by Sernik members for their own use-cases.
+Custom [Universal Blue](https://universal-blue.org/) Powered Images, built with [BlueBuild](https://blue-build.org/). Built by Sernik members for their own use-cases.
 
 This repository by default supports signing.
 
@@ -42,7 +42,7 @@ sneexy's custom image for himself. comes with a bunch of applications and stuff 
 > [!IMPORTANT]  
 > Replace `$IMAGE_NAME` in these commands with the appropriate image name in [packages](https://github.com/orgs/sernik-tech/packages?repo_name=member-images) (Alternatively found in the [recipes](https://github.com/sernik-tech/member-images/tree/live/config/recipes)).
 
-To rebase an existing Silverblue/Kinoite installation to the latest build:
+To rebase an existing atomic Fedora installation to the latest build:
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
@@ -61,26 +61,29 @@ To rebase an existing Silverblue/Kinoite installation to the latest build:
   systemctl reboot
   ```
 
-This repository builds date tags as well, so if you want to rebase to a particular day's build:
-
-```
-rpm-ostree rebase ostree-image-signed:docker://ghcr.io/sernik-tech/$IMAGE_NAME:20230403
-```
-
-This repository by default also supports signing.
-
 The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
 
 ### ISO
 
-This repository makes use of the [`startingpoint`](https://github.com/ublue-os/startingpoint) ISO GitHub Action. Builds are manually ran and an ISO will be produced under the [properly tagged release](https://github.com/sernik-tech/member-images/releases/tag/auto-iso). The ISO will include entries for members custom images (<i>If</i> they prefer that they show up in the ISO).
+The ISO is currently unavailable as we wait for Universal Blue to finish their new [`isogenerator`](https://github.com/ublue-os/isogenerator).
+
+## Verification
+
+These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](https://github.com/sigstore/cosign). You can verify the signature by downloading the `cosign.pub` file from this repo and running the following command:
+
+```bash
+cosign verify --key cosign.pub ghcr.io/sernik-tech/$IMAGE_NAME
+```
 
 ## Extra notes
 
-Refer to "[The Tinkerer's Guide](https://universal-blue.org/tinker/make-your-own/)" on Universal Blue's website to learn how to (<i>properly</i>) customize your image
+> [!NOTE]
+> <b>TODO:</b> Update our docs and update all references to BlueBuild and such.
+
+Refer to the [BlueBuild documentation](https://blue-build.org/learn/getting-started/) to learn on how to customize your image.
 
 We have our own ["documentation"](https://github.com/sernik-tech/member-images/blob/live/sernik/README.md) if you want to refer to them, maintained by us. They serve more as mini-guides rather than full blown documentation though. Also includes what this repository is for and how to participate if you're a Sernik member.
 
-for more information about the project this custom image is based on, check out the [uBlue homepage](https://universal-blue.org/) and the [main uBlue repo](https://github.com/ublue-os/main/)
+For more information about the project this repository is based on, check out the [Universal Blue homepage](https://universal-blue.org/) and the [BlueBuild homepage](https://blue-build.org/).
 
-You can refer to the main [Universal Blue GitHub](https://github.com/ublue-os/) if you want to see what more than be done.
+You can refer to both the main [BlueBuild GitHub](https://github.com/blue-build/) and [Universal Blue GitHub](https://github.com/ublue-os/) if you want to see what more than be done.
