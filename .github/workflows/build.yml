@@ -23,6 +23,8 @@ jobs:
         recipe:
           # !! Add your recipes here 
           - recipes/sneexy/recipe.yml
+          - recipes/rexogamer/recipe.yml
+          - recipes/amycatgirl/recipe.yml
     steps:
        # the build is fully handled by the reusable github action
       - name: Build Custom Image
