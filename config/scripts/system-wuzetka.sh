@@ -30,7 +30,7 @@ rpm-ostree install bat duf fastfetch fd-find fzf git-delta lsd neovim ripgrep sd
 rpm-ostree install pavucontrol-qt playerctl
 
 # terminal emulator(s)
-rpm-ostree install kitty wezterm
+rpm-ostree install kitty wezterm contour-terminal
 
 # podman related packages
 rpm-ostree install podman podman-compose podman-tui
