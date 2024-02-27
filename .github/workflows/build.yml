@@ -1,4 +1,4 @@
-name: bluebuild
+name: sernikbuild
 on:
   schedule:
     - cron: "00 17 * * *" # build at 17:00 UTC every day 
@@ -11,7 +11,7 @@ on:
   workflow_dispatch: # allow manually triggering builds
 jobs:
   bluebuild:
-    name: Build Custom Image
+    name: Build User Images
     runs-on: ubuntu-latest
     permissions:
       contents: read

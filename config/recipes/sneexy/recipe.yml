@@ -18,9 +18,6 @@ modules:
     scripts:
         - system-wuzetka.sh
 
-  # installs system related packages
-  # - from-file: common/sneexy/system.yml
-
   # installs user/userspace related packages
   - from-file: common/sneexy/rpm-ostree.yml
 
