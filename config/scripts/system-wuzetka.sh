@@ -29,8 +29,8 @@ rpm-ostree install bat duf fastfetch fd-find fzf git-delta lsd neovim ripgrep sd
 # audio related packages
 rpm-ostree install pavucontrol-qt playerctl
 
-# terminal emulator(s)
-rpm-ostree install kitty wezterm contour-terminal
+# terminal emulator(s) (qt5-qtgraphicaleffects is for contour - idk why its a missing dep?)
+rpm-ostree install kitty wezterm contour-terminal qt5-qtgraphicaleffects
 
 # podman related packages
 rpm-ostree install podman podman-compose podman-tui
