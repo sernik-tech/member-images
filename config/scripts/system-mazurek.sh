@@ -19,6 +19,9 @@ rpm-ostree override remove sway sway-config-fedora
 # swayfx and friends
 rpm-ostree install swayfx sway-audio-idle-inhibit
 
+# reinstall sway-config-fedora with swayfx already installed
+rpm-ostree install sway-config-fedora
+
 # disabling the respositories for the booted system and later user packages (since they'll be dealt with in image creation)
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_swayfx-swayfx.repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_sneexy-swayland.repo
