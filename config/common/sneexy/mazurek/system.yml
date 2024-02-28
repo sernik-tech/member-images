@@ -17,11 +17,6 @@ install:
     - kernel-headers
     - linux-firmware
 
-# display manager
-    #- sddm
-    #- sddm-wayland-generic
-    #- sddm-themes
-
 # environment
     - xorg-x11-server-Xwayland
     - polkit

@@ -23,6 +23,7 @@ modules:
   - type: script
     scripts:
         - system-mazurek.sh
+        - sddm.sh
 
   # installs default repositories and flatpak packages
   - from-file: common/sneexy/flatpaks.yml
