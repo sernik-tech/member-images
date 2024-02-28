@@ -1,0 +1,38 @@
+# image will be published to ghcr.io/sernik-tech/<name>
+name: mazurek
+# description will be included in the image's metadata
+description: sneexy swayfx
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/sericea-main
+image-version: 39 # latest is also supported if you want new updates ASAP
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  # put some files in the image
+  - from-file: common/sneexy/mazurek/files.yml
+
+  # run system packages installer script
+  - type: script
+    scripts:
+        - system-mazurek.sh
+        - system-wuzetka.sh
+
+  # installs user/userspace related packages
+  - from-file: common/sneexy/mazurek/rpm-ostree.yml
+
+  # installs default repositories and flatpak packages
+  - from-file: common/sneexy/flatpaks.yml
+
+  # configure what to pull in from ublue-os/bling
+  - from-file: common/sneexy/bling.yml
+
+  # install fonts
+  - from-file: common/sneexy/fonts.yml
+
+  # uBlue akmods. includes custom drivers and stuff
+  - from-file: common/sneexy/akmods.yml
+
+  # sets up proper policy & signing files
+  - type: signing

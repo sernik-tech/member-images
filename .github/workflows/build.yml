@@ -23,6 +23,7 @@ jobs:
         recipe:
           # !! Add your recipes here 
           - recipes/sneexy/recipe.yml
+          - recipes/sneexy/mazurek.yml
           - recipes/rexogamer/recipe.yml
           - recipes/amycatgirl/recipe.yml
     steps:
