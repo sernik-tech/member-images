@@ -14,6 +14,7 @@ repos:
 install:
 # display manager
     - sddm
+    - sddm-wayland-generic
     - sddm-themes
 
 # environment

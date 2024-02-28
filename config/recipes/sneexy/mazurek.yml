@@ -22,8 +22,7 @@ modules:
     # run scripts afterwards
   - type: script
     scripts:
-        - mazurek-install-from-copr.sh
-        - mazurek-disable-copr.sh
+        - system-mazurek.sh
 
   # installs default repositories and flatpak packages
   - from-file: common/sneexy/flatpaks.yml

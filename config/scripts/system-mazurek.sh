@@ -24,3 +24,15 @@ if rpm -qa | grep power-profiles-daemon ; then
 else
     rpm-ostree install tlp tlp-rdw powertop
 fi
+
+# enable sddm
+systemctl enable sddm
+
+# disabling the respositories for the booted system (since they'll be dealt with in image creation)
+sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/swayfx-swayfx-fedora-$(rpm -E %fedora).repo
+sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/sneexy-swayland-fedora-$(rpm -E %fedora).repo
+sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/erikreider-SwayNotificationCenter-fedora-$(rpm -E %fedora).repo
+sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/wezfurlong-wezterm-nightly-fedora-$(rpm -E %fedora).repo
+sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite.repo
+sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo
+sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_vrumger-swaylock-effects.repo
