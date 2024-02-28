@@ -9,18 +9,11 @@ set -euo pipefail
 wget "https://copr.fedorainfracloud.org/coprs/swayfx/swayfx/repo/fedora-$(rpm -E %fedora)/swayfx-swayfx-fedora-$(rpm -E %fedora).repo" -O "/etc/yum.repos.d/_copr_swayfx-swayfx.repo"
 # swayland repo
 wget "https://copr.fedorainfracloud.org/coprs/sneexy/swayland/repo/fedora-$(rpm -E %fedora)/sneexy-swayland-fedora-$(rpm -E %fedora).repo" -O "/etc/yum.repos.d/_copr_sneexy-swayland.repo"
-# bazzite repositories
 
 # managing the packages
 
-# removing base packages
-rpm-ostree override remove sway sway-config-fedora
-
 # swayfx and friends
 rpm-ostree install swayfx sway-audio-idle-inhibit
-
-# reinstall sway-config-fedora with swayfx already installed
-rpm-ostree install sway-config-fedora
 
 # disabling the respositories for the booted system and later user packages (since they'll be dealt with in image creation)
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_swayfx-swayfx.repo

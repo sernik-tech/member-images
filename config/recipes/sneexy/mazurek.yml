@@ -4,7 +4,7 @@ name: mazurek
 description: sneexy swayfx
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/sericea-main
+base-image: ghcr.io/ublue-os/base-main
 image-version: 39 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -21,6 +21,9 @@ modules:
 
   # installs user/userspace related packages
   - from-file: common/sneexy/mazurek/rpm-ostree.yml
+
+  # installs user related packages
+  - from-file: common/sneexy/rpm-ostree.yml
 
   # installs default repositories and flatpak packages
   - from-file: common/sneexy/flatpaks.yml
