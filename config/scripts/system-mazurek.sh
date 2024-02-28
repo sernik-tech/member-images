@@ -14,7 +14,7 @@ wget "https://copr.fedorainfracloud.org/coprs/sneexy/swayland/repo/fedora-$(rpm 
 # managing the packages
 
 # removing base packages
-rpm-ostree override remove sway
+rpm-ostree override remove sway sway-config-fedora
 
 # swayfx and friends
 rpm-ostree install swayfx sway-audio-idle-inhibit
