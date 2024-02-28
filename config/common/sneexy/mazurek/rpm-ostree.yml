@@ -2,7 +2,6 @@ type: rpm-ostree
 install:
 # display manager
   - sddm
-  - sddm-themes
 
 # launcher
   - wofi
@@ -70,9 +69,5 @@ install:
   - mpv
 
 # theme and GUI
-  - adwaita-qt5
   - gnome-themes-extra
-  - gnome-icon-theme
-  - paper-icon-theme
-  - breeze-icon-theme
   - papirus-icon-theme
