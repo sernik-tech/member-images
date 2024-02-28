@@ -17,7 +17,7 @@ modules:
   - type: script
     scripts:
         - system-mazurek.sh
-        - system-wuzetka.sh
+        #- system-wuzetka.sh
 
   # installs user/userspace related packages
   - from-file: common/sneexy/mazurek/rpm-ostree.yml
