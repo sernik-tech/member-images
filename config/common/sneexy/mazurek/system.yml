@@ -47,7 +47,8 @@ install:
     - bluez-tools
     - blueman
 
-# sway utilities
+# swayfx & utilities
+    - swayfx
     - wofi
     - swaync
     - sway-audio-idle-inhibit
@@ -80,8 +81,7 @@ install:
     - contour-terminal
     - qt5-qtgraphicaleffects
 
-# theme and GUI
-    - bibata-cursor-themes
+# themes and GUI
     - qt5ct
     - qt6ct
     - gnome-themes-extra
