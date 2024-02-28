@@ -1,0 +1,90 @@
+type: rpm-ostree
+repos:
+    # swayfx
+    - https://copr.fedorainfracloud.org/coprs/swayfx/swayfx/repo/fedora-%OS_VERSION%/swayfx-swayfx-fedora-%OS_VERSION%.repo
+
+    # swayland
+    - https://copr.fedorainfracloud.org/coprs/sneexy/swayland/repo/fedora-%OS_VERSION%/sneexy-swayland-fedora-%OS_VERSION%.repo
+
+    # swaync
+    - https://copr.fedorainfracloud.org/coprs/erikreider/SwayNotificationCenter/repo/fedora-%OS_VERSION%/erikreider-SwayNotificationCenter-fedora-%OS_VERSION%.repo
+
+    # wezterm
+    - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
+install:
+# display manager
+    - sddm
+    - sddm-themes
+
+# environment
+    - xorg-x11-server-Xwayland
+    - polkit
+    - lxpolkit
+    - xdg-user-dirs
+    - dbus-tools
+    - dbus-daemon
+    - wl-clipboard
+    - gnome-keyring
+    - pavucontrol
+    - playerctl
+    - qt5-qtwayland
+    - qt6-qtwayland
+    - vulkan-validation-layers
+    - vulkan-tools
+    - google-noto-emoji-fonts
+    - gnome-disk-utility
+
+# sound
+    - wireplumber
+    - pipewire
+    - pamixer
+
+# networking
+    - network-manager-applet
+    - NetworkManager-openvpn
+    - NetworkManager-openconnect
+    - bluez
+    - bluez-tools
+    - blueman
+
+# sway utilities
+    - wofi
+    - swaync
+    - sway-audio-idle-inhibit
+
+# file manager
+    - thunar
+    - thunar-archive-plugin
+    - thunar-volman
+    - xarchiver
+    - imv
+    - p7zip
+    - unrar-free
+
+# screenshot
+    - slurp
+    - grim
+
+# display
+    - wlr-randr
+    - wlsunset
+    - grimshot
+    - light
+    - swaylock
+    - swayidle
+    - kanshi
+
+# terminals
+    - kitty
+    - wezterm
+    - contour-terminal
+    - qt5-qtgraphicaleffects
+
+# theme and GUI
+    - bibata-cursor-themes
+    - qt5ct
+    - qt6ct
+    - gnome-themes-extra
+    - gnome-icon-theme
+    - papirus-icon-theme
+    - plasma-breeze

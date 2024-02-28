@@ -13,17 +13,17 @@ modules:
   # put some files in the image
   - from-file: common/sneexy/mazurek/files.yml
 
-  # run system packages installer script
-  - type: script
-    scripts:
-        - system-mazurek.sh
-        #- system-wuzetka.sh
+  # installs system related packages
+  - from-file: common/sneexy/mazurek/system.yml
 
   # installs user/userspace related packages
-  - from-file: common/sneexy/mazurek/rpm-ostree.yml
+  - from-file: common/sneexy/mazurek/user.yml
 
-  # installs user related packages
-  - from-file: common/sneexy/rpm-ostree.yml
+    # run scripts afterwards
+  - type: script
+    scripts:
+        - mazurek-install-from-copr.sh
+        - mazurek-disable-copr.sh
 
   # installs default repositories and flatpak packages
   - from-file: common/sneexy/flatpaks.yml
