@@ -33,3 +33,7 @@ sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/wezfurlong-wezterm-nightly-fed
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite.repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_vrumger-swaylock-effects.repo
+
+# regenerate systemd units & enable post-install service
+systemctl daemon-reload
+systemctl enable mazurek-post-setup.service
