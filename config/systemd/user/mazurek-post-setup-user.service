@@ -1,0 +1,10 @@
+[Unit]
+Description=Mazurek post-setup script
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h
+ExecStart=/bin/bash -c '/usr/bin/user-mazurek'
+
+[Install]
+WantedBy=default.target

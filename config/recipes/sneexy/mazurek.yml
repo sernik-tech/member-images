@@ -24,9 +24,14 @@ modules:
   # put some files in the image
   - from-file: common/sneexy/mazurek/files.yml
 
-  - type: script
-    scripts:
-        - system-mazurek-post.sh
+  # enabling systemd services
+  - type: systemd
+    system:
+        enabled:
+            - mazurek-post-setup.service
+    user:
+        enabled:
+            - mazurek-post-setup-user.service
 
   # installs default repositories and flatpak packages
   - from-file: common/sneexy/flatpaks.yml
