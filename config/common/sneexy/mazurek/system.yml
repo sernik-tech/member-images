@@ -6,8 +6,14 @@ repos:
     # swayland
     - https://copr.fedorainfracloud.org/coprs/sneexy/swayland/repo/fedora-%OS_VERSION%/sneexy-swayland-fedora-%OS_VERSION%.repo
 
+    # sway-extra
+    - https://copr.fedorainfracloud.org/coprs/alebastr/sway-extras/repo/fedora-%OS_VERSION%/alebastr-sway-extras-fedora-%OS_VERSION%.repo
+
     # swaync
     - https://copr.fedorainfracloud.org/coprs/erikreider/SwayNotificationCenter/repo/fedora-%OS_VERSION%/erikreider-SwayNotificationCenter-fedora-%OS_VERSION%.repo
+
+    # nwg-shell and friends
+    - https://copr.fedorainfracloud.org/coprs/tofik/nwg-shell/repo/fedora-%OS_VERSION%/tofik-nwg-shell-fedora-%OS_VERSION%.repo
 
     # wezterm
     - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
@@ -55,8 +61,13 @@ install:
 # swayfx & utilities
     - swayfx
     - wofi
+    - swww
     - swaync
     - sway-audio-idle-inhibit
+    - nwg-displays
+    - nwg-look
+    - waybar
+    - wlogout
 
 # file manager
     - thunar
