@@ -17,6 +17,10 @@ install:
     - kernel-headers
     - linux-firmware
 
+# sddm, currently commented because of boot issues
+    - sddm
+    - sddm-wayland-generic
+
 # environment
     - xorg-x11-server-Xwayland
     - polkit

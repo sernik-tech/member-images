@@ -20,7 +20,6 @@ modules:
   - type: script
     scripts:
         - system-mazurek.sh
-        - sddm.sh
 
   # put some files in the image
   - from-file: common/sneexy/mazurek/files.yml
