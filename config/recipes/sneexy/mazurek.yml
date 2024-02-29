@@ -10,9 +10,6 @@ image-version: 39 # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  # put some files in the image
-  - from-file: common/sneexy/mazurek/files.yml
-
   # installs system related packages
   - from-file: common/sneexy/mazurek/system.yml
 
@@ -24,6 +21,9 @@ modules:
     scripts:
         - system-mazurek.sh
         - sddm.sh
+
+  # put some files in the image
+  - from-file: common/sneexy/mazurek/files.yml
 
   # installs default repositories and flatpak packages
   - from-file: common/sneexy/flatpaks.yml
