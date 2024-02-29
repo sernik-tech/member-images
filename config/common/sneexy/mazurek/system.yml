@@ -18,11 +18,6 @@ repos:
     # wezterm
     - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
 install:
-# kernel, reinstalled to update it from the base image
-    - kernel
-    - kernel-headers
-    - linux-firmware
-
 # sddm, currently commented because of boot issues
     - sddm
     - sddm-wayland-generic
