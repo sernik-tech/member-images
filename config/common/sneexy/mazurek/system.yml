@@ -6,11 +6,11 @@ repos:
     # swayland
     - https://copr.fedorainfracloud.org/coprs/sneexy/swayland/repo/fedora-%OS_VERSION%/sneexy-swayland-fedora-%OS_VERSION%.repo
 
-    # sway-extra
-    - https://copr.fedorainfracloud.org/coprs/alebastr/sway-extras/repo/fedora-%OS_VERSION%/alebastr-sway-extras-fedora-%OS_VERSION%.repo
-
     # swaync
     - https://copr.fedorainfracloud.org/coprs/erikreider/SwayNotificationCenter/repo/fedora-%OS_VERSION%/erikreider-SwayNotificationCenter-fedora-%OS_VERSION%.repo
+
+    # hyprland
+    - https://copr.fedorainfracloud.org/coprs/solopasha/hyprland/repo/fedora-%OS_VERSION%/solopasha-hyprland-fedora-%OS_VERSION%.repo
 
     # nwg-shell and friends
     - https://copr.fedorainfracloud.org/coprs/tofik/nwg-shell/repo/fedora-%OS_VERSION%/tofik-nwg-shell-fedora-%OS_VERSION%.repo
@@ -19,8 +19,8 @@ repos:
     - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
 install:
 # sddm, currently commented because of boot issues
-    - sddm
-    - sddm-wayland-generic
+    #- sddm
+    #- sddm-wayland-generic
 
 # environment
     - xorg-x11-server-Xwayland
@@ -53,16 +53,23 @@ install:
     - bluez-tools
     - blueman
 
-# swayfx & utilities
-    - swayfx
+# swayfx & utilities #
+# hyprland & utilities
+    #- swayfx
+    - hyprland
+    - xdg-desktop-portal-hyprland
+    - xdg-desktop-portal-gtk
+    - hyprland-plugins
+    - hyprpicker
+    - hypridle
+    - hyprlock
     - wofi
     - swww
     - swaync
-    - sway-audio-idle-inhibit
-    - nwg-displays
-    - nwg-look
     - waybar
     - wlogout
+    - cliphist
+    - nwg-clipman
 
 # file manager
     - thunar
@@ -76,6 +83,7 @@ install:
 # screenshot
     - slurp
     - grim
+    - hyprshot
 
 # display
     - wlr-randr
@@ -85,6 +93,7 @@ install:
     - swaylock
     - swayidle
     - kanshi
+    - nwg-displays
 
 # terminals
     - kitty
