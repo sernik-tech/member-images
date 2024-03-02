@@ -15,6 +15,9 @@ repos:
     # nwg-shell and friends
     - https://copr.fedorainfracloud.org/coprs/tofik/nwg-shell/repo/fedora-%OS_VERSION%/tofik-nwg-shell-fedora-%OS_VERSION%.repo
 
+    # albert
+    - https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_%OS_VERSION%/home:manuelschneid3r.repo
+
     # wezterm
     - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
 install:
@@ -70,6 +73,7 @@ install:
     - wlogout
     - cliphist
     - nwg-clipman
+    - albert
 
 # file manager
     - thunar

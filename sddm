@@ -1,0 +1,7 @@
+ARG IMAGE_MAJOR_VERSION=39
+ARG BASE_IMAGE_URL=ghcr.io/sernik-tech/mazurek
+
+FROM ${BASE_IMAGE_URL}:${IMAGE_MAJOR_VERSION}
+
+RUN groupadd -g 972 sddm
+RUN useradd -u 972 -g 972 sddm
