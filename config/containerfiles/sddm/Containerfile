@@ -1,4 +1,0 @@
-RUN groupadd -g 972 sddm
-RUN useradd -u 972 -g 972 sddm
-
-RUN rpm-ostree install sddm sddm-wayland-generic
