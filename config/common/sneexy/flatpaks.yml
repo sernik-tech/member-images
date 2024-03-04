@@ -35,6 +35,7 @@ system:
     - com.usebottles.bottles
     - fr.handbrake.ghb
     - org.kde.okteta
+    - io.github.mpobaschnig.Vaults
 
     # system applications
     - org.kde.kclock
@@ -50,7 +51,3 @@ system:
     - com.github.tchx84.Flatseal
     - org.gustavoperedo.FontDownloader
     - io.podman_desktop.PodmanDesktop
-
-user:
-  repo-name: flathub-user
-  repo-title: "Flathub (user)"

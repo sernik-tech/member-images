@@ -13,9 +13,6 @@ wget "https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fe
 # bazzite packages
 rpm-ostree install joystickwake xwiimote-ng
 
-# swaylock effects
-#rpm-ostree override remove swaylock --install=swaylock-effects
-
 # install power related utilities, ensuring no conflicts exist first
 if rpm -qa | grep power-profiles-daemon ; then
     rpm-ostree override remove power-profiles-daemon --install=tlp --install=tlp-rdw --install=powertop
@@ -30,5 +27,6 @@ sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/solopasha-hyprland-fedora-$(rp
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/tofik-nwg-shell-fedora-$(rpm -E %fedora).repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/home:manuelschneid3r.repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/wezfurlong-wezterm-nightly-fedora-$(rpm -E %fedora).repo
+sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/kylegospo-rom-properties-fedora-$(rpm -E %fedora).repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite.repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo

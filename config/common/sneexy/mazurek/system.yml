@@ -14,15 +14,18 @@ repos:
 
     # wezterm
     - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
+
+    # rom properties
+    - https://copr.fedorainfracloud.org/coprs/kylegospo/rom-properties/repo/fedora-%OS_VERSION%/kylegospo-rom-properties-fedora-%OS_VERSION%.repo
 install:
-# sddm, currently commented because of boot issues
+# sddm
     - sddm
     - sddm-wayland-generic
 
 # environment
     - xorg-x11-server-Xwayland
     - polkit
-    - lxpolkit
+    - polkit-kde
     - xdg-user-dirs
     - dbus-tools
     - dbus-daemon
@@ -36,6 +39,9 @@ install:
     - vulkan-tools
     - google-noto-emoji-fonts
     - gnome-disk-utility
+    - qt5-qtgraphicaleffects
+    - qt5-qtquickcontrols2
+    - qt5-qtsvg
 
 # sound
     - wireplumber
@@ -50,7 +56,7 @@ install:
     - bluez-tools
     - blueman
 
-# hyprland & utilities
+# hyprland
     - hyprland
     - xdg-desktop-portal-hyprland
     - xdg-desktop-portal-gtk
@@ -58,6 +64,8 @@ install:
     - hyprpicker
     - hypridle
     - hyprlock
+
+# desktop utilities
     - wofi
     - swww
     - swaync
@@ -66,12 +74,15 @@ install:
     - cliphist
     - nwg-clipman
     - albert
+    - aylurs-gtk-shell
 
 # file manager
-    - thunar
-    - thunar-archive-plugin
-    - thunar-volman
-    - xarchiver
+    - dolphin
+    - dolphin-plugins
+    - nextcloud-client-dolphin
+    - rom-properties-kf5
+    - udiskie
+    - ark
     - imv
     - p7zip
     - unrar-free
@@ -80,6 +91,7 @@ install:
     - slurp
     - grim
     - hyprshot
+    - flameshot
 
 # display
     - wlr-randr
