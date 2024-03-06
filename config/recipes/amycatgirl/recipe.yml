@@ -24,7 +24,7 @@
 # Change this to whatever image name you'd like. It cannot be an image that is used by another
 # image that is being built/published.
 # It will be found under ghcr.io/sernik-tech/<name>
-name: sernik-amy
+name: moonstone-kinoite
 # - Description -
 # Will be included in the image's metadata, can be whatever.
 description: gay cats meowmeowmeowmeowmeow
@@ -33,7 +33,7 @@ description: gay cats meowmeowmeowmeowmeow
 # The base image to build on top of, and the (Fedora) version tag to use.
 # You can see a full list of available images/bases here: https://universal-blue.org/images/#image-categorization
 # Since this is Sericea based, we're using Sericea:
-base-image: ghcr.io/ublue-os/sericea-nvidia
+base-image: ghcr.io/ublue-os/kinoite-nvidia
 # Replace above with `ghcr.io/ublue-os/sericea-nvidia` if you're using a device with Nvidia.
 #
 # Version number, related to the version of Fedora. `latest` is also supported if you
