@@ -32,7 +32,7 @@ modules:
         - mazurek-user-post.service
 
   # installs default repositories and flatpak packages
-  - from-file: common/sneexy/flatpaks.yml
+  - from-file: common/sneexy/mazurek/flatpaks.yml
 
   # configure what to pull in from ublue-os/bling
   - from-file: common/sneexy/bling.yml

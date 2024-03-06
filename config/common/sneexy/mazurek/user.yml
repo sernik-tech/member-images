@@ -1,6 +1,6 @@
 type: rpm-ostree
-repo:
 install:
+    # basic applications
     - waydroid
     - mpv
 remove:

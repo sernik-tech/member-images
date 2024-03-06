@@ -15,6 +15,9 @@ repos:
     # wezterm
     - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
 
+    # bibata cursors
+    - https://copr.fedorainfracloud.org/coprs/peterwu/rendezvous/repo/fedora-%OS_VERSION%/peterwu-rendezvous-fedora-%OS_VERSION%.repo
+
     # rom properties
     - https://copr.fedorainfracloud.org/coprs/kylegospo/rom-properties/repo/fedora-%OS_VERSION%/kylegospo-rom-properties-fedora-%OS_VERSION%.repo
 install:
@@ -110,6 +113,7 @@ install:
     - qt5-qtgraphicaleffects
 
 # themes and GUI
+    - bibata-cursor-themes
     - qt5ct
     - qt6ct
     - gnome-themes-extra

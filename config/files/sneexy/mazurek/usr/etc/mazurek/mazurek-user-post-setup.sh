@@ -25,14 +25,46 @@ fi
 # We'll make sure the directories exist first.
 mkdir -p $HOME/.config/hypr
 mkdir -p $HOME/.config/waybar
+mkdir -p $HOME/.config/ags
 mkdir -p $HOME/.local/bin
 
-# We'll copy the files to the local user's directories.
-cp -r /etc/mazurek/hypr/* $HOME/.config/hypr
-cp -r /etc/mazurek/waybar/* $HOME/.config/waybar
-cp /etc/mazurek/focus-mode.sh $HOME/.local/bin/focus-mode.sh
-cp /etc/mazurek/restart-portal-wlr.sh $HOME/.local/bin/restart-portal-wlr.sh
-cp /etc/mazurek/swww-random.sh $HOME/.local/bin/swww-random.sh
+# We'll copy the files to the local user's directories, if they exist.
+
+if [ -f $HOME/.config/hypr/hyprland.conf ]; then
+    echo "Hyprland config exists. Skipping..."
+else
+    cp -r /etc/mazurek/hypr/* $HOME/.config/hypr
+fi
+
+if [ -f $HOME/.config/waybar/config ]; then
+    echo "Waybar config exists. Skipping..."
+else
+    cp -r /etc/mazurek/waybar/* $HOME/.config/waybar
+fi
+
+if [ -f $HOME/.config/ags ]; then
+    echo "AGS config exists. Skipping..."
+else
+    cp -r /etc/mazurek/ags/* $HOME/.config/ags
+fi
+
+if [ -f $HOME/.local/bin/hypr-focus-mode.sh ]; then
+    echo "Scripts exists. Skipping..."
+else
+    cp /etc/mazurek/hypr-focus-mode.sh $HOME/.local/bin/hypr-focus-mode.sh
+fi
+
+if [ -f $HOME/.local/bin/restart-portal-wlr.sh ]; then
+    echo "Scripts exists. Skipping..."
+else
+    cp /etc/mazurek/restart-portal-wlr.sh $HOME/.local/bin/restart-portal-wlr.sh
+fi
+
+if [ -f $HOME/.local/bin/swww-random.sh ]; then
+    echo "Scripts exists. Skipping..."
+else
+    cp /etc/mazurek/swww-random.sh $HOME/.local/bin/swww-random.sh
+fi
 
 # Ensure the files are executable.
 chmod +x $HOME/.local/bin/focus-mode.sh
