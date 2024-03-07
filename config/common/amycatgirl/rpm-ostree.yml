@@ -2,6 +2,7 @@
 # Official Fedora packages search: https://packages.fedoraproject.org/
 type: rpm-ostree
 repos:
+  - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
     # This `repos` section is used for Copr repositories. You can find some over at the copr
     # homepage: https://copr.fedorainfracloud.org/
 
