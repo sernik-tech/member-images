@@ -12,26 +12,10 @@ system:
     # repo-name: flathub
     # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
     install:
-        # For the Sericea image, by default we install a bunch of GNOME applications along with Firefox and others:
-      - org.gnome.Calculator
-      - org.gnome.Calendar
-      - io.github.celluloid_player.Celluloid
-      - org.gnome.Characters
-      - org.gnome.clocks
-      - org.gnome.Contacts
-      - com.vixalien.decibels
-      - org.gnome.baobab
-      - org.gnome.SimpleScan
-      - org.gnome.Evince
-      - org.gnome.font-viewer
-      - org.gnome.Logs
-      - org.gnome.Loupe
-      - org.gnome.Maps
-      - org.gnome.TextEditor
-      - org.gnome.Weather
-      - org.gnome.Epiphany
-      - com.github.tchx84.Flatseal
-      - org.gnome.World.PikaBackup
+      - chat.revolt.RevoltDesktop
+      - com.spotify.Client
+      - it.mijorus.gearLever
+      - com.obsproject.Studio
         # Below is commented because they're default examples that explain more info.
         # - org.gnome.Loupe
         # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
