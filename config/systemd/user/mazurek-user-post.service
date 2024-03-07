@@ -1,7 +1,0 @@
-[Unit]
-Description=Mazurek user post-setup
-
-[Service]
-Type=oneshot
-ExecStart=/bin/bash -c "/etc/mazurek/mazurek-user-post-setup.sh"
-ExecStart=/usr/bin/systemctl --user disable /usr/lib/systemd/user/mazurek-user-post.service
