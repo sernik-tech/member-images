@@ -74,6 +74,9 @@ modules:
     # Documentation: https://blue-build.org/reference/modules/fonts/
   - from-file: common/amycatgirl/fonts.yml
 
+    # - Bling -
+  - from-file: common/amycatgirl/bling.yml
+
     # - Akmods -
     # Akmods are a neat thing provided by the blue-build people, they're basically easy-to-install kernel modules.
     # Documentation: https://blue-build.org/reference/modules/akmods/
