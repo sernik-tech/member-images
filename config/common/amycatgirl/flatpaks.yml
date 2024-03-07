@@ -5,27 +5,21 @@
 type: default-flatpaks
 notify: true # Send notification after install/uninstall is finished (true/false)
 system:
-    # If no repo information is specified, Flathub will be used by default, which is
-    # why below is commented.
-
-    # repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-    # repo-name: flathub
-    # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
-    install:
-      - chat.revolt.RevoltDesktop
-      - com.spotify.Client
-      - it.mijorus.gearLever
-      - com.obsproject.Studio
-        # Below is commented because they're default examples that explain more info.
-        # - org.gnome.Loupe
-        # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
-                                         # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08).
-                                         # Only normal flatpak applications are (like Floorp Lightning web browser in this example).
-                                         # Multiple install of same flatpaks with different branches is not supported.
-    remove:
-      # Any flatpaks you wish to remove can be listed here:
-      # - org.gnome.eog
-    # A flatpak repo can also be added without having to install flatpaks,
-    # as long as one of the repo- fields is present
-    user:
-      repo-name: flathub
+  install:
+    - org.kde.kclock
+    - org.kde.filelight
+    - org.kde.kamoso
+    - org.kde.kfind
+    - org.kde.kweather
+    - org.kde.gwenview
+    - org.kde.kalk
+    - org.kde.okular
+    - org.mozilla.firefox
+    - org.mozilla.Thunderbird
+user:
+  repo-name: flathub
+  install:
+    - chat.revolt.RevoltDesktop
+    - com.spotify.Client
+    - it.mijorus.gearLever
+    - com.obsproject.Studio
