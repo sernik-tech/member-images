@@ -17,6 +17,7 @@ set -oue pipefail
 if [ -f $HOME/.local/share/.mazurek-post ]; then
     echo "Script has already been ran before. Exiting."
     return 1
+    exit
 fi
 
 # All of our custom configurations and files are located under /usr/etc/mazurek if you
@@ -36,6 +37,7 @@ else
     cp -r /etc/mazurek/hypr/* $HOME/.config/hypr
 fi
 
+# NOTE: to be removed after ags?
 if [ -f $HOME/.config/waybar/config ]; then
     echo "Waybar config exists. Skipping..."
 else
@@ -70,6 +72,12 @@ fi
 chmod +x $HOME/.local/bin/focus-mode.sh
 chmod +x $HOME/.local/bin/restart-portal-wlr.sh
 chmod +x $HOME/.local/bin/swww-random.sh
+
+# Run the extra stuff afterwards.
+hyprctl dispatch exec waybar
+hyprctl dispatch exec swaync
+
+hyprctl reload
 
 # Touch file to prevent this script from running twice.
 touch $HOME/.local/share/.mazurek-post
