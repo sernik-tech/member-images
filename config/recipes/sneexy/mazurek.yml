@@ -26,10 +26,10 @@ modules:
   - from-file: common/sneexy/mazurek/files.yml
 
   # enable systemd units
-  - type: systemd
-    user:
-      enabled:
-        - mazurek-user-post.service
+  #- type: systemd
+  #  user:
+  #    enabled:
+  #      - mazurek-user-post.service
 
   # installs default repositories and flatpak packages
   - from-file: common/sneexy/mazurek/flatpaks.yml

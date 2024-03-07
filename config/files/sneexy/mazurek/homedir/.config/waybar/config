@@ -1,0 +1,155 @@
+{
+	"layer": "top",
+  "position": "top",
+	"modules-left": ["hyprland/workspaces","tray"],
+	"modules-center": ["mpd"],
+	"modules-right": ["battery","pulseaudio","bluetooth","network","idle_inhibitor","clock","custom/notifications"],
+
+	"hyprland/workspaces": {
+	  "format": "{icon}",
+	  "on-click": "activate",
+	  "format-icons": {
+      "1": "󰍦",
+      "2": "󰈹",
+      "3": "󰆍",
+      "4": "󰉋",
+      "5": "󰊖",
+	    "urgent": "󰻂",
+	    "default": "󰝥"
+	  },
+	  "sort-by-number": true
+  },
+
+  "tray": {
+		"icon-size": 20,
+		"spacing": 10
+	},
+
+  "mpd": {
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon} {title}",
+    "format-disconnected": "<span color=\"#f38ba8\"></span> Disconnected",
+    "format-stopped": " {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped",
+    "interval": 10,
+    "on-click": "mpc toggle",
+    "on-click-middle": "mpc prev",
+    "on-click-right": "mpc next",
+    "on-scroll-up": "mpc volume +2",
+    "on-scroll-down": "mpc volume -2",
+    "consume-icons": {
+      "on": "<span color=\"#6c7086\"></span> "
+    },
+    "random-icons": {
+      "on": "<span color=\"#6c7086\"></span> "
+    },
+    "repeat-icons": {
+      "on": "<span color=\"#6c7086\"></span> "
+    },
+    "single-icons": {
+      "on": "<span color=\"#6c7086\"></span> <span color=\"#9399b2\">1</span> "
+    },
+    "state-icons": {
+      "paused": "<span color=\"#f38ba8\"></span>",
+      "playing": "<span color=\"#a6e3a1\"></span>"
+    },
+    "tooltip-format": "󰠃 {artist} ∙ 󰀥 {album} ∙  {title} ({totalTime:%M:%S})\n󰕾 Music Volume is at {volume}%\n MPD (connected)",
+    "tooltip-format-disconnected": " MPD (disconnected)"
+  },
+
+  "battery": {
+    "tooltip": true,
+    "tooltip-format": "Battery is currently at {capacity}%.\n{timeTo}.",
+    "states": {
+      "good": 95,
+      "warning": 39,
+      "critical": 20
+    },
+    "format": "{icon}",
+    "format-charging": "󱐋{icon}",
+    "format-plugged": " ",
+    "format-icons": ["", "", "", "", ""]
+  },
+  
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰽢",
+      "deactivated": "󰖨"
+    }
+  },
+
+	"pulseaudio": {
+    "tooltip": true,
+    "tooltip-format": "{icon} Currently at {volume}%\n{desc}",
+    "scroll-step": 5,
+		"format": "{icon}",
+		"format-muted": "󰝟",
+		"on-click": "volumectl %",
+    "on-click-right": "pavucontrol",
+		"format-icons": ["󰕿", "󰖀", "󰕾"]
+	},
+
+  "bluetooth": {
+    "format": "󰂯",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱",
+    "format-connected-battery": "{icon}",
+    "format-icons": ["󰤾", "󰤿", "󰥀", "󰥁", "󰥂", "󰥃", "󰥄", "󰥅", "󰥆", "󰥉"],
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+	  "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	  "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "blueman-manager",
+  },
+
+	"network": {
+		"tooltip": true,
+    "tooltip-format-wifi": "{icon} Connected to {essid}\nSignal: {signalStrength}",
+    "format-disconnected": "󰤭",
+		"format-wifi": "{icon}",
+    "format-icons": ["󰤯","󰤟", "󰤢", "󰤥", "󰤨"],
+		"format-ethernet": "󰈀",
+    "on-click": "networkmanager_dmenu",
+    "on-click-right": "nm-connection-editor",
+	},
+
+  "clock": {
+    "tooltip": true,
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode"          : "month",
+      "mode-mon-col"  : 3,
+      "weeks-pos"     : "right",
+      "on-scroll"     : 1,
+      "on-click-right": "mode",
+      "format": {
+        "months":     "<span color='#f5c2e7'><b>{}</b></span>",
+        "days":       "<span color='#cdd6f4'><b>{}</b></span>",
+        "weeks":      "<span color='#74c7ec'><b>W{}</b></span>",
+        "weekdays":   "<span color='#fab387'><b>{}</b></span>",
+        "today":      "<span color='#a6e3a1'><b><u>{}</u></b></span>"
+      }
+    },
+    "format": "{:󰃭 %d/%m/%y  %H:%M}"
+  },
+
+  "custom/notifications": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂚",
+      "dnd-notification": "󱅫",
+      "dnd-none": "󰂛",
+      "inhibited-notification": "󱅫",
+      "inhibited-none": "󰂚",
+      "dnd-inhibited-notification": "󱅫",
+      "dnd-inhibited-none": "󰂛"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.1; swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+}
+

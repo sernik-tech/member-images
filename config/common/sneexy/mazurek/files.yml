@@ -1,3 +1,4 @@
 type: files
 files:
+    - sneexy/mazurek/homedir: /usr/etc/skel
     - sneexy/mazurek/usr: /usr

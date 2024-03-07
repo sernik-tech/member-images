@@ -1,0 +1,248 @@
+* {
+	border: none;
+  font-family: "JetBrainsMono NF";
+	font-size: 14px;
+	min-height: 1px;
+}
+
+window#waybar {
+  background: transparent;
+  color: transparent;
+}
+
+window#waybar {
+  transition: none;
+  color: transparent;
+  background: transparent;
+}
+
+@keyframes lowbat {
+    to {
+        background-color: #f38ba8;
+        color: #11111b;
+    }
+}
+
+@keyframes notif {
+  to {
+      background-color: #89b4fa;
+      color: #11111b;
+  }
+}
+
+@keyframes dndnotif {
+  to {
+      background-color: #f38ba8;
+      color: #11111b;
+  }
+}
+
+#workspaces,
+#tray,
+#mpd,
+#battery,
+#pulseaudio,
+#bluetooth,
+#network,
+#idle_inhibitor,
+#clock,
+#custom-notifications {
+  margin-top: 5px;
+}
+
+#network,
+#bluetooth,
+#pulseaudio,
+#battery,
+#clock,
+#temperature,
+#tray,
+#idle_inhibitor {
+	padding-left: 10px;
+	padding-right: 2px;
+	transition: none;
+}
+
+#network,
+#pulseaudio,
+#bluetooth,
+#battery {
+  padding-right: 5px;
+}
+
+#battery,
+#pulseaudio,
+#bluetooth,
+#network,
+#idle_inhibitor {
+  font-size: 20px;
+}
+
+#workspaces {
+  background-color: transparent;
+  margin-left: 5px;
+}
+
+#workspaces button {
+  margin-right: 10px;
+  border-radius: 10px;
+  background: #11111b;
+  color: #cdd6f4;
+}
+
+#workspaces button.active {
+  background: #a6e3a1;
+  color: #11111b;
+}
+
+#workspaces button label {
+  font-size: 20px;
+  padding-right: 3px;
+  margin: -4;
+}
+
+#tray {
+	color: #B5E8E0;
+	background: #161320;
+	border-radius: 10px;
+	padding-right: 10px;
+}
+
+#mpd {
+  background: #161320;
+  color: #cdd6f4;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#pulseaudio {
+	background: #161320;
+	color: #FAE3B0;
+}
+
+#pulseaudio.muted {
+  font-size: 20px;
+  color: #f38ba8;
+}
+
+#bluetooth,
+#bluetooth.connected,
+#bluetooth.connected-battery,
+#bluetooth.on {
+  font-size: 20px;
+  background: #11111b;
+	color: #74c7ec;
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+  color: #f38ba8;
+}
+
+#network.ethernet,
+#network {
+  background: #11111b;
+	color: #f2cdcd;
+  padding-right: 11px;
+}
+
+#network.disconnected {
+  color: #f38ba8;
+}
+
+#battery {
+	background: #11111b;
+	color: #B5E8E0;
+  padding-right: 17px;
+  border-radius: 10px 0 0 10px;
+}
+
+#battery.charging {
+	background-color: #11111b;
+  color: #a6e3a1;
+  padding-right: 17px;
+  padding-left: 7px;
+}
+
+#battery.plugged {
+	background-color: #11111b;
+  color: #a6e3a1;
+  padding-right: 0px;
+  padding-left: 7px;
+}
+
+#battery.critical:not(.charging) {
+  background-color: #11111b;
+  color: #f38ba8;
+  animation-name: lowbat;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#idle_inhibitor {
+	background: #11111b;
+	margin-right: 10px;
+	padding-right: 14px;
+	border-radius: 0 10px 10px 0;
+}
+
+#idle_inhibitor.deactivated {
+  color: #f9e2af;
+}
+
+#idle_inhibitor.activated {
+  color: #b4befe;
+}
+
+#clock {
+  font-size: 16px;
+	background: #11111b;
+	color: #ABE9B3;
+	border-radius: 10px;
+	padding-right: 10px;
+	margin-right: 10px;
+}
+
+#custom-notifications,
+#custom-notifications.none,
+#custom-notifications.inhibited-none{
+	font-size: 20px;
+	border-radius: 10px;
+	color: #f2cdcd;
+	background: #11111b;
+	padding-right: 12px;
+	padding-left: 10px;
+	margin-right: 5px;
+}
+
+#custom-notifications.dnd-none,
+#custom-notifications.dnd-inhibited-none {
+  color: #f38ba8;
+}
+
+#custom-notifications.notification,
+#custom-notifications.dnd-notification,
+#custom-notifications.inhibited-notification,
+#custom-notifications.dnd-inhibited-notification {
+  color: #89b4fa;
+  background-color: #11111b;
+  animation-name: notif;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;  
+}
+
+#custom-notifications.dnd-notification,
+#custom-notifications.dnd-inhibited-notification {
+  color: #f38ba8;
+  background-color: #11111b;
+  animation-name: dndnotif;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
