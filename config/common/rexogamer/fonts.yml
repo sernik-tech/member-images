@@ -8,8 +8,6 @@ fonts:
 
         - FiraCode
         - Hack
-        # - SourceCodePro
-        # - Terminus
         - JetBrainsMono
         - NerdFontsSymbolsOnly
     google-fonts:
@@ -20,8 +18,5 @@ fonts:
         - Roboto
         - Noto Color Emoji
         - Open Sans
-        # - Source Serif 4
-        # - Source Sans 3
-        # - IBM Plex Sans
-        # - IBM Plex Serif
-        # - EB Garamond
+        - Inter
+        - Ubuntu

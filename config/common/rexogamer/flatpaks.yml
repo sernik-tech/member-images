@@ -12,26 +12,42 @@ system:
     # repo-name: flathub
     # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
     install:
-        # For the Silverblue image, by default we install a bunch of GNOME applications along with Firefox and others:
+      # CHAT
+      - chat.revolt.RevoltDesktop
+      - org.signal.Signal
+      # GNOME
+      - org.gnome.Builder
       - org.gnome.Calculator
       - org.gnome.Calendar
-      - io.github.celluloid_player.Celluloid
       - org.gnome.Characters
       - org.gnome.clocks
       - org.gnome.Contacts
-      - com.vixalien.decibels
       - org.gnome.baobab
       - org.gnome.SimpleScan
-      - org.gnome.Evince
       - org.gnome.font-viewer
       - org.gnome.Logs
       - org.gnome.Loupe
       - org.gnome.Maps
+      - org.gnome.Snapshot
       - org.gnome.TextEditor
       - org.gnome.Weather
       - org.gnome.Epiphany
+      # ART
+      - org.inkscape.Inkscape
+      - org.kde.krita
+      # MISC      
+      - re.sonny.Workbench
+      - io.gitlab.news_flash.NewsFlash
+      - md.obsidian.Obsidian
+      - org.libreoffice.LibreOffice
+      - org.qbittorrent.qBittorrent
+      - net.nokyan.Resources
       - com.github.tchx84.Flatseal
+      - io.github.flattool.Warehouse
       - org.gnome.World.PikaBackup
+      - app.drey.KeyRack
+      - com.bitwarden.desktop      
+      - org.prismlauncher.PrismLauncher
         # Below is commented because they're default examples that explain more info.
         # - org.gnome.Loupe
         # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
