@@ -5,7 +5,7 @@ Description=Create GDM user on system boot
 Type=oneshot
 ExecStart=/usr/sbin/groupadd -g 42 gdm
 ExecStart=/usr/sbin/useradd -u 42 -g gdm -c "GNOME Display Manager" -d /var/lib/gdm -s /usr/sbin/nologin gdm
-ExecStart=/usr/bin/systemctl disable /usr/lib/systemd/system/create-gdm-user.service
+ExecStart=/usr/bin/systemctl disable create-gdm-user.service
 
 [Install]
 WantedBy=multi-user.target
