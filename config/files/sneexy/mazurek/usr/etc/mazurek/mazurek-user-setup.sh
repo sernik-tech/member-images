@@ -10,7 +10,7 @@
 set -oue pipefail
 
 # Confirm that the file doesn't exist and don't run if it does.
-if [ -f $HOME/.local/share/.mazurek-post ]; then
+if [ -f $HOME/.local/share/.mazurek ]; then
     echo "Script has already been ran before. Exiting."
     if "systemctl --user status mazurek-user-setup.service | grep '; enabled;'"; then
         systemctl --user disable mazurek-user-setup.service
@@ -23,18 +23,11 @@ fi
 # want to look at them.
 
 # We'll make sure the directories exist first.
-mkdir -p $HOME/.config/hypr
-mkdir -p $HOME/.config/waybar
-mkdir -p $HOME/.config/ags
-mkdir -p $HOME/.config/swaync
+mkdir -p $HOME/.config
 mkdir -p $HOME/.local/bin
 
-# We'll copy the files to the local user's directories, if they exist.
-
-cp -rf /etc/mazurek/hypr/* $HOME/.config/hypr
-cp -rf /etc/mazurek/waybar/* $HOME/.config/waybar
-cp -rf /etc/mazurek/ags/* $HOME/.config/ags
-cp -rf /etc/mazurek/swaync/* $HOME/.config/swaync
+# We'll copy the files to the local user's directories.
+cp -rf /etc/mazurek/config/* $HOME/.config
 cp /etc/mazurek/bin/* $HOME/.local/bin
 
 # Ensure the files are executable.
@@ -53,7 +46,7 @@ hyprctl reload
 systemctl --user disable mazurek-user-setup.service
 
 # Touch file to prevent this script from running twice.
-touch $HOME/.local/share/.mazurek-post
+touch $HOME/.local/share/.mazurek
 
 # Launch first time messages.
 /bin/bash -c "$(/etc/mazurek/mazurek-first-time-messages.sh)"
