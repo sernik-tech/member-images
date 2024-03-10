@@ -1,0 +1,55 @@
+#   _ __   ___ _ __ ___  _ __   ___ _ __  _ __
+# | '_ \ / __| '_ ` _ \| '_ \ / __| '_ \| '_ \
+# | | | | (__| | | | | | |_) | (__| |_) | |_) |
+# |_| |_|\___|_| |_| |_| .__/ \___| .__/| .__/
+#                      |_|        |_|   |_|
+#   the REAL llama ass whipping
+mpd_music_dir = "~/Music"
+lyrics_directory = "~/.config/mpd/lyrics"
+
+# genderal
+connected_message_on_startup = "yes"
+cyclic_scrolling = "yes"
+mouse_support = "yes"
+mouse_list_scroll_whole_page = "yes"
+lines_scrolled = "3"
+message_delay_time = "1"
+playlist_shorten_total_times = "yes"
+playlist_display_mode = "columns"
+browser_display_mode = "columns"
+search_engine_display_mode = "columns"
+playlist_editor_display_mode = "columns"
+autocenter_mode = "yes"
+centered_cursor = "yes"
+user_interface = "classic"
+locked_screen_width_part = "50"
+ask_for_locked_screen_width_part = "yes"
+external_editor = "nvim"
+main_window_color = "default"
+startup_screen = "playlist"
+
+# ui elements visbility
+header_visibility = "yes"
+statusbar_visibility = "yes"
+titles_visibility = "yes"
+enable_window_title = "yes"
+display_volume_level = "yes"
+
+# ui theming
+statusbar_color = "white"
+color1 = "white"
+color2 = "green"
+
+progressbar_look = "─󰮯󰧟"
+progressbar_elapsed_color = "green"
+progressbar_color = "black"
+
+now_playing_prefix = "$b$3$3 "
+now_playing_suffix = "  $/b$8"
+current_item_prefix = "$b$7$/b$5 "
+current_item_suffix = "  $8"
+
+song_columns_list_format = "(50)[]{t|fr:Title} (0)[cyan]{a}"
+song_list_format = " {%t $R   $8%a$8}|{%f $R   $8%l$8} $8"
+song_status_format = "$6 {$3$b%t$/b} $1∙ $5󰀥 {$7$b%b$/b} $1∙ $4󰠃 {$8$b%a$/b}"
+song_window_title_format = "{%a -}{ %t}"

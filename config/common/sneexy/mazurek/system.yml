@@ -45,6 +45,7 @@ install:
     - qt5-qtgraphicaleffects
     - qt5-qtquickcontrols2
     - qt5-qtsvg
+    - power-profiles-daemon
 
 # sound
     - wireplumber
@@ -65,8 +66,6 @@ install:
     - xdg-desktop-portal-gtk
     - hyprland-plugins
     - hyprpicker
-    - hypridle
-    - hyprlock
 
 # desktop utilities
     - wofi
@@ -78,6 +77,7 @@ install:
     - nwg-clipman
     - albert
     - aylurs-gtk-shell
+    - zenity
 
 # file manager
     - dolphin
@@ -101,8 +101,8 @@ install:
     - wlsunset
     - grimshot
     - brightnessctl
-    - swaylock
-    - swayidle
+    - hypridle
+    - hyprlock
     - kanshi
     - nwg-displays
 

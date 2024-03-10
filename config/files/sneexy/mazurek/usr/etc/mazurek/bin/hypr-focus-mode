@@ -12,10 +12,5 @@ if [ "$FOCUSMODE" = 1 ] ; then
     notify-send "Focus Mode enabled" "Press Super + F12 to disable"
     exit
 fi
-hyprctl --batch "\
-    keyword animations:enabled 1;\
-    keyword decoration:drop_shadow 1;\
-    keyword decoration:blur:enabled 1;\
-    keyword general:border_size 2;\
-    keyword decoration:rounding 10"
+hyprctl reload
 notify-send "Focus Mode disabled" "Press Super + F12 to enable"
