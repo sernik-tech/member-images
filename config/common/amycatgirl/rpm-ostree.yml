@@ -3,29 +3,7 @@
 type: rpm-ostree
 repos:
   - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
-    # This `repos` section is used for Copr repositories. You can find some over at the copr
-    # homepage: https://copr.fedorainfracloud.org/
-
-    # To add a copr repo, you need to add the repo file. For example, let's say this is a copr
-    # repo you want to add:
-
-    # https://copr.fedorainfracloud.org/coprs/<username>/<project-name>/
-    #
-    # Append the following to the end:
-    #
-    # repo/fedora-%OS_VERSION%/<username>-<project-name>-rendezvous-fedora-%OS_VERSION%.repo
-    #
-    # And you should get something like this!
-    #
-    # https://copr.fedorainfracloud.org/coprs/<username>/<project-name>/repo/fedora-%OS_VERSION%/<username>-<project-name>-rendezvous-fedora-%OS_VERSION%.repo
-    #
-    # Below are a few example repositories, which if you want to use, just uncomment them.
-
-    # Bibata cursors
-    # - https://copr.fedorainfracloud.org/coprs/peterwu/rendezvous/repo/fedora-%OS_VERSION%/peterwu-rendezvous-fedora-%OS_VERSION%.repo
-
-    # ROM properties for many file managers
-    # - https://copr.fedorainfracloud.org/coprs/kylegospo/rom-properties/repo/fedora-%OS_VERSION%/kylegospo-rom-properties-fedora-%OS_VERSION%.repo
+  - https://copr.fedorainfracloud.org/coprs/atim/lazygit/repo/fedora-%OS_VERSION%/atim-lazygit-fedora-%OS_VERSION%.repo
 install:
     # Everything under install will be installed, even if it already is.
   - ark
@@ -43,6 +21,8 @@ install:
   - starship
   - bat
   - pipx
+  - gh
+  - lazygit
     # foot is the default terminal in sway. Adding here for the sake of that, but you could also just add your own
     # configuration files manually with the `files` module!
 remove:
