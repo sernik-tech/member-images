@@ -13,12 +13,11 @@ wget "https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fe
 # bazzite packages
 rpm-ostree install joystickwake xwiimote-ng
 
-# install power related utilities, ensuring no conflicts exist first
-if rpm -qa | grep power-profiles-daemon ; then
-    rpm-ostree override remove power-profiles-daemon --install=tlp --install=tlp-rdw --install=powertop
-else
-    rpm-ostree install tlp tlp-rdw powertop
-fi
+# remove default hyprland terminal
+rpm-ostree override remove kitty
+
+# install power managements
+rpm-ostree install power-profiles-daemon powertop
 
 # disabling the respositories for the booted system (since they'll be dealt with in image creation)
 # sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/$(rpm -E %fedora).repo
