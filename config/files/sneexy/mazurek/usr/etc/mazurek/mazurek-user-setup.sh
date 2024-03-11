@@ -12,7 +12,7 @@ set -oue pipefail
 # Confirm that the file doesn't exist and don't run if it does.
 if [ -f $HOME/.local/share/.mazurek ]; then
     echo "Script has already been ran before. Exiting."
-    if "systemctl --user status mazurek-user-setup.service | grep '; enabled;'"; then
+    if "systemctl --user status mazurek-user-setup.service | grep \"; enabled;\""; then
         systemctl --user disable mazurek-user-setup.service
     fi
     return 1
@@ -31,7 +31,7 @@ cp -rf /etc/mazurek/config/* $HOME/.config
 cp /etc/mazurek/bin/* $HOME/.local/bin
 
 # Ensure the files are executable.
-chmod +x $HOME/.local/bin/focus-mode
+chmod +x $HOME/.local/bin/hypr-focus-mode
 chmod +x $HOME/.local/bin/restart-portal-wlr
 chmod +x $HOME/.local/bin/swww-random
 
