@@ -30,6 +30,9 @@ modules:
     system:
       enabled:
         - create-sddm-user.service
+    user:
+      enabled:
+        - mazurek-user-setup.service
 
   # installs default repositories and flatpak packages
   - from-file: common/sneexy/mazurek/flatpaks.yml
