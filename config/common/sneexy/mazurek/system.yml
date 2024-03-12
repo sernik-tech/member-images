@@ -107,10 +107,10 @@ install:
     - nwg-displays
 
 # terminals
-    - kitty
     - wezterm
-    - contour-terminal
-    - qt5-qtgraphicaleffects
+
+# media player
+    - mpv
 
 # themes and GUI
     - bibata-cursor-themes

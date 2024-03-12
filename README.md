@@ -41,16 +41,15 @@ sneexy's custom image for himself. comes with a bunch of applications and stuff 
 
 </summary>
 
-sneexy's custom hyprland based image mostly for himself. comes mostly preconfigured out of the box!
+sneexy's custom hyprland based image mostly for himself. comes mostly preconfigured!
 
-> ![NOTE] 
-> there is no display manager set up out of the box, but all of the configurations should be there. this is due to the way bluebuild works, and how users are failed to be created during image creation which is a necessary step for sddm. we recommend manually overlaying the package like so: `rpm-ostree install sddm`
+> [!IMPORTANT]
+> after installing, on first boot you may find yourself stuck at a blank screen. just wait for a few seconds, and then reboot by either pressing the power button or by logging into another tty and running `systemctl reboot`.
 
-- custom sddm [config](https://github.com/sernik-tech/member-images/tree/live/config/files/sneexy/usr/etc/sddm.conf.d) and [theme](https://github.com/aczw/sddm-theme-corners/)
-- customized [yafti](https://github.com/ublue-os/yafti) installer
-- some [modern unix](https://github.com/ibraheemdev/modern-unix) utilities/replacements and zsh installed
-- some [akmods](https://github.com/sernik-tech/member-images/blob/live/config/common/sneexy/akmods.yml)
-- [some personal configurations](https://github.com/sernik-tech/member-images/tree/live/config/files/sneexy/usr/etc/systemd/resolved.conf.d)
+> ![NOTE]
+> if you're *rebasing* from another image, do note that you won't get the custom configurations right after installation. a simple fix is to quickly log into a tty and run `just mazurek` to quickly get yourself set up, then rebooting/logging in and out.
+
+- fill this list out aaaa
 
 </details>
 

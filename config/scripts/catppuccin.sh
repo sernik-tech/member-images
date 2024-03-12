@@ -9,25 +9,11 @@ set -oue pipefail
 
 # GTK Theme
 
-# Install required dependencies. If you already layer these tools/utilities or need them then remove this
-# and the uninstall part from your own copy of this script.
-rpm-ostree install sassc inkscape optipng
-
-# Clone the theme.
-git clone --recurse-submodules https://github.com/catppuccin/gtk.git /tmp/gtk
-
-# Create virtual environment and install required dependencies.
-python3 -m venv /tmp/gtk
-source /tmp/gtk/bin/activate
-pip install -r /tmp/gtk/requirements.txt
-
-# Install the theme.
-# Refer to https://github.com/catppuccin/gtk?tab=readme-ov-file#using-the-script
-#                           {flavour}
-#                           |        {accent}
-#                           |        |
-python3 /tmp/gtk/install.py mocha -a green -d /usr/share/themes
-exit
+# Download the theme (Script doesn't work :( )
+# Refer to https://github.com/catppuccin/gtk/releases/
+wget "https://github.com/catppuccin/gtk/releases/download/v0.7.1/Catppuccin-Mocha-Standard-Green-Dark.zip" -O "/usr/share/themes/cat.zip"
+unzip /usr/share/themes/cat.zip
+rm /usr/share/themes/cat.zip
 
 # QT(5/6CT) Theme
 
@@ -60,6 +46,3 @@ cp -r /tmp/papirus-folders/src/* /usr/share/icons/Papirus
 rm -rf /tmp/gtk
 rm -rf /tmp/qt6ct
 rm -rf /tmp/papirus-folders
-
-# Uninstall dependencies we installed earlier. Remove this line if you need these/already have these tools.
-rpm-ostree remove sassc inkscape optipng
