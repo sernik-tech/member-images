@@ -19,7 +19,7 @@ git clone --recurse-submodules https://github.com/catppuccin/gtk.git /tmp/gtk
 # Create virtual environment and install required dependencies.
 python3 -m venv /tmp/gtk
 source /tmp/gtk/bin/activate
-pip install -r requirements.txt
+pip install -r /tmp/gtk/requirements.txt
 
 # Install the theme.
 # Refer to https://github.com/catppuccin/gtk?tab=readme-ov-file#using-the-script
