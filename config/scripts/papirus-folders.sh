@@ -23,7 +23,7 @@ cp -r /tmp/papirus-folders/src/* /usr/share/icons/Papirus
 # Change the color of the icon theme. You can find this... somehow?
 # If you have a local copy, you can try running `papirus-folders -l`
 # to see all colors.
-#                  {name of icon theme we want to change}
-#                  |               {name of the color scheme we want to set}
-#                  |               |
-papirus-folders -t Papirus-Dark -C cat-mocha-green
+#                                       {name of icon theme we want to change}
+#                                       |               {name of the color scheme we want to set}
+#                                       |               |
+/tmp/papirus-folders/papirus-folders -t Papirus-Dark -C cat-mocha-green
