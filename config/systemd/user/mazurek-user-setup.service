@@ -7,4 +7,4 @@ ExecStart=/bin/bash -c $(/etc/mazurek/mazurek-user-setup.sh)
 ExecStart=/usr/bin/systemctl disable mazurek-user-setup.service
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
