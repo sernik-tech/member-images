@@ -12,7 +12,7 @@ set -oue pipefail
 # Download the theme (Script doesn't work :( )
 # Refer to https://github.com/catppuccin/gtk/releases/
 wget "https://github.com/catppuccin/gtk/releases/download/v0.7.1/Catppuccin-Mocha-Standard-Green-Dark.zip" -O "/usr/share/themes/cat.zip"
-unzip /usr/share/themes/cat.zip
+unzip /usr/share/themes/cat.zip -d /usr/share/themes/
 rm /usr/share/themes/cat.zip
 
 # QT(5/6CT) Theme
