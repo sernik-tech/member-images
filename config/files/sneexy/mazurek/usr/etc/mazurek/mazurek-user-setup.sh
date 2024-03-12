@@ -10,7 +10,7 @@
 set -oue pipefail
 
 # Confirm that the file doesn't exist and don't run if it does.
-if [ -f $HOME/.local/share/.mazurek ]; then
+if [ -f ${HOME}/.local/share/.mazurek ]; then
     echo "Script has already been ran before. Exiting."
     if "systemctl --user status mazurek-user-setup.service | grep \"; enabled;\""; then
         systemctl --user disable mazurek-user-setup.service
@@ -23,30 +23,30 @@ fi
 # want to look at them.
 
 # We'll make sure the directories exist first.
-mkdir -p $HOME/.config
-mkdir -p $HOME/.local/bin
+mkdir -p ${HOME}/.config
+mkdir -p ${HOME}/.local/bin
 
 # We'll copy the files to the local user's directories.
-cp -rf /etc/mazurek/config/* $HOME/.config
-cp /etc/mazurek/bin/* $HOME/.local/bin
+cp -rf /etc/mazurek/config/* ${HOME}/.config
+cp /etc/mazurek/bin/* ${HOME}/.local/bin
 
 # Ensure the files are executable.
-chmod +x $HOME/.local/bin/hypr-focus-mode
-chmod +x $HOME/.local/bin/restart-portal-wlr
-chmod +x $HOME/.local/bin/swww-random
-
-# Run the extra stuff afterwards.
-hyprctl dispatch exec waybar
-hyprctl dispatch exec swaync
+chmod +x ${HOME}/.local/bin/hypr-focus-mode
+chmod +x ${HOME}/.local/bin/restart-portal-wlr
+chmod +x ${HOME}/.local/bin/swww-random
 
 # Reload hyprland config.
 hyprctl reload
+
+# Run the extra stuff afterwards.
+sleep 2 && hyprctl dispatch exec waybar
+sleep 2 && hyprctl dispatch exec swaync
 
 # Disable service.
 systemctl --user disable mazurek-user-setup.service
 
 # Touch file to prevent this script from running twice.
-touch $HOME/.local/share/.mazurek
+touch ${HOME}/.local/share/.mazurek
 
 # Launch first time messages.
-/bin/bash -c "$(/etc/mazurek/mazurek-first-time-messages.sh)"
+/bin/bash -c "/etc/mazurek/mazurek-first-time-messages.sh"

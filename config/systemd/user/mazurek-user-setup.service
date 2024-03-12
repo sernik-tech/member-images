@@ -4,7 +4,7 @@ Description=Copy mazurek files to new users
 [Service]
 Type=oneshot
 ExecStart=/bin/bash -c "/etc/mazurek/mazurek-user-setup.sh"
-ExecStart=/usr/bin/systemctl disable mazurek-user-setup.service
+ExecStart=/usr/bin/systemctl --user disable mazurek-user-setup.service
 
 [Install]
 WantedBy=default.target

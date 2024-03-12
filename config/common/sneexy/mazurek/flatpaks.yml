@@ -5,6 +5,35 @@ system:
     # internet
     - org.mozilla.firefox
     - org.mozilla.Thunderbird
+
+    # office
+    - org.libreoffice.LibreOffice
+    - md.obsidian.Obsidian
+
+      # utilities
+    - io.github.mpobaschnig.Vaults
+    - it.mijorus.smile
+
+    # system applications
+    - org.gnome.Loupe
+    - org.gnome.gedit
+    - org.gnome.clocks
+    - org.gnome.Calculator
+    - org.gnome.Evince
+    - io.github.amit9838.mousam
+    - org.gnome.Cheese
+    - org.kde.filelight
+    - io.github.cboxdoerfer.FSearch
+    - org.pipewire.Helvum
+    - org.gnome.DejaDup
+    - com.github.tchx84.Flatseal
+    - org.gustavoperedo.FontDownloader
+    - io.podman_desktop.PodmanDesktop
+    - app.drey.Dialect
+    - io.github.thetumultuousunicornofdarkness.cpu-x
+user:
+  install:
+    # internet
     - org.qbittorrent.qBittorrent
     - io.gitlab.news_flash.NewsFlash
     - org.nicotine_plus.Nicotine
@@ -26,34 +55,8 @@ system:
     - org.libretro.RetroArch
     - org.vinegarhq.Vinegar
 
-    # office
-    - org.libreoffice.LibreOffice
-    - md.obsidian.Obsidian
-
-      # utilities
+    # utilities
     - com.bitwarden.desktop
     - com.usebottles.bottles
     - fr.handbrake.ghb
     - org.kde.okteta
-    - io.github.mpobaschnig.Vaults
-    - it.mijorus.smile
-
-    # system applications
-    - org.gnome.Loupe
-    - org.gnome.gedit
-    - org.gnome.clocks
-    - org.gnome.Calculator
-    - org.gnome.Evince
-    - io.github.amit9838.mousam
-    - org.gnome.Cheese
-    - org.kde.filelight
-    - io.github.nokse22.asciidraw
-    - io.github.wereturtle.ghostwriter
-    - io.github.cboxdoerfer.FSearch
-    - org.pipewire.Helvum
-    - org.gnome.DejaDup
-    - com.github.tchx84.Flatseal
-    - org.gustavoperedo.FontDownloader
-    - io.podman_desktop.PodmanDesktop
-    - app.drey.Dialect
-    - io.github.thetumultuousunicornofdarkness.cpu-x
