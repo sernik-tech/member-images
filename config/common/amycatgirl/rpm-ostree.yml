@@ -24,6 +24,7 @@ install:
   - pipx
   - gh
   - lazygit
+  - tailscale
     # foot is the default terminal in sway. Adding here for the sake of that, but you could also just add your own
     # configuration files manually with the `files` module!
 remove:
