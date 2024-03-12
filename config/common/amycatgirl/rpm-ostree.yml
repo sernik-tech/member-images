@@ -25,12 +25,8 @@ install:
   - gh
   - lazygit
   - tailscale
-    # foot is the default terminal in sway. Adding here for the sake of that, but you could also just add your own
-    # configuration files manually with the `files` module!
+  # this is completely optional, I use screenkey to display the keys I press whilst recording
+  - screenkey
 remove:
-    # Everything under remove will be uninstalled from the image, if the package exists.
-
-    # We remove Firefox because we use the flatpak in favor. Also removing the langpacks
-    # to prevent dependency problems.
   - firefox
   - firefox-langpacks
