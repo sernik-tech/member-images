@@ -21,15 +21,16 @@ modules:
     scripts:
         - system-mazurek.sh
         - papirus-folders.sh
+        - sddm-user.sh
 
   # put some files in the image
   - from-file: common/sneexy/mazurek/files.yml
 
   # enable systemd units
   - type: systemd
-    system:
-      enabled:
-        - create-sddm-user.service
+    #system:
+    #  enabled:
+    #    - create-sddm-user.service
     user:
       enabled:
         - mazurek-user-setup.service
