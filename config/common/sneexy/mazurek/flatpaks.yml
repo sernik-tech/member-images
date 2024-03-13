@@ -5,14 +5,38 @@ system:
     # internet
     - org.mozilla.firefox
     - org.mozilla.Thunderbird
+    - org.qbittorrent.qBittorrent
+    - io.gitlab.news_flash.NewsFlash
+    - org.nicotine_plus.Nicotine
+
+    # chat
+    - org.gajim.Gajim
+    - in.cinny.Cinny
+    - chat.revolt.RevoltDesktop
+    - org.signal.Signal
+    - dev.vencord.Vesktop
 
     # office
     - org.libreoffice.LibreOffice
     - md.obsidian.Obsidian
 
-      # utilities
+    # utilities
+    - com.bitwarden.desktop
+    - com.usebottles.bottles
+    - fr.handbrake.ghb
+    - org.kde.okteta
     - io.github.mpobaschnig.Vaults
     - it.mijorus.smile
+
+    # gaming
+    - org.DolphinEmu.dolphin-emu
+    - io.github.dosbox-staging
+    - org.freedesktop.Platform.VulkanLayer.gamescope
+    - org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
+    - org.prismlauncher.PrismLauncher
+    - net.davidotek.pupgui2
+    - org.libretro.RetroArch
+    - org.vinegarhq.Vinegar
 
     # system applications
     - org.gnome.Loupe
@@ -31,32 +55,3 @@ system:
     - io.podman_desktop.PodmanDesktop
     - app.drey.Dialect
     - io.github.thetumultuousunicornofdarkness.cpu-x
-user:
-  install:
-    # internet
-    - org.qbittorrent.qBittorrent
-    - io.gitlab.news_flash.NewsFlash
-    - org.nicotine_plus.Nicotine
-
-    # chat
-    - org.gajim.Gajim
-    - in.cinny.Cinny
-    - chat.revolt.RevoltDesktop
-    - org.signal.Signal
-    - dev.vencord.Vesktop
-
-    # gaming
-    - org.DolphinEmu.dolphin-emu
-    - io.github.dosbox-staging
-    - org.freedesktop.Platform.VulkanLayer.gamescope
-    - org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
-    - org.prismlauncher.PrismLauncher
-    - net.davidotek.pupgui2
-    - org.libretro.RetroArch
-    - org.vinegarhq.Vinegar
-
-    # utilities
-    - com.bitwarden.desktop
-    - com.usebottles.bottles
-    - fr.handbrake.ghb
-    - org.kde.okteta

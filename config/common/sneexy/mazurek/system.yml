@@ -30,6 +30,7 @@ install:
     - polkit
     - polkit-kde
     - xdg-user-dirs
+    - xsettingsd
     - dbus-tools
     - dbus-daemon
     - wl-clipboard
