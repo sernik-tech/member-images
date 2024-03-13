@@ -34,8 +34,5 @@ mkdir -p /etc/skel/.local
 
 # clone dotfiles manually from repo and copy them to /etc/skel for user dotfiles
 git clone https://git.gay/sneexy/mazurek-dots.git /tmp/dotfiles
-cp -rf /tmp/dotfiles/config /etc/skel/.config
-cp -rf /tmp/dotfiles/local /etc/skel/.local
-
-# ensure user scripts/bins are executable
-chmod +x /etc/skel/.local/bin/*
+cp -rf /tmp/dotfiles/config/* /etc/skel/.config
+cp -rf /tmp/dotfiles/local/* /etc/skel/.local
