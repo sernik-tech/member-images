@@ -38,6 +38,4 @@ cp -rf /tmp/dotfiles/config /etc/skel/.config
 cp -rf /tmp/dotfiles/local /etc/skel/.local
 
 # ensure user scripts/bins are executable
-chmod +x /etc/skel/.local/bin/hypr-focus-mode
-chmod +x /etc/skel/.local/bin/restart-portal-wlr
-chmod +x /etc/skel/.local/bin/swww-random
+chmod +x /etc/skel/.local/bin/*
