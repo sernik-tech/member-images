@@ -47,6 +47,8 @@ install:
     - qt5-qtquickcontrols2
     - qt5-qtsvg
     - power-profiles-daemon
+    - upower
+    - powertop
 
 # sound
     - wireplumber

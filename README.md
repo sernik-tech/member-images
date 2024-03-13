@@ -41,13 +41,16 @@ sneexy's custom image for himself. comes with a bunch of applications and stuff 
 
 </summary>
 
-sneexy's custom hyprland based image mostly for himself. comes mostly preconfigured!
+sneexy's custom hyprland based image mostly for himself. comes mostly preconfigured!... but not really recommended for anyone else.
 
 > [!IMPORTANT]
 > after installing, on first boot you may find yourself stuck at a blank screen. just wait for a few seconds, and then reboot by either pressing the power button or by logging into another tty and running `systemctl reboot`.
 
 > ![NOTE]
 > if you're *rebasing* from another image, do note that you won't get the custom configurations right after installation. a simple fix is to quickly log into a tty and run `just mazurek` to quickly get yourself set up, then rebooting/logging in and out.
+
+> ![NOTE]
+> this image is mostly configured for personal use. you can use this image if you want to, but some things either may not work or just aren't compatible. along with extra customizations and settings you may not prefer.
 
 - fill this list out aaaa
 

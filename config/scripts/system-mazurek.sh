@@ -16,9 +16,6 @@ rpm-ostree install joystickwake xwiimote-ng
 # remove default hyprland terminal
 rpm-ostree override remove kitty
 
-# install power managements
-rpm-ostree install power-profiles-daemon powertop
-
 # disabling the respositories for the booted system (since they'll be dealt with in image creation)
 # sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/$(rpm -E %fedora).repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/erikreider-SwayNotificationCenter-fedora-$(rpm -E %fedora).repo
@@ -30,3 +27,17 @@ sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/peterwu-rendezvous-fedora-$(rp
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/kylegospo-rom-properties-fedora-$(rpm -E %fedora).repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite.repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo
+
+# create folder structure of the "skeleton" of user files
+mkdir -p /etc/skel/.config
+mkdir -p /etc/skel/.local
+
+# clone dotfiles manually from repo and copy them to /etc/skel for user dotfiles
+git clone https://git.gay/sneexy/mazurek-dots.git /tmp/dotfiles
+cp -rf /tmp/dotfiles/config /etc/skel/.config
+cp -rf /tmp/dotfiles/local /etc/skel/.local
+
+# ensure user scripts/bins are executable
+chmod +x /etc/skel/.local/bin/hypr-focus-mode
+chmod +x /etc/skel/.local/bin/restart-portal-wlr
+chmod +x /etc/skel/.local/bin/swww-random
