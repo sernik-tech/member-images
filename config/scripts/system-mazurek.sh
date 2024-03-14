@@ -31,8 +31,10 @@ sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite-multil
 # create folder structure of the "skeleton" of user files
 mkdir -p /etc/skel/.config
 mkdir -p /etc/skel/.local
+mkdir -p /usr/share/backgrounds/catppuccin
 
 # clone dotfiles manually from repo and copy them to /etc/skel for user dotfiles
 git clone https://git.gay/sneexy/mazurek-dots.git /tmp/dotfiles
 cp -rf /tmp/dotfiles/config/* /etc/skel/.config
 cp -rf /tmp/dotfiles/local/* /etc/skel/.local
+cp -rf /tmp/dotfiles/wallpapers/mazurek-catppuccin/* /usr/share/backgrounds/catppuccin
