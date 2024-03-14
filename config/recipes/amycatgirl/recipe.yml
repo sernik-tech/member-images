@@ -63,6 +63,11 @@ modules:
     # Documentation: https://blue-build.org/reference/modules/rpm-ostree/
   - from-file: common/amycatgirl/rpm-ostree.yml
 
+    # Install Huion's tabler driver and uDev rules
+  - type: script
+    scripts:
+        - huiondriver-setup.sh
+
     # - Flatpaks -
     # Flatpaks that will end up being installed out of the box on the system. Feel free to add anything here you'd
     # want to be inside of flatpaks on your system.
