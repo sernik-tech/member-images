@@ -9,7 +9,7 @@ echo "Starting installation procedure..."
 
 INSTALL_PATH="/opt/huion-driver"
 
-mkdir -p $INSTALL_PATH
+mkdir $INSTALL_PATH
 cd $INSTALL_PATH
 
 echo "Set current working directory to $(pwd)"
