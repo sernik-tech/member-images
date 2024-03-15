@@ -7,3 +7,4 @@ mazurek:
     mkdir -p $HOME/.local/bin
     cp -rf /etc/skel/.config/* $HOME/.config
     cp -rf /etc/skel/.local/* $HOME/.local
+    chmod +x $HOME/.local/bin/*

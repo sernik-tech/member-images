@@ -20,6 +20,10 @@ rm /usr/share/themes/cat.zip
 # Clone the folder (A fork used with a fix as the original repo is inactive)
 git clone https://github.com/ItsEthra/qt5ct.git /tmp/qt5ct
 
+# Ensuring the directories exist
+mkdir -p /usr/share/qt5ct/colors
+mkdir -p /usr/share/qt6ct/colors
+
 # Copy files to respective locations
 cp /tmp/qt5ct/themes/* /usr/share/qt5ct/colors
 cp /tmp/qt5ct/themes/* /usr/share/qt6ct/colors
