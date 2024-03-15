@@ -16,9 +16,6 @@ wget "https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fe
 
 # installing the packages
 
-# reinstall kernel, to get the latest available kernel
-rpm-ostree install kernel kernel-headers linux-firmware
-
 # install power related utilities, ensuring no conflicts exist first
 if rpm -qa | grep power-profiles-daemon ; then
     rpm-ostree override remove power-profiles-daemon --install=tlp --install=tlp-rdw
