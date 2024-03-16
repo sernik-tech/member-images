@@ -13,9 +13,6 @@ wget "https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fe
 # bazzite packages
 rpm-ostree install joystickwake xwiimote-ng
 
-# remove default hyprland terminal
-rpm-ostree override remove kitty
-
 #
 # create all required folders for the following setup
 #
