@@ -1,8 +1,8 @@
 # Theming configs
 [org.gnome.desktop.interface]
-gtk-theme="Catppuccin-Mocha-Standard-Green-Dark"
+gtk-theme="Catppuccin-Mocha-Compact-Green-Dark"
 icon-theme="Papirus-Dark"
-cursor-theme="Bibata-Modern-Ice"
+cursor-theme="Bibata-Modern-Mocha-Light"
 font-name="Lexend 10"
 document-font-name="Lexend 10"
 monospace-font-name="JetBrainsMono Nerd Font 11"
