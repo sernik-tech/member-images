@@ -49,6 +49,9 @@ install:
     - power-profiles-daemon
     - upower
     - powertop
+    - gamemode
+    - gamescope
+    - mangohud
 
 # sound
     - wireplumber
@@ -109,8 +112,28 @@ install:
     - kanshi
     - nwg-displays
 
-# terminals
+# terminal & utilities
     - wezterm
+    - bat
+    - duf
+    - fastfetch
+    - fd-find
+    - fzf
+    - git-delta
+    - lsd
+    - neovim
+    - ripgrep
+    - sd
+    - starship
+    - zoxide
+    - zsh
+    - fontconfig
+    - crontabs
+
+# podman
+    - podman
+    - podman-compose
+    - podman-tui
 
 # media player
     - mpv

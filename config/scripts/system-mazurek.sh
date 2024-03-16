@@ -28,17 +28,21 @@ sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/kylegospo-rom-properties-fedor
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite.repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo
 
+#
 # create all required folders for the following setup
+#
 mkdir -p /usr/share/themes
 mkdir -p /usr/share/icons
 mkdir -p /usr/share/qt5ct/colors
 mkdir -p /usr/share/qt6ct/colors
-mkdir -p /etc/skel/.config
+mkdir -p /etc/skel/.config/nvim
 mkdir -p /etc/skel/.local
 mkdir -p /usr/share/icons
 mkdir -p /usr/share/backgrounds/catppuccin
 
+#
 # Catppuccin setup
+#
 
 # GTK Theme
 
@@ -75,7 +79,16 @@ cp -r /tmp/papirus-folders/src/* /usr/share/icons/Papirus
 # Change the color of the icon theme
 /tmp/papirus-folders/papirus-folders -t Papirus-Dark -C cat-mocha-green
 
+#
+# NvChad
+#
+
+# clone the starting repo into the proper location of user's files
+git clone https://github.com/NvChad/starter.git /etc/skel/.config/nvim
+
+#
 # Dotfiles
+#
 
 # clone dotfiles manually from repo and copy them to /etc/skel for user dotfiles
 git clone https://git.gay/sneexy/mazurek-dots.git /tmp/dotfiles
