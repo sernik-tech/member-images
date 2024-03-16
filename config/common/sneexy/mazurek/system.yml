@@ -149,5 +149,3 @@ install:
     - gnome-icon-theme
     - papirus-icon-theme
     - plasma-breeze
-remove:
-    - kitty
