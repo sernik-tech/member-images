@@ -92,4 +92,4 @@ rm -rf /tmp/gtk
 rm -rf /tmp/qt6ct
 rm -rf /tmp/papirus-folders
 rm -rf /tmp/dotfiles
-rpm-ostree remove sassc inkscape optipng
+rpm-ostree override remove sassc inkscape optipng
