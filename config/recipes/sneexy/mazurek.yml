@@ -45,7 +45,7 @@ modules:
   # GTK settings overrides
   - type: gschema-overrides
     include:
-      - zz0-mazurek.gschema.override
+      - zz1-mazurek.gschema.override
 
   # uBlue akmods. includes custom drivers and stuff
   - from-file: common/sneexy/akmods.yml
