@@ -59,25 +59,16 @@ cp /tmp/qt5ct/themes/* /usr/share/qt6ct/colors
 
 # Papirus (Folders)
 
-# Download and install papirus icons
-wget -qO- https://git.io/papirus-icon-theme-install | DESTDIR="/usr/share/icons" sh
+# Download and install Papirus icons (Avoiding system package to install to user directory)
+wget -qO- https://git.io/papirus-icon-theme-install | DESTDIR="/etc/skel/.local/share/icons" sh
 
-# Clone the script
+# Clone the script & copy the contents to the installed icons.
 git clone https://github.com/catppuccin/papirus-folders.git /tmp/papirus-folders
-chmod +x /tmp/papirus-folders/papirus-folders
+cp -r /tmp/papirus-folders/src/* /etc/skel/.local/share/icons/Papirus
 
-# Copy the contents to the installed icons.
-cp -r /tmp/papirus-folders/src/* /usr/share/icons/Papirus
-
-# Change the color of the icon theme
-/tmp/papirus-folders/papirus-folders -t Papirus -C cat-mocha-green
-/tmp/papirus-folders/papirus-folders -t Papirus-Dark -C cat-mocha-green
-/tmp/papirus-folders/papirus-folders -t Papirus-Light -C cat-mocha-green
-
-# Move modified icons to user directory
-mv -f /usr/share/icons/Papirus /etc/skel/.local/share/icons
-mv -f /usr/share/icons/Papirus-Dark /etc/skel/.local/share/icons
-mv -f /usr/share/icons/Papirus-Light /etc/skel/.local/share/icons
+# Change the color of the icon theme using original papirus-folders script
+wget -qO- https://git.io/papirus-folders-install | env PREFIX=/etc/skel/.local sh
+/etc/skel/.local/bin/papirus-folders -t /etc/skel/.local/share/icons/Papirus-Dark -C cat-mocha-green
 
 #
 # NvChad
