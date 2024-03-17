@@ -95,8 +95,8 @@ chmod +x /etc/skel/.local/bin/*
 
 # required for flatpaks
 ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-Dark /etc/skel/.themes
-ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-hdpi /etc/skel/.themes
-ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-xhdpi /etc/skel/.themes
+ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-Dark-hdpi /etc/skel/.themes
+ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-Dark-xhdpi /etc/skel/.themes
 ls -s /usr/share/icons/Papirus-Dark /etc/skel/.icons
 ls -s /usr/share/icons/Bibata-Modern-Mocha-Light /etc/skel/.icons
 
