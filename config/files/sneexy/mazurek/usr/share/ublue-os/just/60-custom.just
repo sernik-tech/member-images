@@ -14,3 +14,20 @@ mazurek:
     cp -rf /etc/skel/.themes/* $HOME/.themes
     cp -rf /etc/skel/.icons/* $HOME/.icons
     chmod +x $HOME/.local/bin/*
+
+mazurek-first-time:
+    #!/usr/bin/env bash
+    if [ -f $HOME/.local/share/.mazurek-first-done ]; then
+        echo "First time setup already ran. Exiting..."
+        exit
+    else
+        mkdir -p $HOME/.themes
+        mkdir -p $HOME/.icons
+        ln -s $HOME/.local/share/themes/Catppuccin-Mocha-Compact-Green-Dark $HOME/.themes
+        ln -s $HOME/.local/share/themes/Catppuccin-Mocha-Compact-Green-Dark-hdpi $HOME/.themes
+        ln -s $HOME/.local/share/themes/Catppuccin-Mocha-Compact-Green-Dark-xhdpi $HOME/.themes
+        ln -s $HOME/.local/share/icons/Papirus-Dark $HOME/.icons
+        ln -s $HOME/.local/share/icons/Bibata-Modern-Mocha-Light $HOME/.icons
+        $HOME/.local/bin/mazurek-first-time-messages
+        touch $HOME/.local/share/.mazurek-first-done
+    fi

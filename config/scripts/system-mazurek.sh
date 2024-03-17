@@ -45,7 +45,7 @@ git clone --recurse-submodules https://github.com/catppuccin/gtk.git /tmp/gtk
 # python virtual env & theme install
 python3 -m venv /tmp/gtk
 source /tmp/gtk/bin/activate && pip install -r /tmp/gtk/requirements.txt
-cd /tmp/gtk && source /tmp/gtk/bin/activate && python3 /tmp/gtk/install.py mocha -a green -s compact -d /usr/share/themes
+cd /tmp/gtk && source /tmp/gtk/bin/activate && python3 /tmp/gtk/install.py mocha -a green -s compact -d /etc/skel/.local/share/themes
 
 # QT(5/6CT) Theme
 
@@ -84,27 +84,11 @@ git clone https://github.com/NvChad/starter.git /etc/skel/.config/nvim
 git clone https://git.gay/sneexy/mazurek-dots.git /tmp/dotfiles
 cp -rf /tmp/dotfiles/config/* /etc/skel/.config
 cp -rf /tmp/dotfiles/local/* /etc/skel/.local
-cp -rf /tmp/dotfiles/icons/* /usr/share/icons
+cp -rf /tmp/dotfiles/icons/* /etc/skel/.local/share/icons
 cp -rf /tmp/dotfiles/wallpapers/mazurek-catppuccin/* /usr/share/backgrounds/catppuccin
 
 # ensure bins are executable
 chmod +x /etc/skel/.local/bin/*
-
-#
-# Symlinks
-#
-
-# required for flatpaks
-ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-Dark /etc/skel/.themes
-ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-Dark-hdpi /etc/skel/.themes
-ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-Dark-xhdpi /etc/skel/.themes
-ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-Dark /etc/skel/.local/share/themes
-ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-Dark-hdpi /etc/skel/.local/share/themes
-ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-Dark-xhdpi /etc/skel/.local/share/themes
-ls -s /usr/share/icons/Papirus-Dark /etc/skel/.icons
-ls -s /usr/share/icons/Bibata-Modern-Mocha-Light /etc/skel/.icons
-ls -s /usr/share/icons/Papirus-Dark /etc/skel/.local/share/icons
-ls -s /usr/share/icons/Bibata-Modern-Mocha-Light /etc/skel/.local/share/icons
 
 #
 # Clean up
