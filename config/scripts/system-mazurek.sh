@@ -23,6 +23,7 @@ mkdir -p /usr/share/themes
 mkdir -p /usr/share/icons
 mkdir -p /usr/share/qt5ct/colors
 mkdir -p /usr/share/qt6ct/colors
+mkdir -p /etc/mazurek
 mkdir -p /etc/skel/.themes
 mkdir -p /etc/skel/.icons
 mkdir -p /etc/skel/.config/nvim
