@@ -90,7 +90,6 @@ cp -rf /tmp/dotfiles/wallpapers/mazurek-catppuccin/* /usr/share/backgrounds/catp
 
 # ensure bins are executable
 chmod +x /etc/skel/.local/bin/*
-chmod +x /etc/mazurek/*
 
 #
 # Clean up
