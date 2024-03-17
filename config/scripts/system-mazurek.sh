@@ -23,9 +23,10 @@ mkdir -p /usr/share/themes
 mkdir -p /usr/share/icons
 mkdir -p /usr/share/qt5ct/colors
 mkdir -p /usr/share/qt6ct/colors
+mkdir -p /etc/skel/.themes
+mkdir -p /etc/skel/.icons
 mkdir -p /etc/skel/.config/nvim
 mkdir -p /etc/skel/.local
-mkdir -p /usr/share/icons
 mkdir -p /usr/share/backgrounds/catppuccin
 
 #
@@ -87,6 +88,17 @@ cp -rf /tmp/dotfiles/wallpapers/mazurek-catppuccin/* /usr/share/backgrounds/catp
 
 # ensure bins are executable
 chmod +x /etc/skel/.local/bin/*
+
+#
+# Symlinks
+#
+
+# required for flatpaks
+ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-Dark /etc/skel/.themes
+ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-hdpi /etc/skel/.themes
+ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-xhdpi /etc/skel/.themes
+ls -s /usr/share/icons/Papirus-Dark /etc/skel/.icons
+ls -s /usr/share/icons/Bibata-Modern-Mocha-Light /etc/skel/.icons
 
 #
 # Clean up
