@@ -5,9 +5,12 @@ mazurek:
     sleep 10
     mkdir -p $HOME/.config
     mkdir -p $HOME/.local/bin
+    mkdir -p $HOME/.local/share/themes
+    mkdir -p $HOME/.local/share/icons
     mkdir -p $HOME/.themes
     mkdir -p $HOME/.icons
     cp -rf /etc/skel/.config/* $HOME/.config
     cp -rf /etc/skel/.local/* $HOME/.local
-
+    cp -rf /etc/skel/.themes/* $HOME/.themes
+    cp -rf /etc/skel/.icons/* $HOME/.icons
     chmod +x $HOME/.local/bin/*

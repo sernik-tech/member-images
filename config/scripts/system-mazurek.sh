@@ -26,7 +26,8 @@ mkdir -p /usr/share/qt6ct/colors
 mkdir -p /etc/skel/.themes
 mkdir -p /etc/skel/.icons
 mkdir -p /etc/skel/.config/nvim
-mkdir -p /etc/skel/.local
+mkdir -p /etc/skel/.local/share/themes
+mkdir -p /etc/skel/.local/share/icons
 mkdir -p /usr/share/backgrounds/catppuccin
 
 #
@@ -97,8 +98,13 @@ chmod +x /etc/skel/.local/bin/*
 ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-Dark /etc/skel/.themes
 ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-Dark-hdpi /etc/skel/.themes
 ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-Dark-xhdpi /etc/skel/.themes
+ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-Dark /etc/skel/.local/share/themes
+ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-Dark-hdpi /etc/skel/.local/share/themes
+ls -s /usr/share/themes/Catppuccin-Mocha-Compact-Green-Dark-xhdpi /etc/skel/.local/share/themes
 ls -s /usr/share/icons/Papirus-Dark /etc/skel/.icons
 ls -s /usr/share/icons/Bibata-Modern-Mocha-Light /etc/skel/.icons
+ls -s /usr/share/icons/Papirus-Dark /etc/skel/.local/share/icons
+ls -s /usr/share/icons/Bibata-Modern-Mocha-Light /etc/skel/.local/share/icons
 
 #
 # Clean up
