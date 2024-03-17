@@ -56,21 +56,27 @@ git clone https://github.com/ItsEthra/qt5ct.git /tmp/qt5ct
 cp /tmp/qt5ct/themes/* /usr/share/qt5ct/colors
 cp /tmp/qt5ct/themes/* /usr/share/qt6ct/colors
 
-# Papirus Folders
+# Papirus (Folders)
+
+# Download and install papirus icons
+wget -qO- https://git.io/papirus-icon-theme-install | DESTDIR="/usr/share/icons" sh
 
 # Clone the script
 git clone https://github.com/catppuccin/papirus-folders.git /tmp/papirus-folders
 chmod +x /tmp/papirus-folders/papirus-folders
 
-# Copy the contents to the system installed icons. because of this, we need to run
-# this script AFTER installing the icons to ensure nothing goes wrong.
+# Copy the contents to the installed icons.
 cp -r /tmp/papirus-folders/src/* /usr/share/icons/Papirus
 
 # Change the color of the icon theme
+/tmp/papirus-folders/papirus-folders -t Papirus -C cat-mocha-green
 /tmp/papirus-folders/papirus-folders -t Papirus-Dark -C cat-mocha-green
+/tmp/papirus-folders/papirus-folders -t Papirus-Light -C cat-mocha-green
 
-# Copy modified icons to user dir for compatibility
-cp -r /usr/share/icons/Papirus-Dark /etc/skel/.local/share/icons
+# Move modified icons to user directory
+mv -f /usr/share/icons/Papirus /etc/skel/.local/share/icons
+mv -f /usr/share/icons/Papirus-Dark /etc/skel/.local/share/icons
+mv -f /usr/share/icons/Papirus-Light /etc/skel/.local/share/icons
 
 #
 # NvChad

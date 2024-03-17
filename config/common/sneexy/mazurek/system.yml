@@ -142,10 +142,8 @@ install:
     - mpv
 
 # themes and GUI
-    - bibata-cursor-themes
     - qt5ct
     - qt6ct
     - gnome-themes-extra
     - gnome-icon-theme
-    - papirus-icon-theme
     - plasma-breeze
