@@ -11,8 +11,6 @@ mazurek:
     mkdir -p $HOME/.icons
     cp -rf /etc/skel/.config/* $HOME/.config
     cp -rf /etc/skel/.local/* $HOME/.local
-    cp -rf /etc/skel/.themes/* $HOME/.themes
-    cp -rf /etc/skel/.icons/* $HOME/.icons
     chmod +x $HOME/.local/bin/*
 
 mazurek-first-time:

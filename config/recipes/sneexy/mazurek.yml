@@ -30,8 +30,10 @@ modules:
       enabled:
         - create-sddm-user.service
     user:
-      masked:
-        - dummy.service
+      enabled:
+        - theme-maintenance.timer
+      disabled:
+        - theme-maintenance.service
 
   # installs default repositories and flatpak packages
   - from-file: common/sneexy/mazurek/flatpaks.yml

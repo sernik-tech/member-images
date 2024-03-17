@@ -69,6 +69,9 @@ cp -r /tmp/papirus-folders/src/* /usr/share/icons/Papirus
 # Change the color of the icon theme
 /tmp/papirus-folders/papirus-folders -t Papirus-Dark -C cat-mocha-green
 
+# Copy modified icons to user dir for compatibility
+cp -r /usr/share/icons/Papirus-Dark /etc/skel/.local/share/icons
+
 #
 # NvChad
 #
@@ -89,6 +92,7 @@ cp -rf /tmp/dotfiles/wallpapers/mazurek-catppuccin/* /usr/share/backgrounds/catp
 
 # ensure bins are executable
 chmod +x /etc/skel/.local/bin/*
+chmod +x /etc/mazurek/*
 
 #
 # Clean up
