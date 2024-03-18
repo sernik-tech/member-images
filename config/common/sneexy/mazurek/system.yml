@@ -87,6 +87,7 @@ install:
     - albert
     - aylurs-gtk-shell
     - zenity
+    - swappy
 
 # file manager
     - dolphin
@@ -103,7 +104,6 @@ install:
     - slurp
     - grim
     - hyprshot
-    - flameshot
 
 # display
     - wlr-randr
