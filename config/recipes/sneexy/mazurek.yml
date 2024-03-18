@@ -20,6 +20,7 @@ modules:
   - type: script
     scripts:
         - system-mazurek.sh
+        - catppuccin-mazurek.sh
 
   # put some files in the image
   - from-file: common/sneexy/mazurek/files.yml
