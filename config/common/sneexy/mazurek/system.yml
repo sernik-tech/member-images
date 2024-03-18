@@ -142,6 +142,7 @@ install:
     - mpv
 
 # themes and GUI
+    - papirus-icon-theme
     - qt5ct
     - qt6ct
     - gnome-themes-extra

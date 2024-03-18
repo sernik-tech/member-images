@@ -7,8 +7,6 @@ set -oue pipefail
 
 # Theme names and stuff
 GTK_THEME=Catppuccin-Mocha-Compact-Green-Dark
-ICON_THEME=Papirus-Dark
-CURSOR_THEME=Bibata-Modern-Mocha-Light
 
 # Ensure directories exist
 mkdir -p $HOME/.local/share/themes
@@ -18,8 +16,6 @@ mkdir -p $HOME/.local/share/icons
 cp -rf /etc/skel/.local/share/themes/${GTK_THEME} $HOME/.local/share/themes
 cp -rf /etc/skel/.local/share/themes/${GTK_THEME}-hdpi $HOME/.local/share/themes
 cp -rf /etc/skel/.local/share/themes/${GTK_THEME}-xhdpi $HOME/.local/share/themes
-cp -rf /etc/skel/.local/share/icons/${ICON_THEME} $HOME/.local/share/icons
-cp -rf /etc/skel/.local/share/icons/${CURSOR_THEME} $HOME/.local/share/icons
 
 # Create symlinks
 ln -s $HOME/.local/share/themes $HOME/.themes
