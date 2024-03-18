@@ -25,18 +25,12 @@ mkdir -p /etc/skel/.local/share/icons
 mkdir -p /usr/share/backgrounds/catppuccin
 
 #
-# NvChad
-#
-
-# clone the starting repo into the proper location of user's files
-git clone https://github.com/NvChad/starter.git /etc/skel/.config/nvim
-
-#
 # Dotfiles
 #
 
 # clone dotfiles manually from repo and copy them to /etc/skel for user dotfiles
 git clone https://git.gay/sneexy/mazurek-dots.git /tmp/dotfiles
+cp -rf /tmp/dotfiles/etc/* /etc
 cp -rf /tmp/dotfiles/config/* /etc/skel/.config
 cp -rf /tmp/dotfiles/local/* /etc/skel/.local
 cp -rf /tmp/dotfiles/icons/* /usr/share/icons
