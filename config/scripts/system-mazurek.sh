@@ -39,7 +39,7 @@ git clone https://github.com/NvChad/starter.git /etc/skel/.config/nvim
 git clone https://git.gay/sneexy/mazurek-dots.git /tmp/dotfiles
 cp -rf /tmp/dotfiles/config/* /etc/skel/.config
 cp -rf /tmp/dotfiles/local/* /etc/skel/.local
-cp -rf /tmp/dotfiles/icons/* /etc/skel/.local/share/icons
+cp -rf /tmp/dotfiles/icons/* /usr/share/icons
 cp -rf /tmp/dotfiles/wallpapers/mazurek-catppuccin/* /usr/share/backgrounds/catppuccin
 
 # ensure bins are executable
