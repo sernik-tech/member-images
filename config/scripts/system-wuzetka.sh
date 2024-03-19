@@ -32,8 +32,9 @@ sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite-multil
 # KDE Rounded Corners - https://github.com/matinlotfali/KDE-Rounded-Corners
 
 # NOTE: You need to change this for plasma 6
-# Install development packages
-rpm-ostree install cmake gcc-c++ extra-cmake-modules kwin-devel kf5-kconfigwidgets-devel libepoxy-devel
+# Install development packages & ensure correct paths are exported
+rpm-ostree install binutils cmake gcc-c++ extra-cmake-modules kwin-devel kf5-kconfigwidgets-devel libepoxy-devel
+export PATH=$PATH:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin
 
 # Clone repo and compile & install effects
 git clone https://github.com/matinlotfali/KDE-Rounded-Corners /tmp/rounded-corners
