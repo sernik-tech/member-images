@@ -11,7 +11,7 @@ image-version: 39 # latest is also supported if you want new updates ASAP
 # you can include multiple instances of the same module
 modules:
   # put some files in the image
-  - from-file: common/sneexy/files.yml
+  - from-file: common/sneexy/wuzetka/files.yml
 
   # run system packages installer script
   - type: script
@@ -19,10 +19,13 @@ modules:
         - system-wuzetka.sh
 
   # installs user/userspace related packages
-  - from-file: common/sneexy/rpm-ostree.yml
+  - from-file: common/sneexy/wuzetka/system.yml
+
+  # installs user packages jnsdjnsdjnsd
+  - from-file: common/sneexy/wuzetka/user.yml
 
   # installs default repositories and flatpak packages
-  - from-file: common/sneexy/flatpaks.yml
+  - from-file: common/sneexy/wuzetka/flatpaks.yml
 
   # configure what to pull in from ublue-os/bling
   - from-file: common/sneexy/bling.yml

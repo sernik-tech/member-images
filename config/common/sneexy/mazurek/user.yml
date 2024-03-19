@@ -2,7 +2,7 @@ type: rpm-ostree
 install:
     # basic applications
     - waydroid
-    - kde-connect
+    - mpv
 remove:
     - firefox # default firefox removed in favor of flatpak
     - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
