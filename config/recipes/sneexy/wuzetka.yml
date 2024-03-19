@@ -34,6 +34,11 @@ modules:
   # install fonts
   - from-file: common/sneexy/fonts.yml
 
+  # GTK settings overrides
+  - type: gschema-overrides
+    include:
+      - zz1-wuzetka.gschema.override
+
   # uBlue akmods. includes custom drivers and stuff
   - from-file: common/sneexy/akmods.yml
 
