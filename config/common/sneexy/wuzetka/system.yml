@@ -11,9 +11,6 @@ repos:
 
   # rom properties
   - https://copr.fedorainfracloud.org/coprs/kylegospo/rom-properties/repo/fedora-%OS_VERSION%/kylegospo-rom-properties-fedora-%OS_VERSION%.repo
-
-  # kde 6 (remove when we get bumped to fedora 40)
-  - https://copr.fedorainfracloud.org/coprs/solopasha/kde6/repo/fedora-%OS_VERSION%/solopasha-kde6-fedora-fedora-%OS_VERSION%.repo
 install:
   # themes
   - klassy
