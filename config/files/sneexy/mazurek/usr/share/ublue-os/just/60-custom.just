@@ -7,8 +7,7 @@ mazurek:
     mkdir -p $HOME/.local/bin
     mkdir -p $HOME/.local/share/themes
     mkdir -p $HOME/.local/share/icons
-    cp -rf /etc/skel/.config/* $HOME/.config
-    cp -rf /etc/skel/.local/* $HOME/.local
+    cp -rf /etc/skel/* $HOME/
     chmod +x $HOME/.local/bin/*
 
 mazurek-first-time:

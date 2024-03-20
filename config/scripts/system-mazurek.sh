@@ -43,10 +43,10 @@ chmod +x /etc/skel/.local/bin/*
 # Clean up
 #
 rm -rf /tmp/dotfiles
-rm -rf /usr/libexec/sddm-compositor-sway # SDDM configurations provided by sddm-wayland-sway, we only keep the package as it provides a properly configured SDDM user and setup.
-rm -rf /usr/lib/sddm/sddm.conf.d/wayland-sway.conf
-rm -rf /usr/share/sddm/themes/03-sway-fedora
-rm -rf /etc/sway
+#rm -rf /usr/libexec/sddm-compositor-sway # SDDM configurations provided by sddm-wayland-sway, we only keep the package as it provides a properly configured SDDM user and setup.
+#rm -rf /usr/lib/sddm/sddm.conf.d/wayland-sway.conf
+#rm -rf /usr/share/sddm/themes/03-sway-fedora
+#rm -rf /etc/sway
 
 # disabling the respositories for the booted system (since they'll be dealt with in image creation)
 # sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/$(rpm -E %fedora).repo

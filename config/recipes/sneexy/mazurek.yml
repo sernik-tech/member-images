@@ -4,14 +4,14 @@ name: mazurek
 description: sneexy's personal and opinionated hyprland image
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/sericea-main
+base-image: ghcr.io/ublue-os/base-main
 image-version: 39 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
   # "remove" a decent amount of sway related packages
-  - from-file: common/sneexy/mazurek/removal.yml
+  #- from-file: common/sneexy/mazurek/removal.yml
 
   # installs system related packages
   - from-file: common/sneexy/mazurek/system.yml
@@ -31,8 +31,10 @@ modules:
   # enable systemd units
   - type: systemd
     system:
-      mask:
-        - dummy.service
+      enabled:
+        - create-sddm-user.service
+#      masked:
+#        - dummy.service
     user:
       enabled:
         - theme-maintenance.timer
