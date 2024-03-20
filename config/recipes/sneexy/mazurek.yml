@@ -38,6 +38,7 @@ modules:
     user:
       enabled:
         - theme-maintenance.timer
+        - sddm-user-configuration.service
       disabled:
         - theme-maintenance.service
 

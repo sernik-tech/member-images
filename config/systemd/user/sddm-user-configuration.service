@@ -1,0 +1,14 @@
+[Unit]
+Description=Modify sddm user startup services
+
+[Service]
+Type=oneshot
+User=sddm
+Group=sddm
+ExecStart=/usr/bin/systemctl --user stop pipewire.service pipewire.socket wireplumber.service
+ExecStart=/usr/bin/systemctl --user disable pipewire.service pipewire.socket wireplumber.service
+ExecStart=/usr/bin/systemctl --user mask pipewire.service pipewire.socket wireplumber.service
+ExecStart=/usr/bin/systemctl --user disable sddm-user-configuration.service
+
+[Install]
+WantedBy=default.target

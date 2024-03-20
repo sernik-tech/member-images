@@ -55,6 +55,7 @@ install:
     - gamemode
     - gamescope
     - mangohud
+    - grubby
 
 # sound
     - wireplumber
