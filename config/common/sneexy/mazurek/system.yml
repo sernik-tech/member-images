@@ -25,8 +25,8 @@ repos:
     - https://copr.fedorainfracloud.org/coprs/kylegospo/rom-properties/repo/fedora-%OS_VERSION%/kylegospo-rom-properties-fedora-%OS_VERSION%.repo
 install:
 # sddm
-    - sddm
-    - sddm-wayland-generic
+#    - sddm
+#    - sddm-wayland-generic
 
 # environment
     - xorg-x11-server-Xwayland
