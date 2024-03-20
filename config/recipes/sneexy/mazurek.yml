@@ -28,8 +28,8 @@ modules:
   # enable systemd units
   - type: systemd
     system:
-      enabled:
-        - create-sddm-user.service
+      mask:
+        - dummy.service
     user:
       enabled:
         - theme-maintenance.timer

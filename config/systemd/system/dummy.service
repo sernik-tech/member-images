@@ -1,0 +1,9 @@
+[Unit]
+Description=Dummy service
+
+[Service]
+Type=oneshot
+ExecStart=echo "don't mind me. a dummy service. only here because blue-build demands that there is user systemd services it seems"
+
+[Install]
+WantedBy=multi-user.target
