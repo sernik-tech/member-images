@@ -9,5 +9,6 @@ set -oue pipefail
 # !!!
 
 wget "https://copr.fedorainfracloud.org/coprs/solopasha/kde6/repo/fedora-$(rpm -E %fedora)/solopasha-kde6-fedora-$(rpm -E %fedora).repo" -O "/etc/yum.repos.d/_copr_solopasha-kde6.repo" # Fetch the KDE Plasma 6 repository
-rpm-ostree upgrade --from repo='copr:copr.fedorainfracloud.org:solopasha:kde6'
+rpm-ostree upgrade
+#--from repo='copr:copr.fedorainfracloud.org:solopasha:kde6'
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_solopasha-kde6.repo # Disable the repository. This is optional.
