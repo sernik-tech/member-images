@@ -24,13 +24,9 @@ This repository by default supports signing.
 
 </summary>
 
-sneexy's custom image for himself. comes with a bunch of applications and stuff preinstalled out of the box.
+sneexy's heavily opinionated image. uses KDE Plasma with a custom configuration and comes with a handful of applications preinstalled that you probably don't want.
 
-- custom sddm [config](https://github.com/sernik-tech/member-images/tree/live/config/files/sneexy/usr/etc/sddm.conf.d) and [theme](https://github.com/aczw/sddm-theme-corners/)
-- customized [yafti](https://github.com/ublue-os/yafti) installer
-- some [modern unix](https://github.com/ibraheemdev/modern-unix) utilities/replacements and zsh installed
-- some [akmods](https://github.com/sernik-tech/member-images/blob/live/config/common/sneexy/akmods.yml)
-- [some personal configurations](https://github.com/sernik-tech/member-images/tree/live/config/files/sneexy/usr/etc/systemd/resolved.conf.d)
+preconfigured with a custom sddm theme *(no system settings kcm)*, custom desktop theme and layout (Catppuccin Mocha Green!), akmods and forced dns settings.
 
 </details>
 
@@ -41,18 +37,17 @@ sneexy's custom image for himself. comes with a bunch of applications and stuff 
 
 </summary>
 
-sneexy's custom hyprland based image mostly for himself. comes mostly preconfigured!... but not really recommended for anyone else.
+sneexy's *other* heavily opinionated image. uses Hyprland with a full set of customized dotfiles (Catppuccin Mocha Green!) and handful of applications that you probably don't want.
 
-> [!IMPORTANT]
-> after installing, on first boot you may find yourself stuck at a blank screen. just wait for a few seconds, and then reboot by either pressing the power button or by logging into another tty and running `systemctl reboot`.
+> **⚠️ Important:** after installing, on first boot you may find yourself stuck at a blank screen. just wait for a few seconds, and then reboot by either pressing the power button or by logging into another tty and running `systemctl reboot`.
 
-> [!NOTE]
-> if you're *rebasing* from another image, do note that you won't get the custom configurations right after installation. a simple fix is to quickly log into a tty and run `just mazurek` to quickly get yourself set up, then rebooting/logging in and out.
+> **ℹ️ Note:** if you're *rebasing* from another image, do note that you won't get the custom configurations right after installation. a simple fix is to quickly log into a tty and run `just mazurek` to quickly get yourself set up, then rebooting/logging in and out.
 
-> [!NOTE]
-> this image is mostly configured for personal use. you can use this image if you want to, but some things either may not work or just aren't compatible. along with extra customizations and settings you may not prefer.
+> **ℹ️ Note:** this image is mostly configured for personal use. you can use this image if you want to, but some things either may not work or just aren't compatible. along with extra customizations and settings you may not prefer.
 
-- fill this list out aaaa
+> **🛑 Caution:** i am not actively working on this image, and due to the many weird workarounds that this uses some things may be broken or may not work. i sadly can't really fix anything weird here so this image is paused until they either fix these without me having to use workarounds or until i decide to just repurposed the image/this name. (maybe a modified gnome/cosmic image?)
+
+comes with hyprland, full set of custom applications, average riced window manager type stuff. [dotfiles here](https://git.gay/sneexy/mazurek-dots) for those who just want the configuration (which is probably more recommended than using this image).
 
 </details>
 
