@@ -147,6 +147,9 @@ rpm-ostree override replace --experimental --from repo='copr:copr.fedorainfraclo
     libkcompactdisc \
     libkdcraw \
     libkdepim \
+    libkgapi \
+    libkscreen \
+     \
     xdg-desktop-portal-kde \
     xdg-utils \
     xwaylandvideobridge # We attempt to update as many applications as we can that are usually found within a stock Kinoite install (although list is based on Sneexy's kinoite image, so there is likely some extras in here that aren't supposed to be here but this should be a close enough list). In alphabetical order of the repositories' list of packages.
