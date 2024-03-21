@@ -87,7 +87,7 @@ The `latest` tag will automatically point to the latest build. That build will s
 
 ### ISO
 
-The ISO is currently unavailable as we wait for Universal Blue to finish their new [`isogenerator`](https://github.com/ublue-os/isogenerator).
+Refer to [BlueBuild's "Installing an image based on Universal Blue"](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso) to learn how to generate an ISO with the image you want to use. The required tools for it should be pre-installed on any Universal Blue based image.
 
 ## Verification
 
