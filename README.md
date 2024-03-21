@@ -62,7 +62,7 @@ sneexy's custom hyprland based image mostly for himself. comes mostly preconfigu
 > [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
 
 > [!IMPORTANT]  
-> Replace `$IMAGE_NAME` in these commands with the appropriate image name in [packages](https://github.com/orgs/sernik-tech/packages?repo_name=member-images) (Alternatively found in the [recipes](https://github.com/sernik-tech/member-images/tree/live/config/recipes)).
+> Type `IMAGE_NAME=<image_name>` into your console, replacing `<image_name>` with an available image found in [packages](https://github.com/orgs/sernik-tech/packages?repo_name=member-images), before running these commands.
 
 To rebase an existing atomic Fedora installation to the latest build:
 
