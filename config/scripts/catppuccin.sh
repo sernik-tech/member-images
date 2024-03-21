@@ -82,16 +82,16 @@ cp /tmp/qt5ct/themes/* /usr/share/qt6ct/colors # Copy themes for QT6
 
 #
 # KDE Theme
-#
+# !!!!!!! NOTE: Doesn't work.
 
-git clone https://github.com/catppuccin/kde.git /tmp/kde # Clone the KDE theme repository
-cd /tmp/kde && git checkout v0.2.5 # Only for KDE Plasma 5. Remove this line when we get bumped to Plasma 6
-sed -i 's@${XDG_DATA_HOME:-$HOME/.local/share}/color-schemes@/etc/skel/.local/share/color-schemes@g' /tmp/kde/install.sh # Replace the directories in the script to the proper skeleton directory
-sed -i 's@${XDG_DATA_HOME:-$HOME/.local/share}/aurorae/themes@/etc/skel/.local/share/aurorae/themes@g' /tmp/kde/install.sh
-sed -i 's@${XDG_DATA_HOME:-$HOME/.local/share}/plasma/look-and-feel@/etc/skel/.local/share/plasma/look-and-feel@g' /tmp/kde/install.sh
-sed -i 's@${XDG_DATA_HOME:-$HOME/.local/share}/icons@/etc/skel/.local/share/icons@g' /tmp/kde/install.sh
-chmod +x /tmp/kde/install.sh # Make sure its executable
-yes | /tmp/kde/install.sh 1 9 1 # The numbers are the theme options. Refer to https://github.com/catppuccin/kde/blob/main/install.sh#L40-L45, https://github.com/catppuccin/kde/blob/main/install.sh#L66-L80 and https://github.com/catppuccin/kde/blob/main/install.sh#L227-L229 (in that order) to choose your own options.
+#git clone https://github.com/catppuccin/kde.git /tmp/kde # Clone the KDE theme repository
+#cd /tmp/kde && git checkout v0.2.5 # Only for KDE Plasma 5. Remove this line when we get bumped to Plasma 6
+#sed -i 's@${XDG_DATA_HOME:-$HOME/.local/share}/color-schemes@/etc/skel/.local/share/color-schemes@g' /tmp/kde/install.sh # Replace the directories in the script to the proper skeleton directory
+#sed -i 's@${XDG_DATA_HOME:-$HOME/.local/share}/aurorae/themes@/etc/skel/.local/share/aurorae/themes@g' /tmp/kde/install.sh
+#sed -i 's@${XDG_DATA_HOME:-$HOME/.local/share}/plasma/look-and-feel@/etc/skel/.local/share/plasma/look-and-feel@g' /tmp/kde/install.sh
+#sed -i 's@${XDG_DATA_HOME:-$HOME/.local/share}/icons@/etc/skel/.local/share/icons@g' /tmp/kde/install.sh
+#chmod +x /tmp/kde/install.sh # Make sure its executable
+#yes | /tmp/kde/install.sh 1 9 1 # The numbers are the theme options. Refer to https://github.com/catppuccin/kde/blob/main/install.sh#L40-L45, https://github.com/catppuccin/kde/blob/main/install.sh#L66-L80 and https://github.com/catppuccin/kde/blob/main/install.sh#L227-L229 (in that order) to choose your own options.
 
 #
 # Papirus (Folders)
