@@ -46,10 +46,10 @@ sneexy's custom hyprland based image mostly for himself. comes mostly preconfigu
 > [!IMPORTANT]
 > after installing, on first boot you may find yourself stuck at a blank screen. just wait for a few seconds, and then reboot by either pressing the power button or by logging into another tty and running `systemctl reboot`.
 
-> ![NOTE]
+> [!NOTE]
 > if you're *rebasing* from another image, do note that you won't get the custom configurations right after installation. a simple fix is to quickly log into a tty and run `just mazurek` to quickly get yourself set up, then rebooting/logging in and out.
 
-> ![NOTE]
+> [!NOTE]
 > this image is mostly configured for personal use. you can use this image if you want to, but some things either may not work or just aren't compatible. along with extra customizations and settings you may not prefer.
 
 - fill this list out aaaa
@@ -98,9 +98,6 @@ cosign verify --key cosign.pub ghcr.io/sernik-tech/$IMAGE_NAME
 ```
 
 ## Extra notes
-
-> [!NOTE]
-> <b>TODO:</b> Update our docs and update all references to BlueBuild and such.
 
 Refer to the [BlueBuild documentation](https://blue-build.org/learn/getting-started/) to learn on how to customize your image.
 
