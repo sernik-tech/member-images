@@ -1,42 +1,22 @@
 type: default-flatpaks
 notify: true
 system:
+  repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+  repo-name: flathub
+  repo-title: "Flathub (system-wide)"
   install:
     # internet
     - org.mozilla.firefox
     - org.mozilla.Thunderbird
-    - org.qbittorrent.qBittorrent
-    - io.gitlab.news_flash.NewsFlash
-    - org.nicotine_plus.Nicotine
-
-    # chat
-    - org.gajim.Gajim
-    - in.cinny.Cinny
-    - chat.revolt.RevoltDesktop
-    - org.signal.Signal
-    - dev.vencord.Vesktop
 
     # office
     - org.libreoffice.LibreOffice
     - md.obsidian.Obsidian
 
     # utilities
-    - com.bitwarden.desktop
-    - com.usebottles.bottles
     - fr.handbrake.ghb
     - org.kde.okteta
-    - io.github.mpobaschnig.Vaults
     - it.mijorus.smile
-
-    # gaming
-    - org.DolphinEmu.dolphin-emu
-    - io.github.dosbox-staging
-    - org.freedesktop.Platform.VulkanLayer.gamescope
-    - org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
-    - org.prismlauncher.PrismLauncher
-    - net.davidotek.pupgui2
-    - org.libretro.RetroArch
-    - org.vinegarhq.Vinegar
 
     # system applications
     - org.gnome.Loupe
@@ -52,6 +32,38 @@ system:
     - org.gnome.DejaDup
     - com.github.tchx84.Flatseal
     - org.gustavoperedo.FontDownloader
-    - io.podman_desktop.PodmanDesktop
     - app.drey.Dialect
     - io.github.thetumultuousunicornofdarkness.cpu-x
+user:
+  repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+  repo-name: flathub-user
+  repo-title: "Flathub (User)"
+  install:
+    # internet
+    - org.qbittorrent.qBittorrent
+    - io.gitlab.news_flash.NewsFlash
+    - org.nicotine_plus.Nicotine
+
+    # chat
+    - org.gajim.Gajim
+    - in.cinny.Cinny
+    - chat.revolt.RevoltDesktop
+    - org.signal.Signal
+    - dev.vencord.Vesktop
+
+    # gaming
+    - org.DolphinEmu.dolphin-emu
+    - io.github.dosbox-staging
+    - org.freedesktop.Platform.VulkanLayer.gamescope
+    - org.prismlauncher.PrismLauncher
+    - net.davidotek.pupgui2
+    - org.libretro.RetroArch
+    - org.vinegarhq.Vinegar
+
+    # utilities
+    - com.bitwarden.desktop
+    - com.usebottles.bottles
+    - io.github.mpobaschnig.Vaults
+
+    # system
+    - io.podman_desktop.PodmanDesktop
