@@ -20,7 +20,6 @@ modules:
   - type: script
     scripts:
         - system-wuzetka.sh
-        - catppuccin-wuzetka.sh
 
   # put some files in the image
   - from-file: common/sneexy/wuzetka/files.yml
