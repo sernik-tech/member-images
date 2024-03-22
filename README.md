@@ -11,6 +11,8 @@
 
 Custom [Universal Blue](https://universal-blue.org/) Powered Images, built with [BlueBuild](https://blue-build.org/). Built by Sernik members for their own use-cases.
 
+For more "generalized" images, check out the [`sernik`](https://github.com/sernik-tech/member-images/tree/sernik) branch.
+
 This repository by default supports signing.
 
 ###### Repository ran and maintained by [@sneexy-boi](https://github.com/sneexy-boi), owned by [@Rexogamer](https://github.com/Rexogamer).
