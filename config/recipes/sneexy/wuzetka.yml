@@ -19,6 +19,7 @@ modules:
   # run system packages installer script
   - type: script
     scripts:
+        - ld.sh
         - system-wuzetka.sh
 
   # put some files in the image
