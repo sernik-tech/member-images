@@ -88,6 +88,7 @@ install:
 remove:
     - firefox # default firefox removed in favor of flatpak
     - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
+    - gnome-initial-setup # Causes issues for some reason, if you make an ISO make it with the Kinoite varient of the installer
     - gnome-classic-session
     - gnome-software-rpm-ostree
     - gnome-terminal
