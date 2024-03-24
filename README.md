@@ -81,15 +81,12 @@ Refer to [BlueBuild's "Installing an image based on Universal Blue"](https://blu
 
 If you already use a Universal Blue based image, or have podman installed:
 ```bash
-IMAGE_REPO=ghcr.io/sernik-tech
 IMAGE_NAME=<name of image, from https://github.com/orgs/sernik-tech/packages?repo_name=member-images>
-IMAGE_TAG=latest
 IMAGE_VARIANT=Silverblue
 # ^^^ should match the variant your image is based on
-INSTALLER_VERSION=39
 sudo podman run --rm --privileged --volume .:/isogenerator/output --security-opt label=disable --pull=newer \
--e IMAGE_REPO="$IMAGE_REPO" -e IMAGE_NAME="$IMAGE_NAME" -e IMAGE_TAG="$IMAGE_TAG" -e VARIANT="$IMAGE_VARIANT" \
-ghcr.io/ublue-os/isogenerator:$INSTALLER_VERSION
+-e IMAGE_REPO="ghcr.io/sernik-tech" -e IMAGE_NAME="$IMAGE_NAME" -e IMAGE_TAG="latest" -e VARIANT="$IMAGE_VARIANT" \
+ghcr.io/ublue-os/isogenerator:39
 ```
 
 ## Verification
