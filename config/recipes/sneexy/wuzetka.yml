@@ -1,7 +1,7 @@
 # image will be published to ghcr.io/sernik-tech/<name>
 name: wuzetka
 # description will be included in the image's metadata
-description: personal image for Sneexy
+description: sneexy's personal and opinionated kinoite image
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/kinoite-main

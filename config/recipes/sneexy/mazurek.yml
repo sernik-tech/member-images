@@ -1,10 +1,10 @@
 # image will be published to ghcr.io/sernik-tech/<name>
 name: mazurek
 # description will be included in the image's metadata
-description: sneexy's personal and opinionated hyprland image
+description: sneexy's personal and opinionated silverblue image
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/base-main
+base-image: ghcr.io/ublue-os/silverblue-main
 image-version: 39 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -27,20 +27,6 @@ modules:
 
   # put some files in the image
   - from-file: common/sneexy/mazurek/files.yml
-
-  # enable systemd units
-  - type: systemd
-    system:
-      enabled:
-        - create-sddm-user.service
-#      masked:
-#        - dummy.service
-    user:
-      enabled:
-        - theme-maintenance.timer
-        - sddm-user-configuration.service
-      disabled:
-        - theme-maintenance.service
 
   # installs default repositories and flatpak packages
   - from-file: common/sneexy/mazurek/flatpaks.yml

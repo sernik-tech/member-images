@@ -58,7 +58,6 @@ user:
     - org.prismlauncher.PrismLauncher
     - net.davidotek.pupgui2
     - org.libretro.RetroArch
-    - org.vinegarhq.Vinegar
 
     # utilities
     - com.bitwarden.desktop
