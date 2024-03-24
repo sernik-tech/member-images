@@ -37,17 +37,9 @@ preconfigured with a custom sddm theme *(no system settings kcm)*, custom deskto
 
 </summary>
 
-sneexy's *other* heavily opinionated image. uses Hyprland with a full set of customized dotfiles (Catppuccin Mocha Green!) and handful of applications that you probably don't want.
+sneexy's *other* heavily opinionated image. uses GNOME (Material You!) and handful of applications that you probably don't want.
 
-> **⚠️ Important:** after installing, on first boot you may find yourself stuck at a blank screen. just wait for a few seconds, and then reboot by either pressing the power button or by logging into another tty and running `systemctl reboot`.
-
-> **ℹ️ Note:** if you're *rebasing* from another image, do note that you won't get the custom configurations right after installation. a simple fix is to quickly log into a tty and run `just mazurek` to quickly get yourself set up, then rebooting/logging in and out.
-
-> **ℹ️ Note:** this image is mostly configured for personal use. you can use this image if you want to, but some things either may not work or just aren't compatible. along with extra customizations and settings you may not prefer.
-
-> **🛑 Caution:** i am not actively working on this image, and due to the many weird workarounds that this uses some things may be broken or may not work. i sadly can't really fix anything weird here so this image is paused until they either fix these without me having to use workarounds or until i decide to just repurposed the image/this name. (maybe a modified gnome/cosmic image?)
-
-comes with hyprland, full set of custom applications, average riced window manager type stuff. [dotfiles here](https://git.gay/sneexy/mazurek-dots) for those who just want the configuration (which is probably more recommended than using this image).
+preconfigured with extensions and themes, custom desktop theme and layout, akmods and forced dns settings.
 
 </details>
 
