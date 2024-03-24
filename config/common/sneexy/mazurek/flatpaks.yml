@@ -34,6 +34,11 @@ system:
     - org.gustavoperedo.FontDownloader
     - app.drey.Dialect
     - io.github.thetumultuousunicornofdarkness.cpu-x
+
+    # theme
+    - com.github.GradienceTeam.Gradience
+    - org.gtk.Gtk3theme.adw-gtk3
+    - org.gtk.Gtk3theme.adw-gtk3-dark
 user:
   repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
   repo-name: flathub-user

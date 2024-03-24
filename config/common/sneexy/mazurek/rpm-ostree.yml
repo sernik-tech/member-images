@@ -58,10 +58,23 @@ install:
     - fontconfig
     - crontabs
 
+# gnome extensions
+    - gnome-shell-extension-forge
+    - gnome-shell-extension-openweather
+    - gnome-shell-extension-appindicator
+    - gnome-shell-extension-gsconnect
+    - gnome-shell-extension-gamemode
+    - gnome-shell-extension-blur-my-shell
+    - gnome-shell-extension-just-perfection
+    - gnome-shell-extension-dash-to-dock
+
 # podman
     - podman
     - podman-compose
     - podman-tui
+
+# waydroid
+    - waydroid
 
 # media player
     - mpv
@@ -72,3 +85,11 @@ install:
     - qt6ct
     - kvantum
     - gnome-themes-extra
+remove:
+    - firefox # default firefox removed in favor of flatpak
+    - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
+    - gnome-classic-session
+    - gnome-software-rpm-ostree
+    - gnome-terminal
+    - gnome-terminal-nautilus
+    - gnome-tweaks
