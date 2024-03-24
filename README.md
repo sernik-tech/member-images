@@ -74,7 +74,23 @@ The `latest` tag will automatically point to the latest build. That build will s
 
 ### ISO
 
-Refer to [BlueBuild's "Installing an image based on Universal Blue"](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso) to learn how to generate an ISO with the image you want to use. The required tools for it should be pre-installed on any Universal Blue based image.
+> [!NOTE]
+> Depending on what your image is based on (For example, Silverblue has this issue), it may be impossible to install from a custom generated ISO due to the lack of setup options. If this is the case, you can generate and install [Universal Blue's images](https://github.com/ublue-os/isogenerator?tab=readme-ov-file#container) and rebase to your custom image (with the instructions above this section) from that.
+
+Refer to [BlueBuild's "Installing an image based on Universal Blue"](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso) to learn how to generate an ISO with the image you want to use.
+
+If you already use a Universal Blue based image, or have podman installed:
+```bash
+IMAGE_REPO=ghcr.io/sernik-tech
+IMAGE_NAME=<name of image, from https://github.com/orgs/sernik-tech/packages?repo_name=member-images>
+IMAGE_TAG=latest
+IMAGE_VARIANT=Silverblue
+# ^^^ should match the variant your image is based on
+INSTALLER_VERSION=39
+sudo podman run --rm --privileged --volume .:/isogenerator/output --security-opt label=disable --pull=newer \
+-e IMAGE_REPO="$IMAGE_REPO" -e IMAGE_NAME="$IMAGE_NAME" -e IMAGE_TAG="$IMAGE_TAG" -e VARIANT="$IMAGE_VARIANT" \
+ghcr.io/ublue-os/isogenerator:$INSTALLER_VERSION
+```
 
 ## Verification
 
