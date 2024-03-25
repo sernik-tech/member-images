@@ -5,25 +5,13 @@ repos:
 
     # wezterm
     - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
-
-    # rom properties
-    - https://copr.fedorainfracloud.org/coprs/kylegospo/rom-properties/repo/fedora-%OS_VERSION%/kylegospo-rom-properties-fedora-%OS_VERSION%.repo
 install:
 # environment
-    - xorg-x11-server-Xwayland
-    - xdg-user-dirs
-    - xsettingsd
-    - dbus-tools
-    - dbus-daemon
-    - wl-clipboard
     - pavucontrol
     - playerctl
     - qt5-qtwayland
     - qt6-qtwayland
-    - vulkan-validation-layers
-    - vulkan-tools
     - google-noto-emoji-fonts
-    - gnome-disk-utility
     - power-profiles-daemon
     - upower
     - powertop
@@ -35,7 +23,6 @@ install:
     - pamixer
 
 # file manager
-    - rom-properties-gtk3
     - udiskie
     - p7zip
     - unrar-free
@@ -67,11 +54,6 @@ install:
     - gnome-shell-extension-blur-my-shell
     - gnome-shell-extension-just-perfection
     - gnome-shell-extension-dash-to-dock
-
-# podman
-    - podman
-    - podman-compose
-    - podman-tui
 
 # waydroid
     - waydroid
