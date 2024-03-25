@@ -9,13 +9,10 @@ install:
     # environment
     - pavucontrol
     - playerctl
-    - qt5-qtwayland
     - qt6-qtwayland
     - google-noto-emoji-fonts
     - power-profiles-daemon
-    - upower
     - powertop
-    - gamemode
     - gamescope
     - mangohud
     - waydroid
@@ -44,7 +41,6 @@ install:
     - starship
     - zoxide
     - zsh
-    - fontconfig
     - crontabs
 
     # gnome extensions
