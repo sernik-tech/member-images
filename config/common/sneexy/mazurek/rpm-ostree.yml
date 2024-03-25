@@ -6,7 +6,7 @@ repos:
     # wezterm
     - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
 install:
-# environment
+    # environment
     - pavucontrol
     - playerctl
     - qt5-qtwayland
@@ -18,16 +18,18 @@ install:
     - gamemode
     - gamescope
     - mangohud
+    - waydroid
+    - mpv
 
-# sound
+    # sound
     - pamixer
 
-# file manager
+    # file management things
     - udiskie
     - p7zip
     - unrar-free
 
-# terminal & utilities
+    # terminal & utilities
     - wezterm
     - bat
     - duf
@@ -45,7 +47,7 @@ install:
     - fontconfig
     - crontabs
 
-# gnome extensions
+    # gnome extensions
     - gnome-shell-extension-forge
     - gnome-shell-extension-openweather
     - gnome-shell-extension-appindicator
@@ -55,13 +57,7 @@ install:
     - gnome-shell-extension-just-perfection
     - gnome-shell-extension-dash-to-dock
 
-# waydroid
-    - waydroid
-
-# media player
-    - mpv
-
-# themes and GUI
+    # themes and GUI
     - papirus-icon-theme
     - qt5ct
     - qt6ct
@@ -70,7 +66,7 @@ install:
 remove:
     - firefox # default firefox removed in favor of flatpak
     - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
-    - gnome-initial-setup # Causes issues for some reason, if you make an ISO make it with the Kinoite varient of the installer
+    - gnome-initial-setup # Causes issues for some reason(?)
     - gnome-classic-session
     - gnome-software-rpm-ostree
     - gnome-terminal
