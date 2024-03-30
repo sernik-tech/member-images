@@ -55,8 +55,6 @@ install:
     - papirus-icon-theme
     - qt5ct
     - qt6ct
-    - kvantum
-    - gnome-themes-extra
 remove:
     - firefox
     - firefox-langpacks

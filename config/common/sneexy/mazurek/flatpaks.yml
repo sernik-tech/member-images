@@ -34,11 +34,6 @@ system:
     - org.gustavoperedo.FontDownloader
     - app.drey.Dialect
     - io.github.thetumultuousunicornofdarkness.cpu-x
-
-    # theme
-    - com.github.GradienceTeam.Gradience
-    - org.gtk.Gtk3theme.adw-gtk3
-    - org.gtk.Gtk3theme.adw-gtk3-dark
 user:
   repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
   repo-name: flathub-user
@@ -59,6 +54,8 @@ user:
     # gaming
     - org.DolphinEmu.dolphin-emu
     - io.github.dosbox-staging
+    - org.freedesktop.Platform.VulkanLayer.gamescope
+    - org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
     - org.prismlauncher.PrismLauncher
     - net.davidotek.pupgui2
     - org.libretro.RetroArch
@@ -67,6 +64,3 @@ user:
     - com.bitwarden.desktop
     - com.usebottles.bottles
     - io.github.mpobaschnig.Vaults
-
-    # system
-    - io.podman_desktop.PodmanDesktop

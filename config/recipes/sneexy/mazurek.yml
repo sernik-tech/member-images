@@ -22,6 +22,7 @@ modules:
         - sneexy/mazurek/usr: /usr
 
   - from-file: common/sneexy/mazurek/flatpaks.yml
+  - type: yafti
   - from-file: common/sneexy/bling.yml
   - from-file: common/sneexy/fonts.yml
 
