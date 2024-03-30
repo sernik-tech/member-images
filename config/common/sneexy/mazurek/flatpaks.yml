@@ -55,7 +55,6 @@ user:
     - org.DolphinEmu.dolphin-emu
     - io.github.dosbox-staging
     - org.freedesktop.Platform.VulkanLayer.gamescope
-    - org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
     - org.prismlauncher.PrismLauncher
     - net.davidotek.pupgui2
     - org.libretro.RetroArch
