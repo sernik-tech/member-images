@@ -50,6 +50,7 @@ install:
     - gnome-shell-extension-blur-my-shell
     - gnome-shell-extension-just-perfection
     - gnome-shell-extension-dash-to-dock
+    - gnome-shell-extension-user-theme
 
     # themes and GUI
     - papirus-icon-theme
