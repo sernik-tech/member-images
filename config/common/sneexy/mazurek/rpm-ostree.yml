@@ -17,9 +17,7 @@ install:
     - mangohud
     - waydroid
     - mpv
-
-    # sound
-    - pamixer
+    - nextcloud-client
 
     # file management things
     - udiskie
@@ -60,11 +58,9 @@ install:
     - kvantum
     - gnome-themes-extra
 remove:
-    - firefox # default firefox removed in favor of flatpak
-    - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
-    - gnome-initial-setup # Causes issues for some reason(?)
+    - firefox
+    - firefox-langpacks
     - gnome-classic-session
     - gnome-software-rpm-ostree
-    - gnome-terminal
-    - gnome-terminal-nautilus
-    - gnome-tweaks
+    #- gnome-terminal
+    #- gnome-terminal-nautilus
