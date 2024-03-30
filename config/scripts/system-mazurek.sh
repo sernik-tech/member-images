@@ -19,7 +19,7 @@ rpm-ostree install sassc inkscape optipng
 git clone --recurse-submodules https://github.com/catppuccin/gtk.git /tmp/gtk
 python3 -m venv /tmp/gtk/venv
 source /tmp/gtk/venv/bin/activate && pip install -r /tmp/gtk/requirements.txt
-cd /tmp/gtk && source /tmp/gtk/venv/bin/activate && python3 /tmp/gtk/install.py mocha -a green -s compact --tweaks floating -d /usr/etc/skel/.local/share/themes
+cd /tmp/gtk && source /tmp/gtk/venv/bin/activate && python3 /tmp/gtk/install.py mocha -a green -s compact --tweaks float -d /usr/etc/skel/.local/share/themes
 
 # Catppuccin QT(5/6CT) Theme
 git clone https://github.com/ItsEthra/qt5ct.git /tmp/qt5ct
