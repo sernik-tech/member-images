@@ -25,9 +25,9 @@ modules:
   - from-file: common/sneexy/bling.yml
   - from-file: common/sneexy/fonts.yml
 
-  - type: gschema-overrides
-    include:
-      - zz1-mazurek.gschema.override
+  #- type: gschema-overrides
+  #  include:
+  #    - zz1-mazurek.gschema.override
 
   # - from-file: common/sneexy/akmods.yml
   - type: signing

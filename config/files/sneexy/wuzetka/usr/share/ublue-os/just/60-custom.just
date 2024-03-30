@@ -19,8 +19,8 @@ configure-firefox ACTION="prompt":
       echo "  Use 'gnome-theme' to Install Firefox GNOME Theme"
       exit 0
     fi
-    if [ "$OPTION" == "Set needed kernel arguments" ] || [ "${OPTION,,}" == "kargs" ]; then
-      if command -v nvidia-smi; then
+    if [ "$OPTION" == "Install Betterfox user.js" ] || [ "${OPTION,,}" == "betterfox" ]; then
+      if -f $HOME/.var/; then
         rpm-ostree kargs \
           --append-if-missing=rd.driver.blacklist=nouveau \
           --append-if-missing=modprobe.blacklist=nouveau \
