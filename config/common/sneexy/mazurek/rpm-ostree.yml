@@ -46,16 +46,17 @@ install:
 
     # gnome extensions
     - lm_sensors
+    - gnome-shell-extensions
     - gnome-shell-extension-forge
     - gnome-shell-extension-freon
     - gnome-shell-extension-openweather
     - gnome-shell-extension-appindicator
-    - gnome-shell-extension-gpaste
     - gnome-shell-extension-gsconnect
     - gnome-shell-extension-blur-my-shell
     - gnome-shell-extension-just-perfection
     - gnome-shell-extension-dash-to-dock
     - gnome-shell-extension-user-theme
+    - gnome-shell-extension-unite
 
     # themes and GUI
     - papirus-icon-theme

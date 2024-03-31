@@ -64,6 +64,11 @@ cp -r /tmp/paperwm/* /usr/share/gnome-shell/extensions/paperwm@paperwm.github.co
 curl -sL -o /tmp/bmw.zip https://github.com/Schneegans/Burn-My-Windows/releases/latest/download/burn-my-windows@schneegans.github.com.zip
 unzip /tmp/bmw.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
 
+# Wallpaper Slideshow
+git clone https://gitlab.com/AndrewZaech/azwallpaper.git /tmp/azwall
+cd /tmp/azwall && make zip-file
+unzip /tmp/azwall/azwallpaper@azwallpaper.gitlab.com.zip -d /usr/share/gnome-shell/extensions/azwallpaper@azwallpaper.gitlab.com
+
 # disabling the repositories for the booted system
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/atim-starship-fedora-$(rpm -E %fedora).repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/wezfurlong-wezterm-nightly-fedora-$(rpm -E %fedora).repo
