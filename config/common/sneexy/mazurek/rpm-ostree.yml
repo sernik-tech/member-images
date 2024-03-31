@@ -46,9 +46,9 @@ install:
 
     # gnome extensions
     - lm_sensors
+    - libgtop2-devel
     - gnome-shell-extensions
     - gnome-shell-extension-forge
-    - gnome-shell-extension-freon
     - gnome-shell-extension-openweather
     - gnome-shell-extension-appindicator
     - gnome-shell-extension-gsconnect

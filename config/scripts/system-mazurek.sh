@@ -15,8 +15,10 @@ mkdir -p /usr/share/icons
 mkdir -p /usr/share/gnome-shell/extensions/paperwm@paperwm.github.com
 mkdir -p /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
 mkdir -p /usr/share/gnome-shell/extensions/pano@elhan.io
+mkdir -p /usr/share/gnome-shell/extensions/Vitals@CoreCoding.com
 mkdir -p /usr/etc/skel/.local/share/themes
 mkdir -p /usr/etc/skel/.var/app/org.gnome.gedit/data/gedit/styles
+mkdir -p /usr/etc/skel/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/themes
 
 # Catppuccin GTK Theme
 rpm-ostree install sassc inkscape optipng
@@ -40,6 +42,10 @@ chmod +x /tmp/papirus-folders/papirus-folders
 # Gedit
 git clone https://github.com/catppuccin/gedit.git /tmp/gedit
 cp -r /tmp/gedit/themes/* /usr/etc/skel/.var/app/org.gnome.gedit/data/gedit/styles
+
+# PrismLauncher
+git clone https://github.com/catppuccin/prismlauncher.git /tmp/prismlauncher
+mv /tmp/prismlauncher/themes/* /usr/etc/skel/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/themes
 
 # GNOME Extensions
 
@@ -68,6 +74,13 @@ unzip /tmp/bmw.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneega
 git clone https://gitlab.com/AndrewZaech/azwallpaper.git /tmp/azwall
 cd /tmp/azwall && make zip-file
 unzip /tmp/azwall/azwallpaper@azwallpaper.gitlab.com.zip -d /usr/share/gnome-shell/extensions/azwallpaper@azwallpaper.gitlab.com
+
+# Vitals
+git clone https://github.com/corecoding/Vitals.git /tmp/vitals
+rm -rf /tmp/vitals/.git
+rm -rf /tmp/vitals/.github
+rm -rf /tmp/vitals/README.md
+cp -r /tmp/vitals/* /usr/share/gnome-shell/extensions/Vitals@CoreCoding.com
 
 # disabling the repositories for the booted system
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/atim-starship-fedora-$(rpm -E %fedora).repo

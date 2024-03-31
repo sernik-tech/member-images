@@ -7,8 +7,8 @@ font-name = "Lexend Deca 11"
 
 # GNOME shell modifications
 [org.gnome.shell]
-favorite-apps = ['org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Software.desktop', 'org.gnome.Settings.desktop']
-enabled-extensions = ['openweather-extension@jenslody.de', 'appindicatorsupport@rgcjonas.gmail.com', 'gsconnect@andyholmes.github.io', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'blur-my-shell@aunetx', 'just-perfection-desktop@just-perfection', 'dash-to-dock@micxgx.gmail.com']
+favorite-apps = ['org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'org.gnome.Terminal.desktop']
+enabled-extensions = ['openweather-extension@jenslody.de', 'appindicatorsupport@rgcjonas.gmail.com', 'gsconnect@andyholmes.github.io', 'gamemode@christian.kellner.me', 'just-perfection-desktop@just-perfection', 'dash-to-dock@micxgx.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'blur-my-shell@aunetx', 'pip-on-top@rafostar.github.com', 'pano@elhan.io', 'undecorate@sun.wxg@gmail.com', 'forge@jmmaranan.com']
 
 [org.gnome.desktop.interface]
 gtk-theme = "Catppuccin-Mocha-Compact-Green-Dark"
@@ -61,6 +61,8 @@ blur = false
 
 [org.gnome.shell.extensions.openweather]
 position-index = 2
+
+
 
 [org.gnome.software]
 packaging-format-preference = ['flatpak:flathub-user']
