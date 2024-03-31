@@ -3,6 +3,10 @@
 # Tell build process to exit if there are any errors.
 set -euo pipefail
 
+# Quick envvars to quickly change things if required
+PANO_EXT= https://github.com/oae/gnome-shell-pano/releases/download/v22/pano@elhan.io.zip # see: https://github.com/oae/gnome-shell-pano/releases
+BMW_EXT=https://github.com/Schneegans/Burn-My-Windows/releases/download/v41/burn-my-windows@schneegans.github.com.zip # see: https://github.com/Schneegans/Burn-My-Windows/releases
+
 # bazzite repositories and packages
 wget "https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-$(rpm -E %fedora)/kylegospo-bazzite-fedora-$(rpm -E %fedora).repo" -O "/etc/yum.repos.d/_copr_kylegospo-bazzite.repo"
 wget "https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-$(rpm -E %fedora)/kylegospo-bazzite-multilib-fedora-$(rpm -E %fedora).repo" -O "/etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo"
@@ -44,12 +48,8 @@ cp -r /tmp/gedit/themes/* /usr/etc/skel/.var/app/org.gnome.gedit/data/gedit/styl
 # GNOME Extensions
 
 # Pano
-rpm-ostree install nodejs
-git clone https://github.com/oae/gnome-shell-pano.git /tmp/pano
-cd /tmp/pano && yarn install
-cd /tmp/pano && yarn build
-cd /tmp/pano &&
-rpm-ostree override remove nodejs
+wget $PANO_EXT -O "/tmp/pano.zip"
+unzip /tmp/pano.zip -d /usr/share/gnome-shell/extensions/pano@elhan.io
 
 # PaperWM
 git clone https://github.com/paperwm/PaperWM.git /tmp/paperwm
@@ -65,19 +65,21 @@ rm -rf /tmp/paperwm/uninstall.sh
 cp -r /tmp/paperwm/* /usr/share/gnome-shell/extensions/paperwm@paperwm.github.com
 
 # Burn My Windows
-git clone https://github.com/Schneegans/Burn-My-Windows.git /tmp/bmw
-rm -rf /tmp/bmw/.git
-rm -rf /tmp/bmw/.github
-rm -rf /tmp/bmw/.reuse
-rm -rf /tmp/bmw/.clang-format
-rm -rf /tmp/bmw/.gitignore
-rm -rf /tmp/bmw/docs
-rm -rf /tmp/bmw/kwin
-rm -rf /tmp/bmw/scripts
-rm -rf /tmp/bmw/tests
-rm -rf /tmp/bmw/Makefile
-rm -rf /tmp/bmw/README.md
-cp -r /tmp/bmw/* /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
+wget $BMW_EXT -O "/tmp/bmw.zip"
+unzip /tmp/pano.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
+#git clone https://github.com/Schneegans/Burn-My-Windows.git /tmp/bmw
+#rm -rf /tmp/bmw/.git
+#rm -rf /tmp/bmw/.github
+#rm -rf /tmp/bmw/.reuse
+#rm -rf /tmp/bmw/.clang-format
+#rm -rf /tmp/bmw/.gitignore
+#rm -rf /tmp/bmw/docs
+#rm -rf /tmp/bmw/kwin
+#rm -rf /tmp/bmw/scripts
+#rm -rf /tmp/bmw/tests
+#rm -rf /tmp/bmw/Makefile
+#rm -rf /tmp/bmw/README.md
+#cp -r /tmp/bmw/* /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
 
 # disabling the repositories for the booted system
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/atim-starship-fedora-$(rpm -E %fedora).repo
