@@ -43,10 +43,10 @@ install:
 
     # gnome extensions
     - gnome-shell-extension-forge
+    - gnome-shell-extension-pop-shell
     - gnome-shell-extension-openweather
     - gnome-shell-extension-appindicator
     - gnome-shell-extension-gsconnect
-    - gnome-shell-extension-gamemode
     - gnome-shell-extension-blur-my-shell
     - gnome-shell-extension-just-perfection
     - gnome-shell-extension-dash-to-dock

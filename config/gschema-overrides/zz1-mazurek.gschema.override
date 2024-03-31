@@ -3,7 +3,7 @@ font-name = "Lexend 10"
 
 [org.gnome.shell]
 favorite-apps = ['org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Software.desktop', 'org.gnome.Settings.desktop']
-enabled-extensions = ['openweather-extension@jenslody.de', 'appindicatorsupport@rgcjonas.gmail.com', 'gsconnect@andyholmes.github.io', 'gamemode@christian.kellner.me', 'blur-my-shell@aunetx', 'just-perfection-desktop@just-perfection', 'dash-to-dock@micxgx.gmail.com']
+enabled-extensions = ['openweather-extension@jenslody.de', 'appindicatorsupport@rgcjonas.gmail.com', 'gsconnect@andyholmes.github.io', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'blur-my-shell@aunetx', 'just-perfection-desktop@just-perfection', 'dash-to-dock@micxgx.gmail.com']
 
 [org.gnome.desktop.interface]
 gtk-theme = "Catppuccin-Mocha-Compact-Green-Dark"

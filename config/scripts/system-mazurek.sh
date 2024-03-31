@@ -13,6 +13,7 @@ mkdir -p /usr/share/qt5ct/colors
 mkdir -p /usr/share/qt6ct/colors
 mkdir -p /usr/share/icons
 mkdir -p /usr/etc/skel/.local/share/themes
+mkdir -p /usr/etc/skel/.var/app/org.gnome.gedit/data/gedit/styles
 
 # Catppuccin GTK Theme
 rpm-ostree install sassc inkscape optipng
@@ -32,6 +33,10 @@ git clone https://github.com/catppuccin/papirus-folders.git /tmp/papirus-folders
 cp -r /tmp/papirus-folders/src/* /usr/share/icons/Papirus
 chmod +x /tmp/papirus-folders/papirus-folders
 /tmp/papirus-folders/papirus-folders -t Papirus-Dark -C cat-mocha-green
+
+# Gedit
+git clone https://github.com/catppuccin/gedit.git /tmp/gedit
+cp -r /tmp/gedit/themes/* /usr/etc/skel/.var/app/org.gnome.gedit/data/gedit/styles
 
 # disabling the repositories for the booted system
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/atim-starship-fedora-$(rpm -E %fedora).repo
