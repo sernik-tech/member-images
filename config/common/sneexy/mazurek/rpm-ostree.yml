@@ -18,6 +18,7 @@ install:
     - waydroid
     - mpv
     - nextcloud-client
+    - gpaste
 
     # file management things
     - udiskie
@@ -42,10 +43,12 @@ install:
     - crontabs
 
     # gnome extensions
+    - lm_sensors
     - gnome-shell-extension-forge
-    - gnome-shell-extension-pop-shell
+    - gnome-shell-extension-freon
     - gnome-shell-extension-openweather
     - gnome-shell-extension-appindicator
+    - gnome-shell-extension-gpaste
     - gnome-shell-extension-gsconnect
     - gnome-shell-extension-blur-my-shell
     - gnome-shell-extension-just-perfection
