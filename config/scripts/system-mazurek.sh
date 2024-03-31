@@ -4,8 +4,9 @@
 set -euo pipefail
 
 # Quick envvars to quickly change things if required
+# We can do better and use a tiny one-liner or something to automatically detect and download the latest version
 PANO_EXT=https://github.com/oae/gnome-shell-pano/releases/download/v22/pano@elhan.io.zip # see: https://github.com/oae/gnome-shell-pano/releases
-BMW_EXT=https://github.com/Schneegans/Burn-My-Windows/releases/download/v41/burn-my-windows@schneegans.github.com.zip # see: https://github.com/Schneegans/Burn-My-Windows/releases
+#BMW_EXT=https://github.com/Schneegans/Burn-My-Windows/releases/download/v41/burn-my-windows@schneegans.github.com.zip # see: https://github.com/Schneegans/Burn-My-Windows/releases
 
 # bazzite repositories and packages
 wget "https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-$(rpm -E %fedora)/kylegospo-bazzite-fedora-$(rpm -E %fedora).repo" -O "/etc/yum.repos.d/_copr_kylegospo-bazzite.repo"
@@ -47,9 +48,18 @@ cp -r /tmp/gedit/themes/* /usr/etc/skel/.var/app/org.gnome.gedit/data/gedit/styl
 
 # GNOME Extensions
 
-# Pano
+# Panoyarn install
+#rpm-ostree install nodejs cogl-devel gsound-devel libgda-devel
+#npm install -g corepack
+#corepack enable
 wget $PANO_EXT -O "/tmp/pano.zip"
 unzip /tmp/pano.zip -d /usr/share/gnome-shell/extensions/pano@elhan.io
+#git clone https://github.com/oae/gnome-shell-pano.git /tmp/pano
+#cd /tmp/pano && yes | yarn install
+#cd /tmp/pano && yarn build
+#npm remove -g corepack
+#rpm-ostree override remove nodejs cogl-devel gsound-devel libgda-devel
+#rm -rf /usr/local/lib/node_modules
 
 # PaperWM
 git clone https://github.com/paperwm/PaperWM.git /tmp/paperwm
@@ -65,18 +75,23 @@ rm -rf /tmp/paperwm/uninstall.sh
 cp -r /tmp/paperwm/* /usr/share/gnome-shell/extensions/paperwm@paperwm.github.com
 
 # Burn My Windows
-wget $BMW_EXT -O "/tmp/bmw.zip"
-unzip /tmp/pano.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
-#git clone https://github.com/Schneegans/Burn-My-Windows.git /tmp/bmw
+#wget $BMW_EXT -O "/tmp/bmw.zip"
+#unzip /tmp/pano.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
+git clone https://github.com/Schneegans/Burn-My-Windows.git /tmp/bmw
+cd /tmp/bmw && make install
+unzip /tmp/bmw/burn-my-windows@schneegans.github.com.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
 #rm -rf /tmp/bmw/.git
 #rm -rf /tmp/bmw/.github
 #rm -rf /tmp/bmw/.reuse
 #rm -rf /tmp/bmw/.clang-format
 #rm -rf /tmp/bmw/.gitignore
+#rm -rf /tmp/bmw/LICENSES
 #rm -rf /tmp/bmw/docs
 #rm -rf /tmp/bmw/kwin
 #rm -rf /tmp/bmw/scripts
+#rm -rf /tmp/bmw/po
 #rm -rf /tmp/bmw/tests
+#rm -rf /tmp/bmw/assets
 #rm -rf /tmp/bmw/Makefile
 #rm -rf /tmp/bmw/README.md
 #cp -r /tmp/bmw/* /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
