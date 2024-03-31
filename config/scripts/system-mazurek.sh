@@ -54,21 +54,21 @@ curl -sL -o /tmp/pano.zip https://github.com/oae/gnome-shell-pano/releases/lates
 unzip /tmp/pano.zip -d /usr/share/gnome-shell/extensions/pano@elhan.io
 
 # PaperWM
-git clone https://github.com/paperwm/PaperWM.git /tmp/paperwm
-rm -rf /tmp/paperwm/.git
-rm -rf /tmp/paperwm/.github
-rm -rf /tmp/paperwm/.gitignore
-rm -rf /tmp/paperwm/.eslintrc.yml
-rm -rf /tmp/paperwm/media
-rm -rf /tmp/paperwm/README.md
-rm -rf /tmp/paperwm/CONTRIBUTING.md
-rm -rf /tmp/paperwm/install.sh
-rm -rf /tmp/paperwm/uninstall.sh
-cp -r /tmp/paperwm/* /usr/share/gnome-shell/extensions/paperwm@paperwm.github.com
+#git clone https://github.com/paperwm/PaperWM.git /tmp/paperwm
+#rm -rf /tmp/paperwm/.git
+#rm -rf /tmp/paperwm/.github
+#rm -rf /tmp/paperwm/.gitignore
+#rm -rf /tmp/paperwm/.eslintrc.yml
+#rm -rf /tmp/paperwm/media
+#rm -rf /tmp/paperwm/README.md
+#rm -rf /tmp/paperwm/CONTRIBUTING.md
+#rm -rf /tmp/paperwm/install.sh
+#rm -rf /tmp/paperwm/uninstall.sh
+#cp -r /tmp/paperwm/* /usr/share/gnome-shell/extensions/paperwm@paperwm.github.com
 
 # Burn My Windows
-curl -sL -o /tmp/bmw.zip https://github.com/Schneegans/Burn-My-Windows/releases/latest/download/burn-my-windows@schneegans.github.com.zip
-unzip /tmp/bmw.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
+#curl -sL -o /tmp/bmw.zip https://github.com/Schneegans/Burn-My-Windows/releases/latest/download/burn-my-#windows@schneegans.github.com.zip
+#unzip /tmp/bmw.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
 
 # Wallpaper Slideshow
 git clone https://gitlab.com/AndrewZaech/azwallpaper.git /tmp/azwall

@@ -8,7 +8,7 @@ font-name = "Lexend Deca 11"
 # GNOME shell modifications
 [org.gnome.shell]
 favorite-apps = ['org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'org.gnome.Terminal.desktop']
-enabled-extensions = ['openweather-extension@jenslody.de', 'appindicatorsupport@rgcjonas.gmail.com', 'gsconnect@andyholmes.github.io', 'gamemode@christian.kellner.me', 'just-perfection-desktop@just-perfection', 'dash-to-dock@micxgx.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'blur-my-shell@aunetx', 'pip-on-top@rafostar.github.com', 'pano@elhan.io', 'undecorate@sun.wxg@gmail.com', 'forge@jmmaranan.com']
+enabled-extensions = ['openweather-extension@jenslody.de', 'appindicatorsupport@rgcjonas.gmail.com', 'gsconnect@andyholmes.github.io', 'gamemode@christian.kellner.me', 'just-perfection-desktop@just-perfection', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'blur-my-shell@aunetx', 'pip-on-top@rafostar.github.com', 'pano@elhan.io', 'undecorate@sun.wxg@gmail.com', 'Vitals@CoreCoding.com', 'azwallpaper@azwallpaper.gitlab.com', 'burn-my-windows@schneegans.github.com', 'dash-to-dock@micxgx.gmail.com']
 
 [org.gnome.desktop.interface]
 gtk-theme = "Catppuccin-Mocha-Compact-Green-Dark"
@@ -34,6 +34,11 @@ switch-to-workspace-1 = ['<Control><Super>1']
 switch-to-workspace-2 = ['<Control><Super>2']
 switch-to-workspace-3 = ['<Control><Super>3']
 switch-to-workspace-4 = ['<Control><Super>4']
+toggle-message-tray = ['<Control><Super>v']
+close = ['<Super>q']
+maximize = ['<Super>Page_Up']
+minimize = ['<Super>Page_Down']
+toggle-fullscreen = ['<Super>f']
 
 [org.gnome.desktop.peripherals.touchpad]
 tap-to-click = true
@@ -62,8 +67,22 @@ blur = false
 [org.gnome.shell.extensions.openweather]
 position-index = 2
 
+[org.gnome.shell.extensions.vitals]
+position-in-panel = 0
+update-time = 15
+hot-sensors = ['_processor_usage_', '_memory_allocated_', '_storage_used_']
+
+[org.gnome.shell.extensions.azwallpaper]
+slideshow-directory = "/usr/share/backgrounds/catppuccin"
+slideshow-slide-duration = (0, 30, 0)
+slideshow-wallpaper-queue = ['asteroid-miner-mocha.png', 'astro-jelly-mocha.jpg', 'cat-pondering-mocha.png', 'space-mocha.jpg', 'black-hole-mocha.png', 'plasma-6-day-mocha.png', 'galaxies-mocha.png', 'plasma-6-night-mocha.png', 'galaxy-mocha.png']
+slideshow-current-wallpapper = "black-hole-mocha.png"
+
 # Pano
 [org.gnome.shell.extensions.pano]
+global-shortcut = ['<Super>v']
+incognito-shortcut = ['<Shift><Super>v']
+sync-primary = true
 window-background-color = "rgba(30,30,46,0.70)"
 incognito-window-background-color = "rgba(108,112,134,0.70)"
 search-bar-font-family = "Lexend Deca"
