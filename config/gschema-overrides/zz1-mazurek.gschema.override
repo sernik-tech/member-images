@@ -16,6 +16,9 @@ monospace-font-name = "JetBrainsMono Nerd Font 11"
 [org.gnome.shell.extensions.user-theme]
 name = "Catppuccin-Mocha-Compact-Green-Dark"
 
+[org.gnome.desktop.wm.preferences]
+resize-with-right-button = true
+
 [org.gnome.desktop.peripherals.touchpad]
 tap-to-click = true
 
