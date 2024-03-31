@@ -62,7 +62,67 @@ blur = false
 [org.gnome.shell.extensions.openweather]
 position-index = 2
 
+# Pano
+[org.gnome.shell.extensions.pano]
+window-background-color = "rgba(30,30,46,0.70)"
+incognito-window-background-color = "rgba(108,112,134,0.70)"
+search-bar-font-family = "Lexend Deca"
+item-title-font-family = "Lexend Deca"
+item-date-font-family = "Lexend Deca"
+active-item-border-color = "rgb(166,227,161)"
+hovered-item-border-color = "rgba(166,227,161,0.686667)"
 
+[org.gnome.shell.extensions.pano.link-item]
+header-bg-color = "rgb(137,180,250)"
+header-color = "rgb(30,30,46)"
+body-bg-color = "rgb(137,180,250)"
+metadata-bg-color = "rgb(49,50,68)"
+metadata-title-color = "rgb(205,214,244)"
+metadata-description-color = "rgb(205,214,244)"
+metadata-link-color = "rgb(205,214,244)"
+metadata-title-font-family = "Lexend Deca"
+metadata-description-font-family = "Lexend Deca"
+metadata-link-font-family = "Lexend Deca"
+metadata-link-font-family = "Lexend Deca
+
+[org.gnome.shell.extensions.pano.text-item]
+header-bg-color = "rgb(166,227,161)"
+header-color = "rgb(30,30,46)"
+body-bg-color = "rgb(30,30,46)"
+body-color = "rgb(205,214,244)"
+body-font-family = "JetBrainsMono Nerd Font Mono"
+
+[org.gnome.shell.extensions.pano.emoji-item]
+header-bg-color = "rgb(249,226,175)"
+body-bg-color = "rgb(249,226,175)"
+header-color = "rgb(30,30,46)"
+
+[org.gnome.shell.extensions.pano.file-item]
+header-bg-color = "rgb(69,71,90)"
+header-color = "rgb(205,214,244)"
+body-bg-color = "rgb(49,50,68)"
+body-color = "rgb(205,214,244)"
+body-font-family = "Lexend Deca"
+
+[org.gnome.shell.extensions.pano.image-item]
+header-bg-color = "rgb(243,139,168)"
+header-color = "rgb(30,30,46)"
+body-bg-color = "rgb(24,24,37)"
+metadata-bg-color = "rgba(30,30,46,0.70)"
+metadata-font-family = "Lexend Deca"
+
+[org.gnome.shell.extensions.pano.code-item]
+header-bg-color = "rgb(242,205,205)"
+header-color = "rgb(30,30,46)"
+body-bg-color = "rgb(30,30,46)"
+body-font-family = "JetBrainsMono Nerd Font Mono"
+
+[org.gnome.shell.extensions.pano.color-item]
+header-bg-color = "rgb(203,166,247)"
+header-color = "rgb(30,30,46)"
+metadata-bg-color = "rgba(30,30,46,0.70)"
+metadata-color = "rgb(205,214,244)"
+metadata-font-family = "Lexend Deca"
 
 [org.gnome.software]
 packaging-format-preference = ['flatpak:flathub-user']
