@@ -1,6 +1,11 @@
-[org.gnome.desktop.interface:GNOME-Greeter]
-font-name = "Lexend 10"
+# Lock screen modifications
+[org.gnome.desktop.peripherals.touchpad:GNOME-Greeter]
+tap-to-click=true
 
+[org.gnome.desktop.interface:GNOME-Greeter]
+font-name = "Lexend Deca 11"
+
+# GNOME shell modifications
 [org.gnome.shell]
 favorite-apps = ['org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Software.desktop', 'org.gnome.Settings.desktop']
 enabled-extensions = ['openweather-extension@jenslody.de', 'appindicatorsupport@rgcjonas.gmail.com', 'gsconnect@andyholmes.github.io', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'blur-my-shell@aunetx', 'just-perfection-desktop@just-perfection', 'dash-to-dock@micxgx.gmail.com']
@@ -9,8 +14,9 @@ enabled-extensions = ['openweather-extension@jenslody.de', 'appindicatorsupport@
 gtk-theme = "Catppuccin-Mocha-Compact-Green-Dark"
 icon-theme = "Papirus-Dark"
 cursor-theme = "Bibata-Modern-Light"
-font-name = "Lexend 10"
-document-font-name = "Lexend 10"
+font-antialiasing = "rgba"
+font-name = "Lexend Deca 10"
+document-font-name = "Lexend Deca Medium 11"
 monospace-font-name = "JetBrainsMono Nerd Font 11"
 
 [org.gnome.shell.extensions.user-theme]
@@ -21,6 +27,30 @@ resize-with-right-button = true
 
 [org.gnome.desktop.peripherals.touchpad]
 tap-to-click = true
+natural-scroll = false
+
+[org.gnome.desktop.peripherals.mouse]
+accel-profile = flat
+
+[org.gnome.shell.extensions.dash-to-dock]
+hot-keys = false
+
+[org.gnome.shell.extensions.just-perfection]
+search = false
+startup-status = 0
+animation = 4
+
+[org.gnome.shell.extensions.blur-my-shell]
+hacks-level = 1
+
+[org.gnome.shell.extensions.blur-my-shell.panel]
+blur = false
+
+[org.gnome.shell.extensions.blur-my-shell.applications]
+blur = false
+
+[org.gnome.shell.extensions.openweather]
+position-index = 2
 
 [org.gnome.software]
 packaging-format-preference = ['flatpak:flathub-user']

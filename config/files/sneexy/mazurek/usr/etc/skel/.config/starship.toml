@@ -1,0 +1,61 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# left side of the prompt
+format = "$container$directory$character"
+
+# right side of the prompt
+right_format = "$git_status$git_branch$memory_usage$cmd_duration$sudo"
+
+# adds a newline whenever a command is completed
+add_newline = true
+
+[character]
+success_symbol = "[ ](#a6e3a1)"
+error_symbol = "[ ](#f38ba8)"
+vicmd_symbol = "[ ](#f9e2af)"
+
+[container]
+format = "[]($style)(bg:#89dceb fg:#11111b)[󰆧 ](bg:#89dceb fg:#11111b bold)[ ]($style)"
+style = "bg:none fg:#89dceb"
+disabled = false
+
+[directory]
+format = "[]($style)[󰉋 ](bg:#11111b fg:#89b4fa)[$path](bg:#11111b fg:#74c7ec bold)[ ]($style)"
+style = "bg:none fg:#11111b"
+
+[git_branch]
+format = "[]($style)[[ ](bg:#11111b fg:#f5c2e7)$branch](bg:#11111b fg:#f5e0dc)[ ]($style)"
+style = "bg:none fg:#11111b"
+
+[git_status]
+format = "[]($style)[[ ](bg:#11111b fg:#cba6f7)$branch](bg:#11111b fg:#f2cdcd)[ ]($style)"
+style = "bg:none fg:#11111b"
+conflicted = "="
+ahead =	"󰁝${count}"
+behind = "󰁅${count}"
+diverged = "󰹹󰁝${ahead_count}⇣${behind_count}"
+up_to_date = "󰄬"
+untracked = "?${count}"
+stashed = ""
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»${count}"
+deleted = "${count}"
+
+[cmd_duration]
+min_time = 30000
+format = "[]($style)[[ ](bg:#11111b fg:#fab387)$duration](bg:#11111b fg:#fab387)[ ]($style)"
+style = "bg:none fg:#11111b"
+
+
+[memory_usage]
+disabled = false
+threshold = 55
+format = "[]($style)[[󰍛 ](bg:#11111b fg:#f2cdcd)$ram](bg:#11111b fg:#f2cdcd)[ ]($style)" 
+style = "bg:none fg:#11111b"
+
+[sudo]
+format = "[]($style)[[ 󰌾 ](bg:#11111b fg:#f9e2af)](bg:#11111b fg:#f9e2af)[]($style)"
+style = "bg:none fg:#11111b"
+disabled = false

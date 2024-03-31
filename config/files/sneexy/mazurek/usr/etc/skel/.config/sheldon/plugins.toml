@@ -1,0 +1,116 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+
+[plugins]
+
+# deferred loading
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+
+[templates]
+defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
+
+# completions
+[plugins.completion]
+github = "mattmc3/zephyr"
+use = ["plugins/{{ name }}"]
+
+# shell benchmarking
+[plugins.zsh-bench]
+github = "romkatv/zsh-bench"
+apply = ["PATH"]
+
+# oh-my-zsh
+[plugins.key-bindings]
+github = "ohmyzsh/ohmyzsh"
+use = ["lib/{{ name }}.zsh"]
+
+[plugins.omz-completion]
+github = "ohmyzsh/ohmyzsh"
+use = ["lib/completion.zsh"]
+
+[plugins.clipboard]
+github = "ohmyzsh/ohmyzsh"
+use = ["lib/{{ name }}.zsh"]
+
+[plugins.copybuffer]
+github = "ohmyzsh/ohmyzsh"
+use = ["plugins/{{ name }}"]
+
+[plugins.copyfile]
+github = "ohmyzsh/ohmyzsh"
+use = ["plugins/{{ name }}"]
+
+[plugins.copypath]
+github = "ohmyzsh/ohmyzsh"
+use = ["plugins/{{ name }}"]
+
+[plugins.extract]
+github = "ohmyzsh/ohmyzsh"
+use = ["plugins/{{ name }}"]
+apply = ["defer"]
+
+# zsh-utils
+[plugins.history]
+github = "belak/zsh-utils"
+
+[plugins.utility]
+github = "belak/zsh-utils"
+
+# deferred plugins go below
+
+# git-open
+[plugins.git-open]
+github = "paulirish/git-open"
+apply = ["defer"]
+
+# yt-dlp completions and aliases
+[plugins.yt-dlp]
+github = "clavelm/yt-dlp-omz-plugin"
+apply = ["defer"]
+
+# completions learning daemon
+[plugins.cod]
+github = "dim-an/cod"
+apply = ["defer"]
+
+# shift select
+[plugins.shift-select]
+github = "jirutka/zsh-shift-select"
+apply = ["defer"]
+
+# fast syntax highlighting
+[plugins.fast-syntax-highlighting]
+github = "zdharma-continuum/fast-syntax-highlighting"
+apply = ["defer"]
+
+# auto suggestions
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+apply = ["defer"]
+
+# command history searching
+[plugins.zsh-history-substring-search]
+github = "zsh-users/zsh-history-substring-search"
+apply = ["defer"]
+
+# fzf searching plugin
+[plugins.fzf-zsh-plugin]
+github = "unixorn/fzf-zsh-plugin"
+apply = ["defer"]
+
+# git credeeztials manager or something like that
+[plugins.blackbox]
+github = "StackExchange/blackbox"
+apply = ["defer"]
