@@ -14,6 +14,7 @@ mkdir -p /usr/share/qt6ct/colors
 mkdir -p /usr/share/icons
 mkdir -p /usr/share/gnome-shell/extensions/paperwm@paperwm.github.com
 mkdir -p /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
+mkdir -p /usr/share/gnome-shell/extensions/pano@elhan.io
 mkdir -p /usr/etc/skel/.local/share/themes
 mkdir -p /usr/etc/skel/.var/app/org.gnome.gedit/data/gedit/styles
 
@@ -41,6 +42,14 @@ git clone https://github.com/catppuccin/gedit.git /tmp/gedit
 cp -r /tmp/gedit/themes/* /usr/etc/skel/.var/app/org.gnome.gedit/data/gedit/styles
 
 # GNOME Extensions
+
+# Pano
+rpm-ostree install nodejs
+git clone https://github.com/oae/gnome-shell-pano.git /tmp/pano
+cd /tmp/pano && yarn install
+cd /tmp/pano && yarn build
+cd /tmp/pano &&
+rpm-ostree override remove nodejs
 
 # PaperWM
 git clone https://github.com/paperwm/PaperWM.git /tmp/paperwm

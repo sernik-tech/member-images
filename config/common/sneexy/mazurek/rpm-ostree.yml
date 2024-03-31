@@ -19,6 +19,8 @@ install:
     - mpv
     - nextcloud-client
     - gpaste
+    - libgda
+    - libgda-sqlite
 
     # file management things
     - udiskie
