@@ -4,7 +4,7 @@
 set -euo pipefail
 
 # Quick envvars to quickly change things if required
-PANO_EXT= https://github.com/oae/gnome-shell-pano/releases/download/v22/pano@elhan.io.zip # see: https://github.com/oae/gnome-shell-pano/releases
+PANO_EXT=https://github.com/oae/gnome-shell-pano/releases/download/v22/pano@elhan.io.zip # see: https://github.com/oae/gnome-shell-pano/releases
 BMW_EXT=https://github.com/Schneegans/Burn-My-Windows/releases/download/v41/burn-my-windows@schneegans.github.com.zip # see: https://github.com/Schneegans/Burn-My-Windows/releases
 
 # bazzite repositories and packages
