@@ -7,6 +7,7 @@ repos:
     - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
 install:
     # environment
+    - brightnessctl
     - pavucontrol
     - playerctl
     - qt6-qtwayland
