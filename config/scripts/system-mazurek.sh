@@ -49,9 +49,16 @@ mv /tmp/prismlauncher/themes/* /usr/etc/skel/.var/app/org.prismlauncher.PrismLau
 
 # GNOME Extensions
 
+# Pre-deps for installing some from source (yarn)
+rpm-ostree install nodejs yarnpkg gettext gettext-devel
+
 # Pano
-curl -sL -o /tmp/pano.zip https://github.com/oae/gnome-shell-pano/releases/latest/download/pano@elhan.io.zip
-unzip /tmp/pano.zip -d /usr/share/gnome-shell/extensions/pano@elhan.io
+git clone https://github.com/oae/gnome-shell-pano.git /tmp/pano
+cd /tmp/pano && yarn install
+cd /tmp/pano && yarn build
+cp -r /tmp/pano/dist/* /usr/share/gnome-shell/extensions/pano@elhan.io
+#curl -sL -o /tmp/pano.zip https://github.com/oae/gnome-shell-pano/releases/latest/download/pano@elhan.io.zip
+#unzip /tmp/pano.zip -d /usr/share/gnome-shell/extensions/pano@elhan.io
 
 # PaperWM
 #git clone https://github.com/paperwm/PaperWM.git /tmp/paperwm
@@ -70,8 +77,6 @@ unzip /tmp/pano.zip -d /usr/share/gnome-shell/extensions/pano@elhan.io
 git clone https://github.com/Schneegans/Burn-My-Windows.git /tmp/bmw
 cd /tmp/bmw && make zip
 unzip /tmp/bmw/burn-my-windows@schneegans.github.com.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
-#curl -sL -o /tmp/bmw.zip https://github.com/Schneegans/Burn-My-Windows/releases/latest/download/burn-my-#windows@schneegans.github.com.zip
-#unzip /tmp/bmw.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
 
 # Wallpaper Slideshow
 git clone https://gitlab.com/AndrewZaech/azwallpaper.git /tmp/azwall
@@ -84,6 +89,9 @@ rm -rf /tmp/vitals/.git
 rm -rf /tmp/vitals/.github
 rm -rf /tmp/vitals/README.md
 cp -r /tmp/vitals/* /usr/share/gnome-shell/extensions/Vitals@CoreCoding.com
+
+# Uninstall build deps
+rpm-ostree override remove nodejs yarnpkg gettext gettext-devel
 
 # disabling the repositories for the booted system
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/atim-starship-fedora-$(rpm -E %fedora).repo

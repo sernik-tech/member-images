@@ -63,3 +63,4 @@ user:
     - com.bitwarden.desktop
     - com.usebottles.bottles
     - io.github.mpobaschnig.Vaults
+    - io.github.seadve.Mousai
