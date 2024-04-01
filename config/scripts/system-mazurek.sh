@@ -67,6 +67,9 @@ unzip /tmp/pano.zip -d /usr/share/gnome-shell/extensions/pano@elhan.io
 #cp -r /tmp/paperwm/* /usr/share/gnome-shell/extensions/paperwm@paperwm.github.com
 
 # Burn My Windows
+git clone https://github.com/Schneegans/Burn-My-Windows.git /tmp/bmw
+cd /tmp/bmw && make zip
+unzip /tmp/bmw/burn-my-windows@schneegans.github.com.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
 #curl -sL -o /tmp/bmw.zip https://github.com/Schneegans/Burn-My-Windows/releases/latest/download/burn-my-#windows@schneegans.github.com.zip
 #unzip /tmp/bmw.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
 
