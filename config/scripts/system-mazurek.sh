@@ -50,7 +50,7 @@ mv /tmp/prismlauncher/themes/* /usr/etc/skel/.var/app/org.prismlauncher.PrismLau
 # GNOME Extensions
 
 # Pre-deps for installing some from source (yarn)
-rpm-ostree install nodejs yarnpkg gettext gettext-devel
+rpm-ostree install nodejs yarnpkg gettext-devel
 
 # Pano
 git clone https://github.com/oae/gnome-shell-pano.git /tmp/pano
@@ -91,7 +91,7 @@ rm -rf /tmp/vitals/README.md
 cp -r /tmp/vitals/* /usr/share/gnome-shell/extensions/Vitals@CoreCoding.com
 
 # Uninstall build deps
-rpm-ostree override remove nodejs yarnpkg gettext gettext-devel
+rpm-ostree override remove nodejs yarnpkg gettext-devel
 
 # disabling the repositories for the booted system
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/atim-starship-fedora-$(rpm -E %fedora).repo
