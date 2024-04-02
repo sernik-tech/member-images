@@ -63,13 +63,13 @@ cp -r /tmp/dfd/* /usr/share/gnome-shell/extensions/dock-from-dash@fthx
 
 # Useless Gaps (Source)
 git clone https://github.com/mipmip/gnome-shell-extensions-useless-gaps.git /tmp/uselessgaps
-glib-compile-schemas /tmp/uselessgaps/src/schemas
+glib-compile-schemas --targetdir=/tmp/uselessgaps/src/schemas /tmp/uselessgaps/src/schemas
 cd /tmp/uselessgaps && gnome-extensions pack src --force --podir="../po" --extra-source="ui.js" --extra-source="../LICENSE" --extra-source="../CHANGELOG.md"
 unzip /tmp/uselessgaps/useless-gaps@pimsnel.com.shell-extension.zip -d /usr/share/gnome-shell/extensions/useless-gaps@pimsnel.com
 
 # Quick Settings Tweaks (Source)
 git clone https://github.com/qwreey/quick-settings-tweaks.git /tmp/qst
-glib-compile-schemas /tmp/qst/src/schemas
+glib-compile-schemas --targetdir=/tmp/qst/src/schemas /tmp/qst/src/schemas
 cd /tmp/qst && gnome-extensions pack src --extra-source=../LICENSE --extra-source=../LICENSE-gnome-volume-mixer --extra-source=features --extra-source=libs --extra-source=prefPages --extra-source=media --extra-source=contributors --podir=../po --force
 unzip /tmp/qst/quick-settings-tweaks@qwreey.shell-extension.zip -d /usr/share/gnome-shell/extensions/quick-settings-tweaks@qwreey
 
@@ -81,7 +81,7 @@ unzip /tmp/pano.zip -d /usr/share/gnome-shell/extensions/pano@elhan.io
 VER=$(curl --silent -qI https://github.com/hardpixel/unite-shell/releases/latest | awk -F '/' '/^location/ {print  substr($NF, 1, length($NF)-1)}'); \
 curl -sL -o /tmp/unite.zip https://github.com/hardpixel/unite-shell/releases/download/${VER}/unite-${VER}.zip 
 unzip /tmp/unite.zip -d /usr/share/gnome-shell/extensions/unite@hardpixel.eu
-glib-compile-schemas /usr/share/gnome-shell/extensions/unite@hardpixel.eu/schemas
+glib-compile-schemas --targetdir=/usr/share/gnome-shell/extensions/unite@hardpixel.eu/schemas /usr/share/gnome-shell/extensions/unite@hardpixel.eu/schemas
 
 # PaperWM (Source)
 #git clone https://github.com/paperwm/PaperWM.git /tmp/paperwm
@@ -99,13 +99,13 @@ glib-compile-schemas /usr/share/gnome-shell/extensions/unite@hardpixel.eu/schema
 # Desktop Cube (Releases)
 curl -sL -o /tmp/desktopcube.zip https://github.com/Schneegans/Desktop-Cube/releases/latest/download/desktop-cube@schneegans.github.com.zip
 unzip /tmp/desktopcube.zip -d /usr/share/gnome-shell/extensions/desktop-cube@schneegans.github.com
-glib-compile-schemas /usr/share/gnome-shell/extensions/desktop-cube@schneegans.github.com/schemas
+glib-compile-schemas --targetdir=/usr/share/gnome-shell/extensions/desktop-cube@schneegans.github.com/schemas /usr/share/gnome-shell/extensions/desktop-cube@schneegans.github.com/schemas
 
 # Burn My Windows (Source)
 git clone https://github.com/Schneegans/Burn-My-Windows.git /tmp/bmw
 cd /tmp/bmw && make zip
 unzip /tmp/bmw/burn-my-windows@schneegans.github.com.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
-glib-compile-schemas /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com/schemas
+glib-compile-schemas --targerdir=/usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com/schemas /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com/schemas
 
 # Compiz alike magic lamp effect for GNOME Shell (Source)
 git clone https://github.com/hermes83/compiz-alike-magic-lamp-effect.git /tmp/compiz-magic-lamp
