@@ -33,6 +33,7 @@ git clone --recurse-submodules https://github.com/catppuccin/gtk.git /tmp/gtk
 python3 -m venv /tmp/gtk/venv
 source /tmp/gtk/venv/bin/activate && pip install -r /tmp/gtk/requirements.txt
 cd /tmp/gtk && source /tmp/gtk/venv/bin/activate && python3 /tmp/gtk/install.py mocha -a green -s compact --tweaks float -d /usr/etc/skel/.local/share/themes
+rpm-ostree override remove GraphicsMagick GraphicsMagick-c++ boost-atomic boost-filesystem flexiblas flexiblas-netlib flexiblas-openblas-openmp gsl gtksourceview4 inkscape inkscape-libs lib2geom libcdr libgfortran libquadmath librevenge libsass libvisio libwpd libwpg mkfontscale openblas openblas-openmp optipng potrace python3-cssselect python3-inkex python3-lxml python3-numpy python3-pyparsing python3-pyserial python3-scour python3-six sassc urw-base35-fonts-legacy
 
 # Catppuccin QT(5/6CT) Theme
 git clone https://github.com/ItsEthra/qt5ct.git /tmp/qt5ct
@@ -108,7 +109,7 @@ glib-compile-schemas --targetdir=/usr/share/gnome-shell/extensions/desktop-cube@
 git clone https://github.com/Schneegans/Burn-My-Windows.git /tmp/bmw
 cd /tmp/bmw && make zip
 unzip /tmp/bmw/burn-my-windows@schneegans.github.com.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
-glib-compile-schemas --targerdir=/usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com/schemas /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com/schemas
+glib-compile-schemas --targetdir=/usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com/schemas /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com/schemas
 
 # Compiz alike magic lamp effect for GNOME Shell (Source)
 git clone https://github.com/hermes83/compiz-alike-magic-lamp-effect.git /tmp/compiz-magic-lamp
