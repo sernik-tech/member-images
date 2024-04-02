@@ -13,6 +13,9 @@ mkdir -p /usr/share/qt5ct/colors
 mkdir -p /usr/share/qt6ct/colors
 mkdir -p /usr/share/icons
 #mkdir -p /usr/share/gnome-shell/extensions/paperwm@paperwm.github.com
+mkdir -p /usr/share/gnome-shell/extensions/dock-from-dash@fthx
+mkdir -p /usr/share/gnome-shell/extensions/useless-gaps@pimsnel.com
+mkdir -p /usr/share/gnome-shell/extensions/quick-settings-tweaks@qwreey
 mkdir -p /usr/share/gnome-shell/extensions/unite@hardpixel.eu
 mkdir -p /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
 mkdir -p /usr/share/gnome-shell/extensions/desktop-cube@schneegans.github.com
@@ -52,6 +55,23 @@ git clone https://github.com/catppuccin/prismlauncher.git /tmp/prismlauncher
 mv /tmp/prismlauncher/themes/* /usr/etc/skel/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/themes
 
 # GNOME Extensions
+
+# Dock from Dash (Source)
+git clone https://github.com/fthx/dock-from-dash.git /tmp/dfd
+rm -rf /tmp/dfd README.md
+cp -r /tmp/dfd/* /usr/share/gnome-shell/extensions/dock-from-dash@fthx
+
+# Useless Gaps (Source)
+git clone https://github.com/mipmip/gnome-shell-extensions-useless-gaps.git /tmp/uselessgaps
+glib-compile-schemas /tmp/uselessgaps/src/schemas
+cd /tmp/uselessgaps && gnome-extensions pack src --force --podir="../po" --extra-source="ui.js" --extra-source="../LICENSE" --extra-source="../CHANGELOG.md"
+unzip /tmp/uselessgaps/useless-gaps@pimsnel.com.shell-extension.zip -d /usr/share/gnome-shell/extensions/useless-gaps@pimsnel.com
+
+# Quick Settings Tweaks (Source)
+git clone https://github.com/qwreey/quick-settings-tweaks.git /tmp/qst
+glib-compile-schemas /tmp/qst/src/schemas
+cd /tmp/qst && gnome-extensions pack src --extra-source=../LICENSE --extra-source=../LICENSE-gnome-volume-mixer --extra-source=features --extra-source=libs --extra-source=prefPages --extra-source=media --extra-source=contributors --podir=../po --force
+unzip /tmp/qst/quick-settings-tweaks@qwreey.shell-extension.zip -d /usr/share/gnome-shell/extensions/quick-settings-tweaks@qwreey
 
 # Pano (Releases)
 curl -sL -o /tmp/pano.zip https://github.com/oae/gnome-shell-pano/releases/latest/download/pano@elhan.io.zip
