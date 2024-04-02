@@ -90,8 +90,9 @@ unzip /tmp/desktopcube.zip -d /usr/share/gnome-shell/extensions/desktop-cube@sch
 #curl -sL -o /tmp/bmw.zip https://github.com/Schneegans/Burn-My-Windows/releases/latest/download/burn-my-windows@schneegans.github.com.zip
 #unzip /tmp/bmw.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
 git clone https://github.com/Schneegans/Burn-My-Windows.git /tmp/bmw
-cd /tmp/bmw && make zip
-unzip /tmp/bmw/burn-my-windows@schneegans.github.com.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
+#cd /tmp/bmw && make zip
+cd /tmp/bmw && make install
+#unzip /tmp/bmw/burn-my-windows@schneegans.github.com.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
 
 # Compiz alike magic lamp effect for GNOME Shell (Source)
 git clone https://github.com/hermes83/compiz-alike-magic-lamp-effect.git /tmp/compiz-magic-lamp
