@@ -22,6 +22,7 @@ install:
     - gpaste
     - libgda
     - libgda-sqlite
+    - jq
     - xprop
 
     # file management things
