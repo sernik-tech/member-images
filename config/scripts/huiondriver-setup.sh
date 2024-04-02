@@ -7,7 +7,7 @@ set -oue pipefail
 
 echo "Starting installation procedure..."
 
-INSTALL_PATH="/opt/huion-driver"
+INSTALL_PATH="/tmp/huion-driver"
 
 mkdir -p $INSTALL_PATH
 cd $INSTALL_PATH
