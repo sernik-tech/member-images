@@ -13,6 +13,7 @@ mkdir -p /usr/share/qt5ct/colors
 mkdir -p /usr/share/qt6ct/colors
 mkdir -p /usr/share/icons
 #mkdir -p /usr/share/gnome-shell/extensions/paperwm@paperwm.github.com
+mkdir -p /usr/share/gnome-shell/extensions/pip-on-top@rafostar.github.com
 mkdir -p /usr/share/gnome-shell/extensions/dock-from-dash@fthx
 mkdir -p /usr/share/gnome-shell/extensions/useless-gaps@pimsnel.com
 mkdir -p /usr/share/gnome-shell/extensions/quick-settings-tweaks@qwreey
@@ -59,6 +60,14 @@ mv /tmp/prismlauncher/themes/* /usr/etc/skel/.var/app/org.prismlauncher.PrismLau
 sed -i 's@#AutoEnable=true@AutoEnable=false@g' /etc/bluetooth/main.conf
 
 # GNOME Extensions
+
+# PiP on top (Source)
+git clone https://github.com/Rafostar/gnome-shell-extension-pip-on-top.git /tmp/pipontop
+chmod +x /tmp/pipontop/translate.sh
+chmod +x /tmp/pipontop/bundle.sh
+cd /tmp/pipontop && /tmp/pipontop/translate.sh
+cd /tmp/pipontop && /tmp/pipontop/bundle.sh
+unzip /tmp/pipontop/pip-on-top@rafostar.github.com.zip -d /usr/share/gnome-shell/extensions/pip-on-top@rafostar.github.com
 
 # Dock from Dash (Source)
 git clone https://github.com/fthx/dock-from-dash.git /tmp/dfd
