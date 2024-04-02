@@ -54,6 +54,9 @@ cp -r /tmp/gedit/themes/* /usr/etc/skel/.var/app/org.gnome.gedit/data/gedit/styl
 git clone https://github.com/catppuccin/prismlauncher.git /tmp/prismlauncher
 mv /tmp/prismlauncher/themes/* /usr/etc/skel/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/themes
 
+# Configure bluez/bluetooth to not automatically enable itself
+sed -i 's@#AutoEnable=true@AutoEnable=false@g' /etc/bluetooth/main.conf
+
 # GNOME Extensions
 
 # Dock from Dash (Source)
