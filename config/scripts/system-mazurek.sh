@@ -83,8 +83,7 @@ unzip /tmp/unite.zip -d /usr/share/gnome-shell/extensions/unite@hardpixel.eu
 #cp -r /tmp/paperwm/* /usr/share/gnome-shell/extensions/paperwm@paperwm.github.com
 
 # Desktop Cube (Releases)
-curl -sL -o /tmp/desktopcube.zip https://github.com/Schneegans/Desktop-Cube/releases/latest/download/
-desktop-cube@schneegans.github.com.zip
+curl -sL -o /tmp/desktopcube.zip https://github.com/Schneegans/Desktop-Cube/releases/latest/download/desktop-cube@schneegans.github.com.zip
 unzip /tmp/desktopcube.zip -d /usr/share/gnome-shell/extensions/desktop-cube@schneegans.github.com
 
 # Burn My Windows (Source)
