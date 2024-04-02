@@ -58,7 +58,7 @@ mv /tmp/prismlauncher/themes/* /usr/etc/skel/.var/app/org.prismlauncher.PrismLau
 
 # Dock from Dash (Source)
 git clone https://github.com/fthx/dock-from-dash.git /tmp/dfd
-rm -rf /tmp/dfd README.md
+rm -rf /tmp/dfd/README.md
 cp -r /tmp/dfd/* /usr/share/gnome-shell/extensions/dock-from-dash@fthx
 
 # Useless Gaps (Source)
