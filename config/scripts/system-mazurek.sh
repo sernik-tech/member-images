@@ -53,21 +53,15 @@ mv /tmp/prismlauncher/themes/* /usr/etc/skel/.var/app/org.prismlauncher.PrismLau
 
 # GNOME Extensions
 
-# Pre-deps for installing some from source (yarn)
-#rpm-ostree install nodejs yarnpkg gettext-devel
-
 # Pano (Releases)
 curl -sL -o /tmp/pano.zip https://github.com/oae/gnome-shell-pano/releases/latest/download/pano@elhan.io.zip
 unzip /tmp/pano.zip -d /usr/share/gnome-shell/extensions/pano@elhan.io
-#git clone https://github.com/oae/gnome-shell-pano.git /tmp/pano
-#cd /tmp/pano && yarn install
-#cd /tmp/pano && yarn build
-#cp -r /tmp/pano/dist/* /usr/share/gnome-shell/extensions/pano@elhan.io
 
 # Unite (Releases)
 VER=$(curl --silent -qI https://github.com/hardpixel/unite-shell/releases/latest | awk -F '/' '/^location/ {print  substr($NF, 1, length($NF)-1)}'); \
 curl -sL -o /tmp/unite.zip https://github.com/hardpixel/unite-shell/releases/download/${VER}/unite-${VER}.zip 
 unzip /tmp/unite.zip -d /usr/share/gnome-shell/extensions/unite@hardpixel.eu
+glib-compile-schemas /usr/share/gnome-shell/extensions/unite@hardpixel.eu/schemas
 
 # PaperWM (Source)
 #git clone https://github.com/paperwm/PaperWM.git /tmp/paperwm
@@ -85,31 +79,25 @@ unzip /tmp/unite.zip -d /usr/share/gnome-shell/extensions/unite@hardpixel.eu
 # Desktop Cube (Releases)
 curl -sL -o /tmp/desktopcube.zip https://github.com/Schneegans/Desktop-Cube/releases/latest/download/desktop-cube@schneegans.github.com.zip
 unzip /tmp/desktopcube.zip -d /usr/share/gnome-shell/extensions/desktop-cube@schneegans.github.com
+glib-compile-schemas /usr/share/gnome-shell/extensions/desktop-cube@schneegans.github.com/schemas
 
 # Burn My Windows (Source)
-#curl -sL -o /tmp/bmw.zip https://github.com/Schneegans/Burn-My-Windows/releases/latest/download/burn-my-windows@schneegans.github.com.zip
-#unzip /tmp/bmw.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
-git clone https://github.com/Schneegans/Burn-My-Windows.git /tmp/bmw
-#cd /tmp/bmw && make zip
-cd /tmp/bmw && make install
-#unzip /tmp/bmw/burn-my-windows@schneegans.github.com.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
+git clone https://github.com/Schneegans/Burn-My-Windows.git /tmp/bmw#cd /tmp/bmw && make zip
+cd /tmp/bmw && make zip
+unzip /tmp/bmw/burn-my-windows@schneegans.github.com.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
+glib-compile-schemas /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com/schemas
 
 # Compiz alike magic lamp effect for GNOME Shell (Source)
 git clone https://github.com/hermes83/compiz-alike-magic-lamp-effect.git /tmp/compiz-magic-lamp
 chmod +x /tmp/compiz-magic-lamp/zip.sh
 cd /tmp/compiz-magic-lamp && /tmp/compiz-magic-lamp/zip.sh
-unzip /tmp/compiz-magic-lamp/compiz-alike-magic-lamp-effect@hermes83.github.com.zip -d /usr/share/gnome-shell/extensions/compiz-alike-magic-lamp-effect@hermes83.github.com.zip
+unzip /tmp/compiz-magic-lamp/compiz-alike-magic-lamp-effect@hermes83.github.com.zip -d /usr/share/gnome-shell/extensions/compiz-alike-magic-lamp-effect@hermes83.github.com
 
 # Compiz windows effect (Source)
 git clone https://github.com/hermes83/compiz-windows-effect.git /tmp/compiz-windows
 rm -rf /tmp/compiz-windows/assets
 rm -rf /tmp/compiz-windows/README.md
 cp -r /tmp/compiz-windows/* /usr/share/gnome-shell/extensions/compiz-windows-effect@hermes83.github.com
-
-# Rounded window corners (Source)
-# Doesn't work because yarn sucks or something. A pre-compiled version is supplied in the files for now.,
-#git clone https://github.com/yilozt/rounded-window-corners.git /tmp/rounded-windows
-#cd /tmp/rounded-windows && yarn install
 
 # Wallpaper Slideshow (Source)
 git clone https://gitlab.com/AndrewZaech/azwallpaper.git /tmp/azwall
@@ -122,9 +110,6 @@ rm -rf /tmp/vitals/.git
 rm -rf /tmp/vitals/.github
 rm -rf /tmp/vitals/README.md
 cp -r /tmp/vitals/* /usr/share/gnome-shell/extensions/Vitals@CoreCoding.com
-
-# Uninstall build deps
-#rpm-ostree override remove nodejs nodejs-docs nodejs-full-i18n nodejs-libs nodejs-npm yarnpkg gettext-devel
 
 # disabling the repositories for the booted system
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/atim-starship-fedora-$(rpm -E %fedora).repo
