@@ -31,6 +31,7 @@ install:
     - unrar-free
 
     # terminal & utilities
+    - kitty
     - wezterm
     - bat
     - duf
@@ -58,7 +59,6 @@ install:
     - gnome-shell-extension-just-perfection
     - gnome-shell-extension-dash-to-dock
     - gnome-shell-extension-user-theme
-    #- gnome-shell-extension-unite
 
     # themes and GUI
     - papirus-icon-theme
