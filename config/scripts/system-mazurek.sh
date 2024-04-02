@@ -82,7 +82,7 @@ unzip /tmp/desktopcube.zip -d /usr/share/gnome-shell/extensions/desktop-cube@sch
 glib-compile-schemas /usr/share/gnome-shell/extensions/desktop-cube@schneegans.github.com/schemas
 
 # Burn My Windows (Source)
-git clone https://github.com/Schneegans/Burn-My-Windows.git /tmp/bmw#cd /tmp/bmw && make zip
+git clone https://github.com/Schneegans/Burn-My-Windows.git /tmp/bmw
 cd /tmp/bmw && make zip
 unzip /tmp/bmw/burn-my-windows@schneegans.github.com.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
 glib-compile-schemas /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com/schemas
