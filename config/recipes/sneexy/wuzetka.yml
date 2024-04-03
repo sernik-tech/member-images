@@ -10,37 +10,24 @@ image-version: 39 # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  # installs user/userspace related packages
-  - from-file: common/sneexy/wuzetka/system.yml
+  - from-file: common/sneexy/wuzetka/rpm-ostree.yml
 
-  # installs user packages jnsdjnsdjnsd
-  - from-file: common/sneexy/wuzetka/user.yml
-
-  # run system packages installer script
   - type: script
     scripts:
         - ld.sh
         - system-wuzetka.sh
 
-  # put some files in the image
-  - from-file: common/sneexy/wuzetka/files.yml
+  - type: files
+    files:
+    	- sneexy/wuzetka/usr: /usr
 
-  # installs default repositories and flatpak packages
   - from-file: common/sneexy/wuzetka/flatpaks.yml
-
-  # configure what to pull in from ublue-os/bling
   - from-file: common/sneexy/bling.yml
-
-  # install fonts
   - from-file: common/sneexy/fonts.yml
 
-  # GTK settings overrides
   - type: gschema-overrides
     include:
       - zz1-wuzetka.gschema.override
 
-  # uBlue akmods. includes custom drivers and stuff
   - from-file: common/sneexy/akmods.yml
-
-  # sets up proper policy & signing files
   - type: signing
