@@ -8,7 +8,7 @@ font-name = "Lexend Deca 11"
 # GNOME shell modifications
 [org.gnome.shell]
 favorite-apps = ['org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'org.gnome.Terminal.desktop']
-enabled-extensions = ['openweather-extension@jenslody.de', 'appindicatorsupport@rgcjonas.gmail.com', 'gsconnect@andyholmes.github.io', 'gamemode@christian.kellner.me', 'just-perfection-desktop@just-perfection', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'blur-my-shell@aunetx', 'pip-on-top@rafostar.github.com', 'pano@elhan.io', 'undecorate@sun.wxg@gmail.com', 'Vitals@CoreCoding.com', 'azwallpaper@azwallpaper.gitlab.com', 'burn-my-windows@schneegans.github.com', 'dash-to-dock@micxgx.gmail.com']
+enabled-extensions = ['appindicatorsupport@rgcjonas.gmail.com', 'gsconnect@andyholmes.github.io', 'gamemode@christian.kellner.me', 'just-perfection-desktop@just-perfection', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'blur-my-shell@aunetx', 'pip-on-top@rafostar.github.com', 'pano@elhan.io', 'undecorate@sun.wxg@gmail.com', 'Vitals@CoreCoding.com', 'burn-my-windows@schneegans.github.com', 'dash-to-dock@micxgx.gmail.com', 'desktop-cube@schneegans.github.com', 'compiz-windows-effect@hermes83.github.com', 'quick-settings-tweaks@qwreey', 'useless-gaps@pimsnel.com', 'rounded-window-corners@yilozt', 'compiz-alike-magic-lamp-effect@hermes83.github.com', 'azwallpaper@azwallpaper.gitlab.com', 'openweather-extension@jenslody.de']
 
 [org.gnome.desktop.interface]
 gtk-theme = "Catppuccin-Mocha-Compact-Green-Dark"
@@ -63,6 +63,39 @@ blur = false
 
 [org.gnome.shell.extensions.blur-my-shell.applications]
 blur = false
+
+[org.gnome.shell.extensions.rounded-window-corners]
+enable-preferences-entry = true
+
+[org.gnome.shell.extensions.unite]
+autofocus-windows = false
+show-legacy-tray = false
+show-appmenu-button = false
+show-desktop-name = false
+enable-titlebar-actions = false
+enable-titlebar-actions = false
+hide-activities-button = "never"
+hide-window-titlebars = "always"
+show-window-title = "never"
+show-window-buttons = "never"
+notifications-position = "center"
+extend-left-box = false
+use-activities-text = true
+use-activities-text = false
+greyscale-tray-icons = false
+hide-app-menu-icon = false
+reduce-panel-spacing =false
+
+[org.gnome.shell.extensions.useless-gaps]
+gap-size = 5
+
+[org.gnome.shell.extensions.com.github.hermes83.compiz-windows-effect]
+friction = 3.2999999999999998
+spring-k = 3.0
+speedup-factor-divider = 7.5999999999999996
+mass = 64.0
+maximize-effect = true
+resize-effect = true
 
 [org.gnome.shell.extensions.openweather]
 position-index = 2
