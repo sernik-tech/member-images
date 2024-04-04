@@ -1,23 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-# Tell build process to exit if there are any errors.
-set -euo pipefail
-
-git clone https://github.com/catppuccin/kde.git /tmp/catppuccinkde
-cd /tmp/catppuccinkde
-
-# This script installs Catppuccin for KDE.
-# Modified version of catppuccin/kde's install.sh but without
-# any user interaction.
-#
-# Requires: wget, sed, unzip
-# Copy this and make your own modifications.
-
-# Go to line 40-44 to change preferences
-
-1="1"
-2="9"
-3="1"
+# Syntax <Flavour = 1-4 > <Accent = 1-14> <WindowDec = 1/2> <Debug = aurorae/global/color/splash/cursor>
 
 check_command_exists() {
   command_name="${*}"
@@ -410,6 +393,34 @@ InstallCursor() {
     mv ./dist/Catppuccin-"$FLAVOURNAME"-Dark-Cursors "$CURSORDIR"
 }
 
+# Syntax <Flavour> <Accent> <WindowDec> <Debug = aurorae/global/color/splash/cursor>
+case "$DEBUGMODE" in
+    "")
+	aurorae)
+		InstallAuroraeTheme
+		exit
+		;;
+    global)
+        InstallGlobalTheme
+        exit
+        ;;
+    color)
+        BuildColorscheme
+        exit
+        ;;
+    splash)
+        # Prepare Global Theme Folder
+        GLOBALTHEMENAME="Catppuccin-$FLAVOURNAME-$ACCENTNAME"
+
+        cp -r ./Resources/LookAndFeel/Catppuccin-"$FLAVOURNAME"-Global ./dist/"$GLOBALTHEMENAME"
+        mkdir -p ./dist/"$GLOBALTHEMENAME"/contents/splash/images
+
+        BuildSplashScreen
+        ;;
+    cursor) GetCursor ;;
+    *) echo "Invalid Debug Mode" ;;
+esac
+
 # Build and Install Aurorae Theme
 InstallAuroraeTheme
 
@@ -428,6 +439,5 @@ rm -r ./dist
 
 echo "You can apply theme at any time using system settings"
 sleep 1
-echo "Exiting.."
 
-rm -rf /tmp/catppuccinkde
+echo "Exiting.."

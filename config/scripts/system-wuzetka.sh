@@ -18,6 +18,15 @@ mkdir -p /usr/share/icons
 mkdir -p /etc/skel/.local/share/themes
 
 #
+# KDE Theme
+#
+git clone https://github.com/catppuccin/kde.git /tmp/catppuccinkde
+rm -f /tmp/catppuccinkde/install.sh
+curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/sernik/catppuccin-kde/install.sh
+chmod +x /tmp/catppuccinkde/install.sh
+/tmp/catppuccinkde/install.sh 1 9 1
+
+#
 # GTK Theme
 #
 
@@ -71,6 +80,7 @@ rpm-ostree override remove GraphicsMagick GraphicsMagick-c++ flexiblas flexiblas
 rpm-ostree override remove cmake cmake-data extra-cmake-modules jsoncpp kf5-kauth-devel kf5-kcodecs-devel kf5-kconfig kf5-kconfig-devel kf5-kconfigwidgets-devel kf5-kcoreaddons-devel kf5-kservice-devel kf5-kwindowsystem-devel kf5-rpm-macros kwin-devel libX11-devel libXau-devel libepoxy-devel libglvnd-core-devel libglvnd-devel libxcb-devel mesa-libEGL-devel qt5-linguist qt5-qtbase-devel qt5-rpm-macros rhash vulkan-headers vulkan-loader-devel xorg-x11-proto-devel
 
 # kill the files
+rm -rf /tmp/catppuccinkde
 rm -rf /tmp/gtk
 rm -rf /tmp/papirus-folders
 rm -rf /tmp/corners
