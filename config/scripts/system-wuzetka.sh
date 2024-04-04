@@ -22,8 +22,10 @@ mkdir -p /etc/skel/.local/share/themes
 #
 rpm-ostree install gettext-devel
 git clone https://github.com/catppuccin/kde.git /tmp/catppuccinkde
+git checkout v0.2.5 # Comment when Fedora 40/Plasma 6
 rm -f /tmp/catppuccinkde/install.sh
-curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/sernik/catppuccin-kde/install.sh
+#curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/sernik/catppuccin-kde/install.sh
+curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/sernik/catppuccin-kde/install-kde5.sh # Comment when Fedora 40/Plasma 6
 chmod +x /tmp/catppuccinkde/install.sh
 cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 1 9 1
 

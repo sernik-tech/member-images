@@ -21,7 +21,6 @@ install:
   - gamemode
   - gamescope
   - mangohud
-  - gettext
   - kwidgetsaddons-devel
 
   # themes

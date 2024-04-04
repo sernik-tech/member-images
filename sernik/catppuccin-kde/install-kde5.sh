@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Syntax <Flavour = 1-4 > <Accent = 1-14> <WindowDec = 1/2> <Debug = aurorae/global/color/splash/cursor>
+# Syntax <Flavour = 1-4 > <Accent = 1-14> <WindowDec = 1/2> <Debug = global/color/splash/cursor>
 
 check_command_exists() {
   command_name="${*}"
@@ -17,19 +17,21 @@ check_command_exists "sed"
 check_command_exists "unzip"
 check_command_exists "lookandfeeltool"
 
-COLORDIR="/usr/share/color-schemes"
-AURORAEDIR="/usr/share/aurorae/themes"
-LOOKANDFEELDIR="/usr/share/plasma/look-and-feel"
-CURSORDIR="/usr/share/icons"
+COLORDIR="${XDG_DATA_HOME:-$HOME/.local/share}/color-schemes"
+AURORAEDIR="${XDG_DATA_HOME:-$HOME/.local/share}/aurorae/themes"
+LOOKANDFEELDIR="${XDG_DATA_HOME:-$HOME/.local/share}/plasma/look-and-feel"
+DESKTOPTHEMEDIR="${XDG_DATA_HOME:-$HOME/.local/share}/plasma/desktoptheme"
+CURSORDIR="${XDG_DATA_HOME:-$HOME/.local/share}/icons"
 
 echo "Creating theme directories.."
-mkdir -p "$COLORDIR" "$AURORAEDIR" "$LOOKANDFEELDIR" "$CURSORDIR"
+mkdir -p "$COLORDIR" "$AURORAEDIR" "$LOOKANDFEELDIR" "$DESKTOPTHEMEDIR" "$CURSORDIR"
 mkdir ./dist
 
 # Fast install
 FLAVOUR="$1"
 ACCENT="$2"
 WINDECSTYLE="$3"
+
 DEBUGMODE="$4"
 
 clear
@@ -58,7 +60,7 @@ case "$FLAVOUR" in
         exit 1
         ;;
 esac
-echo "$FLAVOURNAME($FLAVOUR) palette was selected."
+echo "The palette $FLAVOURNAME($FLAVOUR) was selected"
 echo
 
 if [ -z "$2" ]; then
@@ -216,14 +218,13 @@ case "$ACCENT" in
         exit 1
         ;;
 esac
-echo "$ACCENTNAME($ACCENT) accent color was selected."
+echo "Accent $ACCENTNAME($ACCENT) was selected!"
 
 GLOBALTHEMENAME="Catppuccin-$FLAVOURNAME-$ACCENTNAME"
 SPLASHSCREENNAME="Catppuccin-$FLAVOURNAME-$ACCENTNAME-splash"
 
 if [ -z "$3" ]; then
     cat <<EOF
-
 Choose window decoration style -
     1. Modern (Mixed)
     2. Classic (MacOS like)
@@ -232,23 +233,20 @@ EOF
     clear
 fi
 
-WINDECSTYLENAME=""
 case "$WINDECSTYLE" in
     1)
         WINDECSTYLENAME=Modern
         WINDECSTYLECODE=__aurorae__svg__Catppuccin"$FLAVOURNAME"-Modern
-
+    
         case "$FLAVOUR" in
-            1) StoreAuroraeNo="2135229" ;;
-            2) StoreAuroraeNo="2135227" ;;
-            3) StoreAuroraeNo="2135225" ;;
-            4) StoreAuroraeNo="2135223" ;;
+            1) StoreAuroraeNo="2023219" ;;
+            2) StoreAuroraeNo="2023220" ;;
+            3) StoreAuroraeNo="2023222" ;;
+            4) StoreAuroraeNo="2023224" ;;
         esac
-
+    
         cat <<EOF
-
-Modern($WINDECSTYLE) decorations were selected.
-These decorations have a few rules that may cause issues.
+Hey! thanks for picking 'Modern', this one has a few rules or else it might break
  1: Use 3 icons on the right, With the 'Close' Button on the Far-Right
  2: If you would like the pin on all desktops button, You need to place it on the left.
 We apologize if you wanted a different configuration :(
@@ -258,21 +256,35 @@ EOF
     2)
         WINDECSTYLENAME=Classic
         WINDECSTYLECODE=__aurorae__svg__Catppuccin"$FLAVOURNAME"-Classic
-
+    
         case "$FLAVOUR" in
-            1) StoreAuroraeNo="2135228" ;;
-            2) StoreAuroraeNo="2135226" ;;
-            3) StoreAuroraeNo="2135224" ;;
-            4) StoreAuroraeNo="2135222" ;;
+            1) StoreAuroraeNo="2023180" ;;
+            2) StoreAuroraeNo="2023202" ;;
+            3) StoreAuroraeNo="2023203" ;;
+            4) StoreAuroraeNo="2023217" ;;
         esac
-
-		cat <<EOF
-
-Classic($WINDECSTYLE) decorations were selected.
-EOF
         ;;
     *) echo "Not a valid Window decoration" ;;
 esac
+
+ModifyLightlyPlasma() {
+
+    rm -rf "$DESKTOPTHEMEDIR"/lightly-plasma-git/icons/*
+    rm -rf "$DESKTOPTHEMEDIR"/lightly-plasma-git/translucent
+    rm "$DESKTOPTHEMEDIR"/lightly-plasma-git/widgets/tabbar.svgz
+    rm "$DESKTOPTHEMEDIR"/lightly-plasma-git/dialogs/background.svgz
+
+    # Copy Patches
+    cp -rf "$DESKTOPTHEMEDIR"/lightly-plasma-git/solid/* "$DESKTOPTHEMEDIR"/lightly-plasma-git
+    cp -rf ./Patches/glowbar.svg "$DESKTOPTHEMEDIR"/lightly-plasma-git/widgets
+    cp -rf ./Patches/background.svg "$DESKTOPTHEMEDIR"/lightly-plasma-git/widgets
+    cp ./Patches/panel-background.svgz "$DESKTOPTHEMEDIR"/lightly-plasma-git/widgets
+
+    # Modify description to state that it has been modified by the KDE Catppuccin Installer
+    sed -i 's/A plasma style with close to the look of the newest Lightly./*MODIFIED BY CATPPUCCIN KDE INSTALLER* &/g' "$DESKTOPTHEMEDIR"/lightly-plasma-git/metadata.desktop
+    cp -f "$DESKTOPTHEMEDIR"/metadata.desktop "$DESKTOPTHEMEDIR"/lightly-plasma-git/metadata.desktop
+    rm "$DESKTOPTHEMEDIR"/metadata.desktop
+}
 
 BuildColorscheme() {
     # Add Metadata & Replace Accent in colors file
@@ -304,26 +316,11 @@ BuildSplashScreen() {
     else
         cp ./Resources/splash-screen/contents/splash/images/Latte_Logo.png ./dist/"$SPLASHSCREENNAME"/contents/splash/images/Logo.png
     fi
-    #sed "s/--accentName/$ACCENTNAME/g; s/--flavour/$FLAVOURNAME/g" ./Resources/splash-screen/metadata.desktop > ./dist/"$SPLASHSCREENNAME"/metadata.desktop
-	#sed "s/--accentName/$ACCENTNAME/g; s/--flavour/$FLAVOURNAME/g" ./Resources/splash-screen/metadata.json > ./dist/"$SPLASHSCREENNAME"/metadata.json
+    sed "s/--accentName/$ACCENTNAME/g; s/--flavour/$FLAVOURNAME/g" ./Resources/splash-screen/metadata.desktop > ./dist/"$SPLASHSCREENNAME"/metadata.desktop
     mkdir ./dist/"$SPLASHSCREENNAME"/contents/previews
     cp ./Resources/splash-previews/"$FLAVOURNAME".png ./dist/"$SPLASHSCREENNAME"/contents/previews/splash.png
-    # cp ./Resources/splash-previews/"$FLAVOURNAME".png ./dist/"$SPLASHSCREENNAME"/contents/previews/preview.png
-    cp -r ./dist/"$SPLASHSCREENNAME"/contents/splash/ "$LOOKANDFEELDIR"/"$GLOBALTHEMENAME"/contents/
-    cp -r ./dist/"$SPLASHSCREENNAME"/contents/previews/* "$LOOKANDFEELDIR"/"$GLOBALTHEMENAME"/contents/previews/
-}
-
-InstallAuroraeTheme() {
-	# Prepare Aurorae Theme Folder
-	cp -r ./Resources/Aurorae/Catppuccin"$FLAVOURNAME"-"$WINDECSTYLENAME" ./dist/
-    if [ "$FLAVOUR" -eq 4 ]; then
-		cp ./Resources/Aurorae/Common/CatppuccinLatte-"$WINDECSTYLENAME"rc ./dist/Catppuccin"$FLAVOURNAME"-"$WINDECSTYLENAME"/Catppuccin"$FLAVOURNAME"-"$WINDECSTYLENAME"rc
-	else
-		cp ./Resources/Aurorae/Common/Catppuccin-"$WINDECSTYLENAME"rc ./dist/Catppuccin"$FLAVOURNAME"-"$WINDECSTYLENAME"/Catppuccin"$FLAVOURNAME"-"$WINDECSTYLENAME"rc
-	fi
-
-	echo "Installing Aurorae Theme..."
-	cp -r ./dist/Catppuccin"$FLAVOURNAME"-"$WINDECSTYLENAME"/ "$AURORAEDIR"
+    cp ./Resources/splash-previews/"$FLAVOURNAME".png ./dist/"$SPLASHSCREENNAME"/contents/previews/preview.png
+    cp -r ./dist/"$SPLASHSCREENNAME" "${XDG_DATA_HOME:-$HOME/.local/share}"/plasma/look-and-feel/
 }
 
 InstallGlobalTheme() {
@@ -333,12 +330,13 @@ InstallGlobalTheme() {
 
     # Hydrate Metadata with Pallet + Accent Info
     sed "s/--accentName/$ACCENTNAME/g; s/--flavour/$FLAVOURNAME/g; s/--StoreAuroraeNo/$StoreAuroraeNo/g" ./Resources/LookAndFeel/metadata.desktop > ./dist/Catppuccin-"$FLAVOURNAME"-"$ACCENTNAME"/metadata.desktop
-	sed "s/--accentName/$ACCENTNAME/g; s/--flavour/$FLAVOURNAME/g; s/--StoreAuroraeNo/$StoreAuroraeNo/g" ./Resources/LookAndFeel/metadata.json > ./dist/Catppuccin-"$FLAVOURNAME"-"$ACCENTNAME"/metadata.json
 
     # Modify 'defaults' to set the correct Aurorae Theme
     sed "s/--accentName/$ACCENTNAME/g; s/--flavour/$FLAVOURNAME/g; s/--aurorae/$WINDECSTYLECODE/g" ./Resources/LookAndFeel/defaults > ./dist/Catppuccin-"$FLAVOURNAME"-"$ACCENTNAME"/contents/defaults
 
-
+    # Build SplashScreen
+    echo "Building SplashScreen.."
+    BuildSplashScreen
 
     # Install Global Theme.
     # This refers to the QDBusConnection: error: could not send signal to service error
@@ -347,20 +345,41 @@ InstallGlobalTheme() {
     cat <<EOF
 
  WARNING: There might be some errors that might not affect the installer at all during this step, Please advise.
-
+ 
 EOF
     sleep 1
     echo "Installing Global Theme.."
     (
         cd ./dist || exit
         tar -cf "$GLOBALTHEMENAME".tar.gz "$GLOBALTHEMENAME"
-        kpackagetool6 -i "$GLOBALTHEMENAME".tar.gz
-        cp -r "$GLOBALTHEMENAME" "$LOOKANDFEELDIR"
+        kpackagetool5 -i "$GLOBALTHEMENAME".tar.gz
     )
 
-    # Build SplashScreen
-    echo "Building SplashScreen.."
-    BuildSplashScreen
+    if [ ! -d "$DESKTOPTHEMEDIR/lightly-plasma-git/" ]; then
+        clear
+        cat <<EOF
+
+Installation failed, could not fetch the lightly plasma theme lightly-plasma-git from store.kde.org
+Here are some things you can do to try fixing this:
+ 1: Rerunning the install script
+ 2: Check your intenet connection
+ 3: See if https://store.kde.org is blocked
+ 4: Manually installing Lightly-Plasma from https://pling.com/p/1879921/
+
+Would you like to install Catppuccin/KDE without lightly plasma? [Y/n]:
+EOF
+        read -r CONFIRMATION
+        if [ "$CONFIRMATION" = "N" ] || [ "$CONFIRMATION" = "n" ]; then
+            echo
+            echo "Exiting..."
+            exit
+        fi
+        echo
+        echo "Continuing without lightly plasma.."
+    else
+        echo "Modifying lightly plasma theme.."
+        ModifyLightlyPlasma
+    fi
 }
 
 InstallColorscheme() {
@@ -378,12 +397,12 @@ GetCursor() {
     # Fetches cursors
     echo "Downloading Catppuccin Cursors from Catppuccin/cursors..."
     sleep 2
-    wget -q -P ./dist https://github.com/catppuccin/cursors/releases/download/v0.2.0/Catppuccin-"$FLAVOURNAME"-"$ACCENTNAME"-Cursors.zip
-    wget -q -P ./dist https://github.com/catppuccin/cursors/releases/download/v0.2.0/Catppuccin-"$FLAVOURNAME"-Dark-Cursors.zip
+    wget -P ./dist https://github.com/catppuccin/cursors/releases/download/v0.2.0/Catppuccin-"$FLAVOURNAME"-"$ACCENTNAME"-Cursors.zip
+    wget -P ./dist https://github.com/catppuccin/cursors/releases/download/v0.2.0/Catppuccin-"$FLAVOURNAME"-Dark-Cursors.zip
     (
         cd ./dist || exit
-        unzip -q Catppuccin-"$FLAVOURNAME"-"$ACCENTNAME"-Cursors.zip
-        unzip -q Catppuccin-"$FLAVOURNAME"-Dark-Cursors.zip
+        unzip Catppuccin-"$FLAVOURNAME"-"$ACCENTNAME"-Cursors.zip
+        unzip Catppuccin-"$FLAVOURNAME"-Dark-Cursors.zip
     )
 }
 
@@ -393,11 +412,13 @@ InstallCursor() {
     mv ./dist/Catppuccin-"$FLAVOURNAME"-Dark-Cursors "$CURSORDIR"
 }
 
-# Syntax <Flavour> <Accent> <WindowDec> <Debug = aurorae/global/color/splash/cursor>
+# Syntax <Flavour> <Accent> <WindowDec> <Debug = global/color/splash/cursor>
 case "$DEBUGMODE" in
-    aurorae)
-        InstallAuroraeTheme
-        exit
+    "")
+        echo
+        echo "Install $FLAVOURNAME $ACCENTNAME? with the $WINDECSTYLENAME window Decorations? [y/N]:"
+        read -r CONFIRMATION
+        clear
         ;;
     global)
         InstallGlobalTheme
@@ -420,23 +441,38 @@ case "$DEBUGMODE" in
     *) echo "Invalid Debug Mode" ;;
 esac
 
-# Build and Install Aurorae Theme
-InstallAuroraeTheme
+if [ "$CONFIRMATION" = "Y" ] || [ "$CONFIRMATION" = "y" ]; then
+    # Build and Install Global Theme
+    InstallGlobalTheme
 
-# Build and Install Global Theme
-InstallGlobalTheme
+    # Build Colorscheme
+    InstallColorscheme
 
-# Build Colorscheme
-InstallColorscheme
+    echo "Installing Catppuccin Cursor theme.."
+    InstallCursor
 
-echo "Installing Catppuccin Cursor theme.."
-InstallCursor
+    # Cleanup
+    echo "Cleaning up.."
+    rm -rf ./dist
 
-# Cleanup
-echo "Cleaning up.."
-rm -r ./dist
+    # Apply theme
+    echo
+    echo "Do you want to apply theme? [y/N]:"
+    read -r CONFIRMATION
 
-echo "You can apply theme at any time using system settings"
-sleep 1
-
-echo "Exiting.."
+    if [ "$CONFIRMATION" = "Y" ] || [ "$CONFIRMATION" = "y" ]; then
+        lookandfeeltool -a "$GLOBALTHEMENAME"
+        clear
+        # Some legacy apps still look in ~/.icons
+        cat <<EOF
+The cursors will fully apply once you log out
+You may want to run the following in your terminal if you notice any inconsistencies for the cursor theme:
+ln -s ~/.local/share/icons/ ~/.icons
+EOF
+    else
+        echo "You can apply theme at any time using system settings"
+        sleep 1
+    fi
+else
+    echo "Exiting.."
+fi
