@@ -395,7 +395,6 @@ InstallCursor() {
 
 # Syntax <Flavour> <Accent> <WindowDec> <Debug = aurorae/global/color/splash/cursor>
 case "$DEBUGMODE" in
-    "")
     aurorae)
         InstallAuroraeTheme
         exit
