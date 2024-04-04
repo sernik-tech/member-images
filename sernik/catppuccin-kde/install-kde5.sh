@@ -320,7 +320,7 @@ BuildSplashScreen() {
     mkdir ./dist/"$SPLASHSCREENNAME"/contents/previews
     cp ./Resources/splash-previews/"$FLAVOURNAME".png ./dist/"$SPLASHSCREENNAME"/contents/previews/splash.png
     cp ./Resources/splash-previews/"$FLAVOURNAME".png ./dist/"$SPLASHSCREENNAME"/contents/previews/preview.png
-    cp -r ./dist/"$SPLASHSCREENNAME" "${XDG_DATA_HOME:-$HOME/.local/share}"/plasma/look-and-feel/
+    cp -r ./dist/"$SPLASHSCREENNAME" /usr/share/plasma/look-and-feel/
 }
 
 InstallGlobalTheme() {
