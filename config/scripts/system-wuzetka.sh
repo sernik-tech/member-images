@@ -83,14 +83,6 @@ rpm-ostree override remove GraphicsMagick GraphicsMagick-c++ flexiblas flexiblas
 # qt deps
 rpm-ostree override remove cmake cmake-data extra-cmake-modules jsoncpp kf5-kauth-devel kf5-kcodecs-devel kf5-kconfig-devel kf5-kconfigwidgets-devel kf5-kcoreaddons-devel kf5-kservice-devel kf5-kwindowsystem-devel kf5-rpm-macros kwin-devel libX11-devel libXau-devel libepoxy-devel libglvnd-core-devel libglvnd-devel libxcb-devel mesa-libEGL-devel qt5-qtbase-devel qt5-linguist vulkan-loader-devel xorg-x11-proto-devel gettext-devel kf5-kwidgetsaddons-devel
 
-# kill the files
-rm -rf /tmp/catppuccinkde
-rm -rf /tmp/gtk
-rm -rf /tmp/papirus-folders
-rm -rf /tmp/corners
-rm -rf /tmp/roundedcorners
-rm -rf /tmp/bmw
-
 # disabling the repositories for the booted system
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/atim-starship-fedora-$(rpm -E %fedora).repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/wezfurlong-wezterm-nightly-fedora-$(rpm -E %fedora).repo
