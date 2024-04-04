@@ -21,7 +21,6 @@ install:
   - gamemode
   - gamescope
   - mangohud
-  - kwidgetsaddons-devel
 
   # themes
   - klassy
