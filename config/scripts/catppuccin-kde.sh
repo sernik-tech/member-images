@@ -15,6 +15,10 @@ cd /tmp/catppuccinkde
 
 # Go to line 40-44 to change preferences
 
+1="1"
+2="9"
+3="1"
+
 check_command_exists() {
   command_name="${*}"
 
@@ -40,9 +44,10 @@ mkdir -p "$COLORDIR" "$AURORAEDIR" "$LOOKANDFEELDIR" "$CURSORDIR"
 mkdir ./dist
 
 # Fast install
-FLAVOUR="1"
-ACCENT="9"
-WINDECSTYLE="1"
+FLAVOUR="$1"
+ACCENT="$2"
+WINDECSTYLE="$3"
+DEBUGMODE="$4"
 
 clear
 
