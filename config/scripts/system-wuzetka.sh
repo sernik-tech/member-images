@@ -72,7 +72,7 @@ rpm-ostree override remove cmake cmake-data extra-cmake-modules jsoncpp kf5-kaut
 
 # kill the files
 rm -rf /tmp/gtk
-rm -tf /tmp/papirus-folders
+rm -rf /tmp/papirus-folders
 rm -rf /tmp/corners
 rm -rf /tmp/roundedcorners
 rm -rf /tmp/bmw
