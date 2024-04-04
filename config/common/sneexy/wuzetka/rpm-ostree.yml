@@ -17,6 +17,10 @@ install:
   - playerctl
   - mpv
   - waydroid
+  - crontabs
+  - gamemode
+  - gamescope
+  - mangohud
 
   # themes
   - klassy
@@ -40,7 +44,7 @@ install:
   - zoxide
   - zsh
 
-  # utilities
+  # kde utilities
   - ark
   - dolphin-plugins
   - kate
@@ -56,10 +60,6 @@ install:
   - translate-shell
   - rom-properties-kf5
   - power-profiles-daemon
-  - crontabs
-  - gamemode
-  - gamescope
-  - mangohud
 
   # libraries and tools
   - fontconfig
