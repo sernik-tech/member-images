@@ -21,6 +21,7 @@ install:
   - gamemode
   - gamescope
   - mangohud
+  - cryfs
 
   # themes
   - klassy
