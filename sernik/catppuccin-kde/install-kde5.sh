@@ -17,11 +17,11 @@ check_command_exists "sed"
 check_command_exists "unzip"
 check_command_exists "lookandfeeltool"
 
-COLORDIR="${XDG_DATA_HOME:-$HOME/.local/share}/color-schemes"
-AURORAEDIR="${XDG_DATA_HOME:-$HOME/.local/share}/aurorae/themes"
-LOOKANDFEELDIR="${XDG_DATA_HOME:-$HOME/.local/share}/plasma/look-and-feel"
-DESKTOPTHEMEDIR="${XDG_DATA_HOME:-$HOME/.local/share}/plasma/desktoptheme"
-CURSORDIR="${XDG_DATA_HOME:-$HOME/.local/share}/icons"
+COLORDIR="/usr/share/color-schemes"
+AURORAEDIR="/usr/share/aurorae/themes"
+LOOKANDFEELDIR="/usr/share/plasma/look-and-feel"
+DESKTOPTHEMEDIR="/usr/share/plasma/desktoptheme"
+CURSORDIR="/usr/share/icons"
 
 echo "Creating theme directories.."
 mkdir -p "$COLORDIR" "$AURORAEDIR" "$LOOKANDFEELDIR" "$DESKTOPTHEMEDIR" "$CURSORDIR"
@@ -365,15 +365,7 @@ Here are some things you can do to try fixing this:
  2: Check your intenet connection
  3: See if https://store.kde.org is blocked
  4: Manually installing Lightly-Plasma from https://pling.com/p/1879921/
-
-Would you like to install Catppuccin/KDE without lightly plasma? [Y/n]:
 EOF
-        read -r CONFIRMATION
-        if [ "$CONFIRMATION" = "N" ] || [ "$CONFIRMATION" = "n" ]; then
-            echo
-            echo "Exiting..."
-            exit
-        fi
         echo
         echo "Continuing without lightly plasma.."
     else
@@ -414,12 +406,6 @@ InstallCursor() {
 
 # Syntax <Flavour> <Accent> <WindowDec> <Debug = global/color/splash/cursor>
 case "$DEBUGMODE" in
-    "")
-        echo
-        echo "Install $FLAVOURNAME $ACCENTNAME? with the $WINDECSTYLENAME window Decorations? [y/N]:"
-        read -r CONFIRMATION
-        clear
-        ;;
     global)
         InstallGlobalTheme
         exit
@@ -441,38 +427,18 @@ case "$DEBUGMODE" in
     *) echo "Invalid Debug Mode" ;;
 esac
 
-if [ "$CONFIRMATION" = "Y" ] || [ "$CONFIRMATION" = "y" ]; then
-    # Build and Install Global Theme
-    InstallGlobalTheme
+# Build and Install Global Theme
+InstallGlobalTheme
 
-    # Build Colorscheme
-    InstallColorscheme
+# Build Colorscheme
+InstallColorscheme
 
-    echo "Installing Catppuccin Cursor theme.."
-    InstallCursor
+echo "Installing Catppuccin Cursor theme.."
+InstallCursor
 
-    # Cleanup
-    echo "Cleaning up.."
-    rm -rf ./dist
+# Cleanup
+echo "Cleaning up.."
+rm -rf ./dist
 
-    # Apply theme
-    echo
-    echo "Do you want to apply theme? [y/N]:"
-    read -r CONFIRMATION
-
-    if [ "$CONFIRMATION" = "Y" ] || [ "$CONFIRMATION" = "y" ]; then
-        lookandfeeltool -a "$GLOBALTHEMENAME"
-        clear
-        # Some legacy apps still look in ~/.icons
-        cat <<EOF
-The cursors will fully apply once you log out
-You may want to run the following in your terminal if you notice any inconsistencies for the cursor theme:
-ln -s ~/.local/share/icons/ ~/.icons
-EOF
-    else
-        echo "You can apply theme at any time using system settings"
-        sleep 1
-    fi
-else
-    echo "Exiting.."
-fi
+echo "You can apply theme at any time using system settings"
+echo "Finished install of Catppuccin KDE Plasma."
