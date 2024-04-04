@@ -12,6 +12,7 @@ rpm-ostree install joystickwake xwiimote-ng
 
 # Ensure all required/used folders are created
 mkdir -p /usr/share/sddm/themes
+mkdir -p /usr/share/kwin/effects
 mkdir -p /usr/share/themes
 mkdir -p /usr/share/icons
 mkdir -p /etc/skel/.local/share/themes
@@ -31,7 +32,6 @@ cd /tmp/gtk && source /tmp/gtk/bin/activate && python3 /tmp/gtk/install.py mocha
 #
 # Papirus (Folders)
 #
-
 git clone https://github.com/catppuccin/papirus-folders.git /tmp/papirus-folders
 cp -r /tmp/papirus-folders/src/* /usr/share/icons/Papirus
 chmod +x /tmp/papirus-folders/papirus-folders
@@ -53,6 +53,14 @@ cd /tmp/roundedcorners/build && cmake .. --install-prefix /usr
 cd /tmp/roundedcorners/build && make && make install
 
 #
+# Burn My Windows
+#
+git clone https://github.com/Schneegans/Burn-My-Windows.git /tmp/bmw
+chmod +x /tmp/bmw/kwin/build.sh
+cd /tmp/bmw && /tmp/bmw/kwin/build.sh
+tar -xf /tmp/bmw/kwin/burn_my_windows_kwin4.tar.gz -C /usr/share/kwin/effects
+
+#
 # Clean up
 #
 
@@ -60,13 +68,14 @@ cd /tmp/roundedcorners/build && make && make install
 # gtk deps
 rpm-ostree override remove GraphicsMagick GraphicsMagick-c++ flexiblas flexiblas-netlib flexiblas-openblas-openmp gsl gtksourceview4 inkscape inkscape-libs lib2geom libcdr libgfortran libquadmath librevenge libsass libvisio libwpd libwpg mkfontscale openblas openblas-openmp optipng potrace python3-cssselect python3-inkex python3-lxml python3-numpy python3-pyparsing python3-pyserial python3-scour python3-six sassc urw-base35-fonts-legacy
 # qt deps
-rpm-ostree override remove cmake cmake-data extra-cmake-modules jsoncpp kf5-kauth-devel kf5-kcodecs-devel kf5-kconfig kf5-kconfig-devel kf5-kconfigwidgets-devel kf5-kcoreaddons-devel kf5-kservice-devel kf5-kwidgetsaddons-devel kf5-kwindowsystem-devel kf5-rpm-macros kwin-devel libX11-devel libXau-devel libepoxy-devel libglvnd-core-devel libglvnd-devel libxcb-devel mesa-libEGL-devel qt5-linguist qt5-qtbase-devel qt5-rpm-macros rhash vulkan-headers vulkan-loader-devel xorg-x11-proto-devel
+rpm-ostree override remove cmake cmake-data extra-cmake-modules jsoncpp kf5-kauth-devel kf5-kcodecs-devel kf5-kconfig kf5-kconfig-devel kf5-kconfigwidgets-devel kf5-kcoreaddons-devel kf5-kservice-devel kf5-kwindowsystem-devel kf5-rpm-macros kwin-devel libX11-devel libXau-devel libepoxy-devel libglvnd-core-devel libglvnd-devel libxcb-devel mesa-libEGL-devel qt5-linguist qt5-qtbase-devel qt5-rpm-macros rhash vulkan-headers vulkan-loader-devel xorg-x11-proto-devel
 
 # kill the files
 rm -rf /tmp/gtk
 rm -tf /tmp/papirus-folders
 rm -rf /tmp/corners
 rm -rf /tmp/roundedcorners
+rm -rf /tmp/bmw
 
 # disabling the repositories for the booted system
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/atim-starship-fedora-$(rpm -E %fedora).repo
