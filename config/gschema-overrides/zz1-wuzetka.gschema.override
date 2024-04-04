@@ -1,3 +1,12 @@
+# GTK Theme
+[org.gnome.desktop.interface]
+gtk-theme = "Catppuccin-Mocha-Compact-Green-Dark"
+icon-theme = "Papirus-Dark"
+cursor-theme = "Bibata-Modern-Light"
+font-name = "Lexend 10"
+document-font-name = "Lexend Medium 11"
+monospace-font-name = "JetBrainsMono Nerd Font 11"
+
 # File picker settings
 [org.gtk.gtk4.settings.file-chooser]
 sort-directories-first=true
