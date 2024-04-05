@@ -351,9 +351,8 @@ EOF
     echo "Installing Global Theme.."
     (
         cd ./dist || exit
-        mkdir -p "$LOOKANDFEELDIR/$GLOBALTHEMENAME"
         tar -cf "$GLOBALTHEMENAME".tar.gz "$GLOBALTHEMENAME"
-        tar -xvzf "$GLOBALTHEMENAME".tar.gz -C "$LOOKANDFEELDIR/$GLOBALTHEMENAME"
+        tar -xvf "$GLOBALTHEMENAME".tar.gz -C "$LOOKANDFEELDIR"
     )
 
     if [ ! -d "$DESKTOPTHEMEDIR/lightly-plasma-git/" ]; then
@@ -425,7 +424,6 @@ case "$DEBUGMODE" in
         BuildSplashScreen
         ;;
     cursor) GetCursor ;;
-    *) echo "Invalid Debug Mode" ;;
 esac
 
 # Build and Install Global Theme
