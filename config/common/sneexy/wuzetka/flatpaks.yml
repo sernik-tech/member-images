@@ -17,6 +17,8 @@ system:
     - com.usebottles.bottles
     - fr.handbrake.ghb
     - org.kde.okteta
+    - io.github.seadve.Mousai
+    - com.dec05eba.gpu_screen_recorder
 
     # system applications
     - org.kde.kclock
@@ -28,7 +30,7 @@ system:
     - org.kde.kalk
     - org.kde.okular
     - org.pipewire.Helvum
-    - org.gnome.DejaDup
+    - org.gnome.World.PikaBackup
     - com.github.tchx84.Flatseal
     - org.gustavoperedo.FontDownloader
 user:
