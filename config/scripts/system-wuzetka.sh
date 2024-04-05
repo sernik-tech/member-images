@@ -21,6 +21,7 @@ mkdir -p /etc/skel/.local/share/themes
 # KDE Theme
 #
 rpm-ostree install gettext-devel
+
 git clone https://github.com/catppuccin/kde.git /tmp/catppuccinkde
 cd /tmp/catppuccinkde && git checkout v0.2.5 # Comment when Fedora 40/Plasma 6
 rm -f /tmp/catppuccinkde/install.sh

@@ -352,7 +352,7 @@ EOF
     (
         cd ./dist || exit
         tar -cf "$GLOBALTHEMENAME".tar.gz "$GLOBALTHEMENAME"
-        kpackagetool5 -i "$GLOBALTHEMENAME".tar.gz
+        tar -xvzf "$GLOBALTHEMENAME".tar.gz -C "$LOOKANDFEELDIR"
     )
 
     if [ ! -d "$DESKTOPTHEMEDIR/lightly-plasma-git/" ]; then

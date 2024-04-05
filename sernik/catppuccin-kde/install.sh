@@ -354,7 +354,7 @@ EOF
     (
         cd ./dist || exit
         tar -cf "$GLOBALTHEMENAME".tar.gz "$GLOBALTHEMENAME"
-        kpackagetool6 -i "$GLOBALTHEMENAME".tar.gz
+        tar -xvzf "$GLOBALTHEMENAME".tar.gz -C "$LOOKANDFEELDIR"
         cp -r "$GLOBALTHEMENAME" "$LOOKANDFEELDIR"
     )
 
