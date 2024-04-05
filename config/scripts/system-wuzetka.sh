@@ -15,7 +15,7 @@ mkdir -p /usr/share/sddm/themes
 mkdir -p /usr/share/kwin/effects
 mkdir -p /usr/share/themes
 mkdir -p /usr/share/icons
-mkdir -p /etc/skel/.local/share/themes
+mkdir -p /usr/etc/skel/.local/share/themes
 
 #
 # KDE Theme
@@ -31,6 +31,12 @@ chmod +x /tmp/catppuccinkde/install.sh
 cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 1 9 1
 
 #
+# Konsole
+#
+git clone https://github.com/catppuccin/konsole /tmp/konsole
+cp -r /tmp/konsole/*.colorscheme /usr/etc/skel/.local/share/konsole
+
+#
 # GTK Theme
 #
 
@@ -40,7 +46,7 @@ rpm-ostree install sassc inkscape optipng
 git clone --recurse-submodules https://github.com/catppuccin/gtk.git /tmp/gtk # Clone the GTK theme repository
 python3 -m venv /tmp/gtk # Create python virtual environment
 source /tmp/gtk/bin/activate && pip install -r /tmp/gtk/requirements.txt
-cd /tmp/gtk && source /tmp/gtk/bin/activate && python3 /tmp/gtk/install.py mocha -a green -s compact -d /etc/skel/.local/share/themes
+cd /tmp/gtk && source /tmp/gtk/bin/activate && python3 /tmp/gtk/install.py mocha -a green -s compact -d /usr/etc/skel/.local/share/themes
 
 #
 # Papirus (Folders)
