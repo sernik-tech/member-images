@@ -16,6 +16,7 @@ mkdir -p /usr/share/kwin/effects
 mkdir -p /usr/share/themes
 mkdir -p /usr/share/icons
 mkdir -p /usr/etc/skel/.local/share/themes
+mkdir -p /usr/etc/skel/.local/share/konsole
 
 #
 # KDE Theme

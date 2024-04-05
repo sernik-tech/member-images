@@ -38,7 +38,7 @@ user:
   install:
     # internet
     - org.qbittorrent.qBittorrent
-    - io.gitlab.news_flash.NewsFlash
+    - io.github.martinrotter.rssguardlite
     - org.nicotine_plus.Nicotine
 
     # chat
@@ -51,14 +51,12 @@ user:
     # gaming
     - org.DolphinEmu.dolphin-emu
     - io.github.dosbox-staging
-    - org.freedesktop.Platform.VulkanLayer.gamescope
-    - org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
+    - org.freedesktop.Platform.VulkanLayer.gamescope//23.08
+    - org.freedesktop.Platform.VulkanLayer.MangoHud//23.08
     - org.prismlauncher.PrismLauncher
     - net.davidotek.pupgui2
     - org.libretro.RetroArch
     - org.vinegarhq.Vinegar
 
     # utilities
-    - com.bitwarden.desktop
-    - io.github.mpobaschnig.Vaults
-    - io.podman_desktop.PodmanDesktop
+    - io.gitlab.azymohliad.WatchMate
