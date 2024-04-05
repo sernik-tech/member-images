@@ -5,4 +5,4 @@ update_info=kscreenlocker.upd:0.1-autolock
 WallpaperPlugin=org.kde.slideshow
 
 [Greeter][Wallpaper][org.kde.slideshow][General]
-SlidePaths=/usr/share/wallpapers/
+SlidePaths=/usr/share/backgrounds/catppuccin/
