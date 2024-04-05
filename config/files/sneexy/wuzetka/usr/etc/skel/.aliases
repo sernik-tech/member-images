@@ -1,0 +1,30 @@
+#!/bin/zsh
+#
+# .aliases - Set whatever shell aliases you want.
+#
+
+# alias aliasname="command"
+
+# kitty
+alias s="kitten ssh"
+
+# alias average commands to modern unix-util counterpartrs
+alias cd="z"
+alias grep="rg"
+alias find="fd"
+alias df="duf"
+# different listing/ls styles
+alias ls="lsd"
+alias l="lsd -l"
+alias la="lsd -a"
+alias lla="lsd -la"
+alias lt="lsd --tree"
+alias cat="bat --paging=never"
+
+# custom aliases
+alias music="ncmpcpp"
+alias ublue-update="systemctl start ublue-update.service"
+alias wttr.in="curl 'wttr.in/?0' && curl 'wttr.in/?0?m'"
+alias please="sudo"
+alias fucking="sudo"
+alias for-the-love-of-god="sudo"
