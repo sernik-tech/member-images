@@ -20,6 +20,12 @@ mkdir -p /usr/etc/skel/.local/share/themes
 mkdir -p /usr/etc/skel/.local/share/konsole
 
 #
+# Sheldon
+#
+curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
+    | bash -s -- --repo rossmacarthur/sheldon --to /usr/bin
+
+#
 # KDE Theme
 #
 rpm-ostree install gettext-devel
@@ -41,10 +47,7 @@ cp -r /tmp/konsole/*.colorscheme /usr/etc/skel/.local/share/konsole
 #
 # GTK Theme
 #
-
-# Install dependencies
 rpm-ostree install sassc inkscape optipng
-
 git clone --recurse-submodules https://github.com/catppuccin/gtk.git /tmp/gtk # Clone the GTK theme repository
 python3 -m venv /tmp/gtk # Create python virtual environment
 source /tmp/gtk/bin/activate && pip install -r /tmp/gtk/requirements.txt
