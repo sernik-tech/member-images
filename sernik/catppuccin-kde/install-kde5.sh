@@ -351,8 +351,9 @@ EOF
     echo "Installing Global Theme.."
     (
         cd ./dist || exit
+        mkdir -p "$LOOKANDFEELDIR/$GLOBALTHEMENAME"
         tar -cf "$GLOBALTHEMENAME".tar.gz "$GLOBALTHEMENAME"
-        tar -xvzf "$GLOBALTHEMENAME".tar.gz -C "$LOOKANDFEELDIR"
+        tar -xvzf "$GLOBALTHEMENAME".tar.gz -C "$LOOKANDFEELDIR/$GLOBALTHEMENAME"
     )
 
     if [ ! -d "$DESKTOPTHEMEDIR/lightly-plasma-git/" ]; then
