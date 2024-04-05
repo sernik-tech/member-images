@@ -23,6 +23,7 @@ install:
   - mangohud
 
   # themes
+  - lightly
   - klassy
   - kvantum
   - papirus-icon-theme
