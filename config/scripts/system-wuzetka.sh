@@ -26,6 +26,15 @@ curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
     | bash -s -- --repo rossmacarthur/sheldon --to /usr/bin
 
 #
+# Krabby
+#
+KRABBY_VER=$(curl -sL https://api.github.com/repos/ViRb3/wgcf/releases/latest | jq -r '.assets[] | select(.name? | match("krabby-.*-x86_64.tar.gz$")) | .browser_download_url')
+curl -sL -o /tmp/krabby.tar.gz ${KRABBY_VER}
+tar -xvf /tmp/krabby.tar.gz -C /tmp/krabby
+cp /tmp/krabby/krabby /usr/bin
+chmod +x /usr/bin/krabby
+
+#
 # wgcf
 #
 WGCF_VER=$(curl -sL https://api.github.com/repos/ViRb3/wgcf/releases/latest | jq -r '.assets[] | select(.name? | match("wgcf_.*_linux_amd64$")) | .browser_download_url')
@@ -49,24 +58,6 @@ cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 1 9 1
 #
 git clone https://github.com/catppuccin/konsole /tmp/konsole
 cp -r /tmp/konsole/*.colorscheme /usr/etc/skel/.local/share/konsole
-
-#
-# Materia Plasma Theme
-#
-git clone https://github.com/PapirusDevelopmentTeam/materia-kde.git /tmp/materia-kde
-cp -r /tmp/materia-kde/plasma/desktoptheme/Materia-Color /usr/share/plasma/desktoptheme
-
-#
-# Splash screen
-#
-curl -Lfs https://www.pling.com/p/1401423/loadFiles | jq -r '.files | first.version as $v | .[] | select(.version == $v).url' | perl -pe 's/\%(\w\w)/chr hex $1/ge' | xargs wget -O /tmp/quarkssplashdarker.tar.gz
-tar -xvf /tmp/quarkssplashdarker.tar.gz -C /usr/share/plasma/look-and-feel
-
-#
-# CatWalk
-#
-curl -Lfs https://www.pling.com/p/2055225/loadFiles | jq -r '.files | first.version as $v | .[] | select(.version == $v).url' | perl -pe 's/\%(\w\w)/chr hex $1/ge' | xargs wget -O /tmp/catwalk.tar.gz
-tar -xvf /tmp/catwalk.tar.gz -C /usr/share/plasma/plasmoids
 
 #
 # GTK Theme
