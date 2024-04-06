@@ -63,6 +63,12 @@ curl -Lfs https://www.pling.com/p/1401423/loadFiles | jq -r '.files | first.vers
 tar -xvf /tmp/quarkssplashdarker.tar.gz -C /usr/share/plasma/look-and-feel
 
 #
+# CatWalk
+#
+curl -Lfs https://www.pling.com/p/2055225/loadFiles | jq -r '.files | first.version as $v | .[] | select(.version == $v).url' | perl -pe 's/\%(\w\w)/chr hex $1/ge' | xargs wget -O /tmp/catwalk.tar.gz
+tar -xvf /tmp/catwalk.tar.gz -C /usr/share/plasma/plasmoids
+
+#
 # GTK Theme
 #
 rpm-ostree install sassc inkscape optipng
