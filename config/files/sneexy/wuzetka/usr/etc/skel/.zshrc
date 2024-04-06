@@ -15,7 +15,7 @@ eval "$(sheldon source)"
 autoload -Uz compinit && compinit
 
 # funny pokemon
-#krabby random
+krabby random
 
 # load aliases
 if [ -f ${HOME}/.config/zsh/.aliases ]; then
@@ -27,3 +27,6 @@ eval "$(zoxide init zsh)"
 
 # starship prompt
 eval "$(starship init zsh)"
+
+# wezterm integration
+source "${HOME}/.config/zsh/wezterm.sh"

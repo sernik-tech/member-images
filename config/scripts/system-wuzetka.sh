@@ -26,10 +26,16 @@ curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
     | bash -s -- --repo rossmacarthur/sheldon --to /usr/bin
 
 #
+# wgcf
+#
+WGCF_VER=$(curl -sL https://api.github.com/repos/ViRb3/wgcf/releases/latest | jq -r '.assets[] | select(.name? | match("wgcf_.*_linux_amd64$")) | .browser_download_url')
+curl -sL -o /usr/bin/wgcf ${WGCF_VER}
+chmod +x /usr/bin/wgcf
+
+#
 # KDE Theme
 #
 rpm-ostree install gettext-devel
-
 git clone https://github.com/catppuccin/kde.git /tmp/catppuccinkde
 cd /tmp/catppuccinkde && git checkout v0.2.5 # Comment when Fedora 40/Plasma 6
 rm -f /tmp/catppuccinkde/install.sh
@@ -43,6 +49,18 @@ cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 1 9 1
 #
 git clone https://github.com/catppuccin/konsole /tmp/konsole
 cp -r /tmp/konsole/*.colorscheme /usr/etc/skel/.local/share/konsole
+
+#
+# Materia Plasma Theme
+#
+git clone https://github.com/PapirusDevelopmentTeam/materia-kde.git /tmp/materia-kde
+cp -r /tmp/materia-kde/plasma/desktoptheme/Materia-Color /usr/share/plasma/desktoptheme
+
+#
+# Splash screen
+#
+curl -Lfs https://www.pling.com/p/1401423/loadFiles | jq -r '.files | first.version as $v | .[] | select(.version == $v).url' | perl -pe 's/\%(\w\w)/chr hex $1/ge' | xargs wget -O /tmp/quarkssplashdarker.tar.gz
+tar -xvf /tmp/quarkssplashdarker.tar.gz -C /usr/share/plasma/look-and-feel
 
 #
 # GTK Theme
@@ -71,7 +89,7 @@ sudo cp -r /tmp/corners/corners /usr/share/sddm/themes
 # Latte spacer
 #
 git clone https://github.com/psifidotos/applet-latte-spacer.git /tmp/latte-spacer
-# plasma 6 git
+# plasma 6 git, might be unneeded later
 #git clone https://github.com/doncsugar/applet-latte-spacer.git /tmp/latte-spacer
 rm -rf /tmp/latte-spacer/.git
 rm -f /tmp/latte-spacer/README.md
