@@ -1,20 +1,9 @@
-[$Version]
-update_info=dolphin_detailsmodesettings.upd:rename-leading-padding,dolphin_detailsmodesettings.upd:move-content-display
-
 [ContextMenu]
 ShowCopyMoveMenu=true
-
-[General]
-Version=202
-ViewPropsTimestamp=2024,4,5,8,59,45.935
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false
 Places Icons Static Size=16
-
-[KPropertiesDialog]
-1366x768 screen: Height=532
-1366x768 screen: Width=462
 
 [MainWindow]
 ToolBarsMovable=Disabled

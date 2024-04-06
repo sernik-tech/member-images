@@ -28,10 +28,10 @@ curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
 #
 # Krabby
 #
-KRABBY_VER=$(curl -sL https://api.github.com/repos/ViRb3/wgcf/releases/latest | jq -r '.assets[] | select(.name? | match("krabby-.*-x86_64.tar.gz$")) | .browser_download_url')
+KRABBY_VER=$(curl -sL https://api.github.com/repos/yannjor/krabby/releases/latest | jq -r '.assets[] | select(.name? | match("krabby-.*-x86_64.tar.gz$")) | .browser_download_url')
 curl -sL -o /tmp/krabby.tar.gz ${KRABBY_VER}
-tar -xvf /tmp/krabby.tar.gz -C /tmp/krabby
-cp /tmp/krabby/krabby /usr/bin
+tar -xvf /tmp/krabby.tar.gz -C /tmp
+cp /tmp/krabby /usr/bin
 chmod +x /usr/bin/krabby
 
 #
@@ -51,7 +51,8 @@ rm -f /tmp/catppuccinkde/install.sh
 #curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/sernik/catppuccin-kde/install.sh
 curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/sernik/catppuccin-kde/install-kde5.sh # Comment when Fedora 40/Plasma 6
 chmod +x /tmp/catppuccinkde/install.sh
-cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 1 9 1
+cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 1 9 1 # Mocha Green (dark)
+cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 4 9 1 # Latte Green (light)
 
 #
 # Konsole

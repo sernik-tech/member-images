@@ -1,0 +1,15 @@
+[General]
+ColorScheme=CatppuccinMochaGreen
+Name=Catppuccin Mocha Green
+
+[Icons]
+Theme=Papirus-Dark
+
+[KDE]
+SingleClick=false
+ChangeCursor=true
+ColorScheme=CatppuccinMochaGreen
+LookAndFeelPackage=Catppuccin-Mocha-Green
+DefaultLightLookAndFeel=Catppuccin-Latte-Green
+DefaultDarkLookAndFeel=Catppuccin-Mocha-Green
+widgetStyle=breeze

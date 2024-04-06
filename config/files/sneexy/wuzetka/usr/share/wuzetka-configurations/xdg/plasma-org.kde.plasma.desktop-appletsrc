@@ -6,9 +6,7 @@ wheel:Vertical;NoModifier=org.kde.switchdesktop
 RightButton;NoModifier=org.kde.contextmenu
 
 [Containments][1]
-ItemGeometries-1366x768=
 ItemGeometriesHorizontal=
-activityId=0ec0e5f6-4e89-423d-9fe5-2da69f6ad66d
 formfactor=0
 immutability=1
 lastScreen=0
@@ -30,7 +28,6 @@ SlideInterval=1800
 SlidePaths=/usr/share/backgrounds/catppuccin/
 
 [Containments][2]
-activityId=
 formfactor=2
 immutability=1
 lastScreen=0
@@ -136,7 +133,6 @@ DialogWidth=1366
 AppletOrder=3;32;20;34;35;33;36;7
 
 [Containments][26]
-activityId=815e913b-b02d-4f6d-8a24-cddd5a1a728f
 formfactor=0
 immutability=1
 lastScreen=0
@@ -145,7 +141,6 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
 [Containments][28]
-activityId=
 formfactor=2
 immutability=1
 lastScreen=0
@@ -191,7 +186,6 @@ DialogWidth=1366
 AppletOrder=29;31;30
 
 [Containments][8]
-activityId=
 formfactor=2
 immutability=1
 lastScreen=0
