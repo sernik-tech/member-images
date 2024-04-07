@@ -55,6 +55,33 @@ cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 1 9 1 # Mocha Green (dark
 cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 4 9 1 # Latte Green (light)
 
 #
+# Custom Plasma Theme
+#
+mkdir -p /tmp/breezemateriaworkingdir
+git clone --depth=1 https://github.com/PapirusDevelopmentTeam/materia-kde /tmp/breezemateriaworkingdir/materia-kde
+cp -r /usr/share/plasma/desktoptheme/default /tmp/breezemateriaworkingdir/breeze
+# delete files
+rm -r /tmp/breezemateriaworkingdir/breeze/icons
+rm -r /tmp/breezemateriaworkingdir/breeze/weather
+rm /tmp/breezemateriaworkingdir/breeze/widgets/containment-controls.svgz
+rm /tmp/breezemateriaworkingdir/breeze/widgets/configuration-icons.svgz
+rm /tmp/breezemateriaworkingdir/breeze/widgets/arrows.svgz
+rm /tmp/breezemateriaworkingdir/breeze/widgets/action-overlays.svgz
+rm /tmp/breezemateriaworkingdir/breeze/metadata.json
+# compress materia's svgs
+gzip -S z /tmp/breezemateriaworkingdir/materia-kde/*/*.svg
+# copy icons from materia to breeze
+cp -r $/tmp/breezemateriaworkingdir/materia-kde/icons /tmp/breezemateriaworkingdir/breeze
+cp -r /tmp/breezemateriaworkingdir/materia-kde/weather /tmp/breezemateriaworkingdir/breeze
+cp /tmp/breezemateriaworkingdir/materia-kde/widgets/containment-controls.svgz /tmp/breezemateriaworkingdir/breeze/widgets
+cp /tmp/breezemateriaworkingdir/materia-kde/widgets/configuration-icons.svgz /tmp/breezemateriaworkingdir/breeze/widgets
+cp /tmp/breezemateriaworkingdir/materia-kde/widgets/arrows.svgz /tmp/breezemateriaworkingdir/breeze/widgets
+cp /tmp/breezemateriaworkingdir/materia-kde/widgets/action-overlays.svgz /tmp/breezemateriaworkingdir/breeze/widgets
+# download modified metadata files and copy to finish the product
+wget https://git.gay/sneexy/sernik/raw/branch/main/kde/breeze-materia/template/metadata.desktop -O /tmp/breezemateriaworkingdir/breeze/metadata.desktop
+mv /tmp/breezemateriaworkingdir/breeze /usr/share/plasma/desktoptheme/Breeze-Materia
+
+#
 # Konsole
 #
 git clone https://github.com/catppuccin/konsole /tmp/konsole
