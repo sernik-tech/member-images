@@ -10,6 +10,9 @@ wget "https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fe
 # bazzite packages
 rpm-ostree install joystickwake xwiimote-ng
 
+# systemd services to enable on the system
+systemctl start hblock.timer
+
 # Ensure all required/used folders are created
 mkdir -p /usr/share/sddm/themes
 mkdir -p /usr/share/kwin/effects

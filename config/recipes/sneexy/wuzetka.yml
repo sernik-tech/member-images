@@ -19,6 +19,7 @@ modules:
 
   - type: files
     files:
+        - sernik/usr: /usr
         - sneexy/wuzetka/usr: /usr
 
   - from-file: common/sneexy/wuzetka/flatpaks.yml
