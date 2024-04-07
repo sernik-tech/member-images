@@ -69,14 +69,14 @@ rm /tmp/breezemateriaworkingdir/breeze/widgets/arrows.svgz
 rm /tmp/breezemateriaworkingdir/breeze/widgets/action-overlays.svgz
 rm /tmp/breezemateriaworkingdir/breeze/metadata.json
 # compress materia's svgs
-gzip -S z /tmp/breezemateriaworkingdir/materia-kde/*/*.svg
+gzip -S z /tmp/breezemateriaworkingdir/materia-kde/plasma/desktoptheme/Materia-Color/*/*.svg
 # copy icons from materia to breeze
-cp -r $/tmp/breezemateriaworkingdir/materia-kde/icons /tmp/breezemateriaworkingdir/breeze
-cp -r /tmp/breezemateriaworkingdir/materia-kde/weather /tmp/breezemateriaworkingdir/breeze
-cp /tmp/breezemateriaworkingdir/materia-kde/widgets/containment-controls.svgz /tmp/breezemateriaworkingdir/breeze/widgets
-cp /tmp/breezemateriaworkingdir/materia-kde/widgets/configuration-icons.svgz /tmp/breezemateriaworkingdir/breeze/widgets
-cp /tmp/breezemateriaworkingdir/materia-kde/widgets/arrows.svgz /tmp/breezemateriaworkingdir/breeze/widgets
-cp /tmp/breezemateriaworkingdir/materia-kde/widgets/action-overlays.svgz /tmp/breezemateriaworkingdir/breeze/widgets
+cp -r /tmp/breezemateriaworkingdir/materia-kde/plasma/desktoptheme/Materia-Color/icons /tmp/breezemateriaworkingdir/breeze
+cp -r /tmp/breezemateriaworkingdir/materia-kde/plasma/desktoptheme/Materia-Color/weather /tmp/breezemateriaworkingdir/breeze
+cp /tmp/breezemateriaworkingdir/materia-kde/plasma/desktoptheme/Materia-Color/widgets/containment-controls.svgz /tmp/breezemateriaworkingdir/breeze/widgets
+cp /tmp/breezemateriaworkingdir/materia-kde/plasma/desktoptheme/Materia-Color/widgets/configuration-icons.svgz /tmp/breezemateriaworkingdir/breeze/widgets
+cp /tmp/breezemateriaworkingdir/materia-kde/plasma/desktoptheme/Materia-Color/widgets/arrows.svgz /tmp/breezemateriaworkingdir/breeze/widgets
+cp /tmp/breezemateriaworkingdir/materia-kde/plasma/desktoptheme/Materia-Color/widgets/action-overlays.svgz /tmp/breezemateriaworkingdir/breeze/widgets
 # download modified metadata files and copy to finish the product
 wget https://git.gay/sneexy/sernik/raw/branch/main/kde/breeze-materia/template/metadata.desktop -O /tmp/breezemateriaworkingdir/breeze/metadata.desktop
 mv /tmp/breezemateriaworkingdir/breeze /usr/share/plasma/desktoptheme/Breeze-Materia
