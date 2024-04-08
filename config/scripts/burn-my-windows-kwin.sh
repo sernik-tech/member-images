@@ -7,6 +7,9 @@ set -euo pipefail
 rpm-ostree install kf5-kwidgetsaddons-devel
 #rpm-ostree install kf6-kwidgetsaddons-devel
 
+# Create kwin effect's folder
+mkdir -p /usr/share/kwin/effects
+
 # Clone git, build and install BMW's kwin effects
 git clone https://github.com/Schneegans/Burn-My-Windows.git /tmp/bmw
 chmod +x /tmp/bmw/kwin/build.sh
