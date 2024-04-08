@@ -10,7 +10,7 @@ repos:
   - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
 
   # kwin theme
-  - https://download.opensuse.org/repositories/home:paul4us/Fedora_%OS_VERSION%/home:paul4us.repo
+  #- https://download.opensuse.org/repositories/home:paul4us/Fedora_%OS_VERSION%/home:paul4us.repo
 
   # rom properties
   - https://copr.fedorainfracloud.org/coprs/kylegospo/rom-properties/repo/fedora-%OS_VERSION%/kylegospo-rom-properties-fedora-%OS_VERSION%.repo
@@ -28,7 +28,7 @@ install:
 
   # themes
   #- lightly
-  - klassy
+  #- klassy
   #- kvantum
   - papirus-icon-theme
 
