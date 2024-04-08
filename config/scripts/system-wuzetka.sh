@@ -49,10 +49,10 @@ chmod +x /usr/bin/wgcf
 #
 rpm-ostree install gettext-devel
 git clone https://github.com/catppuccin/kde.git /tmp/catppuccinkde
-cd /tmp/catppuccinkde && git checkout v0.2.5 # Comment when Fedora 40/Plasma 6
+#cd /tmp/catppuccinkde && git checkout v0.2.5 # Comment when Fedora 40/Plasma 6
 rm -f /tmp/catppuccinkde/install.sh
-#curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/sernik/catppuccin-kde/install.sh
-curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/sernik/catppuccin-kde/install-kde5.sh # Comment when Fedora 40/Plasma 6
+curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/sernik/catppuccin-kde/install.sh
+#curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/sernik/catppuccin-kde/install-kde5.sh # Comment when Fedora 40/Plasma 6
 chmod +x /tmp/catppuccinkde/install.sh
 cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 1 9 1 # Mocha Green (dark)
 cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 4 9 1 # Latte Green (light)
@@ -116,9 +116,9 @@ sudo cp -r /tmp/corners/corners /usr/share/sddm/themes
 #
 # Latte spacer
 #
-git clone https://github.com/psifidotos/applet-latte-spacer.git /tmp/latte-spacer
+#git clone https://github.com/psifidotos/applet-latte-spacer.git /tmp/latte-spacer
 # plasma 6 git, might be unneeded later
-#git clone https://github.com/doncsugar/applet-latte-spacer.git /tmp/latte-spacer
+git clone https://github.com/doncsugar/applet-latte-spacer.git /tmp/latte-spacer
 rm -rf /tmp/latte-spacer/.git
 rm -f /tmp/latte-spacer/README.md
 rm -f /tmp/latte-spacer/CHANGELOG.md
@@ -127,7 +127,8 @@ cp -r /tmp/latte-spacer/* /usr/share/plasma/plasmoids/org.kde.latte.spacer
 #
 # KDE Rounded Corners
 #
-rpm-ostree install git cmake gcc-c++ extra-cmake-modules kwin-devel kf5-kconfigwidgets-devel libepoxy-devel
+#rpm-ostree install git cmake gcc-c++ extra-cmake-modules kwin-devel kf5-kconfigwidgets-devel libepoxy-devel
+rpm-ostree install git cmake gcc-c++ extra-cmake-modules kwin-devel kf6-kconfigwidgets-devel libepoxy-devel kf6-kcmutils-devel qt6-qtbase-private-devel wayland-devel
 git clone https://github.com/matinlotfali/KDE-Rounded-Corners.git /tmp/roundedcorners
 mkdir /tmp/roundedcorners/build
 cd /tmp/roundedcorners/build && cmake .. --install-prefix /usr
@@ -136,7 +137,8 @@ cd /tmp/roundedcorners/build && make && make install
 #
 # Burn My Windows
 #
-rpm-ostree install kf5-kwidgetsaddons-devel
+#rpm-ostree install kf5-kwidgetsaddons-devel
+rpm-ostree install kf6-kwidgetsaddons-devel
 git clone https://github.com/Schneegans/Burn-My-Windows.git /tmp/bmw
 chmod +x /tmp/bmw/kwin/build.sh
 cd /tmp/bmw && /tmp/bmw/kwin/build.sh
@@ -159,7 +161,7 @@ tar -xf /tmp/bmw/kwin/burn_my_windows_kwin4.tar.gz -C /usr/share/kwin/effects
 # gtk deps
 rpm-ostree override remove GraphicsMagick GraphicsMagick-c++ flexiblas flexiblas-netlib flexiblas-openblas-openmp gsl gtksourceview4 inkscape inkscape-libs lib2geom libcdr libgfortran libquadmath librevenge libsass libvisio libwpd libwpg mkfontscale openblas openblas-openmp optipng potrace python3-cssselect python3-inkex python3-lxml python3-numpy python3-pyparsing python3-pyserial python3-scour python3-six sassc urw-base35-fonts-legacy
 # qt deps
-rpm-ostree override remove cmake cmake-data extra-cmake-modules jsoncpp kf5-kauth-devel kf5-kcodecs-devel kf5-kconfig-devel kf5-kconfigwidgets-devel kf5-kcoreaddons-devel kf5-kservice-devel kf5-kwindowsystem-devel kf5-rpm-macros kwin-devel libX11-devel libXau-devel libepoxy-devel libglvnd-core-devel libglvnd-devel libxcb-devel mesa-libEGL-devel qt5-qtbase-devel qt5-linguist qt5-rpm-macros vulkan-loader-devel xorg-x11-proto-devel gettext-devel kf5-kwidgetsaddons-devel
+rpm-ostree override remove cmake cmake-data extra-cmake-modules jsoncpp kf5-kauth-devel kf5-kcodecs-devel kf5-kconfig-devel kf6-kconfigwidgets-devel kf5-kcoreaddons-devel kf5-kservice-devel kf5-kwindowsystem-devel kf5-rpm-macros kwin-devel libX11-devel libXau-devel libepoxy-devel libglvnd-core-devel libglvnd-devel libxcb-devel mesa-libEGL-devel qt5-qtbase-devel qt5-linguist qt5-rpm-macros vulkan-loader-devel xorg-x11-proto-devel gettext-devel kf5-kwidgetsaddons-devel
 
 # disabling the repositories for the booted system
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/atim-starship-fedora-$(rpm -E %fedora).repo
