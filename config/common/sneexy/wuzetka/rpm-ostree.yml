@@ -11,9 +11,6 @@ repos:
 
   # kwin theme
   - https://download.opensuse.org/repositories/home:paul4us/Fedora_%OS_VERSION%/home:paul4us.repo
-
-  # rom properties
-  - https://copr.fedorainfracloud.org/coprs/kylegospo/rom-properties/repo/fedora-%OS_VERSION%/kylegospo-rom-properties-fedora-%OS_VERSION%.repo
 install:
   # environment
   - pavucontrol-qt
@@ -63,7 +60,6 @@ install:
   - qt5-qtquickcontrols2
   - qt5-qtsvg
   - translate-shell
-  - rom-properties-kf5
   - power-profiles-daemon
 
   # libraries and tools
