@@ -2,6 +2,9 @@
 
 # Syntax <Flavour = 1-4 > <Accent = 1-14> <WindowDec = 1/2> <Debug = global/color/splash/cursor>
 
+# Required Dependency
+rpm-ostree install gettext-devel
+
 check_command_exists() {
   command_name="${*}"
 
@@ -438,6 +441,14 @@ InstallCursor
 # Cleanup
 echo "Cleaning up.."
 rm -rf ./dist
+rpm-ostree override remove gettext-devel
 
 echo "You can apply theme at any time using system settings"
 echo "Finished install of Catppuccin KDE Plasma."
+
+# Konsole
+git clone https://github.com/catppuccin/konsole /tmp/konsole
+cp -r /tmp/konsole/*.colorscheme /usr/etc/skel/.local/share/konsole
+sleep 1
+
+echo "Exiting.."
