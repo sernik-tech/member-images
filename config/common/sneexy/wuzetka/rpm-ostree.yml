@@ -27,9 +27,9 @@ install:
   #- hblock
 
   # themes
-  - lightly
+  #- lightly
   - klassy
-  - kvantum
+  #- kvantum
   - papirus-icon-theme
 
   # terminals and console utilities
