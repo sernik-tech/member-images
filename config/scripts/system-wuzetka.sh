@@ -15,7 +15,7 @@ systemctl enable hblock.timer
 
 # Ensure all required/used folders are created
 mkdir -p /usr/share/sddm/themes
-mkdir -p /usr/share/plasma/plasmoids/org.kde.latte.space
+mkdir -p /usr/share/plasma/plasmoids/org.kde.latte.spacer
 
 #
 # Sheldon
