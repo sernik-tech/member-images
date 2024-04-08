@@ -448,6 +448,7 @@ echo "Finished install of Catppuccin KDE Plasma."
 
 # Konsole
 git clone https://github.com/catppuccin/konsole /tmp/konsole
+mkdir -p /usr/etc/skel/.local/share/konsole
 cp -r /tmp/konsole/*.colorscheme /usr/etc/skel/.local/share/konsole
 sleep 1
 

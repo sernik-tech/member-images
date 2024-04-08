@@ -8,6 +8,9 @@ FLAVOUR=mocha
 ACCENT=green
 GTKDIR=/usr/etc/skel/.local/share/themes
 
+# Create theme directory
+mkdir -p /usr/etc/skel/.local/share/themes
+
 # Dependencies to create theme
 rpm-ostree install sassc inkscape optipng
 # Clone repository into /tmp/gtk

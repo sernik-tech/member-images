@@ -444,6 +444,7 @@ echo "You can apply theme at any time using system settings"
 
 # Konsole
 git clone https://github.com/catppuccin/konsole /tmp/konsole
+mkdir -p /usr/etc/skel/.local/share/konsole
 cp -r /tmp/konsole/*.colorscheme /usr/etc/skel/.local/share/konsole
 sleep 1
 

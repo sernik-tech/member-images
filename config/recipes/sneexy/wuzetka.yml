@@ -15,10 +15,12 @@ modules:
   - type: script
     scripts:
         - ld.sh
+        - system-wuzetka.sh
+        - burn-my-windows-kwin.sh
+        - rounded-corners-kwin.sh
         - catppuccin-gtk.sh
         - catppuccin-papirus.sh
         - breezemateria.sh
-        - system-wuzetka.sh
 
   - type: files
     files:

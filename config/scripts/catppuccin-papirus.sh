@@ -7,6 +7,10 @@ set -euo pipefail
 FLAVOUR=mocha
 ACCENT=green
 
+# Create icon directory
+mkdir -p /usr/share/icons
+
+# Install papirus if it isn't already installed
 if [ ! "rpm -qa | grep papirus-icon-theme" ]; then
     rpm-ostree install papirus-icon-theme
 fi
