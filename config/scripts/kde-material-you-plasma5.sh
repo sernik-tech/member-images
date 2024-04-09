@@ -12,7 +12,7 @@ fi
 #rpm-ostree install gcc dbus-python dbus-python-devel glib2 glib2-devel \
 #    zlib zlib-devel libjpeg-turbo libjpeg-turbo-devel libtiff libtiff-devel lcms2 lcms2-devel \
 #    extra-cmake-modules qt5-qttools-devel kf5-plasma-devel
-rpm-ostree install gcc dbus-python dbus-python-devel glib2 glib2-devel python3-pillow extra-cmake-modules qt5-qttools-devel kf5-plasma-devel
+rpm-ostree install gcc python3-dbus dbus-python-devel glib2 glib2-devel python3-pillow extra-cmake-modules qt5-qttools-devel kf5-plasma-devel
 
 # Install the backend and other dependicies with pip
 pip install --prefix=/usr kde-material-you-colors
