@@ -11,3 +11,5 @@ fi
 # Install the backend and other dependicies with pip
 pip install --prefix=/usr kde-material-you-colors
 pip install --prefix=/usr pywal
+
+rpm-ostree install gcc
