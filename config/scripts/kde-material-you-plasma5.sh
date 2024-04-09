@@ -10,7 +10,7 @@ fi
 
 # First set of packages are related to the backend, second set for pillow, the rest is related to the plasma widget
 rpm-ostree install gcc python3-dbus dbus-python-devel glib2 glib2-devel \
-    python3-devel redhat-rpm-config zlib zlib-devel libjpeg-turbo libjpeg-turbo-devel libtiff libtiff-devel lcms2 lcms2-devel libwebp libwebp-devel openjpeg2 openjpeg2-devel libimagequant libimagequant-devel libraqm libraqm-devel libxcb \
+    python3-devel redhat-rpm-config libtiff-devel libjpeg-devel openjpeg2-devel zlib-devel freetype-devel lcms2-devel libwebp-devel tcl-devel tk-devel harfbuzz-devel fribidi-devel libraqm-devel libimagequant-devel libxcb-devel \
     extra-cmake-modules qt5-qttools-devel kf5-plasma-devel
 
 # Install the backend and other dependicies with pip
@@ -30,5 +30,5 @@ cd /tmp/kde-material-you && cmake --install build
 
 # Remove
 rpm-ostree install gcc dbus-python-devel glib2-devel \
-    python3-devel redhat-rpm-config zlib-devel libjpeg-turbo-devel libtiff-devel lcms2-devel libwebp-devel openjpeg2-devel libimagequant-devel libraqm-devel libxcb-devel \
+    python3-devel redhat-rpm-config libtiff-devel libjpeg-devel openjpeg2-devel zlib-devel freetype-devel lcms2-devel libwebp-devel tcl-devel tk-devel harfbuzz-devel fribidi-devel libraqm-devel libimagequant-devel libxcb-devel \
     extra-cmake-modules qt5-qttools-devel kf5-plasma-devel
