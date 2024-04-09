@@ -14,11 +14,17 @@ rpm-ostree install gcc python3-dbus dbus-python-devel glib2 glib2-devel \
     extra-cmake-modules qt5-qttools-devel kf5-plasma-devel
 
 # Install the backend and other dependicies with pip
-pip install --prefix=/usr kde-material-you-colors
+pip install --prefix=/usr kde-material-you-colors==1.7.1
 pip install --prefix=/usr pywal
 
 git clone https://github.com/luisbocanegra/kde-material-you-colors -b plasma5 /tmp/kde-material-you
 cd /tmp/kde-material-you && cmake -B build -S . -DCMAKE_INSTALL_PREFIX=/usr -DINSTALL_PLASMOID=ON
+cd /tmp/kde-material-you && cmake --build build
+cd /tmp/kde-material-you && cmake --install build
+if [ -d "/tmp/kde-material-you/build" ]; then
+    rm -rf /tmp/kde-material-you/build
+fi
+cd /tmp/kde-material-you && cmake -B build -S . -DCMAKE_INSTALL_PREFIX=/usr
 cd /tmp/kde-material-you && cmake --build build
 cd /tmp/kde-material-you && cmake --install build
 
