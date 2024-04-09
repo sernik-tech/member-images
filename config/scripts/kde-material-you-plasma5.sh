@@ -21,14 +21,6 @@ git clone https://github.com/luisbocanegra/kde-material-you-colors -b plasma5 /t
 cd /tmp/kde-material-you && cmake -B build -S . -DCMAKE_INSTALL_PREFIX=/usr -DINSTALL_PLASMOID=ON
 cd /tmp/kde-material-you && cmake --build build
 cd /tmp/kde-material-you && cmake --install build
-if [ -d "/tmp/kde-material-you/build" ]; then
-    rm -rf /tmp/kde-material-you/build
-fi
-cd /tmp/kde-material-you && cmake -B build -S . -DCMAKE_INSTALL_PREFIX=/usr
-cd /tmp/kde-material-you && cmake --build build
-cd /tmp/kde-material-you && cmake --install build
 
 # Remove
-rpm-ostree install gcc dbus-python-devel glib2-devel \
-    python3-devel redhat-rpm-config libtiff-devel libjpeg-devel openjpeg2-devel zlib-devel freetype-devel lcms2-devel libwebp-devel tcl-devel tk-devel harfbuzz-devel fribidi-devel libraqm-devel libimagequant-devel libxcb-devel \
-    extra-cmake-modules qt5-qttools-devel kf5-plasma-devel
+rpm-ostree override remove annobin-docs annobin-plugin-gcc ansible-srpm-macros brotli-devel bzip2-devel clang-libs clang-resource-filesystem cmake cmake-data compiler-rt dbus-devel efi-srpm-macros extra-cmake-modules fontconfig-devel fonts-srpm-macrosforge-srpm-macros fpc-srpm-macros freetype-devel fribidi-devel gcc-plugin-annobin ghc-srpm-macros glib2-devel gnat-srpm-macros go-srpm-macros graphite2-devel harfbuzz-devel harfbuzz-icu jsoncpp kernel-srpm-macros kf5-kconfig kf5-kconfig-devel kf5-kcoreaddons-devel kf5-kpackage-devel kf5-kservice-devel kf5-kwindowsystem-devel kf5-plasma-devel kf5-rpm-macros lcms2-devel libX11-devel libXau-devel libXft-devel libXrender-devel libatomic libblkid-devel libffi-devel libglvnd-core-devel libglvnd-devel libicu-devel libimagequant-devel libjpeg-turbo-devel libmount-devel libomp libomp-devel libpng-devel libraqm-devel libselinux-devel libsepol-devel libtiff-devel libwebp-devel libxcb-devel libxml2-devel lua-srpm-macros mesa-libEGL-devel ocaml-srpm-macros openblas-srpm-macros openjpeg2-devel package-notes-srpm-macros pcre2-devel perl-srpm-macros pyproject-srpm-macros python-srpm-macros python3-devel qt5-designer qt5-doctools qt5-linguist qt5-qtbase-devel qt5-qttools-devel qt5-qttools-libs-designercomponents qt5-qttools-libs-help qt5-rpm-macros qt5-srpm-macros qt6-srpm-macros redhat-rpm-config rhash rpmautospec-rpm-macros rust-srpm-macros sysprof-capture-devel tcl-devel tk-devel vulkan-headers vulkan-loader-devel xorg-x11-proto-devel xz-devel zlib-devel
