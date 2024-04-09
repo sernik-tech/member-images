@@ -17,5 +17,4 @@ cd /tmp/bmw && /tmp/bmw/kwin/build.sh
 tar -xf /tmp/bmw/kwin/burn_my_windows_kwin4.tar.gz -C /usr/share/kwin/effects
 
 # Remove Dependency
-rpm-ostree override remove kf5-kwidgetsaddons-devel
-#rpm-ostree override remove kf6-kwidgetsaddons-devel
+rpm-ostree override remove cmake cmake-data jsoncpp kf5-kwidgetsaddons-devel libX11-devel libXau-devel libglvnd-core-devel libglvnd-devel libxcb-devel mesa-libEGL-devel qt5-qtbase-devel qt5-rpm-macros rhash vulkan-headers vulkan-loader-devel xorg-x11-proto-devel
