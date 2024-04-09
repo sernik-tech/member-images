@@ -3,9 +3,9 @@
 # Tell build process to exit if there are any errors.
 set -euo pipefail
 
-# Install pipx if it's not already installed
-if ! rpm -q pipx > /dev/null; then
-    rpm-ostree install pipx
+# Install python3-pip if it's not already installed
+if ! rpm -q python3-pip > /dev/null; then
+    rpm-ostree install python3-pip
 fi
 
 # First set of packages are related to the backend, second set for pillow, the rest is related to the plasma widget
@@ -14,8 +14,8 @@ rpm-ostree install gcc python3-dbus dbus-python-devel glib2 glib2-devel \
     extra-cmake-modules qt5-qttools-devel kf5-plasma-devel
 
 # Install the backend and other dependicies with pip
-pipx install kde-material-you-colors==1.7.1
-pipx inject kde-material-you-colors pywal
+pip install --prefix=/usr kde-material-you-colors
+pip install --prefix=/usr pywal
 
 git clone https://github.com/luisbocanegra/kde-material-you-colors -b plasma5 /tmp/kde-material-you
 cd /tmp/kde-material-you && cmake -B build -S . -DCMAKE_INSTALL_PREFIX=/usr -DINSTALL_PLASMOID=ON
