@@ -59,6 +59,7 @@ install:
   - qt5-qtsvg
   - translate-shell
   - power-profiles-daemon
+  - plasma-sdk
 
   # libraries and tools
   - fontconfig
