@@ -6,6 +6,7 @@ on:
     push:
         paths:
             - '.github/**'
+            - 'sernik/build-scripts/**'
             - 'sernik/containerfiles/**'
     workflow_dispatch:
 env:
