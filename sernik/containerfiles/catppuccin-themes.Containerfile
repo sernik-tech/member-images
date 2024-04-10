@@ -17,19 +17,19 @@ RUN chmod +x /tmp/build-scripts/rounded-corners-kwin.sh && \
     /tmp/build-scripts/rounded-corners-kwin.sh
 
 # Icons (Papirus)
-FROM fedora:${IMAGE_MAJOR_VERSION} as icons
+FROM fedora:${IMAGE_MAJOR_VERSION} as papirus
 
-COPY sernik/build-scripts /tmp/build-scripts
+COPY sernik/build-scripts/catppuccin/icons /tmp/catppuccin/icons
 
-RUN chmod +x /tmp/build-scripts/kde-material-you.sh && \
-    /tmp/build-scripts/kde-material-you.sh
+RUN chmod +x /tmp/catppuccin/icons/.sh && \
+    /tmp/catppuccin/icons/.sh
 
 # Finalize container build
 FROM fedora:${IMAGE_MAJOR_VERSION}
 
-RUN mkdir -p /artifacts/usr/etc
-RUN mkdir -p /artifacts/sbin
+RUN mkdir -p /artifacts/usr/etc/skel/.local/share/themes
+RUN mkdir -p /artifacts/usr/share/icons
 
-COPY --from=kde-material-you /tmp/kde-material-you-built/usr /artifacts/usr
-COPY --from=burn-my-windows-kwin /tmp/burn-my-windows-built/usr /artifacts/usr
-COPY --from=rounded-corners-kwin /tmp/rounded-corners-built/usr /artifacts/usr
+COPY --from=gtk /tmp/kde-material-you-built/usr /artifacts/usr
+COPY --from=kde /tmp/burn-my-windows-built/usr /artifacts/usr
+COPY --from=icons /tmp/rounded-corners-built/usr /artifacts/usr
