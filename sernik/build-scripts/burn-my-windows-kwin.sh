@@ -4,7 +4,7 @@
 set -euo pipefail
 
 # Dependency
-dnf install -y git kf6-kwidgetsaddons-devel
+dnf install -y git gettext kf6-kwidgetsaddons-devel
 
 # Create kwin effect's folder
 mkdir -p /tmp/burn-my-windows-built/usr/share/kwin/effects
