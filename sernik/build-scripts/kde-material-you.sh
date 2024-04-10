@@ -4,7 +4,7 @@
 set -euo pipefail
 
 # First set of packages are related to the backend, second set for pillow, the rest is related to the plasma widget
-dnf install -y python3-pip gcc python3-dbus dbus-python-devel glib2 glib2-devel \
+dnf install -y git python3-pip gcc python3-dbus dbus-python-devel glib2 glib2-devel \
     python3-devel redhat-rpm-config libtiff-devel libjpeg-devel openjpeg2-devel zlib-devel freetype-devel lcms2-devel libwebp-devel tcl-devel tk-devel harfbuzz-devel fribidi-devel libraqm-devel libimagequant-devel libxcb-devel \
     extra-cmake-modules qt5-qttools-devel kf5-plasma-devel
 
