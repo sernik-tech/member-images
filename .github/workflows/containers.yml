@@ -20,7 +20,7 @@ jobs:
             fail-fast: false
             matrix:
                 containerfile:
-                    - wuzetka.Containerfile
+                    - sernik/containerfiles/wuzetka.Containerfile
 
         steps:
             # Checkout push-to-registry action GitHub repository
