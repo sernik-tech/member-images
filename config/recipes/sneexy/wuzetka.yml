@@ -10,10 +10,10 @@ image-version: 40 # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - from-file: common/sneexy/wuzetka/rpm-ostree.yml
+    - from-file: common/sneexy/wuzetka/rpm-ostree.yml
 
-  - type: script
-    scripts:
+    - type: script
+      scripts:
         - ld.sh
         - system-wuzetka.sh
         - burn-my-windows-kwin.sh
@@ -23,18 +23,23 @@ modules:
         - catppuccin-papirus.sh
         - breezemateria.sh
 
-  - type: files
-    files:
+    - type: files
+      files:
         - sernik/usr: /usr
         - sneexy/wuzetka/usr: /usr
 
-  - from-file: common/sneexy/wuzetka/flatpaks.yml
-  - from-file: common/sneexy/bling.yml
-  - from-file: common/sneexy/fonts.yml
+    - type: containerfile
+      snippets:
+        - COPY --from=ghcr.io/sernik-tech/wuzetka-packages /artifacts/usr /usr
+        - COPY --from=ghcr.io/sernik-tech/wuzetka-packages /artifacts/sbin /sbin
 
-  - type: gschema-overrides
-    include:
-      - zz1-wuzetka.gschema.override
+    - from-file: common/sneexy/wuzetka/flatpaks.yml
+    - from-file: common/sneexy/bling.yml
+    - from-file: common/sneexy/fonts.yml
 
-  #- from-file: common/sneexy/akmods.yml
-  - type: signing
+    - type: gschema-overrides
+      include:
+        - zz1-wuzetka.gschema.override
+
+    #- from-file: common/sneexy/akmods.yml
+    - type: signing
