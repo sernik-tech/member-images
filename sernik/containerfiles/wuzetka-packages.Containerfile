@@ -24,12 +24,21 @@ COPY sernik/build-scripts /tmp/build-scripts
 RUN chmod +x /tmp/build-scripts/kde-material-you.sh && \
     /tmp/build-scripts/kde-material-you.sh
 
+# Joystickwake
+FROM fedora:${IMAGE_MAJOR_VERSION} as joystickwake
+
+COPY sernik/build-scripts /tmp/build-scripts
+
+RUN chmod +x /tmp/build-scripts/joystickwake.sh && \
+    /tmp/build-scripts/joystickwake.sh
+
 # Finalize container build
 FROM fedora:${IMAGE_MAJOR_VERSION}
 
 RUN mkdir -p /artifacts/usr/etc
 RUN mkdir -p /artifacts/sbin
 
+COPY --from=joystickwake /tmp/joystickwake-built/usr /artifacts/usr
 COPY --from=kde-material-you /tmp/kde-material-you-built/usr /artifacts/usr
 COPY --from=burn-my-windows-kwin /tmp/burn-my-windows-built/usr /artifacts/usr
 COPY --from=rounded-corners-kwin /tmp/rounded-corners-built/usr /artifacts/usr
