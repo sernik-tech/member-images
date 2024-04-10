@@ -16,9 +16,6 @@ modules:
       scripts:
         - ld.sh
         - system-wuzetka.sh
-        - burn-my-windows-kwin.sh
-        - rounded-corners-kwin.sh
-        - kde-material-you-plasma5.sh
         - catppuccin-gtk.sh
         - catppuccin-papirus.sh
         - breezemateria.sh

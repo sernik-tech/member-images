@@ -4,7 +4,7 @@
 set -euo pipefail
 
 # Dependency
-rpm-ostree kf6-kwidgetsaddons-devel
+dnf install -y kf6-kwidgetsaddons-devel
 
 # Create kwin effect's folder
 mkdir -p /tmp/burn-my-windows-built/usr/share/kwin/effects
