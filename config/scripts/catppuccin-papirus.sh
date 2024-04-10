@@ -11,9 +11,7 @@ ACCENT=green
 mkdir -p /usr/share/icons
 
 # Install papirus if it isn't already installed
-if [ ! "rpm -qa | grep papirus-icon-theme" ]; then
-    rpm-ostree install papirus-icon-theme
-fi
+rpm-ostree install papirus-icon-theme
 
 git clone https://github.com/catppuccin/papirus-folders.git /tmp/papirus-folders
 cp -r /tmp/papirus-folders/src/* /usr/share/icons/Papirus

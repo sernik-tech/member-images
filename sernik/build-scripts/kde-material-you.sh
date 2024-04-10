@@ -15,8 +15,10 @@ mkdir -p /tmp/kde-material-you-built/usr
 pip install --prefix=/tmp/kde-material-you-built/usr kde-material-you-colors
 pip install --prefix=/tmp/kde-material-you-built/usr pywal
 
-cd /tmp/kde-material-you
+cd /tmp
 git clone --single-branch --depth=1 https://github.com/luisbocanegra/kde-material-you-colors
-cmake -B build -S . -DCMAKE_INSTALL_PREFIX=/tmp/kde-material-you-built -DINSTALL_PLASMOID=ON --install-prefix /usr
+cd kde-material-you-colors
+cmake -B build -S . -DCMAKE_INSTALL_PREFIX=/tmp/kde-material-you-built -DINSTALL_PLASMOID=ON
 cmake --build build
 cmake --install build
+ls /tmp/kde-material-you-built

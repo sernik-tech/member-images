@@ -25,7 +25,7 @@ jobs:
             matrix:
                 containerfile:
                     - sernik/containerfiles/wuzetka-packages.Containerfile
-                    - sernik/containerfiles/catppuccin.Containerfile
+                    - sernik/containerfiles/catppuccin-themes.Containerfile
 
         steps:
             # Checkout push-to-registry action GitHub repository
