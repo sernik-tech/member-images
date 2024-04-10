@@ -17,12 +17,6 @@ RUN chmod +x /tmp/build-scripts/rounded-corners-kwin.sh && \
     /tmp/build-scripts/rounded-corners-kwin.sh
 
 # Icons (Papirus)
-FROM fedora:${IMAGE_MAJOR_VERSION} as papirus
-
-COPY sernik/build-scripts/catppuccin/icons /tmp/catppuccin/icons
-
-RUN chmod +x /tmp/catppuccin/icons/.sh && \
-    /tmp/catppuccin/icons/.sh
 
 # Finalize container build
 FROM fedora:${IMAGE_MAJOR_VERSION}
