@@ -25,7 +25,7 @@ jobs:
             matrix:
                 containerfile:
                     - sernik/containerfiles/wuzetka-packages.Containerfile
-                    - sernik-containerfiles/catppuccin.Containerfile
+                    - sernik/containerfiles/catppuccin.Containerfile
 
         steps:
             # Checkout push-to-registry action GitHub repository
@@ -33,7 +33,7 @@ jobs:
               uses: actions/checkout@v3
 
             - name: Gather environment variables
-              run: echo "IMAGE_NAME=$(echo ${{ matrix.containerfile }} | cut -d . -f 1)" >> $GITHUB_ENV
+              run: echo "IMAGE_NAME=$(echo ${{ matrix.containerfile }} | cut -d . -f 1) && IMAGE_NAME=$(echo $IMAGE_NAME | cut -d '/' -f 3)" >> $GITHUB_ENV
 
             # Build metadata
             - name: Image Metadata
