@@ -7,6 +7,7 @@ set -euo pipefail
 dnf install -y git cmake gcc-c++ extra-cmake-modules kwin-devel kf6-kconfigwidgets-devel libepoxy-devel kf6-kcmutils-devel qt6-qtbase-private-devel wayland-devel
 
 # Clone, build and install the effects
+cd /tmp
 git clone --single-branch --depth=1 https://github.com/matinlotfali/KDE-Rounded-Corners.git
 cd KDE-Rounded-Corners
 mkdir build

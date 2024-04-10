@@ -14,5 +14,5 @@ cd /tmp
 git clone --single-branch --depth=1 https://github.com/Schneegans/Burn-My-Windows.git
 cd Burn-My-Windows/kwin
 chmod +x build.sh
-/tmp/Burn-My-Windows/kwin/build.sh
+cd /tmp/Burn-My-Windows/kwin && /tmp/Burn-My-Windows/kwin/build.sh
 tar -xf burn_my_windows_kwin4.tar.gz -C /tmp/burn-my-windows-built/usr/share/kwin/effects
