@@ -16,3 +16,4 @@ cd Burn-My-Windows/kwin
 chmod +x build.sh
 ./build.sh
 tar -zvxf burn_my_windows_kwin4.tar.gz -C /tmp/burn-my-windows-built/usr/share/kwin/effects --no-same-owner --no-same-permissions
+ls /tmp/burn-my-windows-built
