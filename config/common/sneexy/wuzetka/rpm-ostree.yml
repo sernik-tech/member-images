@@ -27,6 +27,10 @@ install:
   - klassy
   - papirus-icon-theme
 
+  # material you colors dependencies
+  - python3-dbus
+  - python3-numpy
+
   # terminals and console utilities
   - wezterm
   - kitty
