@@ -16,9 +16,8 @@ modules:
       scripts:
         - ld.sh
         - system-wuzetka.sh
-        #- catppuccin-gtk.sh
         - catppuccin-papirus.sh
-        - breezemateria.sh
+        - qdbus.sh
 
     - type: files
       files:

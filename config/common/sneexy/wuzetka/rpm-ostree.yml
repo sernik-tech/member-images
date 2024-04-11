@@ -26,7 +26,6 @@ install:
   # material you colors dependencies
   - python3-dbus
   - python3-numpy
-  - kf6-kdbusaddons
 
   # joystickwake dependencies
   - python3-pyudev
