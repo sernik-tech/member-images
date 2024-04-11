@@ -4,7 +4,7 @@
 set -euo pipefail
 
 # Install required build dependencies
-dnf install -y git cmake extra-cmake-modules libplasma plasma5support
+dnf install -y git cmake extra-cmake-modules libplasma-devel plasma5support-devel
 
 # dir
 mkdir -p /tmp/panel-colorizer-built/usr
