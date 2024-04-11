@@ -8,7 +8,7 @@ dnf install -y git cmake extra-cmake-modules gettext "cmake(KF5Config)" "cmake(K
 
 # Clone, build and install the effects
 cd /tmp
-git clone --single-branch --depth=1 https://github.com/paulmcauley/klassy.git -b 6.0plasma
+git clone --single-branch --depth=1 https://github.com/paulmcauley/klassy.git -b plasma6.0
 cd klassy
 mkdir build
 cd build
