@@ -44,7 +44,6 @@ RUN chmod +x /tmp/build-scripts/joystickwake.sh && \
 FROM fedora:${IMAGE_MAJOR_VERSION}
 
 RUN mkdir -p /artifacts/usr/etc
-RUN mkdir -p /artifacts/sbin
 
 COPY --from=joystickwake /tmp/joystickwake-built/usr /artifacts/usr
 COPY --from=kde-material-you /tmp/kde-material-you-built/usr /artifacts/usr

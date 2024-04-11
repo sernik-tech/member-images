@@ -28,7 +28,6 @@ modules:
     - type: containerfile
       snippets:
         - COPY --from=ghcr.io/sernik-tech/wuzetka-packages /artifacts/usr /usr
-        - COPY --from=ghcr.io/sernik-tech/wuzetka-packages /artifacts/sbin /sbin
 
     - from-file: common/sneexy/wuzetka/flatpaks.yml
     - from-file: common/sneexy/bling.yml
