@@ -5,7 +5,7 @@
 
 <div align="center">
 
-[![build-ublue](https://github.com/sernik-tech/member-images/actions/workflows/build.yml/badge.svg)](https://github.com/sernik-tech/member-images/actions/workflows/build.yml)
+[![build](https://github.com/sernik-tech/member-images/actions/workflows/build.yml/badge.svg)](https://github.com/sernik-tech/member-images/actions/workflows/build.yml) [![containers](https://github.com/sernik-tech/member-images/actions/workflows/containers.yml/badge.svg)](https://github.com/sernik-tech/member-images/actions/workflows/containers.yml)
 
 </div>
 
