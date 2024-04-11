@@ -13,7 +13,7 @@ mkdir -p /tmp/joystickwake-built/usr/share/man/man1
 cd /tmp
 git clone --single-branch --depth=1 https://github.com/foresto/joystickwake.git
 cd joystickwake
-python setup.py install --prefix=/usr --root=/tmp/joystickwake-built
+python3 setup.py install --prefix=/usr --root=/tmp/joystickwake-built
 rst2man README.rst joystickwake.1
 gzip joystickwake.1
 mv joystickwake.1.gz /tmp/joystickwake-built/usr/share/man/man1
