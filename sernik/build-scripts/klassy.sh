@@ -10,7 +10,7 @@ dnf install -y git cmake extra-cmake-modules gettext "cmake(KF5Config)" "cmake(K
 cd /tmp
 git clone --single-branch --depth=1 https://github.com/paulmcauley/klassy.git
 cd klassy
-git checkout 6.0.breeze6.0.2
+git checkout 6.0plasma
 mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DKDE_INSTALL_USE_QT_SYS_PATHS=ON
