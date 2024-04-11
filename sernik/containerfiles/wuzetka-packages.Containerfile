@@ -48,6 +48,6 @@ RUN mkdir -p /artifacts/sbin
 
 COPY --from=joystickwake /tmp/joystickwake-built/usr /artifacts/usr
 COPY --from=kde-material-you /tmp/kde-material-you-built/usr /artifacts/usr
-COPY --from=klassy /tmp/klassy/usr /artifacts/usr
+COPY --from=klassy /tmp/klassy-built/usr /artifacts/usr
 COPY --from=burn-my-windows-kwin /tmp/burn-my-windows-built/usr /artifacts/usr
 COPY --from=rounded-corners-kwin /tmp/rounded-corners-built/usr /artifacts/usr
