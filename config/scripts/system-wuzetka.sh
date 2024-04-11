@@ -3,19 +3,11 @@
 # Tell build process to exit if there are any errors.
 set -euo pipefail
 
-# Bazzite
-#wget "https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-$(rpm -E %fedora)/kylegospo-bazzite-fedora-$(rpm -E %fedora).repo" -O "/etc/yum.repos.d/_copr_kylegospo-bazzite.repo"
-#wget "https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-$(rpm -E %fedora)/kylegospo-bazzite-multilib-fedora-$(rpm -E %fedora).repo" -O "/etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo"
-
-# bazzite packages
-#rpm-ostree install joystickwake xwiimote-ng
-
 # systemd services to enable on the system
 systemctl enable hblock.timer
 
 # Ensure all required/used folders are created
 mkdir -p /usr/share/sddm/themes
-#mkdir -p /usr/share/plasma/plasmoids/org.kde.latte.spacer
 
 #
 # Sheldon
@@ -60,6 +52,3 @@ sudo cp -r /tmp/corners/corners /usr/share/sddm/themes
 # disabling the repositories for the booted system
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/atim-starship-fedora-$(rpm -E %fedora).repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/wezfurlong-wezterm-nightly-fedora-$(rpm -E %fedora).repo
-#sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/home:paul4us.repo
-#sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite.repo
-#sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo

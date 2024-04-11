@@ -16,7 +16,7 @@ modules:
       scripts:
         - ld.sh
         - system-wuzetka.sh
-        - catppuccin-gtk.sh
+        #- catppuccin-gtk.sh
         - catppuccin-papirus.sh
         - breezemateria.sh
 
@@ -28,6 +28,10 @@ modules:
     - type: containerfile
       snippets:
         - COPY --from=ghcr.io/sernik-tech/wuzetka-packages /artifacts/usr /usr
+        # GTK theme
+        - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/etc/skel/.local/share/themes/Catppuccin-Mocha-Compact-Green-Dark /usr/etc/skel/.local/share/themes/Catppuccin-Mocha-Compact-Green-Dark
+        - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/etc/skel/.local/share/themes/Catppuccin-Mocha-Compact-Green-Dark-xhdpi /usr/etc/skel/.local/share/themes/Catppuccin-Mocha-Compact-Green-Dark-xhdpi
+        - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/etc/skel/.local/share/themes/Catppuccin-Mocha-Compact-Green-Dark-hdpi /usr/etc/skel/.local/share/themes/Catppuccin-Mocha-Compact-Green-Dark-hdpi
 
     - from-file: common/sneexy/wuzetka/flatpaks.yml
     - from-file: common/sneexy/bling.yml
