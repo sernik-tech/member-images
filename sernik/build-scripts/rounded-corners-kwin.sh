@@ -15,4 +15,3 @@ cd build
 cmake .. --install-prefix /usr
 make
 make install DESTDIR=/tmp/rounded-corners-built PREFIX='/usr'
-ls /tmp/rounded-corners-built
