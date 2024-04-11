@@ -43,10 +43,10 @@ chmod +x /usr/bin/wgcf
 # KDE Theme
 #
 git clone https://github.com/catppuccin/kde.git /tmp/catppuccinkde
-cd /tmp/catppuccinkde && git checkout v0.2.5 # Comment when Fedora 40/Plasma 6
+#cd /tmp/catppuccinkde && git checkout v0.2.5 # Comment when Fedora 40/Plasma 6
 rm -f /tmp/catppuccinkde/install.sh
-#curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/config/scripts/catppuccin-plasma6.sh
-curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/config/scripts/catppuccin-plasma5.sh # Comment when Fedora 40/Plasma 6
+curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/config/scripts/catppuccin-plasma6.sh
+#curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/config/scripts/catppuccin-plasma5.sh # Comment when Fedora 40/Plasma 6
 chmod +x /tmp/catppuccinkde/install.sh
 cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 1 9 1 # Mocha Green (dark)
 cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 4 9 1 # Latte Green (light)
@@ -62,11 +62,11 @@ sudo cp -r /tmp/corners/corners /usr/share/sddm/themes
 #
 #git clone https://github.com/psifidotos/applet-latte-spacer.git /tmp/latte-spacer
 # plasma 6 git, might be unneeded later
-#git clone https://github.com/doncsugar/applet-latte-spacer.git /tmp/latte-spacer
-#rm -rf /tmp/latte-spacer/.git
-#rm -f /tmp/latte-spacer/README.md
-#rm -f /tmp/latte-spacer/CHANGELOG.md
-#cp -r /tmp/latte-spacer/* /usr/share/plasma/plasmoids/org.kde.latte.spacer
+git clone https://github.com/doncsugar/applet-latte-spacer.git /tmp/latte-spacer
+rm -rf /tmp/latte-spacer/.git
+rm -f /tmp/latte-spacer/README.md
+rm -f /tmp/latte-spacer/CHANGELOG.md
+cp -r /tmp/latte-spacer/* /usr/share/plasma/plasmoids/org.kde.latte.spacer
 
 #
 # Panel Colorizer
@@ -80,6 +80,6 @@ cd /tmp/panel-colorizer && cmake --install build
 # disabling the repositories for the booted system
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/atim-starship-fedora-$(rpm -E %fedora).repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/wezfurlong-wezterm-nightly-fedora-$(rpm -E %fedora).repo
-sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/home:paul4us.repo
-sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite.repo
-sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo
+#sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/home:paul4us.repo
+#sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite.repo
+#sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo

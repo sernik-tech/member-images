@@ -10,7 +10,7 @@ repos:
   - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
 
   # kwin theme
-  - https://download.opensuse.org/repositories/home:paul4us/Fedora_%OS_VERSION%/home:paul4us.repo
+  #- https://download.opensuse.org/repositories/home:paul4us/Fedora_%OS_VERSION%/home:paul4us.repo
 install:
   # environment
   - pavucontrol-qt
@@ -25,7 +25,7 @@ install:
   - python3-pip
 
   # themes
-  - klassy
+  #- klassy
   - papirus-icon-theme
 
   # material you colors dependencies
