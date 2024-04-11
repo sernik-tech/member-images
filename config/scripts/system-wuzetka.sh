@@ -62,11 +62,11 @@ sudo cp -r /tmp/corners/corners /usr/share/sddm/themes
 #
 #git clone https://github.com/psifidotos/applet-latte-spacer.git /tmp/latte-spacer
 # plasma 6 git, might be unneeded later
-git clone https://github.com/doncsugar/applet-latte-spacer.git /tmp/latte-spacer
-rm -rf /tmp/latte-spacer/.git
-rm -f /tmp/latte-spacer/README.md
-rm -f /tmp/latte-spacer/CHANGELOG.md
-cp -r /tmp/latte-spacer/* /usr/share/plasma/plasmoids/org.kde.latte.spacer
+#git clone https://github.com/doncsugar/applet-latte-spacer.git /tmp/latte-spacer
+#rm -rf /tmp/latte-spacer/.git
+#rm -f /tmp/latte-spacer/README.md
+#rm -f /tmp/latte-spacer/CHANGELOG.md
+#cp -r /tmp/latte-spacer/* /usr/share/plasma/plasmoids/org.kde.latte.spacer
 
 #
 # Panel Colorizer
