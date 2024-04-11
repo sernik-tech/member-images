@@ -57,9 +57,8 @@ install:
   - kaccounts-providers
   - kdepim
   - kdepim-addons
-  - qt5-qtgraphicaleffects
-  - qt5-qtquickcontrols2
-  - qt5-qtsvg
+  - qt6-qtquickcontrols2
+  - qt6-qtsvg
   - translate-shell
   - power-profiles-daemon
   - plasma-sdk

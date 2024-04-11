@@ -46,8 +46,14 @@ cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 4 9 1 # Latte Green (ligh
 #
 # SDDM Theme
 #
-git clone https://github.com/aczw/sddm-theme-corners.git /tmp/corners
-sudo cp -r /tmp/corners/corners /usr/share/sddm/themes
+git clone https://github.com/catppuccin/sddm.git /tmp/catppuccin-sddm
+cp -r /tmp/catppuccin-sddm/src /usr/share/sddm/themes
+mv /usr/share/sddm/themes/src /usr/share/sddm/themes/catppuccin-mocha
+cp /tmp/catppuccin-sddm/pertheme/mocha.conf /usr/share/sddm/themes/catppuccin-mocha/theme.conf
+sed -i 's@Font="Noto Sans"@Font="Lexend Deca"@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
+sed -i 's@FontSize=9@FontSize=11@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
+sed -i 's@# PasswordShowLastLetter=1000@PasswordShowLastLetter=1000@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
+sed -i 's@Font="Noto Sans"@Font="Lexend Deca"@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
 
 # disabling the repositories for the booted system
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/atim-starship-fedora-$(rpm -E %fedora).repo
