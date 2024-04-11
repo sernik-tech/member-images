@@ -57,26 +57,6 @@ cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 4 9 1 # Latte Green (ligh
 git clone https://github.com/aczw/sddm-theme-corners.git /tmp/corners
 sudo cp -r /tmp/corners/corners /usr/share/sddm/themes
 
-#
-# Latte spacer
-#
-#git clone https://github.com/psifidotos/applet-latte-spacer.git /tmp/latte-spacer
-# plasma 6 git, might be unneeded later
-#git clone https://github.com/doncsugar/applet-latte-spacer.git /tmp/latte-spacer
-#rm -rf /tmp/latte-spacer/.git
-#rm -f /tmp/latte-spacer/README.md
-#rm -f /tmp/latte-spacer/CHANGELOG.md
-#cp -r /tmp/latte-spacer/* /usr/share/plasma/plasmoids/org.kde.latte.spacer
-
-#
-# Panel Colorizer
-#
-rpm-ostree install libplasma plasma5support
-git clone git clone https://github.com/luisbocanegra/plasma-panel-colorizer /tmp/panel-colorizer
-cd /tmp/panel-colorizer && cmake -B build -S . -DCMAKE_INSTALL_PREFIX=/usr
-cd /tmp/panel-colorizer && cmake --build build
-cd /tmp/panel-colorizer && cmake --install build
-
 # disabling the repositories for the booted system
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/atim-starship-fedora-$(rpm -E %fedora).repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/wezfurlong-wezterm-nightly-fedora-$(rpm -E %fedora).repo
