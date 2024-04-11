@@ -8,9 +8,6 @@ repos:
 
   # wezterm terminal
   - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
-
-  # kwin theme
-  #- https://download.opensuse.org/repositories/home:paul4us/Fedora_%OS_VERSION%/home:paul4us.repo
 install:
   # environment
   - pavucontrol-qt
@@ -22,15 +19,17 @@ install:
   - gamescope
   - mangohud
   - hblock
-  - python3-pip
 
   # themes
-  #- klassy
   - papirus-icon-theme
 
   # material you colors dependencies
   - python3-dbus
   - python3-numpy
+  - kf6-kdbusaddons
+
+  # joystickwake dependencies
+  - python3-pyudev
 
   # terminals and console utilities
   - wezterm
