@@ -10,7 +10,7 @@ GTKDIR=/tmp/catppuccin-gtk
 mkdir -p $GTKDIR
 
 # Dependencies to create theme
-dnf install -y sassc inkscape optipng
+dnf install -y git python3 python3-pip sassc inkscape optipng
 cd /tmp
 # Clone repository into /tmp/gtk
 git clone --recurse-submodules https://github.com/catppuccin/gtk.git
