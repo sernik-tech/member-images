@@ -22,6 +22,13 @@ install:
   - pipx
   - python3-uinput
 
+  # themes
+  - oxygen-sounds
+  - plasma-mobile-sounds
+  - pop-sound-theme
+  - yaru-sound-theme
+  - deepin-sound-theme
+
   # material you colors dependencies
   # - python3-dbus
   # - python3-numpy
@@ -61,7 +68,6 @@ install:
   - translate-shell
   - power-profiles-daemon
   - plasma-sdk
-  - oxygen-sounds
 
   # libraries and tools
   - fontconfig
