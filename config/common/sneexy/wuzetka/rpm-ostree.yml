@@ -23,6 +23,7 @@ install:
   - python3-uinput
 
   # themes
+  - papirus-icon-theme
   - oxygen-sounds
   - plasma-mobile-sounds
   - pop-sound-theme

@@ -14,8 +14,8 @@ snippets:
     #- COPY --from=ghcr.io/sernik-tech/catppuccin-themes /artifacts/usr/share/icons/Papirus /usr/share/icons
     #- COPY --from=ghcr.io/sernik-tech/catppuccin-themes /artifacts/usr/share/icons/Papirus-Light /usr/share/icons
     #- COPY --from=ghcr.io/sernik-tech/catppuccin-themes /artifacts/usr/share/icons/Papirus-Dark /usr/share/icons
-    - COPY --from=ghcr.io/sernik-tech/catppuccin-themes /artifacts/usr/share/icons/Papirus-Catppuccin-Latte-* /usr/share/icons
-    - COPY --from=ghcr.io/sernik-tech/catppuccin-themes /artifacts/usr/share/icons/Papirus-Catppuccin-Mocha-* /usr/share/icons
+    #- COPY --from=ghcr.io/sernik-tech/catppuccin-themes /artifacts/usr/share/icons/Papirus-Catppuccin-Latte-* /usr/share/icons
+    #- COPY --from=ghcr.io/sernik-tech/catppuccin-themes /artifacts/usr/share/icons/Papirus-Catppuccin-Mocha-* /usr/share/icons
     # Double-check to make sure all files are properly placed
     - RUN echo "Inside /usr/share/aurorae/themes:"
     - RUN ls /usr/share/aurorae/themes
