@@ -11,6 +11,9 @@ snippets:
     - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/share/themes/Catppuccin-Latte-* /usr/etc/skel/.local/share/themes
     - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/share/themes/Catppuccin-Mocha-* /usr/etc/skel/.local/share/themes
     # Icon theme
+    - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/share/icons/Papirus /usr/share/icons
+    - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/share/icons/Papirus-Light /usr/share/icons
+    - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/share/icons/Papirus-Dark /usr/share/icons
     - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/share/icons/Papirus-Catppuccin-Latte-* /usr/share/icons
     - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/share/icons/Papirus-Catppuccin-Mocha-* /usr/share/icons
     # Double-check to make sure all files are properly placed
