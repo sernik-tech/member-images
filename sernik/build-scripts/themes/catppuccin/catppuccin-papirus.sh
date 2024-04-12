@@ -3,13 +3,12 @@
 # Tell build process to exit if there are any errors.
 set -euo pipefail
 
-dnf install -y wget sed
+dnf install -y git wget sed papirus-icon-theme
 
 # dirs
 mkdir -p /tmp/papirus-catppuccin/usr/share/icons
 
 cd /tmp
-dnf install -y papirus-icon-theme
 
 # grab catppuccin theme then manually create all different colored icons and install them
 git clone https://github.com/catppuccin/papirus-folders.git
