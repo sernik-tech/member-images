@@ -3,6 +3,8 @@
 # Tell build process to exit if there are any errors.
 set -euo pipefail
 
+dnf install -y wget sed
+
 # dirs
 mkdir -p /tmp/papirus-catppuccin/usr/share/icons
 
