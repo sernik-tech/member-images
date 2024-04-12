@@ -62,7 +62,7 @@ sed -i 's@# PasswordShowLastLetter=1000@PasswordShowLastLetter=1000@g' /usr/shar
 sed -i 's@Font="Noto Sans"@Font="Lexend Deca"@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
 
 # Papirus KDE Colored Icons
-git clone https://github.com/luisbocanegra/papirus-colors/git /tmp/papirus-colors
+git clone https://github.com/luisbocanegra/papirus-colors.git /tmp/papirus-colors
 sed -i 's@~/.local/share/icons/@/usr/share/icons@g' /tmp/papirus-colors/places_icons_mod.sh
 chmod +x /tmp/papirus-colors/places_icons_mod.sh
 cd /tmp/papirus-colors && /tmp/papirus-colors/places_icons_mod.sh
