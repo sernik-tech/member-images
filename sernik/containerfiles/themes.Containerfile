@@ -25,8 +25,8 @@ FROM fedora:${IMAGE_MAJOR_VERSION} as catppuccin-icons
 
 COPY sernik/build-scripts/themes/catppuccin /tmp/build-scripts
 
-RUN chmod +x /tmp/build-scripts/catppuccin-plasma.sh && \
-    /tmp/build-scripts/catppuccin-plasma.sh
+RUN chmod +x /tmp/build-scripts/catppuccin-papirus.sh && \
+    /tmp/build-scripts/catppuccin-papirus.sh
 
 # Finalize container build
 FROM fedora:${IMAGE_MAJOR_VERSION}
