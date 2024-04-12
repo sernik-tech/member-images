@@ -32,6 +32,12 @@ curl -sL -o /usr/bin/wgcf ${WGCF_VER}
 chmod +x /usr/bin/wgcf
 
 #
+# OpenTabletDriver
+#
+curl -sL -o /tmp/otd.rpm https://github.com/OpenTabletDriver/OpenTabletDriver/releases/latest/download/OpenTabletDriver.rpm
+rpm-ostree install /tmp/otd.rpm
+
+#
 # KDE Theme
 #
 git clone https://github.com/catppuccin/kde.git /tmp/catppuccinkde
