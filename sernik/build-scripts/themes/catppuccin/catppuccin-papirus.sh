@@ -9,11 +9,7 @@ dnf install -y wget sed
 mkdir -p /tmp/papirus-catppuccin/usr/share/icons
 
 cd /tmp
-# Install papirus straight from their install script
-wget https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/install.sh
-sed -i 's@tar -xzf@tar --no-same-owner --no-same-permissions -xzf@g' /tmp/install.sh
-chmod +x install.sh
-./install.sh
+dnf install -y papirus-icon-theme
 
 # grab catppuccin theme then manually create all different colored icons and install them
 git clone https://github.com/catppuccin/papirus-folders.git
