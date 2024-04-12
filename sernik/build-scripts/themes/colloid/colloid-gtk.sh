@@ -4,7 +4,7 @@
 set -euo pipefail
 
 # You'll need to install these packages in your image too (minus sassc)
-dnf install -y gnome-themes-extra gtk-murrine-engine sassc
+dnf install -y git gnome-themes-extra gtk-murrine-engine sassc
 
 # Create theme directory
 mkdir -p /tmp/colloid-gtk
