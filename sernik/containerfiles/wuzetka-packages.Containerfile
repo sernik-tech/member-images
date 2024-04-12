@@ -25,12 +25,12 @@ RUN chmod +x /tmp/build-scripts/klassy.sh && \
     /tmp/build-scripts/klassy.sh
 
 # KDE Material You Colors
-FROM fedora:${IMAGE_MAJOR_VERSION} as kde-material-you
-
-COPY sernik/build-scripts /tmp/build-scripts
-
-RUN chmod +x /tmp/build-scripts/kde-material-you.sh && \
-    /tmp/build-scripts/kde-material-you.sh
+# FROM fedora:${IMAGE_MAJOR_VERSION} as kde-material-you
+#
+# COPY sernik/build-scripts /tmp/build-scripts
+#
+# RUN chmod +x /tmp/build-scripts/kde-material-you.sh && \
+#     /tmp/build-scripts/kde-material-you.sh
 
 # Plasma Panel Colorizer
 FROM fedora:${IMAGE_MAJOR_VERSION} as plasma-panel-colorizer
@@ -55,7 +55,7 @@ RUN mkdir -p /artifacts/usr/etc
 
 COPY --from=joystickwake /tmp/joystickwake-built/usr /artifacts/usr
 COPY --from=plasma-panel-colorizer /tmp/panel-colorizer-built/usr /artifacts/usr
-COPY --from=kde-material-you /tmp/kde-material-you-built/usr /artifacts/usr
+# COPY --from=kde-material-you /tmp/kde-material-you-built/usr /artifacts/usr
 COPY --from=klassy /tmp/klassy-built/usr /artifacts/usr
 COPY --from=burn-my-windows-kwin /tmp/burn-my-windows-built/usr /artifacts/usr
 COPY --from=rounded-corners-kwin /tmp/rounded-corners-built/usr /artifacts/usr

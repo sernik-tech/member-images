@@ -19,13 +19,14 @@ install:
   - gamescope
   - mangohud
   - hblock
+  - pipx
 
   # themes
   - papirus-icon-theme
 
   # material you colors dependencies
-  - python3-dbus
-  - python3-numpy
+  # - python3-dbus
+  # - python3-numpy
 
   # joystickwake dependencies
   - python3-pyudev
