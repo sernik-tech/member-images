@@ -41,8 +41,17 @@ COPY --from=catppuccin-gtk /tmp/catppuccin-gtk /artifacts/usr/etc/skel/.local/sh
 COPY --from=catppuccin-kde /tmp/catppuccin-kde/usr /artifacts/usr
 COPY --from=catppuccin-icons /tmp/catppuccin-papirus/usr /artifacts/usr
 
-RUN ls /artifacts/usr/etc/skel/.local/share/themes && \
+RUN echo "Inside /artifacts/usr/etc/skel/.local/share/themes:" && \
+    ls /artifacts/usr/etc/skel/.local/share/themes && \
+    echo && \
+    echo "Inside /artifacts/usr/share/icons:" && \
     ls /artifacts/usr/share/icons && \
+    echo && \
+    echo "Inside /artifacts/usr/share/color-schemes:" && \
     ls /artifacts/usr/share/color-schemes && \
+    echo && \
+    echo "Inside /artifacts/usr/share/aurorae/themes:" && \
     ls /artifacts/usr/share/aurorae/themes && \
+    echo && \
+    echo "Inside /artifacts/usr/share/plasma/look-and-feel:" && \
     ls /artifacts/usr/share/plasma/look-and-feel
