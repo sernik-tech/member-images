@@ -61,6 +61,8 @@ sed -i 's@FontSize=9@FontSize=11@g' /usr/share/sddm/themes/catppuccin-mocha/them
 sed -i 's@# PasswordShowLastLetter=1000@PasswordShowLastLetter=1000@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
 sed -i 's@Font="Noto Sans"@Font="Lexend Deca"@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
 
-# disabling the repositories for the booted system
-sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/atim-starship-fedora-$(rpm -E %fedora).repo
-sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/wezfurlong-wezterm-nightly-fedora-$(rpm -E %fedora).repo
+# Papirus KDE Colored Icons
+git clone https://github.com/luisbocanegra/papirus-colors/git /tmp/papirus-colors
+sed -i 's@~/.local/share/icons/@/usr/share/icons@g' /tmp/papirus-colors/places_icons_mod.sh
+chmod +x /tmp/papirus-colors/places_icons_mod.sh
+cd /tmp/papirus-colors && /tmp/papirus-colors/places_icons_mod.sh
