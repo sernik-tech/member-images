@@ -20,6 +20,7 @@ install:
   - mangohud
   - hblock
   - pipx
+  - python3-uinput
 
   # themes
   - papirus-icon-theme
