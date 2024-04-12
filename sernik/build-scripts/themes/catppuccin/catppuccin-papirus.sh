@@ -11,6 +11,7 @@ mkdir -p /tmp/papirus-catppuccin/usr/share/icons
 cd /tmp
 # Install papirus straight from their install script
 wget https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/install.sh
+sed -i 's@tar -xzf@tar --no-same-owner --no-same-permissions -xzf@g' /tmp/install.sh
 chmod +x install.sh
 ./install.sh
 
