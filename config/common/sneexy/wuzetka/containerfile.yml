@@ -1,0 +1,27 @@
+type: containerfile
+snippets:
+    # Self compiled software and allat
+    - COPY --from=ghcr.io/sernik-tech/wuzetka-packages /artifacts/usr /usr
+    # KDE theme
+    - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/share/aurorae/themes/CatppuccinLatte* /usr/share/aurorae/themes
+    - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/share/aurorae/themes/CatppuccinMocha* /usr/share/aurorae/themes
+    - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/share/color-schemes/CatppuccinLatte* /usr/share/color-schemes
+    - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/share/color-schemes/CatppuccinMocha* /usr/share/color-schemes
+    # GTK theme
+    - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/share/themes/Catppuccin-Latte-* /usr/etc/skel/.local/share/themes
+    - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/share/themes/Catppuccin-Mocha-* /usr/etc/skel/.local/share/themes
+    # Icon theme
+    - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/share/icons/Papirus-Catppuccin-Latte-* /usr/share/icons
+    - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/share/icons/Papirus-Catppuccin-Mocha-* /usr/share/icons
+    # Double-check to make sure all files are properly placed
+    - RUN echo "Inside /usr/share/aurorae/themes:"
+    - RUN ls /usr/share/aurorae/themes
+    - RUN echo
+    - RUN echo "Inside /usr/share/color-schemes:"
+    - RUN ls /usr/share/color-schemes
+    - RUN echo
+    - RUN echo "Inside /usr/etc/skel/.local/share/themes:"
+    - RUN ls /usr/etc/skel/.local/share/themes
+    - RUN echo
+    - RUN echo "Inside /usr/share/icons:"
+    - RUN ls /usr/share/icons

@@ -40,14 +40,14 @@ rpm-ostree install /tmp/otd.rpm
 #
 # KDE Theme
 #
-git clone https://github.com/catppuccin/kde.git /tmp/catppuccinkde
+#git clone https://github.com/catppuccin/kde.git /tmp/catppuccinkde
 #cd /tmp/catppuccinkde && git checkout v0.2.5 # Comment when Fedora 40/Plasma 6
-rm -f /tmp/catppuccinkde/install.sh
-curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/config/scripts/catppuccin-plasma6.sh
+#rm -f /tmp/catppuccinkde/install.sh
+#curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/config/scripts/catppuccin-plasma6.sh
 #curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/config/scripts/catppuccin-plasma5.sh # Comment when Fedora 40/Plasma 6
-chmod +x /tmp/catppuccinkde/install.sh
-cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 1 9 1 # Mocha Green (dark)
-cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 4 9 1 # Latte Green (light)
+#chmod +x /tmp/catppuccinkde/install.sh
+#cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 1 9 1 # Mocha Green (dark)
+#cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 4 9 1 # Latte Green (light)
 
 #
 # SDDM Theme

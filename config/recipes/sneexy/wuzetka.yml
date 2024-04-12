@@ -15,23 +15,16 @@ modules:
     - type: script
       scripts:
         - ld.sh
-        - system-wuzetka.sh
-        - catppuccin-papirus.sh
         - qdbus.sh
+        - system-wuzetka.sh
+        #- catppuccin-papirus.sh
 
     - type: files
       files:
         - sernik/usr: /usr
         - sneexy/wuzetka/usr: /usr
 
-    - type: containerfile
-      snippets:
-        - COPY --from=ghcr.io/sernik-tech/wuzetka-packages /artifacts/usr /usr
-        # GTK theme
-        - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/etc/skel/.local/share/themes/Catppuccin-Mocha-Compact-Green-Dark /usr/etc/skel/.local/share/themes/Catppuccin-Mocha-Compact-Green-Dark
-        - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/etc/skel/.local/share/themes/Catppuccin-Mocha-Compact-Green-Dark-xhdpi /usr/etc/skel/.local/share/themes/Catppuccin-Mocha-Compact-Green-Dark-xhdpi
-        - COPY --from=ghcr.io/sernik-tech/themes /artifacts/usr/etc/skel/.local/share/themes/Catppuccin-Mocha-Compact-Green-Dark-hdpi /usr/etc/skel/.local/share/themes/Catppuccin-Mocha-Compact-Green-Dark-hdpi
-
+    - from-file: common/sneexy/wuzetka/containerfile.yml
     - from-file: common/sneexy/wuzetka/flatpaks.yml
     - from-file: common/sneexy/bling.yml
     - from-file: common/sneexy/fonts.yml

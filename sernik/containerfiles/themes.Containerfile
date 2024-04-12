@@ -66,11 +66,11 @@ RUN mkdir -p /artifacts/usr/etc/skel/.local/share/themes && \
     mkdir -p /artifacts/usr/share/aurorae/themes && \
     mkdir -p /artifacts/usr/share/plasma/look-and-feel
 
-COPY --from=catppuccin /tmp/catppuccin-gtk /artifacts/usr/etc/skel/.local/share/themes
+COPY --from=catppuccin /tmp/catppuccin-gtk/usr /artifacts/usr
 COPY --from=catppuccin /tmp/catppuccin-kde/usr /artifacts/usr
 COPY --from=catppuccin /tmp/catppuccin-papirus/usr /artifacts/usr
 
-COPY --from=colloid /tmp/colloid-gtk /artifacts/usr/etc/skel/.local/share/themes
+COPY --from=colloid /tmp/colloid-gtk/usr /artifacts/usr
 COPY --from=colloid /tmp/colloid-kde/usr /artifacts/usr
 COPY --from=colloid /tmp/colloid-icons/usr /artifacts/usr
 
