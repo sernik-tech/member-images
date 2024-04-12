@@ -2,8 +2,6 @@
 
 # Syntax <Flavour = 1-4 > <Accent = 1-14> <WindowDec = 1/2> <Debug = aurorae/global/color/splash/cursor>
 
-rpm-ostree install gettext-devel
-
 check_command_exists() {
   command_name="${*}"
 
@@ -354,8 +352,8 @@ EOF
     echo "Installing Global Theme.."
     (
         cd ./dist || exit
-        tar -cf "$GLOBALTHEMENAME".tar.gz "$GLOBALTHEMENAME"
-        tar -xvf "$GLOBALTHEMENAME".tar.gz -C "$LOOKANDFEELDIR"
+        tar -cf "$GLOBALTHEMENAME".tar.gz "$GLOBALTHEMENAME" --no-same-owner --no-same-permissions
+        tar -xvf "$GLOBALTHEMENAME".tar.gz -C "$LOOKANDFEELDIR" --no-same-owner --no-same-permissions
         cp -r "$GLOBALTHEMENAME" "$LOOKANDFEELDIR"
     )
 

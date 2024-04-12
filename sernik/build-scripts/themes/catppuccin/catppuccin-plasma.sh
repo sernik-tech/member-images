@@ -3,7 +3,7 @@
 # Tell build process to exit if there are any errors.
 set -euo pipefail
 
-dnf install -y git sed wget unzip
+dnf install -y gettext-devel git sed wget unzip
 
 # dirs
 mkdir -p /tmp/catppuccin-kde/usr/share/color-schemes
