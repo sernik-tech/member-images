@@ -27,7 +27,7 @@ RUN chmod +x /tmp/build-scripts/catppuccin-papirus.sh && \
 # Finalize image
 FROM fedora:${IMAGE_MAJOR_VERSION}
 
-RUN mkdir -p /artifacts/usr/etc/skel/.local/share/themes && \
+RUN mkdir -p /artifacts/usr/share/themes && \
     mkdir -p /artifacts/usr/share/icons && \
     mkdir -p /artifacts/usr/share/color-schemes && \
     mkdir -p /artifacts/usr/share/aurorae/themes && \
@@ -37,8 +37,8 @@ COPY --from=catppuccin /tmp/catppuccin-gtk/usr /artifacts/usr
 COPY --from=catppuccin /tmp/catppuccin-kde/usr /artifacts/usr
 COPY --from=catppuccin /tmp/catppuccin-papirus/usr /artifacts/usr
 
-RUN echo "Inside /artifacts/usr/etc/skel/.local/share/themes:" && \
-    ls /artifacts/usr/etc/skel/.local/share/themes && \
+RUN echo "Inside /artifacts/usr/share/themes:" && \
+    ls /artifacts/usr/share/themes && \
     echo && \
     echo "Inside /artifacts/usr/share/icons:" && \
     ls /artifacts/usr/share/icons && \
