@@ -18,6 +18,7 @@ RUN chmod +x /tmp/build-scripts/catppuccin-plasma.sh && \
     /tmp/build-scripts/catppuccin-plasma.sh
 
 # Icons
+# NOTE: Original Papirus icons are required, so copy those to your image as well.
 COPY sernik/build-scripts/themes/catppuccin /tmp/build-scripts
 
 RUN chmod +x /tmp/build-scripts/catppuccin-papirus.sh && \

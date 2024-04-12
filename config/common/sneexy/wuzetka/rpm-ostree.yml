@@ -22,9 +22,6 @@ install:
   - pipx
   - python3-uinput
 
-  # themes
-  - papirus-icon-theme
-
   # material you colors dependencies
   # - python3-dbus
   # - python3-numpy

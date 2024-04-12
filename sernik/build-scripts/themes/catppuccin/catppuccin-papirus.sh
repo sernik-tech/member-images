@@ -16,6 +16,11 @@ cd papirus-folders
 cp -r src/* /usr/share/icons/Papirus
 chmod +x papirus-folders
 
+# Original papirus icons are required so we copy those as well
+cp -r /usr/share/icons/Papirus /tmp/catppuccin-papirus/usr/share/icons/Papirus
+cp -r /usr/share/icons/Papirus-Light /tmp/catppuccin-papirus/usr/share/icons/Papirus-Light
+cp -r /usr/share/icons/Papirus-Dark /tmp/catppuccin-papirus/usr/share/icons/Papirus-Dark
+
 # Latte
 ./papirus-folders -C cat-latte-rosewater --theme Papirus-Light
 cp -r /usr/share/icons/Papirus-Light /tmp/catppuccin-papirus/usr/share/icons/Papirus-Catppuccin-Latte-Rosewater
