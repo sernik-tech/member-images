@@ -24,41 +24,7 @@ COPY sernik/build-scripts/themes/catppuccin /tmp/build-scripts
 RUN chmod +x /tmp/build-scripts/catppuccin-papirus.sh && \
     /tmp/build-scripts/catppuccin-papirus.sh
 
-#
-# Colloid
-#
-FROM fedora:${IMAGE_MAJOR_VERSION} as colloid
-
-# GTK Theme
-COPY sernik/build-scripts/themes/colloid /tmp/build-scripts
-
-RUN chmod +x /tmp/build-scripts/colloid-gtk.sh && \
-    /tmp/build-scripts/colloid-gtk.sh
-
-# KDE Theme
-COPY sernik/build-scripts/themes/colloid /tmp/build-scripts
-
-RUN chmod +x /tmp/build-scripts/colloid-plasma.sh && \
-    /tmp/build-scripts/colloid-plasma.sh
-
-# Icons
-COPY sernik/build-scripts/themes/colloid /tmp/build-scripts
-
-RUN chmod +x /tmp/build-scripts/colloid-icons.sh && \
-    /tmp/build-scripts/colloid-icons.sh
-
-#
-# Jasper
-#
-
-#
-# Orchis
-#
-
-#
-# Tela
-#
-
+# Finalize image
 FROM fedora:${IMAGE_MAJOR_VERSION}
 
 RUN mkdir -p /artifacts/usr/etc/skel/.local/share/themes && \
@@ -70,10 +36,6 @@ RUN mkdir -p /artifacts/usr/etc/skel/.local/share/themes && \
 COPY --from=catppuccin /tmp/catppuccin-gtk/usr /artifacts/usr
 COPY --from=catppuccin /tmp/catppuccin-kde/usr /artifacts/usr
 COPY --from=catppuccin /tmp/catppuccin-papirus/usr /artifacts/usr
-
-COPY --from=colloid /tmp/colloid-gtk/usr /artifacts/usr
-COPY --from=colloid /tmp/colloid-kde/usr /artifacts/usr
-COPY --from=colloid /tmp/colloid-icons/usr /artifacts/usr
 
 RUN echo "Inside /artifacts/usr/etc/skel/.local/share/themes:" && \
     ls /artifacts/usr/etc/skel/.local/share/themes && \
