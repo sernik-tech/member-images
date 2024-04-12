@@ -61,6 +61,7 @@ install:
   - translate-shell
   - power-profiles-daemon
   - plasma-sdk
+  - oxygen-sounds
 
   # libraries and tools
   - fontconfig
