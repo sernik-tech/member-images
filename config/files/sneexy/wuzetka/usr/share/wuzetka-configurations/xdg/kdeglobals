@@ -12,6 +12,8 @@ widgetStyle=Breeze
 
 [KDE]
 LookAndFeelPackage=wuzetkaDark
+DefaultLightLookAndFeel=wuzetkaLight
+DefaultDarkLookAndFeel=wuzetkaLight
 
 [KFileDialog Settings]
 Allow Expansion=false
