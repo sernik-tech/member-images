@@ -63,3 +63,6 @@ user:
 
     # utilities
     - io.gitlab.azymohliad.WatchMate
+    - org.gimp.GIMP
+    - org.kde.krita
+    - org.kde.kdenlive
