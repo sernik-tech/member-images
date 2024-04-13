@@ -8,12 +8,14 @@ repos:
 
   # wezterm terminal
   - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
+
+  # waydroid (custom builds to fix minor issues)
+  - https://copr.fedorainfracloud.org/coprs/huakim/waydroid/repo/fedora-%OS_VERSION%/huakim-waydroid-fedora-%OS_VERSION%.repo
 install:
   # environment
   - pavucontrol-qt
   - playerctl
   - mpv
-  - waydroid
   - crontabs
   - gamemode
   - gamescope
@@ -37,6 +39,24 @@ install:
 
   # joystickwake dependencies
   - python3-pyudev
+
+  # virt-manager
+  - qemu
+  - qemu-user-binfmt
+  - virt-manager
+  - libvirt
+  - edk2-ovmf
+  - genisoimage
+  - qemu-img
+  - qemu-system-x86-core
+  - qemu-char-spice
+  - qemu-device-usb-redirect
+  - qemu-device-display-virtio-vga
+  - qemu-device-display-virtio-gpu
+
+  # waydroid
+  - waydroid
+  - waydroid-image-system-vanilla
 
   # terminals and console utilities
   - wezterm
