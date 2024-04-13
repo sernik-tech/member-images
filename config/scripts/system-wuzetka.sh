@@ -71,3 +71,9 @@ git clone https://github.com/luisbocanegra/papirus-colors.git /tmp/papirus-color
 sed -i 's@~/.local/share/icons/@/usr/share/icons@g' /tmp/papirus-colors/places_icons_mod.sh
 chmod +x /tmp/papirus-colors/places_icons_mod.sh
 cd /tmp/papirus-colors && /tmp/papirus-colors/places_icons_mod.sh
+
+#
+# Wuzetka Desktop Layouts
+#
+git clone https://git.gay/sneexy/sernik.git /tmp/wuzetka
+cp -r /tmp/wuzetka/kde/wuzetka* /usr/share/plasma/look-and-feel
