@@ -15,7 +15,7 @@ idleTime=540000
 lidAction=1
 powerButtonAction=16
 powerDownAction=16
-triggerLidActionWhenExternalMonitorPresent=false
+triggerLidActionWhenExternalMonitorPresent=true
 
 [AC][PowerProfile]
 profile=performance
@@ -37,7 +37,7 @@ idleTime=240000
 lidAction=1
 powerButtonAction=16
 powerDownAction=16
-triggerLidActionWhenExternalMonitorPresent=false
+triggerLidActionWhenExternalMonitorPresent=true
 
 [Battery][PowerProfile]
 profile=power-saver

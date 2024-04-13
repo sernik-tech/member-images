@@ -1,18 +1,20 @@
-[Desktops]
-Number=5
-Rows=1
-
 [Effect-ًRound-Corners]
 ActiveOutlineUseCustom=false
 ActiveOutlineUsePalette=true
 InactiveOutlinePalette=4
-InactiveOutlineThickness=3
+InactiveOutlineThickness=2
 InactiveOutlineUseCustom=false
 InactiveOutlineUsePalette=true
-OutlineThickness=3
+OutlineThickness=2
+
+[NightColor]
+Active=true
+NightTemperature=4800
 
 [Plugins]
 contrastEnabled=true
+cubeEnabled=true
+dimscreenEnabled=true
 kwin4_effect_dimscreenEnabled=true
 kwin4_effect_scaleEnabled=false
 kwin4_effect_shapecornersEnabled=true
@@ -20,8 +22,16 @@ kwin4_effect_squashEnabled=false
 kwin4_effect_translucencyEnabled=true
 kwin4_effect_tv_glitchEnabled=true
 magiclampEnabled=true
+mouseclickEnabled=true
+scaleEnabled=false
+shakecursorEnabled=true
 sheetEnabled=true
+squashEnabled=false
+translucencyEnabled=true
 wobblywindowsEnabled=true
+
+[Tiling]
+padding=4
 
 [Wayland]
 InputMethod[$e]=/usr/share/applications/com.github.maliit.keyboard.desktop

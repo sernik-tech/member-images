@@ -2,4 +2,5 @@
 WallpaperPlugin=org.kde.slideshow
 
 [Greeter][Wallpaper][org.kde.slideshow][General]
+Image=file:///usr/share/backgrounds/catppuccin/space-mocha.jpg
 SlidePaths=/usr/share/backgrounds/catppuccin/
