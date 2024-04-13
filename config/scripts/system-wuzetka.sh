@@ -44,12 +44,6 @@ sed -i 's@# PasswordShowLastLetter=1000@PasswordShowLastLetter=1000@g' /usr/shar
 sed -i 's@Font="Noto Sans"@Font="Lexend Deca"@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
 
 #
-# OpenTabletDriver
-#
-curl -sL -o /tmp/otd.rpm https://github.com/OpenTabletDriver/OpenTabletDriver/releases/latest/download/OpenTabletDriver.rpm
-rpm-ostree install /tmp/otd.rpm
-
-#
 # KDE Theme
 #
 git clone https://github.com/catppuccin/kde.git /tmp/catppuccinkde
