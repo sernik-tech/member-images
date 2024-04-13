@@ -11,9 +11,9 @@ toolBarFont=Lexend,10,-1,5,50,0,0,0,0,0
 widgetStyle=Breeze
 
 [KDE]
-LookAndFeelPackage=wuzetkaDark
-DefaultLightLookAndFeel=wuzetkaLight
-DefaultDarkLookAndFeel=wuzetkaLight
+LookAndFeelPackage=Catppuccin-Mocha-Green
+DefaultLightLookAndFeel=Catppuccin-Latte-Green
+DefaultDarkLookAndFeel=Catppuccin-Mocha-Green
 
 [KFileDialog Settings]
 Allow Expansion=false
