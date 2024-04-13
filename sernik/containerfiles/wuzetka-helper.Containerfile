@@ -48,11 +48,21 @@ COPY sernik/build-scripts /tmp/build-scripts
 RUN chmod +x /tmp/build-scripts/joystickwake.sh && \
     /tmp/build-scripts/joystickwake.sh
 
+# Catppuccin
+FROM fedora:${IMAGE_MAJOR_VERSION} as catppuccin
+
+# GTK Theme
+COPY sernik/build-scripts /tmp/build-scripts
+
+RUN chmod +x /tmp/build-scripts/catppuccin-gtk.sh && \
+    /tmp/build-scripts/catppuccin-gtk.sh
+
 # Finalize container build
 FROM fedora:${IMAGE_MAJOR_VERSION}
 
 RUN mkdir -p /artifacts/usr/etc
 
+COPY --from=catppuccin /tmp/catppuccin-gtk/usr /artifacts/usr
 COPY --from=joystickwake /tmp/joystickwake-built/usr /artifacts/usr
 COPY --from=plasma-panel-colorizer /tmp/panel-colorizer-built/usr /artifacts/usr
 # COPY --from=kde-material-you /tmp/kde-material-you-built/usr /artifacts/usr

@@ -17,14 +17,18 @@ modules:
         - ld.sh
         - qdbus.sh
         - system-wuzetka.sh
-        #- catppuccin-papirus.sh
 
     - type: files
       files:
         - sernik/usr: /usr
         - sneexy/wuzetka/usr: /usr
 
-    - from-file: common/sneexy/wuzetka/containerfile.yml
+    - type: containerfile
+      snippets:
+        # Self compiled software and allat
+        - COPY --from=ghcr.io/sernik-tech/wuzetka-helper /artifacts/usr /usr
+
+    #- from-file: common/sneexy/wuzetka/containerfile.yml
     - from-file: common/sneexy/wuzetka/flatpaks.yml
     - from-file: common/sneexy/bling.yml
     - from-file: common/sneexy/fonts.yml
