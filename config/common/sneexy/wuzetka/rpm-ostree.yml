@@ -20,7 +20,8 @@ install:
   - mangohud
   - hblock
   - pipx
-  - python3-uinput
+  - nextcloud-client
+  - nextcloud-client-dolphin
 
   # themes
   - papirus-icon-theme
