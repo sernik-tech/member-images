@@ -21,7 +21,6 @@ install:
   - gamescope
   - mangohud
   - hblock
-  - pipx
   - nextcloud-client
   - nextcloud-client-dolphin
 
@@ -32,10 +31,6 @@ install:
   - pop-sound-theme
   - yaru-sound-theme
   - deepin-sound-theme
-
-  # material you colors dependencies
-  # - python3-dbus
-  # - python3-numpy
 
   # joystickwake dependencies
   - python3-pyudev

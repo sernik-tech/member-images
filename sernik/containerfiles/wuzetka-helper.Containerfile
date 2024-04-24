@@ -24,14 +24,6 @@ COPY sernik/build-scripts /tmp/build-scripts
 RUN chmod +x /tmp/build-scripts/klassy.sh && \
     /tmp/build-scripts/klassy.sh
 
-# KDE Material You Colors
-# FROM fedora:${IMAGE_MAJOR_VERSION} as kde-material-you
-#
-# COPY sernik/build-scripts /tmp/build-scripts
-#
-# RUN chmod +x /tmp/build-scripts/kde-material-you.sh && \
-#     /tmp/build-scripts/kde-material-you.sh
-
 # Plasma Panel Colorizer
 FROM fedora:${IMAGE_MAJOR_VERSION} as plasma-panel-colorizer
 
@@ -57,11 +49,18 @@ COPY sernik/build-scripts /tmp/build-scripts
 RUN chmod +x /tmp/build-scripts/catppuccin-gtk.sh && \
     /tmp/build-scripts/catppuccin-gtk.sh
 
+# Packages built with cargo/rust
+FROM fedora:${IMAGE_MAJOR_VERSION} as cargo
+
+RUN chmod +x /tmp/build-scripts/cargo.sh && \
+    /tmp/build-scripts/cargo.sh
+
 # Finalize container build
 FROM fedora:${IMAGE_MAJOR_VERSION}
 
 RUN mkdir -p /artifacts/usr/etc
 
+COPY --from=cargo /tmp/catppuccin-gtk/usr /artifacts/usr
 COPY --from=catppuccin /tmp/catppuccin-gtk/usr /artifacts/usr
 COPY --from=joystickwake /tmp/joystickwake-built/usr /artifacts/usr
 COPY --from=plasma-panel-colorizer /tmp/panel-colorizer-built/usr /artifacts/usr
