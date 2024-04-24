@@ -58,6 +58,11 @@ install:
   - waydroid
   - waydroid-image-system-vanilla
 
+  # mpd
+  - mpd
+  - mpdris2
+  - ncmpcpp
+
   # terminals and console utilities
   - wezterm
   - kitty
