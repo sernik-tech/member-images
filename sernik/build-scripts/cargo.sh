@@ -5,7 +5,7 @@ set -euo pipefail
 
 # Dependency and folder
 dnf install -y git gcc openssl cargo
-mkdir /tmp/cargo-built/usr/bin
+mkdir -p /tmp/cargo-built/usr/bin
 
 # Atuin - https://github.com/atuinsh/atuin
 cargo install atuin --path /tmp/cargo-built/usr/bin
