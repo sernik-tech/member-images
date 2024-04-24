@@ -57,11 +57,20 @@ COPY sernik/build-scripts /tmp/build-scripts
 RUN chmod +x /tmp/build-scripts/cargo.sh && \
     /tmp/build-scripts/cargo.sh
 
+# Packages built with go
+FROM fedora:${IMAGE_MAJOR_VERSION} as go
+
+COPY sernik/build-scripts /tmp/build-scripts
+
+RUN chmod +x /tmp/build-scripts/go.sh && \
+    /tmp/build-scripts/go.sh
+
 # Finalize container build
 FROM fedora:${IMAGE_MAJOR_VERSION}
 
 RUN mkdir -p /artifacts/usr/etc
 
+COPY --from=go /tmp/go-built/usr /artifacts/usr
 COPY --from=cargo /tmp/cargo-built/usr /artifacts/usr
 COPY --from=catppuccin /tmp/catppuccin-gtk/usr /artifacts/usr
 COPY --from=joystickwake /tmp/joystickwake-built/usr /artifacts/usr
