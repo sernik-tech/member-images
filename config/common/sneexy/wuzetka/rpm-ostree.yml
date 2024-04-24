@@ -67,7 +67,7 @@ install:
   - fd-find
   - fzf
   - git-delta
-  - lsd
+  - eza
   - neovim
   - ripgrep
   - sd
@@ -89,7 +89,6 @@ install:
   - qt6-qtsvg
   - translate-shell
   - power-profiles-daemon
-  - plasma-sdk
 
   # libraries and tools
   - fontconfig
