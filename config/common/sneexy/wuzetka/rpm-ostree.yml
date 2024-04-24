@@ -35,7 +35,7 @@ install:
   # joystickwake dependencies
   - python3-pyudev
 
-  # virt-manager
+  # virtualization software
   - qemu
   - qemu-user-binfmt
   - virt-manager
@@ -58,7 +58,7 @@ install:
   - mpdris2
   - ncmpcpp
 
-  # terminals and console utilities
+  # terminals and some modern unix utilities
   - wezterm
   - kitty
   - bat
@@ -74,6 +74,12 @@ install:
   - starship
   - zoxide
   - zsh
+
+  # console utilities
+  - ffmpeg
+  - yt-dlp
+  - figlet
+  
 
   # kde utilities
   - ark
