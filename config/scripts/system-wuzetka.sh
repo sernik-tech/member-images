@@ -10,21 +10,6 @@ systemctl enable hblock.timer
 mkdir -p /usr/share/sddm/themes
 
 #
-# Sheldon
-#
-curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
-    | bash -s -- --repo rossmacarthur/sheldon --to /usr/bin
-
-#
-# Krabby
-#
-KRABBY_VER=$(curl -sL https://api.github.com/repos/yannjor/krabby/releases/latest | jq -r '.assets[] | select(.name? | match("krabby-.*-x86_64.tar.gz$")) | .browser_download_url')
-curl -sL -o /tmp/krabby.tar.gz ${KRABBY_VER}
-tar -xvf /tmp/krabby.tar.gz -C /tmp
-cp /tmp/krabby /usr/bin
-chmod +x /usr/bin/krabby
-
-#
 # wgcf
 #
 WGCF_VER=$(curl -sL https://api.github.com/repos/ViRb3/wgcf/releases/latest | jq -r '.assets[] | select(.name? | match("wgcf_.*_linux_amd64$")) | .browser_download_url')
@@ -63,20 +48,6 @@ cp -r /tmp/papirus-folders/src/* /usr/share/icons/Papirus
 chmod +x /tmp/papirus-folders/papirus-folders
 /tmp/papirus-folders/papirus-folders -t Papirus-Light -C cat-latte-green
 /tmp/papirus-folders/papirus-folders -t Papirus-Dark -C cat-mocha-green
-
-#
-# Papirus KDE Colored Icons
-#
-git clone https://github.com/luisbocanegra/papirus-colors.git /tmp/papirus-colors
-sed -i 's@~/.local/share/icons/@/usr/share/icons@g' /tmp/papirus-colors/places_icons_mod.sh
-chmod +x /tmp/papirus-colors/places_icons_mod.sh
-cd /tmp/papirus-colors && /tmp/papirus-colors/places_icons_mod.sh
-
-#
-# Wuzetka Desktop Layouts
-#
-git clone https://git.gay/sneexy/sernik.git /tmp/wuzetka
-cp -r /tmp/wuzetka/kde/wuzetka* /usr/share/plasma/look-and-feel
 
 #
 # Justfiles
