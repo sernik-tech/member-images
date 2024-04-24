@@ -7,6 +7,9 @@ set -euo pipefail
 dnf install -y git gcc openssl cargo
 mkdir /tmp/cargo-built/usr/bin
 
+# Atuin - https://github.com/atuinsh/atuin
+cargo install atuin --path /tmp/cargo-built/usr/bin
+
 # Sheldon - https://github.com/rossmacarthur/sheldon
 cargo install sheldon --path /tmp/cargo-built/usr/bin
 
