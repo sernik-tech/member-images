@@ -16,6 +16,7 @@ modules:
       scripts:
         - ld.sh
         - qdbus.sh
+        - posy-cursors.sh
         - system-wuzetka.sh
 
     - type: files
