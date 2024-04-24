@@ -3,19 +3,18 @@
 # .zshrc - Zsh file loaded on interactive shell sessions.
 #
 
-# export some custom paths
-# (required for some packages/scripts/applications and some things in here)
+# export some custom paths the average user may use
 path+=("${HOME}/.local/bin")
 path+=("${HOME}/.cargo/bin")
 
 # load sheldon
 eval "$(sheldon source)"
 
+# random pokemon sprite
+krabby random
+
 # load completions
 autoload -Uz compinit && compinit
-
-# funny pokemon
-krabby random
 
 # load aliases
 if [ -f ${HOME}/.config/zsh/.aliases ]; then
@@ -25,8 +24,8 @@ fi
 # zoxide
 eval "$(zoxide init zsh)"
 
+# autin
+eval "$(atuin init zsh)"
+
 # starship prompt
 eval "$(starship init zsh)"
-
-# wezterm integration
-source "${HOME}/.config/zsh/wezterm.sh"

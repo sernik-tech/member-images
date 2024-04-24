@@ -29,32 +29,32 @@ use = ["plugins/{{ name }}"]
 # shell benchmarking
 [plugins.zsh-bench]
 github = "romkatv/zsh-bench"
-apply = ["PATH"]
+apply = [ "PATH" "defer" ]
 
 # oh-my-zsh
 [plugins.key-bindings]
 github = "ohmyzsh/ohmyzsh"
 use = ["lib/{{ name }}.zsh"]
 
-[plugins.omz-completion]
-github = "ohmyzsh/ohmyzsh"
-use = ["lib/completion.zsh"]
-
 [plugins.clipboard]
 github = "ohmyzsh/ohmyzsh"
 use = ["lib/{{ name }}.zsh"]
+apply = ["defer"]
 
 [plugins.copybuffer]
 github = "ohmyzsh/ohmyzsh"
 use = ["plugins/{{ name }}"]
+apply = ["defer"]
 
 [plugins.copyfile]
 github = "ohmyzsh/ohmyzsh"
 use = ["plugins/{{ name }}"]
+apply = ["defer"]
 
 [plugins.copypath]
 github = "ohmyzsh/ohmyzsh"
 use = ["plugins/{{ name }}"]
+apply = ["defer"]
 
 [plugins.extract]
 github = "ohmyzsh/ohmyzsh"
@@ -62,13 +62,14 @@ use = ["plugins/{{ name }}"]
 apply = ["defer"]
 
 # zsh-utils
-[plugins.history]
-github = "belak/zsh-utils"
-
 [plugins.utility]
 github = "belak/zsh-utils"
+apply = ["defer"]
 
-# deferred plugins go below
+[plugins.editor]
+local = "~/.config/zsh/plugins/{{ name }}"
+
+# extra or unrelated plugins go below
 
 # git-open
 [plugins.git-open]
@@ -98,19 +99,4 @@ apply = ["defer"]
 # auto suggestions
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
-apply = ["defer"]
-
-# command history searching
-[plugins.zsh-history-substring-search]
-github = "zsh-users/zsh-history-substring-search"
-apply = ["defer"]
-
-# fzf searching plugin
-[plugins.fzf-zsh-plugin]
-github = "unixorn/fzf-zsh-plugin"
-apply = ["defer"]
-
-# git credeeztials manager or something like that
-[plugins.blackbox]
-github = "StackExchange/blackbox"
 apply = ["defer"]
