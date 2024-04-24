@@ -1,6 +1,0 @@
-[Unit]
-Description=Mazurek theme self-care and maintenance
-
-[Service]
-Type=oneshot
-ExecStart=/bin/bash -c "/etc/mazurek/mazurek-theme-maintenance.sh"
