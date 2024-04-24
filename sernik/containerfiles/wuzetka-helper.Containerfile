@@ -52,6 +52,8 @@ RUN chmod +x /tmp/build-scripts/catppuccin-gtk.sh && \
 # Packages built with cargo/rust
 FROM fedora:${IMAGE_MAJOR_VERSION} as cargo
 
+COPY sernik/build-scripts /tmp/build-scripts
+
 RUN chmod +x /tmp/build-scripts/cargo.sh && \
     /tmp/build-scripts/cargo.sh
 
@@ -60,11 +62,10 @@ FROM fedora:${IMAGE_MAJOR_VERSION}
 
 RUN mkdir -p /artifacts/usr/etc
 
-COPY --from=cargo /tmp/catppuccin-gtk/usr /artifacts/usr
+COPY --from=cargo /tmp/cargo-built/usr /artifacts/usr
 COPY --from=catppuccin /tmp/catppuccin-gtk/usr /artifacts/usr
 COPY --from=joystickwake /tmp/joystickwake-built/usr /artifacts/usr
 COPY --from=plasma-panel-colorizer /tmp/panel-colorizer-built/usr /artifacts/usr
-# COPY --from=kde-material-you /tmp/kde-material-you-built/usr /artifacts/usr
 COPY --from=klassy /tmp/klassy-built/usr /artifacts/usr
 COPY --from=burn-my-windows-kwin /tmp/burn-my-windows-built/usr /artifacts/usr
 COPY --from=rounded-corners-kwin /tmp/rounded-corners-built/usr /artifacts/usr
