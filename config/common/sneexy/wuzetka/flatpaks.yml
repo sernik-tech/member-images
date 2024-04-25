@@ -19,6 +19,8 @@ system:
     - org.kde.okteta
     - io.github.seadve.Mousai
     - com.dec05eba.gpu_screen_recorder
+    - net.davidotek.pupgui2
+    - com.github.Matoking.protontricks
 
     # system applications
     - org.kde.kclock
@@ -52,14 +54,16 @@ user:
     - dev.vencord.Vesktop
 
     # gaming
+    - org.libretro.RetroArch
     - org.DolphinEmu.dolphin-emu
+    - net.pcsx2.PCSX2
+    - org.duckstation.DuckStation
+    - org.ppsspp.PPSSPP
+    - net.kuribo64.melonDS
     - io.github.dosbox-staging
     - org.freedesktop.Platform.VulkanLayer.gamescope//23.08
     - org.freedesktop.Platform.VulkanLayer.MangoHud//23.08
     - org.prismlauncher.PrismLauncher
-    - net.davidotek.pupgui2
-    - org.libretro.RetroArch
-    - org.vinegarhq.Vinegar
 
     # utilities
     - io.gitlab.azymohliad.WatchMate
