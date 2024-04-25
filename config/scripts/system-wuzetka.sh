@@ -10,7 +10,7 @@ systemctl enable hblock.timer
 mkdir -p /usr/share/sddm/themes
 
 # bye bye konsole!
-rpm-ostree override remove konsole konsole5
+#rpm-ostree override remove konsole konsole5
 
 #
 # wgcf
