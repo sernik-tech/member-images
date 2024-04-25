@@ -10,7 +10,6 @@ sudo dnf install -y git cmake extra-cmake-modules gettext "cmake(KF5Config)" "cm
 cd /tmp
 git clone https://github.com/paulmcauley/klassy.git
 cd klassy
-git checkout 6.1.breeze6.0.3
 mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DKDE_INSTALL_USE_QT_SYS_PATHS=ON
