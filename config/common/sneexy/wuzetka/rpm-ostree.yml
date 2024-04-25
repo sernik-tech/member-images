@@ -79,7 +79,6 @@ install:
   - ffmpeg
   - yt-dlp
   - figlet
-  
 
   # kde utilities
   - ark

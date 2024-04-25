@@ -9,6 +9,9 @@ systemctl enable hblock.timer
 # Ensure all required/used folders are created
 mkdir -p /usr/share/sddm/themes
 
+# bye bye konsole!
+rpm-ostree override remove konsole 
+
 #
 # wgcf
 #
