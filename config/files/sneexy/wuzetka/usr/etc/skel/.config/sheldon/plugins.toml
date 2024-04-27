@@ -29,7 +29,7 @@ use = ["plugins/{{ name }}"]
 # shell benchmarking
 [plugins.zsh-bench]
 github = "romkatv/zsh-bench"
-apply = [ "PATH" "defer" ]
+apply = [ "PATH", "defer" ]
 
 # oh-my-zsh
 [plugins.key-bindings]
@@ -67,7 +67,7 @@ github = "belak/zsh-utils"
 apply = ["defer"]
 
 [plugins.editor]
-local = "~/.config/zsh/plugins/{{ name }}"
+local = "~/.config/zsh/plugins/editor"
 
 # extra or unrelated plugins go below
 
