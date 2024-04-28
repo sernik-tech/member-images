@@ -30,6 +30,14 @@ curl -sL -o /usr/lib/systemd/user/mpd-discord-rpc.service https://raw.githubuser
 curl -sL -o /usr/lib/systemd/user/rescrobbled.service https://raw.githubusercontent.com/InputUsername/rescrobbled/master/rescrobbled.service
 
 #
+# Globally enable systemd user services
+#
+systemctl --global enable mpd.service \
+    mpDris2.service \
+    mpd-discord-rpc.service \
+    rescrobbled.service
+
+#
 # SDDM Theme
 #
 git clone https://github.com/catppuccin/sddm.git /tmp/catppuccin-sddm
