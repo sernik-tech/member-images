@@ -1,12 +1,36 @@
 ARG IMAGE_MAJOR_VERSION=40
 
-# KDE/Kwin Extras/Addons
-FROM fedora:${IMAGE_MAJOR_VERSION} as kde-extras
+# Burn my windows (KWin)
+FROM fedora:${IMAGE_MAJOR_VERSION} as burn-my-windows-kwin
 
 COPY sernik/build-scripts /tmp/build-scripts
 
-RUN chmod +x /tmp/build-scripts/kde-extras.sh.sh && \
-    /tmp/build-scripts/kde-extras.sh.sh
+RUN chmod +x /tmp/build-scripts/burn-my-windows-kwin.sh && \
+    /tmp/build-scripts/burn-my-windows-kwin.sh
+
+# Rounded corners (KWin)
+FROM fedora:${IMAGE_MAJOR_VERSION} as rounded-corners-kwin
+
+COPY sernik/build-scripts /tmp/build-scripts
+
+RUN chmod +x /tmp/build-scripts/rounded-corners-kwin.sh && \
+    /tmp/build-scripts/rounded-corners-kwin.sh
+
+# Klassy
+FROM fedora:${IMAGE_MAJOR_VERSION} as klassy
+
+COPY sernik/build-scripts /tmp/build-scripts
+
+RUN chmod +x /tmp/build-scripts/klassy.sh && \
+    /tmp/build-scripts/klassy.sh
+
+# Plasma Panel Colorizer
+FROM fedora:${IMAGE_MAJOR_VERSION} as plasma-panel-colorizer
+
+COPY sernik/build-scripts /tmp/build-scripts
+
+RUN chmod +x /tmp/build-scripts/plasma-panel-colorizer.sh && \
+    /tmp/build-scripts/plasma-panel-colorizer.sh
 
 # Joystickwake
 FROM fedora:${IMAGE_MAJOR_VERSION} as joystickwake
@@ -50,4 +74,7 @@ COPY --from=go /tmp/go-built/usr /artifacts/usr
 COPY --from=cargo /tmp/cargo-built/usr /artifacts/usr
 COPY --from=catppuccin /tmp/catppuccin-gtk/usr /artifacts/usr
 COPY --from=joystickwake /tmp/joystickwake-built/usr /artifacts/usr
-COPY --from=kde-extras /tmp/kde-extras-built/usr /artifacts/usr
+COPY --from=plasma-panel-colorizer /tmp/panel-colorizer-built/usr /artifacts/usr
+COPY --from=klassy /tmp/klassy-built/usr /artifacts/usr
+COPY --from=burn-my-windows-kwin /tmp/burn-my-windows-built/usr /artifacts/usr
+COPY --from=rounded-corners-kwin /tmp/rounded-corners-built/usr /artifacts/usr

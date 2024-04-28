@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 
+# this script mass builds multiple plasma, kwin and other types of extensions for the wuzetka image.
+
 # Tell build process to exit if there are any errors.
 set -euo pipefail
 
-# Dependency
+#
+# Dependencies
+#
+# Burn My Windows dependencies
 dnf install -y git gettext kf6-kwidgetsaddons-devel
 
 # Create kwin effect's folder
