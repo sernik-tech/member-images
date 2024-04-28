@@ -60,9 +60,10 @@ user:
     - org.ppsspp.PPSSPP
     - net.kuribo64.melonDS
     - io.github.dosbox-staging
+    - page.kramo.Cartridges
+    - org.prismlauncher.PrismLauncher
     - org.freedesktop.Platform.VulkanLayer.gamescope//23.08
     - org.freedesktop.Platform.VulkanLayer.MangoHud//23.08
-    - org.prismlauncher.PrismLauncher
 
     # utilities
     - io.gitlab.azymohliad.WatchMate
