@@ -5,8 +5,8 @@ FROM fedora:${IMAGE_MAJOR_VERSION} as kde-extras
 
 COPY sernik/build-scripts /tmp/build-scripts
 
-RUN chmod +x /tmp/build-scripts/kde-extras.sh.sh && \
-    /tmp/build-scripts/kde-extras.sh.sh
+RUN chmod +x /tmp/build-scripts/kde-extras.sh && \
+    /tmp/build-scripts/kde-extras.sh
 
 # Joystickwake
 FROM fedora:${IMAGE_MAJOR_VERSION} as joystickwake
