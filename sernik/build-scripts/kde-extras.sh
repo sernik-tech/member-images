@@ -70,9 +70,9 @@ tar -zvxf burn_my_windows_kwin4.tar.gz -C /tmp/kde-extras-built/usr/share/kwin/e
 cd /tmp
 git clone --single-branch --depth=1 https://github.com/luisbocanegra/plasma-panel-colorizer.git
 cd plasma-panel-colorizer
-cmake -B build -S . -DCMAKE_INSTALL_PREFIX=/tmp/kde-extras-built
-cmake --build build
-cmake --install build
+chmod +x package-plasmoid.sh
+./package-plasmoid.sh
+unzip plasmoid-panel-colorizer-v*.plasmoid -d /tmp/kde-extras-built/usr/share/plasma/plasmoids/luisbocanegra.panel.colorizer
 
 #
 # Compact Pager
