@@ -8,6 +8,7 @@ system:
     # internet
     - org.mozilla.firefox
     - org.mozilla.Thunderbird
+    - com.ulduzsoft.Birdtray
 
     # office
     - org.libreoffice.LibreOffice
