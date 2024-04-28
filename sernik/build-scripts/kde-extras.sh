@@ -67,6 +67,7 @@ tar -zvxf burn_my_windows_kwin4.tar.gz -C /tmp/kde-extras-built/usr/share/kwin/e
 #
 # Plasma Panel Colorizer
 #
+mkdir -p /tmp/kde-extras-built/usr/share/plasma/plasmoids/luisbocanegra.panel.colorizer
 cd /tmp
 git clone --single-branch --depth=1 https://github.com/luisbocanegra/plasma-panel-colorizer.git
 cd plasma-panel-colorizer
