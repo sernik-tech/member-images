@@ -23,6 +23,7 @@ alias cat="bat --paging=never"
 # custom aliases
 alias music="ncmpcpp"
 alias ublue-update="systemctl start ublue-update.service"
+alias distrbox="distrobox"
 alias wttr="curl 'wttr.in/?0' && curl 'wttr.in/?0?m'"
 alias please="sudo"
 alias fucking="sudo"
