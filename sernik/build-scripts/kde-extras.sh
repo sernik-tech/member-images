@@ -102,7 +102,7 @@ mkdir -p /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.latte.separato
 cd /tmp
 git clone https://github.com/doncsugar/applet-latte-separator.git -b plasma6
 cd applet-latte-separator
-mv -r contents /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.latte.separator
+mv contents /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.latte.separator
 mv LICENSE /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.latte.separator
 mv metadata.json /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.latte.separator
 
@@ -113,7 +113,7 @@ mkdir -p /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.windowtitle
 cd /tmp
 git clone https://github.com/dhruv8sh/plasma6-window-title-applet.git
 cd plasma6-window-title-applet
-mv -r contents /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.windowtitle
+mv contents /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.windowtitle
 mv LICENSE /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.windowtitle
 mv metadata.json /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.windowtitle
 
@@ -124,7 +124,7 @@ mkdir -p /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.netspeedWidget
 cd /tmp
 git clone https://github.com/dfaust/plasma-applet-netspeed-widget.git
 cd plasma-applet-netspeed-widget
-mv -r ./package/* /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.netspeedWidget
+mv ./package/* /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.netspeedWidget
 
 #
 # PlasMusic Toolbar
@@ -133,7 +133,7 @@ mkdir -p /tmp/kde-extras-built/usr/share/plasma/plasmoids/plasmusic-toolbar
 cd /tmp
 git clone https://github.com/ccatterina/plasmusic-toolbar.git
 cd plasmusic-toolbar
-mv -r ./src/* /tmp/kde-extras-built/usr/share/plasma/plasmoids/plasmusic-toolbar
+mv ./src/* /tmp/kde-extras-built/usr/share/plasma/plasmoids/plasmusic-toolbar
 
 #
 # Desktop Indicator
@@ -142,6 +142,6 @@ mkdir -p /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.plasma.plasm6d
 cd /tmp
 git clone https://github.com/dhruv8sh/plasma6-desktop-indicator.git
 cd plasma6-desktop-indicator
-mv -r contents /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.plasma.plasm6desktopindicator
+mv contents /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.plasma.plasm6desktopindicator
 mv LICENSE /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.plasma.plasm6desktopindicator
 mv metadata.json /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.plasma.plasm6desktopindicator
