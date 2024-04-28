@@ -28,6 +28,7 @@ curl -sL -o /usr/lib/systemd/user/mpd-discord-rpc.service https://raw.githubuser
 # Rescrobbled systemd service
 #
 curl -sL -o /usr/lib/systemd/user/rescrobbled.service https://raw.githubusercontent.com/InputUsername/rescrobbled/master/rescrobbled.service
+sed -i 's@ExecStart=%h/.cargo/bin/rescrobbled@ExecStart=/usr/bin/rescrobbled@g' /usr/lib/systemd/user/rescrobbled.service
 
 #
 # Globally enable systemd user services
