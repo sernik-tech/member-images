@@ -7,8 +7,6 @@ system:
   install:
     # internet
     - org.mozilla.firefox
-    - org.mozilla.Thunderbird
-    - com.ulduzsoft.Birdtray
 
     # office
     - org.libreoffice.LibreOffice
@@ -43,7 +41,6 @@ user:
   install:
     # internet
     - org.qbittorrent.qBittorrent
-    - io.github.martinrotter.rssguardlite
     - org.nicotine_plus.Nicotine
 
     # chat
