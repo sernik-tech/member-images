@@ -13,14 +13,13 @@ system:
     - org.libreoffice.LibreOffice
     - md.obsidian.Obsidian
 
-      # utilities
+    # utilities
     - com.usebottles.bottles
     - fr.handbrake.ghb
     - org.kde.okteta
     - io.github.seadve.Mousai
     - com.dec05eba.gpu_screen_recorder
     - net.davidotek.pupgui2
-    - com.github.Matoking.protontricks
 
     # system applications
     - org.kde.kclock
