@@ -25,6 +25,11 @@ chmod +x /usr/bin/wgcf
 curl -sL -o /usr/lib/systemd/user/mpd-discord-rpc.service https://raw.githubusercontent.com/JakeStanger/mpd-discord-rpc/master/mpd-discord-rpc.service
 
 #
+# Rescrobbled systemd service
+#
+curl -sL -o /usr/lib/systemd/user/rescrobbled.service https://raw.githubusercontent.com/InputUsername/rescrobbled/master/rescrobbled.service
+
+#
 # SDDM Theme
 #
 git clone https://github.com/catppuccin/sddm.git /tmp/catppuccin-sddm
