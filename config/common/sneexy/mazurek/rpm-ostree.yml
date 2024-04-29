@@ -47,6 +47,7 @@ install:
     - zoxide
     - zsh
     - crontabs
+    - beets
 
     # gnome extensions
     - lm_sensors
