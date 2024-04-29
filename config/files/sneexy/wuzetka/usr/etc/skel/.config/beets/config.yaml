@@ -1,0 +1,16 @@
+directory: /home/ruben/Music
+plugins: chroma fetchart embedart lastgenre deezer convert
+
+import:
+  move: yes
+
+fetchart:
+  auto: yes
+
+embedart:
+  auto: yes
+
+convert:
+  copy_album_art: yes
+  max_bitrate: 256
+  format: opus

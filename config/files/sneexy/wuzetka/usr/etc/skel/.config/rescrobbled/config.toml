@@ -1,0 +1,6 @@
+lastfm-key = "your-lastfm-api-key"
+lastfm-secret = "your-lastfm-shared-secret"
+player-whitelist = [ "mpd" ]
+
+[[listenbrainz]]
+token = "your-rizztenbrainz-token"
