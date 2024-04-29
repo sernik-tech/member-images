@@ -55,6 +55,14 @@ install:
   - mpdris2
   - ncmpcpp
 
+  # beets
+  - beets
+  - beets-plugins
+  - python3-requests
+  - python3-acoustid
+  - python3-pylast
+  - chromaprint-tools
+
   # terminals and some modern unix utilities
   - wezterm
   - kitty
@@ -70,6 +78,7 @@ install:
   - sd
   - zoxide
   - zsh
+  - ImageMagick
 
   # console utilities
   - ffmpeg
