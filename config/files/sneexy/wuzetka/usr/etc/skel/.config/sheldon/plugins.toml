@@ -26,11 +26,6 @@ defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file 
 github = "mattmc3/zephyr"
 use = ["plugins/{{ name }}"]
 
-# shell benchmarking
-[plugins.zsh-bench]
-github = "romkatv/zsh-bench"
-apply = [ "PATH", "defer" ]
-
 # oh-my-zsh
 [plugins.key-bindings]
 github = "ohmyzsh/ohmyzsh"
@@ -39,12 +34,10 @@ use = ["lib/{{ name }}.zsh"]
 [plugins.clipboard]
 github = "ohmyzsh/ohmyzsh"
 use = ["lib/{{ name }}.zsh"]
-apply = ["defer"]
 
 [plugins.copybuffer]
 github = "ohmyzsh/ohmyzsh"
 use = ["plugins/{{ name }}"]
-apply = ["defer"]
 
 [plugins.copyfile]
 github = "ohmyzsh/ohmyzsh"
@@ -54,7 +47,6 @@ apply = ["defer"]
 [plugins.copypath]
 github = "ohmyzsh/ohmyzsh"
 use = ["plugins/{{ name }}"]
-apply = ["defer"]
 
 [plugins.extract]
 github = "ohmyzsh/ohmyzsh"
@@ -84,11 +76,6 @@ apply = ["defer"]
 # completions learning daemon
 [plugins.cod]
 github = "dim-an/cod"
-apply = ["defer"]
-
-# shift select
-[plugins.shift-select]
-github = "jirutka/zsh-shift-select"
 apply = ["defer"]
 
 # fast syntax highlighting
