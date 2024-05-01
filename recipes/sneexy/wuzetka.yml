@@ -10,7 +10,7 @@ image-version: 40 # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-    - from-file: common/sneexy/wuzetka/rpm-ostree.yml
+    - from-file: ./config/common/sneexy/wuzetka/rpm-ostree.yml
 
     - type: script
       scripts:
@@ -28,13 +28,13 @@ modules:
         # Self compiled software and allat
         - COPY --from=ghcr.io/sernik-tech/wuzetka-helper /artifacts/usr /usr
 
-    - from-file: common/sneexy/wuzetka/flatpaks.yml
-    - from-file: common/sneexy/bling.yml
-    - from-file: common/sneexy/fonts.yml
+    - from-file: ./config/common/sneexy/wuzetka/flatpaks.yml
+    - from-file: ./config/common/sneexy/bling.yml
+    - from-file: ./config/common/sneexy/fonts.yml
 
     - type: gschema-overrides
       include:
         - zz1-wuzetka.gschema.override
 
-    - from-file: common/sneexy/akmods.yml
+    - from-file: ./config/common/sneexy/akmods.yml
     - type: signing
