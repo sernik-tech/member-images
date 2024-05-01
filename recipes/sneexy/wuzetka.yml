@@ -21,7 +21,6 @@ modules:
 
     - type: files
       files:
-        - sernik/usr: /usr
         - sneexy/wuzetka/usr: /usr
 
     - type: containerfile
