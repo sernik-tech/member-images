@@ -15,34 +15,6 @@ This repository by default supports signing.
 
 ###### Repository ran and maintained by [@sneexy-boi](https://github.com/sneexy-boi), owned by [@Rexogamer](https://github.com/Rexogamer).
 
-## Images
-
-<details>
-<summary>
-
-### Wuzetka
-
-</summary>
-
-sneexy's heavily opinionated image. uses KDE Plasma with a custom configuration and comes with a handful of applications preinstalled that you probably don't want.
-
-preconfigured with a custom sddm theme *(no system settings kcm)*, custom desktop theme and layout (Catppuccin Mocha Green!), akmods and forced dns settings.
-
-</details>
-
-<details>
-<summary>
-
-### Mazurek
-
-</summary>
-
-sneexy's *other* heavily opinionated image. uses GNOME (Material You!) and handful of applications that you probably don't want.
-
-preconfigured with extensions and themes, custom desktop theme and layout, akmods and forced dns settings.
-
-</details>
-
 ## Installation
 
 > [!WARNING]  
@@ -74,16 +46,13 @@ The `latest` tag will automatically point to the latest build. That build will s
 
 ### ISO
 
-> [!NOTE]
-> Depending on what your image is based on (For example, Silverblue has this issue), it may be impossible to install from a custom generated ISO due to the lack of setup options. If this is the case, you can generate and install [Universal Blue's images](https://github.com/ublue-os/isogenerator?tab=readme-ov-file#container) and rebase to your custom image (with the instructions above this section) from that.
-
 Refer to [BlueBuild's "Installing an image based on Universal Blue"](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso) to learn how to generate an ISO with the image you want to use.
 
 If you already use a Universal Blue based image, or have podman installed:
 ```bash
 IMAGE_NAME=<name of image, from https://github.com/orgs/sernik-tech/packages?repo_name=member-images>
 IMAGE_VARIANT=Silverblue
-# ^^^ should match the variant your image is based on
+# ^ should match the varient of your image (changes the first time/boot medium installer)
 sudo podman run --rm --privileged --volume .:/isogenerator/output --security-opt label=disable --pull=newer \
 -e IMAGE_REPO="ghcr.io/sernik-tech" -e IMAGE_NAME="$IMAGE_NAME" -e IMAGE_TAG="latest" -e VARIANT="$IMAGE_VARIANT" \
 ghcr.io/ublue-os/isogenerator:39
