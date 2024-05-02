@@ -55,7 +55,7 @@ sed -i 's@Font="Noto Sans"@Font="Lexend Deca"@g' /usr/share/sddm/themes/catppucc
 #
 git clone https://github.com/catppuccin/kde.git /tmp/catppuccinkde
 rm -f /tmp/catppuccinkde/install.sh
-curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/sernik/scripts/catppuccin-plasma.sh
+curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/config/scripts/catppuccin-plasma.sh
 chmod +x /tmp/catppuccinkde/install.sh
 # Latte
 cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 1 9 1

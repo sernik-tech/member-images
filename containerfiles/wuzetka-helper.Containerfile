@@ -3,7 +3,7 @@ ARG IMAGE_MAJOR_VERSION=40
 # KDE/Kwin Extras/Addons
 FROM fedora:${IMAGE_MAJOR_VERSION} as kde-extras
 
-COPY sernik/build-scripts /tmp/build-scripts
+COPY config/scripts/build-scripts /tmp/build-scripts
 
 RUN chmod +x /tmp/build-scripts/kde-extras.sh && \
     /tmp/build-scripts/kde-extras.sh
@@ -11,7 +11,7 @@ RUN chmod +x /tmp/build-scripts/kde-extras.sh && \
 # Joystickwake
 FROM fedora:${IMAGE_MAJOR_VERSION} as joystickwake
 
-COPY sernik/build-scripts /tmp/build-scripts
+COPY config/scripts/build-scripts /tmp/build-scripts
 
 RUN chmod +x /tmp/build-scripts/joystickwake.sh && \
     /tmp/build-scripts/joystickwake.sh
@@ -20,7 +20,7 @@ RUN chmod +x /tmp/build-scripts/joystickwake.sh && \
 FROM fedora:${IMAGE_MAJOR_VERSION} as catppuccin
 
 # GTK Theme
-COPY sernik/build-scripts /tmp/build-scripts
+COPY config/scripts/build-scripts /tmp/build-scripts
 
 RUN chmod +x /tmp/build-scripts/catppuccin-gtk.sh && \
     /tmp/build-scripts/catppuccin-gtk.sh
@@ -28,7 +28,7 @@ RUN chmod +x /tmp/build-scripts/catppuccin-gtk.sh && \
 # Packages built with cargo/rust
 FROM fedora:${IMAGE_MAJOR_VERSION} as cargo
 
-COPY sernik/build-scripts /tmp/build-scripts
+COPY config/scripts/build-scripts /tmp/build-scripts
 
 RUN chmod +x /tmp/build-scripts/cargo.sh && \
     /tmp/build-scripts/cargo.sh
@@ -36,7 +36,7 @@ RUN chmod +x /tmp/build-scripts/cargo.sh && \
 # Packages built with go
 FROM fedora:${IMAGE_MAJOR_VERSION} as go
 
-COPY sernik/build-scripts /tmp/build-scripts
+COPY config/scripts/build-scripts /tmp/build-scripts
 
 RUN chmod +x /tmp/build-scripts/go.sh && \
     /tmp/build-scripts/go.sh
