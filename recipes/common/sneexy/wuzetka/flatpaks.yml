@@ -53,6 +53,7 @@ user:
     - dev.vencord.Vesktop
 
     # gaming
+    - com.github.k4zmu2a.spacecadetpinball
     - org.libretro.RetroArch
     - org.DolphinEmu.dolphin-emu
     - net.pcsx2.PCSX2
