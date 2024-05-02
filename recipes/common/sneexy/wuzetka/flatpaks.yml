@@ -15,6 +15,7 @@ system:
     # utilities
     - com.usebottles.bottles
     - fr.handbrake.ghb
+    - com.github.tenderowl.frog
     - org.kde.okteta
     - io.github.seadve.Mousai
     - com.dec05eba.gpu_screen_recorder
@@ -48,6 +49,7 @@ user:
     - in.cinny.Cinny
     - chat.revolt.RevoltDesktop
     - org.signal.Signal
+    - org.squidowl.halloy
     - dev.vencord.Vesktop
 
     # gaming
@@ -62,9 +64,16 @@ user:
     - org.prismlauncher.PrismLauncher
     - org.freedesktop.Platform.VulkanLayer.gamescope//23.08
     - org.freedesktop.Platform.VulkanLayer.MangoHud//23.08
+    - app.drey.Doggo # :3
 
     # utilities
     - io.gitlab.azymohliad.WatchMate
+    - io.github.halfmexican.Mingle
+    - io.github.Figma_Linux.figma_linux
+    - page.codeberg.JakobDev.jdPixelUpscaler
+    - page.codeberg.JakobDev.jdAnimatedImageEditor
+    - io.github.nate_xyz.Paleta
+    - io.github.lainsce.Emulsion
     - org.gimp.GIMP
     - org.kde.krita
     - org.kde.kdenlive
