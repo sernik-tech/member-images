@@ -65,6 +65,17 @@ chmod +x build.sh
 tar -zvxf burn_my_windows_kwin4.tar.gz -C /tmp/kde-extras-built/usr/share/kwin/effects --no-same-owner --no-same-permissions
 
 #
+# Smart Video Wallpaper Reborn
+#
+mkdir -p /tmp/kde-extras-built/usr/share/plasma/plasmoids/luisbocanegra.smart.video.wallpaper.reborn
+cd /tmp
+git clone https://github.com/luisbocanegra/plasma-smart-video-wallpaper-reborn.git
+cd plasma-smart-video-wallpaper-reborn
+sed -i 's@~/.local@/tmp/kde-extras-built/usr@g' /tmp/plasma-smart-video-wallpaper-reborn/install.sh
+chmod +x install.sh
+./install.sh
+
+#
 # Plasma Panel Colorizer
 #
 mkdir -p /tmp/kde-extras-built/usr/share/plasma/plasmoids/luisbocanegra.panel.colorizer
