@@ -67,7 +67,7 @@ tar -zvxf burn_my_windows_kwin4.tar.gz -C /tmp/kde-extras-built/usr/share/kwin/e
 #
 # Smart Video Wallpaper Reborn
 #
-mkdir -p /tmp/kde-extras-built/usr/share/plasma/plasmoids/luisbocanegra.smart.video.wallpaper.reborn
+mkdir -p /tmp/kde-extras-built/usr/share/plasma/wallpapers/luisbocanegra.smart.video.wallpaper.reborn
 cd /tmp
 git clone https://github.com/luisbocanegra/plasma-smart-video-wallpaper-reborn.git
 cd plasma-smart-video-wallpaper-reborn
