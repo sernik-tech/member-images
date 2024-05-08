@@ -22,6 +22,8 @@ chmod +x /usr/bin/wgcf
 #
 # Cloudflare WHAR because wgcf sometimes doesn't work
 #
+curl -fsSl https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo | tee /etc/yum.repos.d/cloudflare-warp.repo
+rpm-ostree install cloudflare-warp
 
 #
 # MPD Discord RPC systemd service
