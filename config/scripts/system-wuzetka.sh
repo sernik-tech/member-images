@@ -20,6 +20,10 @@ curl -sL -o /usr/bin/wgcf ${WGCF_VER}
 chmod +x /usr/bin/wgcf
 
 #
+# Cloudflare WHAR because wgcf sometimes doesn't work
+#
+
+#
 # MPD Discord RPC systemd service
 #
 curl -sL -o /usr/lib/systemd/user/mpd-discord-rpc.service https://raw.githubusercontent.com/JakeStanger/mpd-discord-rpc/master/mpd-discord-rpc.service

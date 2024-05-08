@@ -2,7 +2,7 @@ name: containersbuild
 on:
     pull_request:
     schedule:
-        - cron: "0 7 * * *" # 7 am everyday
+        - cron: "0 16 * * *" # builds an hour before images start automatically building
     push:
         paths:
             - ".github/**"
