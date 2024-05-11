@@ -7,6 +7,7 @@ system:
   install:
     # internet
     - org.mozilla.firefox
+    - one.ablaze.floorp
 
     # office
     - org.libreoffice.LibreOffice
@@ -76,5 +77,7 @@ user:
     - io.github.nate_xyz.Paleta
     - io.github.lainsce.Emulsion
     - org.gimp.GIMP
+    - org.inkscape.Inkscape
+    - com.boxy_svg.BoxySVG
     - org.kde.krita
     - org.kde.kdenlive
