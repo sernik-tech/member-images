@@ -23,7 +23,7 @@
         "License": "GPL-2.0+",
         "Name": "CatWalk",
         "Website": "",
-        "Version": "2.1"
+        "Version": "2.2"
     },
     "X-Plasma-API-Minimum-Version": "6.0",
     "X-Plasma-Provides": [

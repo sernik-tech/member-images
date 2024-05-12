@@ -46,8 +46,6 @@ Item {
             case CompactRepresentation.LayoutType.VerticalPanel:
             case CompactRepresentation.LayoutType.VerticalDesktop:
                 return compactRepresentation.parent.width
-            case CompactRepresentation.LayoutType.IconOnly:
-                return svgItem.Layout.preferredWidth
             }
         }
         height: {
@@ -86,12 +84,14 @@ Item {
             visible: plasmoid.configuration.type !== 2
             imagePath: Qt.resolvedUrl("../images/my-idle-symbolic.svg")
         }
-        ColumnLayout {
-            visible: plasmoid.configuration.type !== 1
-            Layout.alignment: Qt.AlignVCenter
-            Layout.fillWidth: layoutForm === CompactRepresentation.LayoutType.VerticalPanel
+            Layout.maximumHeight: textMetrics.height * 2
+            PlasmaComponents3.Label {
+                property double fontHeightRatio: textMetrics.font.pixelSize / textMetrics.height
+                id: label
+                text: totalSensor.formattedValue
+                Layout.fillWidth: layoutForm === CompactRepresentation.LayoutType.VerticalPanel
                               || layoutForm === CompactRepresentation.LayoutType.VerticalDesktop
-            Layout.maximumWidth: {
+                Layout.maximumWidth: {
                 switch (layoutForm) {
                 case CompactRepresentation.LayoutType.HorizontalPanel:
                     return textMetrics.width
@@ -101,13 +101,6 @@ Item {
                     return grid.Layout.preferredWidth
                 }
             }
-            Layout.maximumHeight: textMetrics.height * 2
-            PlasmaComponents3.Label {
-                property double fontHeightRatio: textMetrics.font.pixelSize / textMetrics.height
-                id: label
-                text: totalSensor.formattedValue
-                Layout.fillWidth: parent.Layout.fillWidth
-                Layout.maximumWidth: Layout.fillWidth ? -1 : textMetrics.width
                 Layout.minimumWidth: Layout.maximumWidth
                 fontSizeMode: Text.VerticalFit
                 height: parent.height * 0.71
@@ -144,6 +137,5 @@ Item {
                     svgItem.sourceIndex += 1
                 }
             }
-        }
     }
 }
