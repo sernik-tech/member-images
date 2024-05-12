@@ -17,7 +17,6 @@ modules:
         - ld.sh
         - qdbus.sh
         - posy-cursors.sh
-        - steam.sh
         - system-wuzetka.sh
 
     - type: files
