@@ -23,6 +23,16 @@ modules:
       files:
         - sneexy/wuzetka/usr: /usr
 
+    - type: chezmoi
+      install_chezmoi: true
+      repository: "https://git.gay/sneexy/dotfiles"
+      enable_all_users: true
+      run_every: '5d'
+      wait_after_boot: '5m'
+      disable_init: false
+      disable_update: false
+      changed-file-policy: "skip"
+
     - type: containerfile
       snippets:
         # Self compiled software and allat
