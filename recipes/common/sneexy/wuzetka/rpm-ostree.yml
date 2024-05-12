@@ -83,14 +83,16 @@ install:
   - kate
   - ksystemlog
   - ffmpegthumbs
-  - kaccounts-integration
-  - kaccounts-providers
-  - kdepim
-  - kdepim-addons
   - qt6-qtquickcontrols2
   - qt6-qtsvg
   - translate-shell
   - power-profiles-daemon
+
+  # kde libraries or something idk its weird
+  - kaccounts-integration
+  - kaccounts-providers
+  - kdepim
+  - kdepim-addons
 
   # libraries and tools
   - fontconfig

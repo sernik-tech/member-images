@@ -1,8 +1,115 @@
 #!/usr/bin/env bash
 # Taken from Bazzite. Steam RPM is fucking hell
 # https://github.com/ublue-os/bazzite/blob/a37b7154324db712d951b7083bd45204e788dd55/Containerfile#L352
+# Note that I also did some modifications to fix issues but I didn't bother to fix them properly. Just to make the issues go away.
 
 set -oue pipefail
+
+# Update packages that commonly cause build issues
+rpm-ostree override replace \
+--experimental \
+--from repo=updates \
+    vulkan-loader \
+    || true && \
+rpm-ostree override replace \
+--experimental \
+--from repo=updates \
+    alsa-lib \
+    || true && \
+rpm-ostree override replace \
+--experimental \
+--from repo=updates \
+    gnutls \
+    || true && \
+rpm-ostree override replace \
+--experimental \
+--from repo=updates \
+    glib2 \
+    || true && \
+rpm-ostree override replace \
+--experimental \
+--from repo=updates \
+    gtk3 \
+    || true && \
+rpm-ostree override replace \
+--experimental \
+--from repo=updates \
+    atk \
+    at-spi2-atk \
+    || true && \
+rpm-ostree override replace \
+--experimental \
+--from repo=updates \
+    libaom \
+    || true && \
+rpm-ostree override replace \
+--experimental \
+--from repo=updates \
+    gstreamer1 \
+    gstreamer1-plugins-base \
+    gstreamer1-plugins-bad-free-libs \
+    gstreamer1-plugins-good-qt \
+    gstreamer1-plugins-good \
+    gstreamer1-plugins-bad-free \
+    gstreamer1-plugin-libav \
+    gstreamer1-plugins-ugly-free \
+    || true && \
+rpm-ostree override replace \
+--experimental \
+--from repo=updates \
+    python3 \
+    python3-libs \
+    || true && \
+rpm-ostree override replace \
+--experimental \
+--from repo=updates \
+    libdecor \
+    || true && \
+rpm-ostree override replace \
+--experimental \
+--from repo=updates \
+    libtirpc \
+    || true && \
+rpm-ostree override replace \
+--experimental \
+--from repo=updates \
+    libuuid \
+    || true && \
+rpm-ostree override replace \
+--experimental \
+--from repo=updates \
+    libblkid \
+    || true && \
+rpm-ostree override replace \
+--experimental \
+--from repo=updates \
+    libmount \
+    || true && \
+rpm-ostree override replace \
+--experimental \
+--from repo=updates \
+    cups-libs \
+    || true && \
+rpm-ostree override replace \
+--experimental \
+--from repo=updates \
+    libinput \
+    || true && \
+rpm-ostree override replace \
+--experimental \
+--from repo=updates \
+    libopenmpt \
+    || true && \
+rpm-ostree override remove \
+    glibc32 \
+    || true
+
+# Install extra dependencies
+rpm-ostree install \
+    pulseaudio-utils \
+    mesa-libGLU \
+    vulkan-tools \
+    glibc.i686 \
 
 # from what i can gather here:
 # 1. pre-install any libraries or dependencies
