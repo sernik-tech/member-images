@@ -4,8 +4,12 @@
 
 set -oue pipefail
 
+# from what i can gather here:
+# 1. pre-install any libraries or dependencies
+# 2. toggling different repos and installing the correct versions of libraries and software (this part is pain)
+# 3. installing extra dependencies and useful applications
+# 4. install latencyflex
 rpm-ostree install \
-    jupiter-sd-mounting-btrfs \
     at-spi2-core.i686 \
     atk.i686 \
     vulkan-loader.i686 \
