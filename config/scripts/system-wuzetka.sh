@@ -9,15 +9,27 @@ systemctl enable hblock.timer
 # Ensure all required/used folders are created
 mkdir -p /usr/share/sddm/themes
 
-# bye bye konsole!
-#rpm-ostree override remove konsole konsole5
-
 #
 # wgcf
 #
 WGCF_VER=$(curl -sL https://api.github.com/repos/ViRb3/wgcf/releases/latest | jq -r '.assets[] | select(.name? | match("wgcf_.*_linux_amd64$")) | .browser_download_url')
 curl -sL -o /usr/bin/wgcf ${WGCF_VER}
 chmod +x /usr/bin/wgcf
+
+#
+# VSCodium
+#
+tee -a /etc/yum.repos.d/vscodium.repo << 'EOF'
+[gitlab.com_paulcarroty_vscodium_repo]
+name=gitlab.com_paulcarroty_vscodium_repo
+baseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
+metadata_expire=1h
+EOF
+rpm-ostree install codium
 
 #
 # MPD Discord RPC systemd service

@@ -3,6 +3,9 @@ repos:
   # rawr browser :3
   - https://rpm.librewolf.net/librewolf-repo.repo
 
+  # vivaldi (not my main, just to test it/when i need chromium)
+  - https://repo.vivaldi.com/stable/vivaldi-fedora.repo
+
   # hblock
   - https://copr.fedorainfracloud.org/coprs/pesader/hblock/repo/fedora-%OS_VERSION%/pesader-hblock-fedora-%OS_VERSION%.repo
 
@@ -15,22 +18,25 @@ install:
   # web browsers (layered directly because its both less of a hassle and also currently more secure than flatpak)
   - firefox
   - librewolf
+  - vivaldi-stable
   - torbrowser-launcher
 
   # office
   - libreoffice
+  - merkuro
 
   # environment
   - pavucontrol-qt
   - playerctl
   - mpv
   - crontabs
-  - gamemode
   - gamescope
   - mangohud
   - hblock
   - nextcloud-client
   - nextcloud-client-dolphin
+  - trash-cli
+  - plymouth-kcm
 
   # themes
   - papirus-icon-theme
@@ -86,15 +92,14 @@ install:
   - yt-dlp
   - figlet
 
-  # kde utilities
+  # kde applications and utilities (some probably already installed but /shrug)
   - ark
   - dolphin-plugins
+  - gwenview
+  - okular
   - kate
   - ksystemlog
-  - ffmpegthumbs
-  - qt6-qtquickcontrols2
-  - qt6-qtsvg
-  - translate-shell
+  - filelight
   - power-profiles-daemon
 
   # kde libraries
@@ -102,10 +107,28 @@ install:
   - kaccounts-providers
   - kdepim
   - kdepim-addons
+  - ffmpegthumbs
+  - qt6-qtquickcontrols2
+  - qt6-qtsvg
+  - translate-shell
 
   # libraries and tools
   - fontconfig
+  - hunspell-en
   - gnome-themes-extra
   - lzip
   - qt5-qtwayland
   - qt6-qtwayland
+optfix:
+  # chromium issue
+  - vivaldi
+remove:
+  # default editors installed with fedora
+  - vim-data
+  - vim-minimal
+  - vim-filesystem
+  - vim-common
+  - vim-enhanced
+  - nano
+  - nano-default-editor
+  - default-editor
