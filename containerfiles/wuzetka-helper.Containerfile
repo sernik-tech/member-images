@@ -9,12 +9,12 @@ RUN chmod +x /tmp/build-scripts/kde-extras.sh && \
     /tmp/build-scripts/kde-extras.sh
 
 # Joystickwake
-FROM fedora:${IMAGE_MAJOR_VERSION} as joystickwake
-
-COPY config/scripts/build-scripts /tmp/build-scripts
-
-RUN chmod +x /tmp/build-scripts/joystickwake.sh && \
-    /tmp/build-scripts/joystickwake.sh
+#FROM fedora:${IMAGE_MAJOR_VERSION} as joystickwake
+#
+#COPY config/scripts/build-scripts /tmp/build-scripts
+#
+#RUN chmod +x /tmp/build-scripts/joystickwake.sh && \
+#    /tmp/build-scripts/joystickwake.sh
 
 # Catppuccin
 FROM fedora:${IMAGE_MAJOR_VERSION} as catppuccin
