@@ -17,12 +17,19 @@ repos:
 
   # cursors
   - https://copr.fedorainfracloud.org/coprs/peterwu/rendezvous/repo/fedora-%OS_VERSION%/peterwu-rendezvous-fedora-%OS_VERSION%.repo
+
+  # rom properties
+  - https://copr.fedorainfracloud.org/coprs/kylegospo/rom-properties/repo/fedora-%OS_VERSION%/kylegospo-rom-properties-fedora-%OS_VERSION%.repo
+
+  # linux mint's webapp/pwa manager
+  - https://copr.fedorainfracloud.org/coprs/kylegospo/webapp-manager/repo/fedora-%OS_VERSION%/kylegospo-webapp-manager-fedora-%OS_VERSION%.repo
 install:
-  # web browsers (layered directly because its both less of a hassle and also currently more secure than flatpak)
+  # web browsers, related web utilities (layered directly because its both less of a hassle and also currently more secure than flatpak)
   - firefox
   - librewolf
   - vivaldi-stable
   - torbrowser-launcher
+  - webapp-manager
 
   # office
   - libreoffice
@@ -38,6 +45,7 @@ install:
   - hblock
   - nextcloud-client
   - nextcloud-client-dolphin
+  - wl-clipboard
   - trash-cli
 
   # themes
@@ -46,9 +54,6 @@ install:
   - oxygen-sounds
   - pop-sound-theme
   - yaru-sound-theme
-
-  # joystickwake dependencies
-  - python3-pyudev
 
   # virtualization software
   - qemu
@@ -97,6 +102,7 @@ install:
   # kde applications and utilities (some probably already installed but /shrug)
   - ark
   - dolphin-plugins
+  - rom-properties-kf6
   - gwenview
   - okular
   - kate
@@ -114,7 +120,7 @@ install:
   - qt6-qtsvg
   - translate-shell
 
-  # libraries and tools
+  # libraries and tools, misc.
   - fontconfig
   - hunspell-en
   - gnome-themes-extra
