@@ -62,7 +62,6 @@ install:
 
   # waydroid
   - waydroid
-  - waydroid-image-system-vanilla
 
   # mpd
   - mpd
