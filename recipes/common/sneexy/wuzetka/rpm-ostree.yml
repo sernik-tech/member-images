@@ -15,6 +15,7 @@ install:
   # web browsers (layered directly because its both less of a hassle and also currently more secure than flatpak)
   - firefox
   - librewolf
+  - torbrowser-launcher
 
   # environment
   - pavucontrol-qt
