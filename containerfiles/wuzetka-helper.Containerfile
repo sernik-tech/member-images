@@ -49,5 +49,5 @@ RUN mkdir -p /artifacts/usr/etc
 COPY --from=go /tmp/go-built/usr /artifacts/usr
 COPY --from=cargo /tmp/cargo-built/usr /artifacts/usr
 COPY --from=catppuccin /tmp/catppuccin-gtk/usr /artifacts/usr
-COPY --from=joystickwake /tmp/joystickwake-built/usr /artifacts/usr
+#COPY --from=joystickwake /tmp/joystickwake-built/usr /artifacts/usr
 COPY --from=kde-extras /tmp/kde-extras-built/usr /artifacts/usr
