@@ -36,7 +36,6 @@ install:
   - nextcloud-client
   - nextcloud-client-dolphin
   - trash-cli
-  - plymouth-kcm
 
   # themes
   - papirus-icon-theme
