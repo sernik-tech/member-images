@@ -6,7 +6,6 @@ system:
   repo-title: "Flathub (system-wide)"
   install:
     # office
-    - org.libreoffice.LibreOffice
     - md.obsidian.Obsidian
 
     # utilities
@@ -46,7 +45,6 @@ user:
     - in.cinny.Cinny
     - chat.revolt.RevoltDesktop
     - org.signal.Signal
-    - org.squidowl.halloy
     - dev.vencord.Vesktop
 
     # gaming

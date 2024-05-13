@@ -17,6 +17,9 @@ install:
   - librewolf
   - torbrowser-launcher
 
+  # office
+  - libreoffice
+
   # environment
   - pavucontrol-qt
   - playerctl
@@ -32,10 +35,8 @@ install:
   # themes
   - papirus-icon-theme
   - oxygen-sounds
-  - plasma-mobile-sounds
   - pop-sound-theme
   - yaru-sound-theme
-  - deepin-sound-theme
 
   # joystickwake dependencies
   - python3-pyudev
@@ -96,7 +97,7 @@ install:
   - translate-shell
   - power-profiles-daemon
 
-  # kde libraries or something idk its weird
+  # kde libraries
   - kaccounts-integration
   - kaccounts-providers
   - kdepim
