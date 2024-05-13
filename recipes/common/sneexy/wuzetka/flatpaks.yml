@@ -9,6 +9,7 @@ system:
     - org.qbittorrent.qBittorrent
     - org.nicotine_plus.Nicotine
     - org.gajim.Gajim
+    - org.kde.neochat
     - in.cinny.Cinny
     - chat.revolt.RevoltDesktop
     - org.signal.Signal
