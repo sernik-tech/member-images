@@ -3,9 +3,6 @@ repos:
   # rawr browser :3
   - https://rpm.librewolf.net/librewolf-repo.repo
 
-  # vivaldi (not my main, just to test it/when i need chromium)
-  - https://repo.vivaldi.com/stable/vivaldi-fedora.repo
-
   # hblock
   - https://copr.fedorainfracloud.org/coprs/pesader/hblock/repo/fedora-%OS_VERSION%/pesader-hblock-fedora-%OS_VERSION%.repo
 
@@ -27,7 +24,6 @@ install:
   # web browsers, related web utilities (layered directly because its both less of a hassle and also currently more secure than flatpak)
   - firefox
   - librewolf
-  - vivaldi-stable
   - torbrowser-launcher
   - webapp-manager
 
@@ -127,9 +123,6 @@ install:
   - lzip
   - qt5-qtwayland
   - qt6-qtwayland
-optfix:
-  # chromium issue
-  - vivaldi
 remove:
   # default editors installed with fedora
   - vim-data
