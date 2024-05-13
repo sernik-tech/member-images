@@ -14,6 +14,9 @@ repos:
 
   # waydroid (custom builds to fix minor issues)
   - https://copr.fedorainfracloud.org/coprs/huakim/waydroid/repo/fedora-%OS_VERSION%/huakim-waydroid-fedora-%OS_VERSION%.repo
+
+  # cursors
+  - https://copr.fedorainfracloud.org/coprs/peterwu/rendezvous/repo/fedora-%OS_VERSION%/peterwu-rendezvous-fedora-%OS_VERSION%.repo
 install:
   # web browsers (layered directly because its both less of a hassle and also currently more secure than flatpak)
   - firefox
@@ -39,6 +42,7 @@ install:
 
   # themes
   - papirus-icon-theme
+  - bibata-cursor-themes
   - oxygen-sounds
   - pop-sound-theme
   - yaru-sound-theme
