@@ -10,6 +10,12 @@ systemctl enable hblock.timer
 mkdir -p /usr/share/sddm/themes
 
 #
+# Symlink `/opt`/`/usr/lib/opt/` binaries to /usr/bin
+#
+ln -sf /usr/lib/opt/floorp/floorp /usr/bin/floorp
+ln -sf /usr/lib/opt/floorp/floorp /usr/bin/floorp-ablaze
+
+#
 # Bazzite packages
 # Enables bazzite repositories to install extra software then disables them afterwards to prevent installing software from their repos
 wget "https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-$(rpm -E %fedora)/kylegospo-bazzite-fedora-$(rpm -E %fedora).repo" -O "/etc/yum.repos.d/_copr_kylegospo-bazzite.repo"
