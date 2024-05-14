@@ -10,10 +10,10 @@ systemctl enable hblock.timer
 mkdir -p /usr/share/sddm/themes
 
 #
-# Symlink `/opt`/`/usr/lib/opt/` binaries to /usr/bin
+# Floorp fixes
 #
-ln -sf /usr/lib/opt/floorp/floorp /usr/bin/floorp
-ln -sf /usr/lib/opt/floorp/floorp /usr/bin/floorp-ablaze
+sed -i 's@/opt/floorp/floorp@/usr/lib/opt/floorp/floorp@g' /usr/bin/floorp-ablaze
+ln -sf /usr/bin/floorp-ablaze /usr/bin/floorp
 
 #
 # Bazzite packages
