@@ -13,8 +13,7 @@ mkdir -p /usr/share/sddm/themes
 # Floorp fixes
 #
 ln -sf /usr/lib/opt/floorp /var/opt/floorp
-sed -i 's@/opt/floorp/floorp@/usr/lib/opt/floorp/floorp@g' /usr/bin/floorp-ablaze
-ln -sf /usr/bin/floorp-ablaze /usr/bin/floorp
+sed -i 's@/opt/floorp/floorp@/usr/lib/opt/floorp/floorp@g' /usr/bin/floorp
 
 #
 # Bazzite packages
