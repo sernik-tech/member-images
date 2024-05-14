@@ -103,11 +103,8 @@ install:
   - ark
   - dolphin-plugins
   - rom-properties-kf6
-  - gwenview
-  - okular
   - kate
   - ksystemlog
-  - filelight
   - power-profiles-daemon
 
   # kde libraries

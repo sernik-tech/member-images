@@ -64,11 +64,15 @@ system:
     - app.drey.Doggo # :3
 
     # system applications
+    - org.kde.filelight
+    - org.kde.gwenview
+    - org.kde.isoimagewriter
     - org.kde.kclock
     - org.kde.kamoso
     - org.kde.kfind
+    - org.kde.krdc
     - org.kde.kweather
-    - org.kde.isoimagewriter
+    - org.kde.okular
     - org.pipewire.Helvum
     - com.github.tchx84.Flatseal
     - org.gustavoperedo.FontDownloader
