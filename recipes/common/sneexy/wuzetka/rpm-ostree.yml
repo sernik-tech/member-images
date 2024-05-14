@@ -3,6 +3,8 @@ repos:
   # rawr browser :3
   - https://rpm.librewolf.net/librewolf-repo.repo
 
+  # floorp browser
+  - https://copr.fedorainfracloud.org/coprs/sneexy/floorp/repo/fedora-%OS_VERSION%/sneexy-floorp-fedora-%OS_VERSION%.repo
   # hblock
   - https://copr.fedorainfracloud.org/coprs/pesader/hblock/repo/fedora-%OS_VERSION%/pesader-hblock-fedora-%OS_VERSION%.repo
 
@@ -23,6 +25,7 @@ repos:
 install:
   # web browsers, related web utilities (layered directly because its both less of a hassle and also currently more secure than flatpak)
   - firefox
+  - floorp
   - librewolf
   - torbrowser-launcher
   - webapp-manager
@@ -65,8 +68,9 @@ install:
   - qemu-device-display-virtio-vga
   - qemu-device-display-virtio-gpu
 
-  # waydroid
+  # waydroid and android
   - waydroid
+  - android-tools
 
   # mpd
   - mpd
@@ -123,6 +127,8 @@ install:
   - lzip
   - qt5-qtwayland
   - qt6-qtwayland
+optfix:
+  - floorp
 remove:
   # default editors installed with fedora
   - vim-data
