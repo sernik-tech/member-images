@@ -7,6 +7,7 @@ set -euo pipefail
 systemctl enable hblock.timer
 
 # Ensure all required/used folders are created
+mkdir -p /etc/skel/.local/share/icons
 mkdir -p /usr/share/sddm/themes
 
 #
@@ -70,7 +71,8 @@ systemctl --global enable mpd.service \
 #
 # SDDM Theme
 #
-git clone https://github.com/catppuccin/sddm.git /tmp/catppuccin-sddm
+cd /tmp
+git clone https://github.com/catppuccin/sddm.git catppuccin-sddm
 cp -r /tmp/catppuccin-sddm/src /usr/share/sddm/themes
 mv /usr/share/sddm/themes/src /usr/share/sddm/themes/catppuccin-mocha
 cp /tmp/catppuccin-sddm/pertheme/mocha.conf /usr/share/sddm/themes/catppuccin-mocha/theme.conf
@@ -82,23 +84,39 @@ sed -i 's@Font="Noto Sans"@Font="Lexend Deca"@g' /usr/share/sddm/themes/catppucc
 #
 # KDE Theme
 #
-git clone https://github.com/catppuccin/kde.git /tmp/catppuccinkde
-rm -f /tmp/catppuccinkde/install.sh
+cd /tmp
+git clone https://github.com/catppuccin/kde.git catppuccinkde
+cd catppuccinkde
+rm -f install.sh
 curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/config/scripts/catppuccin-plasma.sh
-chmod +x /tmp/catppuccinkde/install.sh
+chmod +x install.sh
 # Latte
 cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 1 9 1
 # Mocha
 cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 4 9 1
 
 #
+# Tela icon pack
+#
+cd /tmp
+git clone https://github.com/vinceliuice/Tela-icon-theme.git
+cd Tela-icon-theme
+chmod +x install.sh
+./install.sh -c -d /usr/share/icons
+./install.sh -c -d /etc/skel/.local/share/icons
+./install.sh -d /usr/share/icons green
+./install.sh -d /etc/skel/.local/share/icons green
+
+#
 # Papirus-folders
 #
-git clone https://github.com/catppuccin/papirus-folders.git /tmp/papirus-folders
+cd /tmp
+git clone https://github.com/catppuccin/papirus-folders.git
+cd papirus-folders
 cp -r /tmp/papirus-folders/src/* /usr/share/icons/Papirus
-chmod +x /tmp/papirus-folders/papirus-folders
-/tmp/papirus-folders/papirus-folders -t Papirus-Light -C cat-latte-green
-/tmp/papirus-folders/papirus-folders -t Papirus-Dark -C cat-mocha-green
+chmod +x papirus-folders
+./papirus-folders -t Papirus-Light -C cat-latte-green
+./papirus-folders -t Papirus-Dark -C cat-mocha-green
 
 #
 # Justfiles
