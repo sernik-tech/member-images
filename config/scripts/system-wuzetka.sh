@@ -7,7 +7,6 @@ set -euo pipefail
 systemctl enable hblock.timer
 
 # Ensure all required/used folders are created
-mkdir -p /etc/skel/.local/share/icons
 mkdir -p /usr/share/sddm/themes
 
 #
@@ -71,15 +70,34 @@ systemctl --global enable mpd.service \
 #
 # SDDM Theme
 #
+#cd /tmp
+#git clone https://github.com/catppuccin/sddm.git catppuccin-sddm
+#cp -r /tmp/catppuccin-sddm/src /usr/share/sddm/themes
+#mv /usr/share/sddm/themes/src /usr/share/sddm/themes/catppuccin-mocha
+#cp /tmp/catppuccin-sddm/pertheme/mocha.conf /usr/share/sddm/themes/catppuccin-mocha/theme.conf
+#sed -i 's@Font="Noto Sans"@Font="Lexend Deca"@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
+#sed -i 's@FontSize=9@FontSize=11@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
+#sed -i 's@# PasswordShowLastLetter=1000@PasswordShowLastLetter=1000@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
+#sed -i 's@Font="Noto Sans"@Font="Lexend Deca"@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
 cd /tmp
-git clone https://github.com/catppuccin/sddm.git catppuccin-sddm
-cp -r /tmp/catppuccin-sddm/src /usr/share/sddm/themes
-mv /usr/share/sddm/themes/src /usr/share/sddm/themes/catppuccin-mocha
-cp /tmp/catppuccin-sddm/pertheme/mocha.conf /usr/share/sddm/themes/catppuccin-mocha/theme.conf
-sed -i 's@Font="Noto Sans"@Font="Lexend Deca"@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
-sed -i 's@FontSize=9@FontSize=11@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
-sed -i 's@# PasswordShowLastLetter=1000@PasswordShowLastLetter=1000@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
-sed -i 's@Font="Noto Sans"@Font="Lexend Deca"@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
+git clone https://github.com/Keyitdev/sddm-astronaut-theme.git /usr/share/sddm/themes/sddm-astronaut-theme
+rm -f /usr/share/sddm/themes/sddm-astronaut-theme/background.png
+rm -f /usr/share/sddm/themes/sddm-astronaut-theme/README.md
+rm -rf /usr/share/sddm/themes/sddm-astronaut-theme/Previews
+rm -rf /usr/share/sddm/themes/sddm-astronaut-theme/Fonts
+cp -f /usr/share/backgrounds/catppuccin/black-hole-mocha.png /usr/share/sddm/themes/sddm-astronaut-theme/background.png
+sed -i 's/ScreenWidth="1920"//' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+sed -i 's/ScreenHeight="1080"//' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+sed -i 's/## Adjust to your resolution to help SDDM speed up on calculations//' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+sed -i 's@PartialBlur="true"@PartialBlur="false"@g' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+sed -i 's@FullBlur="false"@FullBlur="true"@g' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+sed -i 's@Font="Open Sans"@Font="Lexend"@g' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+# catppuccinify
+sed -i 's@MainColor="#F8F8F2"@MainColor="#cdd6f4"@g' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+sed -i 's@AccentColor="#343746"@AccentColor="#a6e3a1"@g' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+sed -i 's@BackgroundColor="#21222C"@BackgroundColor="#1e1e2e"@g' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+sed -i 's@placeholderColor="#bbbbbb"@placeholderColor="#6c7086"@g' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+sed -i 's@IconColor="#ffffff"@IconColor="#cdd6f4"@g' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
 
 #
 # KDE Theme
