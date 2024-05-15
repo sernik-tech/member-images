@@ -85,7 +85,6 @@ rm -f /usr/share/sddm/themes/sddm-astronaut-theme/background.png
 rm -f /usr/share/sddm/themes/sddm-astronaut-theme/README.md
 rm -rf /usr/share/sddm/themes/sddm-astronaut-theme/Previews
 rm -rf /usr/share/sddm/themes/sddm-astronaut-theme/Fonts
-cp -f /usr/share/backgrounds/catppuccin/black-hole-mocha.png /usr/share/sddm/themes/sddm-astronaut-theme/background.png
 sed -i 's/ScreenWidth="1920"//' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
 sed -i 's/ScreenHeight="1080"//' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
 sed -i 's/## Adjust to your resolution to help SDDM speed up on calculations//' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf

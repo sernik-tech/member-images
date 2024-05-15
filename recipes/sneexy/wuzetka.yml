@@ -25,7 +25,9 @@ modules:
 
     - type: containerfile
       snippets:
-        # Self compiled software and allat
+        # Replace default sddm background
+        - RUN cp -f /usr/share/backgrounds/catppuccin/black-hole-mocha.png /usr/share/sddm/themes/sddm-astronaut-theme/background.png
+        # Copy self compiled software and allat
         - COPY --from=ghcr.io/sernik-tech/wuzetka-helper /artifacts/usr /usr
 
     - from-file: common/sneexy/wuzetka/flatpaks.yml
