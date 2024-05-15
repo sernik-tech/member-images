@@ -103,9 +103,9 @@ git clone https://github.com/vinceliuice/Tela-icon-theme.git
 cd Tela-icon-theme
 chmod +x install.sh
 ./install.sh -c -d /usr/share/icons
-./install.sh -c -d /etc/skel/.local/share/icons
+#./install.sh -c -d /etc/skel/.local/share/icons
 ./install.sh -d /usr/share/icons green
-./install.sh -d /etc/skel/.local/share/icons green
+#./install.sh -d /etc/skel/.local/share/icons green
 
 #
 # Papirus-folders
