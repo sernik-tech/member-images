@@ -10,7 +10,6 @@ system:
     - org.nicotine_plus.Nicotine
     - org.gajim.Gajim
     - org.kde.neochat
-    - in.cinny.Cinny
     - chat.revolt.RevoltDesktop
     - org.signal.Signal
     - dev.vencord.Vesktop
@@ -19,7 +18,7 @@ system:
     - md.obsidian.Obsidian
     - io.github.Qalculate.qalculate-qt
 
-    # media production, edition software
+    # media production, editing software
     - com.obsproject.Studio
     - com.obsproject.Studio.Plugin.OBSVkCapture
     - com.obsproject.Studio.Plugin.Gstreamer
@@ -61,7 +60,6 @@ system:
     - org.prismlauncher.PrismLauncher
     - org.freedesktop.Platform.VulkanLayer.gamescope//23.08
     - org.freedesktop.Platform.VulkanLayer.MangoHud//23.08
-    - app.drey.Doggo # :3
 
     # system applications
     - org.kde.filelight
