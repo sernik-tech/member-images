@@ -25,6 +25,10 @@ COPY config/scripts/build-scripts /tmp/build-scripts
 RUN chmod +x /tmp/build-scripts/catppuccin-gtk.sh && \
     /tmp/build-scripts/catppuccin-gtk.sh
 
+# Papirus Icons Repatched
+#RUN chmod +x /tmp/build-scripts/catppuccin-papirus.sh && \
+#    /tmp/build-scripts/catppuccin-papirus.sh
+
 # Packages built with cargo/rust
 FROM fedora:${IMAGE_MAJOR_VERSION} as cargo
 
@@ -48,6 +52,7 @@ RUN mkdir -p /artifacts/usr/etc
 
 COPY --from=go /tmp/go-built/usr /artifacts/usr
 COPY --from=cargo /tmp/cargo-built/usr /artifacts/usr
+#COPY --from=catppuccin /tmp/catppuccin-papirus/usr /artifacts/usr
 COPY --from=catppuccin /tmp/catppuccin-gtk/usr /artifacts/usr
 #COPY --from=joystickwake /tmp/joystickwake-built/usr /artifacts/usr
 COPY --from=kde-extras /tmp/kde-extras-built/usr /artifacts/usr
