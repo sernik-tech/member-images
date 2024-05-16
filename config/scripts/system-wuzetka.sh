@@ -12,8 +12,8 @@ mkdir -p /usr/share/sddm/themes
 #
 # Floorp fixes
 #
-#sed -i 's@/opt/floorp/floorp@/usr/lib/opt/floorp/floorp@g' /usr/bin/floorp-ablaze
-#ln -sf /usr/bin/floorp-ablaze /usr/bin/floorp
+sed -i 's@/opt/floorp/floorp@/usr/lib/opt/floorp/floorp@g' /usr/bin/floorp-ablaze
+ln -sf /usr/bin/floorp-ablaze /usr/bin/floorp
 
 #
 # Bazzite packages
@@ -39,6 +39,8 @@ chmod +x /usr/bin/wgcf
 THORIUM_VER=$(curl -sL https://api.github.com/repos/Alex313031/thorium/releases/latest | jq -r '.assets[] | select(.name? | match(".*_AVX2.rpm$")) | .browser_download_url')
 curl -sL -o /tmp/thorium.rpm ${THORIUM_VER}
 rpm-ostree install /tmp/thorium.rpm
+ln -sf /usr/lib/opt/chromium.org/thorium/thorium-browser /usr/bin/thorium-browser
+sed -i 's@/opt/chromium.org/thorium/thorium_shell@/usr/lib/opt/chromium.org/thorium/thorium_shell@g' /usr/bin/thorium-shell
 
 #
 # VSCodium
