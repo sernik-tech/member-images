@@ -34,6 +34,13 @@ curl -sL -o /usr/bin/wgcf ${WGCF_VER}
 chmod +x /usr/bin/wgcf
 
 #
+# Thorium browser
+#
+THORIUM_VER=$(curl -sL https://api.github.com/repos/Alex313031/thorium/releases/latest | jq -r '.assets[] | select(.name? | match("thorium-browser_.*_AVX2.rpm$")) | .browser_download_url')
+curl -sL -o /tmp/thorium.rpm ${THORIUM_VER}
+rpm-ostree install /tmp/thorium.rpm
+
+#
 # VSCodium
 #
 tee -a /etc/yum.repos.d/vscodium.repo << 'EOF'
