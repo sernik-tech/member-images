@@ -113,6 +113,12 @@ cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 1 9 1
 cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 4 9 1
 
 #
+# Papirus icon pack (From source)
+#
+cd /tmp
+wget -qO- https://git.io/papirus-icon-theme-install | sh
+
+#
 # Tela icon pack
 #
 cd /tmp
@@ -120,15 +126,6 @@ git clone https://github.com/vinceliuice/Tela-icon-theme.git
 cd Tela-icon-theme
 chmod +x install.sh
 ./install.sh -c -d /usr/share/icons
-
-#
-# Colloid icon pack
-#
-cd /tmp
-git clone https://github.com/vinceliuice/Colloid-icon-theme.git
-cd Colloid-icon-theme
-chmod +x install.sh
-./install.sh -t default -d /usr/share/icons
 
 #
 # Papirus-folders

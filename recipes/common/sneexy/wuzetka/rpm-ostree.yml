@@ -41,7 +41,7 @@ install:
   - trash-cli
 
   # themes
-  - papirus-icon-theme
+  #- papirus-icon-theme
   - bibata-cursor-themes
   - oxygen-sounds
   - pop-sound-theme
