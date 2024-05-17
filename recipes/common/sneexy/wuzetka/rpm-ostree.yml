@@ -8,10 +8,7 @@ repos:
 
   # wezterm terminal
   - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
-
-  # waydroid (custom builds to fix minor issues)
-  - https://copr.fedorainfracloud.org/coprs/huakim/waydroid/repo/fedora-%OS_VERSION%/huakim-waydroid-fedora-%OS_VERSION%.repo
-
+  
   # cursors
   - https://copr.fedorainfracloud.org/coprs/peterwu/rendezvous/repo/fedora-%OS_VERSION%/peterwu-rendezvous-fedora-%OS_VERSION%.repo
 
