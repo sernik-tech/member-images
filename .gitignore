@@ -1,3 +1,5 @@
 .idea
+*.code-workspace
 cosign.key
+cosign.private
 /Containerfile
