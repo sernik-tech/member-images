@@ -13,6 +13,8 @@ system:
     - chat.revolt.RevoltDesktop
     - org.signal.Signal
     - dev.vencord.Vesktop
+    - dev.geopjr.Tuba
+    - org.kde.tokodon
 
     # office
     - md.obsidian.Obsidian
