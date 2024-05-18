@@ -58,12 +58,6 @@ EOF
 rpm-ostree install codium
 
 #
-# Bitwarden (Flatpak has issues, namely copy-pasting not working)
-#
-curl -sL -o /tmp/bitwarden.rpm "https://vault.bitwarden.com/download/?app=desktop&platform=linux&variant=rpm"
-rpm-ostree install /tmp/bitwarden.rpm
-
-#
 # MPD Discord RPC systemd service
 #
 curl -sL -o /usr/lib/systemd/user/mpd-discord-rpc.service https://raw.githubusercontent.com/JakeStanger/mpd-discord-rpc/master/mpd-discord-rpc.service
