@@ -35,6 +35,7 @@ system:
     # (desktop) utilities
     - com.usebottles.bottles
     - fr.handbrake.ghb
+    - it.mijorus.gearlever
     - com.github.tenderowl.frog
     - org.kde.okteta
     - io.github.seadve.Mousai
