@@ -55,7 +55,7 @@ IMAGE_VARIANT=Silverblue
 # ^ should match the varient of your image (changes the first time/boot medium installer)
 sudo podman run --rm --privileged --volume .:/isogenerator/output --security-opt label=disable --pull=newer \
 -e IMAGE_REPO="ghcr.io/sernik-tech" -e IMAGE_NAME="$IMAGE_NAME" -e IMAGE_TAG="latest" -e VARIANT="$IMAGE_VARIANT" \
-ghcr.io/ublue-os/isogenerator:39
+ghcr.io/ublue-os/isogenerator:40
 ```
 
 ## Verification
