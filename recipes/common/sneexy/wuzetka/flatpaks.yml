@@ -45,6 +45,7 @@ system:
     - page.codeberg.JakobDev.jdAnimatedImageEditor
     - io.github.nate_xyz.Paleta
     - io.github.lainsce.Emulsion
+    - com.bitwarden.desktop
     - org.kde.kompare
 
     # gaming
