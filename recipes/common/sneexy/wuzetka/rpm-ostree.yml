@@ -113,7 +113,7 @@ install:
   - qt6-qtdeclarative
   - qt6-qt5compat
   - qt6-qtsvg
-  - kf6-kwidgetsaddons-devel
+  #- kf6-kwidgetsaddons-devel
   - translate-shell
 
   # libraries and tools, misc.
