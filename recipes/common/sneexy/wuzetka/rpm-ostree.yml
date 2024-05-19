@@ -28,16 +28,19 @@ install:
   - libreoffice
   - merkuro
 
+  # other software
+  - blender
+  - mpv
+  - nextcloud-client
+  - nextcloud-client-dolphin
+
   # environment
   - pavucontrol-qt
   - playerctl
-  - mpv
   - crontabs
   - gamescope
   - mangohud
   - hblock
-  - nextcloud-client
-  - nextcloud-client-dolphin
   - wl-clipboard
   - trash-cli
 
