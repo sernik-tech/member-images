@@ -1,0 +1,17 @@
+[Annotations]
+annotationToolType=5
+rectangleFillColor=255,0,0
+rectangleStrokeColor=0,0,0,0
+
+[General]
+autoSaveImage=true
+clipboardGroup=PostScreenshotCopyImage
+
+[GuiConfig]
+captureMode=0
+
+[ImageSave]
+translatedScreenshotsFolder=Screenshots
+
+[VideoSave]
+translatedScreencastsFolder=Screencasts

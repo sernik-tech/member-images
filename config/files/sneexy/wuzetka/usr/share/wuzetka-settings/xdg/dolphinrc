@@ -1,0 +1,17 @@
+[ExtractDialog]
+2 screens: Height=480
+2 screens: Width=896
+
+[General]
+Version=202
+ViewPropsTimestamp=2024,4,27,14,2,20.703
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=16
+
+[MainWindow]
+ToolBarsMovable=Disabled
+
+[PlacesPanel]
+IconSize=16

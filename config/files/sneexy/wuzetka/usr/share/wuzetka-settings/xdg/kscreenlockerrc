@@ -1,0 +1,6 @@
+[Greeter]
+WallpaperPlugin=org.kde.slideshow
+
+[Greeter][Wallpaper][org.kde.slideshow][General]
+Image=file:///home/ruben/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes/Dark/maxell PI plus T-60_5K.png
+SlidePaths=/home/ruben/Pictures/Wallpapers/Desktop/Catppuccin/

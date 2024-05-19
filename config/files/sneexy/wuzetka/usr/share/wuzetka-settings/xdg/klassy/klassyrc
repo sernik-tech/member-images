@@ -1,0 +1,14 @@
+[Global]
+LookAndFeelSet=Catppuccin-Mocha-Green
+
+[Windeco Exception 0]
+BorderSize=0
+Enabled=true
+ExceptionBorder=false
+ExceptionPreset=
+ExceptionProgramNamePattern=
+ExceptionWindowPropertyPattern=.*
+ExceptionWindowPropertyType=0
+HideTitleBar=true
+OpaqueTitleBar=false
+PreventApplyOpacityToHeader=false
