@@ -42,8 +42,6 @@ install:
     # Yaru theme
   - yaru-theme
 remove:
-    # Everything under remove will be uninstalled from the image, if the package exists.
-  - gnome-classic-session
   - gnome-software-rpm-ostree
   - gnome-terminal
   - gnome-terminal-nautilus
