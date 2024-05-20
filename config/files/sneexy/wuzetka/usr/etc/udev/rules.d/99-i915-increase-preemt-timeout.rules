@@ -1,0 +1,6 @@
+# Increase Intel preemt timeout to 10 000 ms
+#
+# This is needed for Blender not to crush, see
+# https://askubuntu.com/questions/1477715/blender-hangs-using-intel-integrated-graphics
+
+ACTION=="add|bind",SUBSYSTEM=="pci",DRIVER=="i915",RUN+="/bin/bash -c 'for i in /sys/$DEVPATH/drm/card?/engine/[rc]cs*/preempt_timeout_ms; do echo 10000 > $i; done'"
