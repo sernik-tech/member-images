@@ -1,58 +1,19 @@
-# This recipe file is based on blue-build's default recipe file for Silverblue images.
-# We'll try our best to link to most documentation or explain certain modules.
-# You'll find links back to their original documentation, which are mostly (if not all) found over at:
-# https://blue-build.org/learn/getting-started/
-
-# This recipe file is structured for multiple folders. All configurations done with modules in here
-# are controlled/configured outside of this file and usually done in /common/. This is not necessary
-# If you do not prefer this way. I'd (Sneexy) figured this would probably be the cleanest and also a
-# nice collaborative way of making images, especially if anyone decides to team up with each other
-# for making images(...?)
-
-# If you'd just want to make this by yourself from scratch, or would prefer not to use our customized
-# examples, please refer to the original repository at https://github.com/blue-build/template/
-# and their documentation at https://blue-build.org/learn/getting-started/
-#
-# Their default examples are possibly more updated with information than ours, and also use a more
-# "simpler" recipe where most of the module configuration is done within the file rather than
-# externally sourcing the modules.
-
-# Below is basic image metadata/information.
-# Documentation: https://blue-build.org/reference/recipe/
-
-# - Your image name -
-# Change this to whatever image name you'd like. It cannot be an image that is used by another
-# image that is being built/published.
-# It will be found under ghcr.io/sernik-tech/<name>
-name: sernik-rexogayming
+# image will be published to ghcr.io/sernik-tech/<name>
+name: krowki
 # - Description -
 # Will be included in the image's metadata, can be whatever.
 description: gay cats from mexico
 
-# - Base image -
-# The base image to build on top of, and the (Fedora) version tag to use.
-# You can see a full list of available images/bases here: https://universal-blue.org/images/#image-categorization
-# Since this is Silverblue based, we're using Silverblue:
+# the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/silverblue-main
-# Replace above with `ghcr.io/ublue-os/silverblue-nvidia` if you're using a device with Nvidia.
-#
-# Version number, related to the version of Fedora. `latest` is also supported if you
-# want new updates as soon as possible.
-image-version: 39
+image-version: 40 # latest is also supported if you want new updates ASAP
 
-# - Modules -
-# Module configurations, executed in order.
-# You can include multiple instances of the same module.
-# Documentation: https://blue-build.org/reference/module/
+# module configuration, executed in order
+# you can include multiple instances of the same module
 modules:
     # Modules here are sourced from files in `/common/rexogamer` for this specific recipe. If you don't want to rely on
     # modules being outside of this recipe file, you can refer to the documentation (linked above) to see examples.
     # Alternatively, use the `recipe-all.yml` recipe instead of this one if you prefer that.
-
-    # - Files -
-    # Determines which files you want to add into the "root" (in heavy air quotes, because it's `/usr/`) of your image.
-    # Documentation: https://blue-build.org/reference/modules/files/
-  - from-file: common/rexogamer/files.yml
 
     # - rpm-ostree -
     # Packages that should be installed on the image. Now, when choosing which packages to install, we recommend
@@ -62,6 +23,22 @@ modules:
     # it's best to just layer them manually on your booted system afterwards if this is the case.
     # Documentation: https://blue-build.org/reference/modules/rpm-ostree/
   - from-file: common/rexogamer/rpm-ostree.yml
+
+    # - Script -
+    # Use any bash scripts you created during image creation. These are placed within `./config/scripts' in this repository.
+    # The 'ld.sh' script simply fixes a minor issue that does get in the way often.
+    # Documentation: https://blue-build.org/reference/modules/script/
+    - type: script
+      scripts:
+        - ld.sh
+
+    # - Files -
+    # Determines which files you want to add into the "root" (in heavy air quotes, because it's `/usr/`) of your image.
+    # TIP: Use `/usr/etc/skel` to add files you'd want to a users home directory after a user creates their profile.
+    # Documentation: https://blue-build.org/reference/modules/files/
+  - type: files
+      files:
+        - rexogamer/usr: /usr
 
     # - Flatpaks -
     # Flatpaks that will end up being installed out of the box on the system. Feel free to add anything here you'd
@@ -73,6 +50,14 @@ modules:
     # The fonts module allows you to easily install fonts from both Google Fonts and Nerd Fonts.
     # Documentation: https://blue-build.org/reference/modules/fonts/
   - from-file: common/rexogamer/fonts.yml
+
+    # - Gschema Overrides -
+    # Allows you to modify the default settings for a lot of things related to GNOME and GTK.
+    # Use this to your advantage to change any defaults on GNOME you'd like.
+    # Documentation: https://blue-build.org/reference/modules/gschema-overrides/
+  - type: gschema-overrides
+      include:
+        - zz1-krowki.gschema.override
 
     # - Akmods -
     # Akmods are a neat thing provided by the blue-build people, they're basically easy-to-install kernel modules.

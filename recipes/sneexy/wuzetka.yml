@@ -26,7 +26,7 @@ modules:
     - type: containerfile
       snippets:
         # Replace default sddm background
-        - RUN cp -f /usr/share/backgrounds/catppuccin/black-hole-mocha.png /usr/share/sddm/themes/sddm-astronaut-theme/background.png
+        - RUN ln -sf /usr/share/backgrounds/catppuccin/black-hole-mocha.png /usr/share/sddm/themes/sddm-astronaut-theme/background.png
         # Copy self compiled software and allat
         - COPY --from=ghcr.io/sernik-tech/wuzetka-helper /artifacts/usr /usr
 

@@ -47,7 +47,3 @@ remove:
   - gnome-software-rpm-ostree
   - gnome-terminal
   - gnome-terminal-nautilus
-    # We remove Firefox because we use the flatpak in favor. Also removing the langpacks
-    # to prevent dependency problems.
-  - firefox
-  - firefox-langpacks
