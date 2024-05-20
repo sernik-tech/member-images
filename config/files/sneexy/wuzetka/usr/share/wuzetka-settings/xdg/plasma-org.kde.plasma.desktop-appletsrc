@@ -17,8 +17,8 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.slideshow
 
 [Containments][1][ConfigDialog]
-DialogHeight=510
-DialogWidth=680
+DialogHeight=838
+DialogWidth=1238
 
 [Containments][1][General]
 ToolBoxButtonState=topcenter
@@ -26,9 +26,9 @@ ToolBoxButtonX=339
 ToolBoxButtonY=46
 
 [Containments][1][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/ruben/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes/Dark/Target T-120_5K.png
+Image=file:///usr/share/backgrounds/catppuccin/Cassettes/Avanti 120_5K.png
 SlideInterval=1800
-SlidePaths=/home/ruben/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes/
+SlidePaths=/usr/share/backgrounds/catppuccin/Cassettes/
 
 [Containments][2]
 ItemGeometriesHorizontal=
@@ -45,9 +45,9 @@ DialogHeight=510
 DialogWidth=680
 
 [Containments][2][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/ruben/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes/Dark/JVC 120 ER DARK_5K.png
+Image=file:///usr/share/backgrounds/catppuccin/Cassettes/Silver Shadow T-120_5K.png
 SlideInterval=1800
-SlidePaths=/home/ruben/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes/
+SlidePaths=/usr/share/backgrounds/catppuccin/Cassettes/
 
 [Containments][29]
 activityId=
@@ -331,7 +331,7 @@ marginRules=org.kde.plasma.kickoff,0,-1|org.kde.plasma.colorpicker,0,0|org.kde.p
 normalPreset=Normal
 opacity=1
 panelWidgets=org.kde.windowtitle,Window Title,preferences-desktop|org.kde.plasma.colorpicker,Color Picker,color-picker|org.kde.plasma.catwalk,CatWalk,animal-symbolic|org.kde.netspeedWidget,Netspeed Widget,network-connect|org.kde.plasma.panelspacer,Panel Spacer,|plasmusic-toolbar,PlasMusic Toolbar,view-media-track|luisbocanegra.panel.colorizer,Panel colorizer,desktop|org.kde.plasma.notifications,Notifications,notification-inactive-symbolic|org.kde.plasma.clipboard,Clipboard,klipper-symbolic|org.kde.plasma.systemtray,System Tray,preferences-desktop-notification|org.kde.plasma.digitalclock,Digital Clock,preferences-system-time|org.kde.plasma.weather,Weather Report,weather-none-available-symbolic
-panelWidgetsWithTray=org.kde.windowtitle,Window Title,preferences-desktop|org.kde.plasma.colorpicker,Color Picker,color-picker|org.kde.plasma.catwalk,CatWalk,animal-symbolic|org.kde.netspeedWidget,Netspeed Widget,network-connect|org.kde.plasma.panelspacer,Panel Spacer,|plasmusic-toolbar,PlasMusic Toolbar,view-media-track|luisbocanegra.panel.colorizer,Panel colorizer,desktop|org.kde.plasma.notifications,Notifications,notification-inactive-symbolic|org.kde.plasma.clipboard,Clipboard,klipper-symbolic|Discover Notifier_org.kde.DiscoverNotifier,Updates,update-low|org.kde.plasma.volume,Audio Volume,audio-volume-muted|org.kde.plasma.bluetooth,Bluetooth,network-bluetooth-inactive-symbolic|org.kde.plasma.networkmanagement,Networks,network-wireless-80|org.kde.plasma.battery,Power and Battery,battery-full-symbolic|org.kde.plasma.digitalclock,Digital Clock,preferences-system-time|org.kde.plasma.weather,Weather Report,weather-none-available-symbolic
+panelWidgetsWithTray=org.kde.windowtitle,Window Title,preferences-desktop|org.kde.plasma.colorpicker,Color Picker,color-picker|org.kde.plasma.catwalk,CatWalk,animal-symbolic|org.kde.netspeedWidget,Netspeed Widget,network-connect|org.kde.plasma.panelspacer,Panel Spacer,|plasmusic-toolbar,PlasMusic Toolbar,view-media-track|luisbocanegra.panel.colorizer,Panel colorizer,desktop|org.kde.plasma.notifications,Notifications,notification-inactive-symbolic|org.kde.plasma.clipboard,Clipboard,klipper-symbolic|,,|Discover Notifier_org.kde.DiscoverNotifier,Updates,update-low|org.kde.plasma.volume,Audio Volume,audio-volume-muted|org.kde.plasma.bluetooth,Bluetooth,network-bluetooth-inactive-symbolic|org.kde.plasma.networkmanagement,Networks,network-wireless-80|org.kde.plasma.battery,Power and Battery,battery-full-symbolic|org.kde.plasma.digitalclock,Digital Clock,preferences-system-time|org.kde.plasma.weather,Weather Report,weather-none-available-symbolic
 widgetBgEnabled=true
 widgetBgHMargin=2
 
@@ -438,7 +438,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][9][Applets][24][Configuration]
-PreloadWeight=5
+PreloadWeight=2
 
 [Containments][9][Applets][24][Configuration][General]
 showPercentage=true
