@@ -4,15 +4,11 @@
 type: fonts
 fonts:
     nerd-fonts:
-        # Add the name of fonts found in Nerd Fonts below:
-
         - FiraCode
         - Hack
         - JetBrainsMono
         - NerdFontsSymbolsOnly
     google-fonts:
-        # Add the name of fonts found in Google Fonts below:
-
         - Lexend
         - Noto Sans
         - Roboto
