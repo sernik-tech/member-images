@@ -28,17 +28,17 @@ modules:
     # Use any bash scripts you created during image creation. These are placed within `./config/scripts' in this repository.
     # The 'ld.sh' script simply fixes a minor issue that does get in the way often.
     # Documentation: https://blue-build.org/reference/modules/script/
-    - type: script
-      scripts:
-        - ld.sh
+  - type: script
+    scripts:
+      - ld.sh
 
     # - Files -
     # Determines which files you want to add into the "root" (in heavy air quotes, because it's `/usr/`) of your image.
     # TIP: Use `/usr/etc/skel` to add files you'd want to a users home directory after a user creates their profile.
     # Documentation: https://blue-build.org/reference/modules/files/
   - type: files
-      files:
-        - rexogamer/usr: /usr
+    files:
+      - rexogamer/usr: /usr
 
     # - Flatpaks -
     # Flatpaks that will end up being installed out of the box on the system. Feel free to add anything here you'd
@@ -56,8 +56,8 @@ modules:
     # Use this to your advantage to change any defaults on GNOME you'd like.
     # Documentation: https://blue-build.org/reference/modules/gschema-overrides/
   - type: gschema-overrides
-      include:
-        - zz1-krowki.gschema.override
+    include:
+      - zz1-krowki.gschema.override
 
     # - Akmods -
     # Akmods are a neat thing provided by the blue-build people, they're basically easy-to-install kernel modules.

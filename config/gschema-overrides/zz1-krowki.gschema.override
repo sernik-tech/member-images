@@ -1,0 +1,182 @@
+# Lock screen modifications
+[org.gnome.desktop.peripherals.touchpad:GNOME-Greeter]
+tap-to-click=true
+
+[org.gnome.desktop.interface:GNOME-Greeter]
+font-name = "Lexend Deca 11"
+
+# GNOME shell modifications
+[org.gnome.shell]
+favorite-apps = ['org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'org.gnome.Terminal.desktop']
+enabled-extensions = ['appindicatorsupport@rgcjonas.gmail.com', 'gsconnect@andyholmes.github.io', 'gamemode@christian.kellner.me', 'just-perfection-desktop@just-perfection', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'blur-my-shell@aunetx', 'pip-on-top@rafostar.github.com', 'pano@elhan.io', 'undecorate@sun.wxg@gmail.com', 'Vitals@CoreCoding.com', 'burn-my-windows@schneegans.github.com', 'dash-to-dock@micxgx.gmail.com', 'desktop-cube@schneegans.github.com', 'compiz-windows-effect@hermes83.github.com', 'quick-settings-tweaks@qwreey', 'useless-gaps@pimsnel.com', 'rounded-window-corners@yilozt', 'compiz-alike-magic-lamp-effect@hermes83.github.com', 'azwallpaper@azwallpaper.gitlab.com', 'openweather-extension@jenslody.de']
+
+[org.gnome.desktop.interface]
+gtk-theme = "Yaru-Dark"
+font-name = "Lexend Deca 10"
+document-font-name = "Lexend Deca Medium 11"
+monospace-font-name = "JetBrainsMono Nerd Font 11"
+
+[org.gnome.shell.extensions.user-theme]
+name = "Yaru"
+
+[org.gnome.desktop.wm.preferences]
+resize-with-right-button = true
+
+[org.gnome.desktop.wm.keybindings]
+move-to-workspace-1 = ['<Super>1']
+move-to-workspace-2 = ['<Super>2']
+move-to-workspace-3 = ['<Super>3']
+move-to-workspace-4 = ['<Super>4']
+switch-to-workspace-1 = ['<Control><Super>1']
+switch-to-workspace-2 = ['<Control><Super>2']
+switch-to-workspace-3 = ['<Control><Super>3']
+switch-to-workspace-4 = ['<Control><Super>4']
+#toggle-message-tray = ['<Control><Super>n']
+close = ['<Super>q']
+maximize = ['<Super>Page_Up']
+minimize = ['<Super>Page_Down']
+toggle-fullscreen = ['<Super>f']
+
+[org.gnome.desktop.peripherals.touchpad]
+tap-to-click = true
+natural-scroll = false
+
+#[org.gnome.desktop.peripherals.mouse]
+#accel-profile = flat
+
+[org.gnome.shell.extensions.dash-to-dock]
+hot-keys = false
+
+[org.gnome.shell.extensions.just-perfection]
+search = false
+startup-status = 0
+animation = 4
+
+[org.gnome.shell.extensions.blur-my-shell]
+hacks-level = 1
+
+[org.gnome.shell.extensions.blur-my-shell.panel]
+blur = false
+
+[org.gnome.shell.extensions.blur-my-shell.applications]
+blur = false
+
+[org.gnome.shell.extensions.rounded-window-corners]
+enable-preferences-entry = true
+
+[org.gnome.shell.extensions.unite]
+autofocus-windows = false
+show-legacy-tray = false
+show-appmenu-button = false
+show-desktop-name = false
+enable-titlebar-actions = false
+enable-titlebar-actions = false
+hide-activities-button = "never"
+hide-window-titlebars = "always"
+show-window-title = "never"
+show-window-buttons = "never"
+notifications-position = "center"
+extend-left-box = false
+use-activities-text = true
+use-activities-text = false
+greyscale-tray-icons = false
+hide-app-menu-icon = false
+reduce-panel-spacing =false
+
+[org.gnome.shell.extensions.useless-gaps]
+gap-size = 5
+
+[org.gnome.shell.extensions.com.github.hermes83.compiz-windows-effect]
+friction = 3.2999999999999998
+spring-k = 3.0
+speedup-factor-divider = 7.5999999999999996
+mass = 64.0
+maximize-effect = true
+resize-effect = true
+
+[org.gnome.shell.extensions.openweather]
+position-index = 2
+
+[org.gnome.shell.extensions.vitals]
+position-in-panel = 0
+update-time = 15
+hot-sensors = ['_processor_usage_', '_memory_allocated_', '_storage_used_']
+
+[org.gnome.shell.extensions.azwallpaper]
+slideshow-directory = "/usr/share/backgrounds/catppuccin"
+slideshow-slide-duration = (0, 30, 0)
+slideshow-wallpaper-queue = ['asteroid-miner-mocha.png', 'astro-jelly-mocha.jpg', 'cat-pondering-mocha.png', 'space-mocha.jpg', 'black-hole-mocha.png', 'plasma-6-day-mocha.png', 'galaxies-mocha.png', 'plasma-6-night-mocha.png', 'galaxy-mocha.png']
+slideshow-current-wallpapper = "black-hole-mocha.png"
+
+# Pano
+[org.gnome.shell.extensions.pano]
+global-shortcut = ['<Super>v']
+incognito-shortcut = ['<Shift><Super>v']
+window-background-color = "rgba(30,30,46,0.70)"
+incognito-window-background-color = "rgba(108,112,134,0.70)"
+search-bar-font-family = "Lexend Deca"
+item-title-font-family = "Lexend Deca"
+item-date-font-family = "Lexend Deca"
+active-item-border-color = "rgb(166,227,161)"
+hovered-item-border-color = "rgba(166,227,161,0.686667)"
+
+[org.gnome.shell.extensions.pano.link-item]
+header-bg-color = "rgb(137,180,250)"
+header-color = "rgb(30,30,46)"
+body-bg-color = "rgb(137,180,250)"
+metadata-bg-color = "rgb(49,50,68)"
+metadata-title-color = "rgb(205,214,244)"
+metadata-description-color = "rgb(205,214,244)"
+metadata-link-color = "rgb(205,214,244)"
+metadata-title-font-family = "Lexend Deca"
+metadata-description-font-family = "Lexend Deca"
+metadata-link-font-family = "Lexend Deca"
+metadata-link-font-family = "Lexend Deca
+
+[org.gnome.shell.extensions.pano.text-item]
+header-bg-color = "rgb(166,227,161)"
+header-color = "rgb(30,30,46)"
+body-bg-color = "rgb(30,30,46)"
+body-color = "rgb(205,214,244)"
+body-font-family = "JetBrainsMono Nerd Font Mono"
+
+[org.gnome.shell.extensions.pano.emoji-item]
+header-bg-color = "rgb(249,226,175)"
+body-bg-color = "rgb(249,226,175)"
+header-color = "rgb(30,30,46)"
+
+[org.gnome.shell.extensions.pano.file-item]
+header-bg-color = "rgb(69,71,90)"
+header-color = "rgb(205,214,244)"
+body-bg-color = "rgb(49,50,68)"
+body-color = "rgb(205,214,244)"
+body-font-family = "Lexend Deca"
+
+[org.gnome.shell.extensions.pano.image-item]
+header-bg-color = "rgb(243,139,168)"
+header-color = "rgb(30,30,46)"
+body-bg-color = "rgb(24,24,37)"
+metadata-bg-color = "rgba(30,30,46,0.70)"
+metadata-font-family = "Lexend Deca"
+
+[org.gnome.shell.extensions.pano.code-item]
+header-bg-color = "rgb(242,205,205)"
+header-color = "rgb(30,30,46)"
+body-bg-color = "rgb(30,30,46)"
+body-font-family = "JetBrainsMono Nerd Font Mono"
+
+[org.gnome.shell.extensions.pano.color-item]
+header-bg-color = "rgb(203,166,247)"
+header-color = "rgb(30,30,46)"
+metadata-bg-color = "rgba(30,30,46,0.70)"
+metadata-color = "rgb(205,214,244)"
+metadata-font-family = "Lexend Deca"
+
+[org.gnome.software]
+packaging-format-preference = ['flatpak:flathub-user']
+
+[org.gtk.gtk4.settings.file-chooser]
+sort-directories-first = true
+
+[org.gtk.settings.file-chooser]
+sort-directories-first = true
