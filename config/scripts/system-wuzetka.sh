@@ -16,6 +16,11 @@ sed -i 's@/opt/floorp/floorp@/usr/lib/opt/floorp/floorp@g' /usr/bin/floorp-ablaz
 ln -sf /usr/bin/floorp-ablaze /usr/bin/floorp
 
 #
+# Blender fixes
+#
+sed -i 's@Exec=blender %f@Exec=env INTEL_DEBUG=reemit blender %f@g' /usr/share/applications/blender.desktop
+
+#
 # Bazzite packages
 # Enables bazzite repositories to install extra software then disables them afterwards to prevent installing software from their repos
 wget "https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-$(rpm -E %fedora)/kylegospo-bazzite-fedora-$(rpm -E %fedora).repo" -O "/etc/yum.repos.d/_copr_kylegospo-bazzite.repo"
@@ -79,15 +84,6 @@ systemctl --global enable mpd.service \
 #
 # SDDM Theme
 #
-#cd /tmp
-#git clone https://github.com/catppuccin/sddm.git catppuccin-sddm
-#cp -r /tmp/catppuccin-sddm/src /usr/share/sddm/themes
-#mv /usr/share/sddm/themes/src /usr/share/sddm/themes/catppuccin-mocha
-#cp /tmp/catppuccin-sddm/pertheme/mocha.conf /usr/share/sddm/themes/catppuccin-mocha/theme.conf
-#sed -i 's@Font="Noto Sans"@Font="Lexend Deca"@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
-#sed -i 's@FontSize=9@FontSize=11@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
-#sed -i 's@# PasswordShowLastLetter=1000@PasswordShowLastLetter=1000@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
-#sed -i 's@Font="Noto Sans"@Font="Lexend Deca"@g' /usr/share/sddm/themes/catppuccin-mocha/theme.conf
 cd /tmp
 git clone https://github.com/Keyitdev/sddm-astronaut-theme.git /usr/share/sddm/themes/sddm-astronaut-theme
 rm -f /usr/share/sddm/themes/sddm-astronaut-theme/background.png
