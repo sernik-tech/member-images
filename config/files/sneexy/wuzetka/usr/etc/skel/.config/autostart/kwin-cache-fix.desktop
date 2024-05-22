@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/home/ruben/.local/bin/kwin-cache-fix
+Icon=application-x-shellscript
+Name=kwin-cache-fix
+Type=Application
+X-KDE-AutostartScript=true

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Simple script that symlinks ~/.cache/kwin to a tmpfs folder. Plasma issue
+rm -r ~/.cache/kwin
+mkdir /tmp/kwin && ln -s /tmp/kwin ~/.cache/

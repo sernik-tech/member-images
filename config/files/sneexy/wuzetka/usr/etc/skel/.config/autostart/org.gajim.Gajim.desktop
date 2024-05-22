@@ -1,0 +1,21 @@
+[Desktop Action StartChat]
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=gajim org.gajim.Gajim --start-chat
+Icon=org.gajim.Gajim
+Name=Start a new chat
+
+[Desktop Entry]
+Actions=StartChat;
+Categories=Network;InstantMessaging;GTK;Chat;
+Comment=A fully-featured XMPP chat client
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=gajim --file-forwarding org.gajim.Gajim @@u %u @@
+GenericName=XMPP Chat Client
+Icon=org.gajim.Gajim
+Keywords=chat;messaging;im;xmpp;voip;
+MimeType=x-scheme-handler/xmpp;
+Name=Gajim
+SingleMainWindow=true
+StartupNotify=false
+Terminal=false
+Type=Application
+X-Flatpak=org.gajim.Gajim
+X-GNOME-UsesNotifications=true

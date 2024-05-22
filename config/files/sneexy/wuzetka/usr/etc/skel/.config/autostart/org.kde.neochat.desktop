@@ -1,0 +1,13 @@
+[Desktop Entry]
+Categories=Network;InstantMessaging;
+Comment=Client for the Matrix protocol
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=neochat --file-forwarding org.kde.neochat @@u %u @@
+GenericName=Matrix Client
+Icon=org.kde.neochat
+MimeType=x-scheme-handler/matrix;
+Name=NeoChat
+SingleMainWindow=true
+Terminal=false
+Type=Application
+Version=1.5
+X-Flatpak=org.kde.neochat
