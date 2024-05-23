@@ -118,6 +118,8 @@ rpm-ostree install \
     xwininfo \
     xrandr \
     input-remapper \
+    joystickwake \
+    xwiimote-ng \
     pulseaudio-utils \
     mesa-libGLU \
     vulkan-tools \
