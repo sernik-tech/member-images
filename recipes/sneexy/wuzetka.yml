@@ -17,6 +17,7 @@ modules:
         - ld.sh
         - qdbus.sh
         - posy-cursors.sh
+        - steam.sh
         - system-wuzetka.sh
 
     - type: files
@@ -24,8 +25,8 @@ modules:
         - sneexy/wuzetka/usr: /usr
 
     - type: containerfile
-      containerfiles:
-        - steam
+      #containerfiles:
+      #  - steam
       snippets:
         # Replace default sddm background
         - RUN ln -sf /usr/share/backgrounds/catppuccin/black-hole-mocha.png /usr/share/sddm/themes/sddm-astronaut-theme/background.png
