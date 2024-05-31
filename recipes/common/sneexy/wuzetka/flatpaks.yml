@@ -54,8 +54,12 @@ system:
 
     # gaming
     - com.github.k4zmu2a.spacecadetpinball
+    - org.xonotic.Xonotic
+    - io.github.ec_.Quake3e.OpenArena
     - org.libretro.RetroArch
     - org.DolphinEmu.dolphin-emu
+    - ca.parallel_launcher.ParallelLauncher
+    - re.sonny.Tangram
     - net.pcsx2.PCSX2
     - org.duckstation.DuckStation
     - org.ppsspp.PPSSPP

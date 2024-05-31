@@ -18,8 +18,10 @@ source venv/bin/activate
 pip install -r requirements.txt
 # Create theme and install
 # As user:
-python3 build.py latte --dest /tmp/catppuccin-gtk/usr/etc/skel/.local/share/themes -a green
-python3 build.py mocha --dest /tmp/catppuccin-gtk/usr/etc/skel/.local/share/themes -a green
+#python3 build.py latte --dest /tmp/catppuccin-gtk/usr/etc/skel/.local/share/themes -a green
+#python3 build.py mocha --dest /tmp/catppuccin-gtk/usr/etc/skel/.local/share/themes -a green
 # As root:
-python3 build.py latte --dest /tmp/catppuccin-gtk/usr/share/themes -a green
-python3 build.py mocha --dest /tmp/catppuccin-gtk/usr/share/themes -a green
+#python3 build.py latte --dest /tmp/catppuccin-gtk/usr/share/themes -a green
+#python3 build.py mocha --dest /tmp/catppuccin-gtk/usr/share/themes -a green
+python3 build.py latte --dest /tmp/catppuccin-gtk/etc/wuzetka-os/gtk -a green
+python3 build.py mocha --dest /tmp/catppuccin-gtk/etc/wuzetka-os/gtk -a green
