@@ -31,7 +31,7 @@ modules:
         # Replace default sddm background
         - RUN ln -sf /usr/share/backgrounds/catppuccin/black-hole-mocha.png /usr/share/sddm/themes/sddm-astronaut-theme/background.png
         # Copy self compiled software and allat
-        - COPY --from=ghcr.io/sernik-tech/wuzetka-helper /artifacts/usr /usr
+        - COPY --from=ghcr.io/sernik-tech/wuzetka-helper /artifacts/ /
 
     - from-file: common/sneexy/wuzetka/flatpaks.yml
     - from-file: common/sneexy/bling.yml
