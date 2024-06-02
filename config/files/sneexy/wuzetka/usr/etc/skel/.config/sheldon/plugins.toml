@@ -59,7 +59,7 @@ github = "belak/zsh-utils"
 apply = ["defer"]
 
 [plugins.editor]
-local = "~/.config/zsh/plugins/editor"
+github = "belak/zsh-utils"
 
 # extra or unrelated plugins go below
 
