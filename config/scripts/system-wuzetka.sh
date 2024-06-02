@@ -142,15 +142,6 @@ cd /tmp
 wget -qO- https://git.io/papirus-icon-theme-install | sh
 
 #
-# Tela icon pack
-#
-cd /tmp
-git clone https://github.com/vinceliuice/Tela-icon-theme.git
-cd Tela-icon-theme
-chmod +x install.sh
-./install.sh -c -d /usr/share/icons
-
-#
 # Papirus-folders
 #
 cd /tmp
