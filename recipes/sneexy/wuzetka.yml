@@ -12,6 +12,11 @@ image-version: 40 # latest is also supported if you want new updates ASAP
 modules:
     - from-file: common/sneexy/wuzetka/rpm-ostree.yml
 
+    - type: containerfile
+      snippets:
+        # GTK theme lives in /etc so we copy that first
+        - COPY --from=ghcr.io/sernik-tech/wuzetka-helper /artifacts/etc /etc
+
     - type: script
       scripts:
         - ld.sh
@@ -29,7 +34,6 @@ modules:
         - RUN ln -sf /usr/share/backgrounds/catppuccin/black-hole-mocha.png /usr/share/sddm/themes/sddm-astronaut-theme/background.png
         # Copy self compiled software and allat
         - COPY --from=ghcr.io/sernik-tech/wuzetka-helper /artifacts/usr /usr
-        - COPY --from=ghcr.io/sernik-tech/wuzetka-helper /artifacts/etc /etc
 
     - from-file: common/sneexy/wuzetka/flatpaks.yml
     - from-file: common/sneexy/bling.yml
