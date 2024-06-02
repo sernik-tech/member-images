@@ -21,6 +21,10 @@ LineColor=invalid
 [Effect-kwin4_effect_tv_glitch]
 Color=invalid
 
+[Effect-scale]
+InScale=0.09999999999999991
+OutScale=0.09999999999999991
+
 [Effect-ًRound-Corners]
 ActiveOutlineUseCustom=true
 ActiveOutlineUsePalette=false
@@ -37,9 +41,9 @@ blurEnabled=true
 contrastEnabled=true
 cubeEnabled=true
 dimscreenEnabled=true
-kwin4_effect_hexagonEnabled=true
+kwin4_effect_hexagonEnabled[$d]
 magiclampEnabled=true
-scaleEnabled=false
+scaleEnabled[$d]
 shakecursorEnabled=true
 sheetEnabled=true
 squashEnabled=false
