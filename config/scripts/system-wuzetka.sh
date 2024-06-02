@@ -142,12 +142,15 @@ cd /tmp
 wget -qO- https://git.io/papirus-icon-theme-install | sh
 
 #
-# Papirus-folders
+# Catppuccin Papirus-folders
 #
 cd /tmp
-git clone https://github.com/catppuccin/papirus-folders.git
-cd papirus-folders
+git clone https://github.com/catppuccin/papirus-folders.git catppuccin-papirus-folders
+cd catppuccin-papirus-folders
 cp -r /tmp/papirus-folders/src/* /usr/share/icons/Papirus
+cd /tmp
+git clone https://github.com/PapirusDevelopmentTeam/papirus-folders
+cd papirus-folders
 chmod +x papirus-folders
 ./papirus-folders -t Papirus-Light -C cat-latte-green
 ./papirus-folders -t Papirus-Dark -C cat-mocha-green
