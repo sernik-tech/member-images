@@ -125,15 +125,15 @@ cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 4 9 1
 # GTK Theme symlinking
 #
 mkdir -p /etc/skel/.config/gtk-4.0
-ln -sf /etc/wuzetka-os/gtk/catppuccin-mocha-green-standard+default-dark /usr/share/themes/catppuccin-mocha-green-standard+default-dark
-ln -sf /etc/wuzetka-os/gtk/catppuccin-mocha-green-standard+default-dark-hdpi /usr/share/themes/catppuccin-mocha-green-standard+default-dark-xhdpi
-ln -sf /etc/wuzetka-os/gtk/catppuccin-mocha-green-standard+default-dark-xhdpi /usr/share/themes/catppuccin-mocha-green-standard+default-dark-xhdpi
-ln -sf /etc/wuzetka-os/gtk/catppuccin-latte-green-standard+default-light /usr/share/themes/catppuccin-latte-green-standard+default-light
-ln -sf /etc/wuzetka-os/gtk/catppuccin-latte-green-standard+default-light-hdpi /usr/share/themes/catppuccin-latte-green-standard+default-light-hdpi
-ln -sf /etc/wuzetka-os/gtk/catppuccin-latte-green-standard+default-light /usr/share/themes/catppuccin-latte-green-standard+default-light
-ln -sf /etc/wuzetka-os/gtk/catppuccin-mocha-green-standard+default-dark/gtk-4.0/assets /etc/skel/.config/gtk-4.0/assets
-ln -sf /etc/wuzetka-os/gtk/catppuccin-mocha-green-standard+default-dark/gtk-4.0/gtk-dark.css /etc/skel/.config/gtk-4.0/gtk-dark.css
-ln -sf /etc/wuzetka-os/gtk/catppuccin-mocha-green-standard+default-dark/gtk-4.0/gtk.css /etc/skel/.config/gtk-4.0/gtk.css
+ln -sf /etc/wuzetka-system/gtk/catppuccin-mocha-green-standard+default-dark /usr/share/themes/catppuccin-mocha-green-standard+default-dark
+ln -sf /etc/wuzetka-system/gtk/catppuccin-mocha-green-standard+default-dark-hdpi /usr/share/themes/catppuccin-mocha-green-standard+default-dark-xhdpi
+ln -sf /etc/wuzetka-system/gtk/catppuccin-mocha-green-standard+default-dark-xhdpi /usr/share/themes/catppuccin-mocha-green-standard+default-dark-xhdpi
+ln -sf /etc/wuzetka-system/gtk/catppuccin-latte-green-standard+default-light /usr/share/themes/catppuccin-latte-green-standard+default-light
+ln -sf /etc/wuzetka-system/gtk/catppuccin-latte-green-standard+default-light-hdpi /usr/share/themes/catppuccin-latte-green-standard+default-light-hdpi
+ln -sf /etc/wuzetka-system/gtk/catppuccin-latte-green-standard+default-light /usr/share/themes/catppuccin-latte-green-standard+default-light
+ln -sf /etc/wuzetka-system/gtk/catppuccin-mocha-green-standard+default-dark/gtk-4.0/assets /etc/skel/.config/gtk-4.0/assets
+ln -sf /etc/wuzetka-system/gtk/catppuccin-mocha-green-standard+default-dark/gtk-4.0/gtk-dark.css /etc/skel/.config/gtk-4.0/gtk-dark.css
+ln -sf /etc/wuzetka-system/gtk/catppuccin-mocha-green-standard+default-dark/gtk-4.0/gtk.css /etc/skel/.config/gtk-4.0/gtk.css
 
 #
 # Papirus icon pack (From source)
