@@ -50,6 +50,18 @@ squashEnabled=false
 translucencyEnabled=true
 wobblywindowsEnabled=true
 
+[PrimaryOutline]
+ActiveOutlineUseCustom=false
+ActiveOutlineUsePalette=true
+InactiveOutlineThickness=2
+OutlineThickness=2
+
+[SecondOutline]
+ActiveSecondOutlineUseCustom=false
+ActiveSecondOutlineUsePalette=true
+InactiveSecondOutlineThickness=0
+SecondOutlineThickness=0
+
 [TabBox]
 DesktopMode=0
 

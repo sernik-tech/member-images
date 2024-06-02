@@ -146,9 +146,7 @@ wget -qO- https://git.io/papirus-icon-theme-install | sh
 #
 cd /tmp
 git clone https://github.com/catppuccin/papirus-folders.git catppuccin-papirus-folders
-cd catppuccin-papirus-folders
-cp -r /tmp/papirus-folders/src/* /usr/share/icons/Papirus
-cd /tmp
+cp -r /tmp/catppuccin-papirus-folders/src/* /usr/share/icons/Papirus
 git clone https://github.com/PapirusDevelopmentTeam/papirus-folders
 cd papirus-folders
 chmod +x papirus-folders
