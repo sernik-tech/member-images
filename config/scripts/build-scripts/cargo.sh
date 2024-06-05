@@ -24,3 +24,6 @@ cargo install mpd-discord-rpc --root /tmp/cargo-built/usr
 
 # Rescrobbled - https://github.com/InputUsername/rescrobbled
 cargo install rescrobbled --root /tmp/cargo-built/usr
+
+# tlrc - https://github.com/tldr-pages/tlrc
+cargo install tlrc --root /tmp/cargo-built/usr
