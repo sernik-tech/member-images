@@ -30,6 +30,7 @@ system:
     - org.tenacityaudio.Tenacity
     - org.gimp.GIMP
     - org.inkscape.Inkscape
+    - org.mattbas.Glaxnimate
     - io.github.Figma_Linux.figma_linux
     - org.kde.krita
     - org.kde.kdenlive
