@@ -4,7 +4,7 @@
 set -euo pipefail
 
 # Dependency and folder
-dnf install -y git gcc gcc-c++ cmake openssl protobuf-compiler openssl-devel dbus-devel pkgconf-pkg-config cargo
+dnf install -y git gcc gcc-c++ cmake openssl protobuf protobuf-compiler openssl-devel dbus-devel pkgconf-pkg-config rustup cargo
 mkdir -p /tmp/cargo-built/usr/bin
 
 # Atuin - https://github.com/atuinsh/atuin
