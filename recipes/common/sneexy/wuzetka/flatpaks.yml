@@ -66,6 +66,7 @@ system:
     - org.ppsspp.PPSSPP
     - net.kuribo64.melonDS
     - io.github.dosbox-staging
+    - net.lutris.Lutris
     - page.kramo.Cartridges
     - org.prismlauncher.PrismLauncher
     - org.freedesktop.Platform.VulkanLayer.gamescope//23.08
