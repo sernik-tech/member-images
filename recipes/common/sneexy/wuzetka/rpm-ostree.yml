@@ -33,6 +33,16 @@ install:
   - mpv
   - nextcloud-client
   - nextcloud-client-dolphin
+  - winetricks
+  
+  # beets
+  - beets
+  - beets-plugins
+  - beets-doc
+  - python3-requests
+  - python3-pylast
+  - python3-acoustid
+  - chromaprint-tools
 
   # environment
   - pavucontrol-qt
