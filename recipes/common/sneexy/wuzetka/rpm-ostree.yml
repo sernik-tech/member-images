@@ -33,7 +33,6 @@ install:
   - mpv
   - nextcloud-client
   - nextcloud-client-dolphin
-  - winetricks
   
   # beets
   - beets
