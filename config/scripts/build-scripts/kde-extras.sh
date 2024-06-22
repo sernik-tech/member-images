@@ -31,18 +31,6 @@ mkdir -p /tmp/kde-extras-built/usr/share/kwin/effects
 mkdir -p /tmp/kde-extras-built/usr/share/plasma/plasmoid
 
 #
-# Klassy
-#
-cd /tmp
-git clone https://github.com/paulmcauley/klassy.git
-cd klassy
-mkdir build
-cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DKDE_INSTALL_USE_QT_SYS_PATHS=ON
-make -j$(nproc)
-make install DESTDIR=/tmp/kde-extras-built PREFIX='/usr'
-
-#
 # KDE Rounded Corners
 #
 cd /tmp
