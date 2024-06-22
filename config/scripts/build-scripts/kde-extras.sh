@@ -51,7 +51,7 @@ cd KDE-Rounded-Corners
 mkdir build
 cd build
 cmake .. --install-prefix /usr
-make
+cmake --build . -j
 make install DESTDIR=/tmp/kde-extras-built PREFIX='/usr'
 
 #
