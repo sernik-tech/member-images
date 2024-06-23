@@ -133,8 +133,8 @@ ForegroundPositive=166, 227, 161
 ForegroundVisited=203, 166, 247
 
 [DirSelect Dialog]
-DirSelectDialog Size=824,583
-History Items[$e]=file:///usr/share/backgrounds/catppuccin/Cassettes,file:$HOME/Pictures/Wallpapers/Desktop/Catppuccin,file:$HOME/.gnupg,file:$HOME/.ssh,file:$HOME/.config,file:$HOME/Music,file:$HOME/Downloads/Nicotine,file:$HOME/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes,file:$HOME/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes,file:$HOME/Videos,file:$HOME/Pictures,file:$HOME/Music,file:$HOME/Documents,file:$HOME/Nextcloud
+DirSelectDialog Size=1366,768
+History Items[$e]=file:///var/home/ruben/Git/sernik-tech/member-images,file:///var/home/ruben/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances/1.20.1/.minecraft,file:$HOME/Git/sernik-tech/member-images,file:$HOME/Git/sneexy/sharkey-tweaks,file:$HOME/Git/sernik-tech/member-images,file:$HOME/Git/sneexy/themes,file:///usr/share/backgrounds/catppuccin/Cassettes,file:$HOME/Pictures/Wallpapers/Desktop/Catppuccin,file:$HOME/.gnupg,file:$HOME/.ssh,file:$HOME/.config,file:$HOME/Music,file:$HOME/Downloads/Nicotine,file:$HOME/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes,file:$HOME/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes,file:$HOME/Videos,file:$HOME/Pictures,file:$HOME/Music,file:$HOME/Documents,file:$HOME/Nextcloud
 
 [General]
 ColorSchemeHash=c450872dc068bdb11b46a0d8e2343caf9b60972f

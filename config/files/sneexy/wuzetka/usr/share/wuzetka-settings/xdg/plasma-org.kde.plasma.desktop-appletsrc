@@ -26,7 +26,7 @@ DialogWidth=680
 
 [Containments][1][Applets][49][Configuration][General]
 color=black
-cursorPosition=147
+cursorPosition=165
 fontSize=16
 noteId=b24d8331-5f74-4d85-aa75-c623ed01af
 
@@ -36,11 +36,11 @@ DialogWidth=680
 
 [Containments][1][General]
 ToolBoxButtonState=topcenter
-ToolBoxButtonX=339
+ToolBoxButtonX=374
 ToolBoxButtonY=46
 
 [Containments][1][Wallpaper][org.kde.slideshow][General]
-Image=file:///usr/share/backgrounds/catppuccin/Cassettes/AMPEX 189 T120_5K.png
+Image=file:///usr/share/backgrounds/catppuccin/Cassettes/Dark/SAMSUNG HQS T-120_DARK_5K.png
 SlideInterval=1800
 SlidePaths=/usr/share/backgrounds/catppuccin/Cassettes/
 
@@ -95,7 +95,7 @@ floatingPreset=Dock
 hideRealPanelBg=true
 hideWidget=true
 lastPreset=Dock
-marginRules=com.himdek.kde.plasma.overview,0,0|org.kde.plasma.icontasks,0,14|org.kde.plasma.kickerdash,0,0|luisbocanegra.panel.colorizer,0,0|org.kde.plasma.folder,0,0|org.kde.plasma.trash,0,0
+marginRules=com.himdek.kde.plasma.overview,0,0|org.kde.plasma.icontasks,0,14|org.kde.plasma.kickerdash,0,0|luisbocanegra.panel.colorizer,0,0|org.kde.plasma.folder,0,3|org.kde.plasma.trash,0,5|org.kde.plasma.kickoff,0,5
 normalPreset=Dock
 opacity=1
 panelWidgets=org.kde.plasma.kickoff,Application Launcher,start-here|org.kde.plasma.icontasks,Icons-only Task Manager,preferences-system-windows|org.kde.plasma.folder,Home,folder-home|org.kde.plasma.folder,Downloads,folder-downloads|org.kde.plasma.trash,Trash,user-trash-symbolic|luisbocanegra.panel.colorizer,Panel colorizer,desktop
@@ -119,7 +119,7 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=
 
 [Containments][29][Applets][46][Configuration]
-PreloadWeight=60
+PreloadWeight=65
 activityId=
 formfactor=0
 immutability=1
@@ -197,7 +197,7 @@ DialogHeight=510
 DialogWidth=680
 
 [Containments][29][Applets][6][Configuration][General]
-launchers=preferred://filemanager,applications:kitty.desktop,preferred://browser,applications:org.kde.kmail2.desktop,applications:org.kde.akregator.desktop,applications:webapp-LeasDungeon7024.desktop,applications:org.signal.Signal.desktop,applications:dev.vencord.Vesktop.desktop,applications:chat.revolt.RevoltDesktop.desktop,applications:org.gajim.Gajim.desktop,applications:org.kde.neochat.desktop,applications:com.bitwarden.desktop.desktop,applications:page.kramo.Cartridges.desktop,applications:virt-manager.desktop,applications:codium.desktop
+launchers=preferred://filemanager,applications:org.wezfurlong.wezterm.desktop,preferred://browser,applications:org.kde.kmail2.desktop,applications:org.kde.akregator.desktop,applications:webapp-LeasDungeon7024.desktop,applications:org.signal.Signal.desktop,applications:dev.vencord.Vesktop.desktop,applications:chat.revolt.RevoltDesktop.desktop,applications:org.gajim.Gajim.desktop,applications:org.kde.neochat.desktop,applications:com.bitwarden.desktop.desktop,applications:page.kramo.Cartridges.desktop,applications:virt-manager.desktop,applications:codium.desktop
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=false
 
@@ -218,7 +218,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][3][Applets][22][Configuration]
-PreloadWeight=60
+PreloadWeight=70
 popupHeight=425
 popupWidth=560
 
@@ -295,12 +295,12 @@ immutability=1
 plugin=org.kde.plasma.colorpicker
 
 [Containments][3][Applets][36][Configuration]
-PreloadWeight=90
+PreloadWeight=100
 popupHeight=306
 popupWidth=306
 
 [Containments][3][Applets][36][Configuration][General]
-history=#4d4d4d,#252525,#4d4d4d,#ce570f,#1e1e1e,#296cfd,#888888,#ffffff,#ffc85b
+history=#9b9b9b,#404040,#ffffff,#c2e6ff,#4d4d4d,#252525,#4d4d4d,#ce570f,#1e1e1e
 
 [Containments][3][Applets][37]
 immutability=1
@@ -338,14 +338,13 @@ fgColorMode=4
 fgContrastFixEnabled=true
 fgLightness=0.15
 fgSaturationEnabled=true
-floatingPreset=Floating
 hideWidget=true
 lastPreset=Normal
 marginRules=org.kde.plasma.kickoff,0,-1|org.kde.plasma.colorpicker,0,0|org.kde.plasma.catwalk,0,2|org.kde.netspeedWidget,0,0|org.kde.windowtitle,0,2|org.kde.plasma.panelspacer,0,0|luisbocanegra.panel.colorizer,0,0|org.kde.plasma.notifications,0,0|org.kde.plasma.clipboard,0,0|org.kde.plasma.systemtray,0,0|Minimal.chaac.weather,0,2|org.kde.plasma.digitalclock,0,2|com.github.boraerciyas.controlcentre,0,-1|plasmusic-toolbar,0,0|org.kde.plasma.weather,0,0
 normalPreset=Normal
 opacity=1
 panelWidgets=org.kde.windowtitle,Window Title,preferences-desktop|org.kde.plasma.colorpicker,Color Picker,color-picker|org.kde.plasma.catwalk,CatWalk,animal-symbolic|org.kde.netspeedWidget,Netspeed Widget,network-connect|org.kde.plasma.panelspacer,Panel Spacer,|plasmusic-toolbar,PlasMusic Toolbar,view-media-track|luisbocanegra.panel.colorizer,Panel colorizer,desktop|org.kde.plasma.notifications,Notifications,notification-inactive-symbolic|org.kde.plasma.clipboard,Clipboard,klipper-symbolic|org.kde.plasma.systemtray,System Tray,preferences-desktop-notification|org.kde.plasma.digitalclock,Digital Clock,preferences-system-time|org.kde.plasma.weather,Weather Report,weather-none-available-symbolic
-panelWidgetsWithTray=org.kde.windowtitle,Window Title,preferences-desktop|org.kde.plasma.colorpicker,Color Picker,color-picker|org.kde.plasma.catwalk,CatWalk,animal-symbolic|org.kde.netspeedWidget,Netspeed Widget,network-connect|org.kde.plasma.panelspacer,Panel Spacer,|plasmusic-toolbar,PlasMusic Toolbar,view-media-track|luisbocanegra.panel.colorizer,Panel colorizer,desktop|org.kde.plasma.notifications,Notifications,notification-inactive-symbolic|org.kde.plasma.clipboard,Clipboard,klipper-symbolic|Discover Notifier_org.kde.DiscoverNotifier,Updates,update-low|org.kde.plasma.volume,Audio Volume,audio-volume-muted|org.kde.plasma.bluetooth,Bluetooth,network-bluetooth-inactive-symbolic|org.kde.plasma.networkmanagement,Networks,network-wireless-80|org.kde.plasma.battery,Power and Battery,battery-full-symbolic|org.kde.plasma.digitalclock,Digital Clock,preferences-system-time|org.kde.plasma.weather,Weather Report,weather-none-available-symbolic
+panelWidgetsWithTray=org.kde.windowtitle,Window Title,preferences-desktop|org.kde.plasma.colorpicker,Color Picker,color-picker|org.kde.plasma.catwalk,CatWalk,animal-symbolic|org.kde.netspeedWidget,Netspeed Widget,network-connect|org.kde.plasma.panelspacer,Panel Spacer,|plasmusic-toolbar,PlasMusic Toolbar,view-media-track|luisbocanegra.panel.colorizer,Panel colorizer,desktop|org.kde.plasma.notifications,Notifications,notification-inactive-symbolic|org.kde.plasma.clipboard,Clipboard,klipper-symbolic|,,|Discover Notifier_org.kde.DiscoverNotifier,Updates,update-low|org.kde.plasma.volume,Audio Volume,audio-volume-muted|org.kde.plasma.bluetooth,Bluetooth,network-bluetooth-symbolic|org.kde.plasma.networkmanagement,Networks,network-wireless-80|org.kde.plasma.battery,Power and Battery,battery-full-symbolic|org.kde.plasma.digitalclock,Digital Clock,preferences-system-time|org.kde.plasma.weather,Weather Report,weather-none-available-symbolic
 widgetBgEnabled=true
 widgetBgHMargin=2
 
@@ -360,6 +359,11 @@ DialogWidth=680
 [Containments][3][Applets][42]
 immutability=1
 plugin=org.kde.plasma.clipboard
+
+[Containments][3][Applets][42][Configuration]
+PreloadWeight=60
+popupHeight=408
+popupWidth=408
 
 [Containments][3][Applets][43]
 immutability=1
@@ -455,7 +459,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][9][Applets][24][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][9][Applets][24][Configuration][General]
 showPercentage=true
@@ -472,14 +476,14 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][9][Applets][26][Configuration]
-PreloadWeight=0
+PreloadWeight=20
 
 [Containments][9][Applets][27]
 immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][9][Applets][27][Configuration]
-PreloadWeight=12
+PreloadWeight=22
 
 [Containments][9][Applets][28][Configuration]
 PreloadWeight=42
