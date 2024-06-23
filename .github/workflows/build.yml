@@ -30,7 +30,7 @@ jobs:
     steps:
        # the build is fully handled by the reusable github action
       - name: Build Custom Image
-        uses: blue-build/github-action@v1.5
+        uses: blue-build/github-action@v1.6
         with:
           maximize_build_space: true
           recipe: ${{ matrix.recipe }}
