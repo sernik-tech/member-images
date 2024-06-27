@@ -32,4 +32,4 @@ cargo install tlrc --root /tmp/cargo-built/usr
 cd /tmp
 git clone https://git.joinfirefish.org/firefish/emoji-gen.git
 cd emoji-gen
-cargo install --path /tmp/cargo-built/usr
+cargo install --path . --root /tmp/cargo-built/usr
