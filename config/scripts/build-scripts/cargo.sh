@@ -27,3 +27,9 @@ cargo install rescrobbled --root /tmp/cargo-built/usr
 
 # tlrc - https://github.com/tldr-pages/tlrc
 cargo install tlrc --root /tmp/cargo-built/usr
+
+# emoji-gen - https://activitypub.software/Amelia/emoji-gen
+cd /tmp
+git clone https://git.joinfirefish.org/firefish/emoji-gen.git
+cd emoji-gen
+cargo install --path /tmp/cargo-built/usr
