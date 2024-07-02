@@ -109,6 +109,7 @@ install:
   - ark
   - dolphin-plugins
   - rom-properties-kf6
+  - k3b
   - kate
   - ksystemlog
   - power-profiles-daemon
