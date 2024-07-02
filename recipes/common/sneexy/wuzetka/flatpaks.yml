@@ -31,6 +31,7 @@ system:
     - org.gimp.GIMP
     - org.inkscape.Inkscape
     - org.mattbas.Glaxnimate
+    - net.blockbench.Blockbench
     - io.github.Figma_Linux.figma_linux
     - org.kde.krita
     - org.kde.kdenlive
