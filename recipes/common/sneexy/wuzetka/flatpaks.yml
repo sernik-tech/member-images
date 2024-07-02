@@ -52,6 +52,7 @@ system:
     - io.github.lainsce.Emulsion
     - com.bitwarden.desktop
     - org.kde.kompare
+    - com.github.qarmin.szyszka
 
     # gaming
     - com.github.k4zmu2a.spacecadetpinball
