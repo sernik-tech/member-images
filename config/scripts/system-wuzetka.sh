@@ -52,6 +52,12 @@ ln -sf /usr/lib/opt/chromium.org/thorium/thorium-browser /usr/bin/thorium-browse
 sed -i 's@/opt/chromium.org/thorium/thorium_shell@/usr/lib/opt/chromium.org/thorium/thorium_shell@g' /usr/bin/thorium-shell
 
 #
+# flac2opus
+#
+curl -sL -o /usr/bin/flac2opus "https://raw.githubusercontent.com/SimonTeixidor/flac2opus/master/flac2opus.sh"
+chmod +x /usr/bin/flac2opus
+
+#
 # VSCodium
 #
 tee -a /etc/yum.repos.d/vscodium.repo << 'EOF'

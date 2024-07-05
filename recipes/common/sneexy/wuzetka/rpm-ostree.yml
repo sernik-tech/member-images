@@ -43,6 +43,10 @@ install:
   - python3-acoustid
   - chromaprint-tools
 
+  # flac2opus
+  - flac
+  - opus-tools
+
   # environment
   - pavucontrol-qt
   - playerctl
