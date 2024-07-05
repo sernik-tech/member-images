@@ -89,6 +89,7 @@ Item {
                 property double fontHeightRatio: textMetrics.font.pixelSize / textMetrics.height
                 id: label
                 text: totalSensor.formattedValue
+                visible: plasmoid.configuration.type !== 1
                 Layout.fillWidth: layoutForm === CompactRepresentation.LayoutType.VerticalPanel
                               || layoutForm === CompactRepresentation.LayoutType.VerticalDesktop
                 Layout.maximumWidth: {
