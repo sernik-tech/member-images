@@ -15,6 +15,9 @@ repos:
   # rom properties
   - https://copr.fedorainfracloud.org/coprs/kylegospo/rom-properties/repo/fedora-%OS_VERSION%/kylegospo-rom-properties-fedora-%OS_VERSION%.repo
 
+  # tailscale
+  - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+
   # linux mint's webapp/pwa manager
   - https://copr.fedorainfracloud.org/coprs/kylegospo/webapp-manager/repo/fedora-%OS_VERSION%/kylegospo-webapp-manager-fedora-%OS_VERSION%.repo
 install:
@@ -51,6 +54,7 @@ install:
   - pavucontrol-qt
   - playerctl
   - crontabs
+  - tailscale
   - gamescope
   - mangohud
   - hblock
