@@ -5,6 +5,7 @@ set -euo pipefail
 
 # systemd services to enable on the system
 systemctl enable hblock.timer
+systemctl enable tailscaled.service
 
 # Ensure all required/used folders are created
 mkdir -p /usr/share/sddm/themes
