@@ -129,7 +129,7 @@ cd /tmp
 git clone https://github.com/catppuccin/kde.git catppuccinkde
 cd catppuccinkde
 rm -f install.sh
-curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/config/scripts/catppuccin-plasma.sh
+curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/files/scripts/catppuccin-plasma.sh
 chmod +x install.sh
 # Latte
 cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 1 9 1
