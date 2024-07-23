@@ -72,7 +72,6 @@ system:
     - page.kramo.Cartridges
     - org.prismlauncher.PrismLauncher
     - net.minetest.Minetest
-    - org.freedesktop.Platform.VulkanLayer.MangoHud//23.08
 
     # system applications
     - org.kde.filelight
