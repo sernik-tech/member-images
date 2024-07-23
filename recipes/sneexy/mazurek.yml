@@ -19,7 +19,8 @@ modules:
 
   - type: files
     files:
-        - sneexy/mazurek/usr: /usr
+        - source: system/sneexy/wuzetka
+          destination: /
 
   - from-file: common/sneexy/mazurek/flatpaks.yml
   - from-file: common/sneexy/bling.yml
@@ -29,5 +30,5 @@ modules:
     include:
       - zz1-mazurek.gschema.override
 
-  - from-file: common/sneexy/akmods.yml
+  #- from-file: common/sneexy/akmods.yml
   - type: signing
