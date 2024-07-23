@@ -21,7 +21,8 @@ modules:
 
     - type: files
       files:
-        - sneexy/wuzetka/usr: /usr
+        - source: system/sneexy/wuzetka
+          destination: /
 
     - type: containerfile
       snippets:
