@@ -1,6 +1,5 @@
 # Module Documentation: https://blue-build.org/reference/modules/files/
 type: files
 files:
-    - amycatgirl/usr: /usr
-    # usr: file/folder inside config/files/amycatgirl to copy (config/files/usr/ in the repository)
-    # /usr: destination on the final system
+    - source: system/amycatgirl
+      destination: /

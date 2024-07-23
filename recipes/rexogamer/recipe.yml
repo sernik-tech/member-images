@@ -38,7 +38,8 @@ modules:
     # Documentation: https://blue-build.org/reference/modules/files/
   - type: files
     files:
-      - rexogamer/usr: /usr
+      - source: system/rexogamer
+        destination: /
 
     # - Flatpaks -
     # Flatpaks that will end up being installed out of the box on the system. Feel free to add anything here you'd
