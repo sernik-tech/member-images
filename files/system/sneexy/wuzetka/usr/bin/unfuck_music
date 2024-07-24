@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# funny little script that just reloads mpd and related services
+# for some reason they appear to just crash on startup
+# i should probably just figure out how to fix it instead of this
+# but this works + funny
+
+systemctl --user restart mpd.service && \
+systemctl --user restart mpDris2.service
