@@ -92,9 +92,6 @@ curl -sL -o /usr/share/zsh/site-functions/_tldr https://raw.githubusercontent.co
 curl -sL -o /usr/share/fish/vendor_completions.d/tldr.fish https://raw.githubusercontent.com/tldr-pages/tlrc/main/completions/tldr.fish
 curl -sL -o /usr/share/man/man1/tldr.1 https://raw.githubusercontent.com/tldr-pages/tlrc/main/tldr.1
 
-# unfuck_music
-chmod +x /usr/bin/unfuck_music
-
 #
 # Globally enable systemd user services
 #
