@@ -8,6 +8,6 @@ Name=Vesktop
 StartupWMClass=Vesktop
 Terminal=false
 Type=Application
-X-AppImage-Version=1.5.1
+X-AppImage-Version=1.5.3
 X-Desktop-File-Install-Version=0.27
 X-Flatpak=dev.vencord.Vesktop

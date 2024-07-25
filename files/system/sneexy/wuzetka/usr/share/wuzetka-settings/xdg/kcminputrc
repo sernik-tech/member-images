@@ -1,2 +1,6 @@
+[Libinput][1118][225][Microsoft Microsoft Notebook Receiver v2.0 Mouse]
+PointerAcceleration=0.400
+PointerAccelerationProfile=1
+
 [Mouse]
 cursorTheme=Bibata-Modern-Mocha-Light

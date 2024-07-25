@@ -1,5 +1,5 @@
 [Annotations]
-annotationToolType=5
+annotationToolType=0
 rectangleFillColor=255,0,0
 rectangleStrokeColor=0,0,0,0
 
@@ -9,8 +9,10 @@ clipboardGroup=PostScreenshotCopyImage
 
 [GuiConfig]
 captureMode=0
+includePointer=true
 
 [ImageSave]
+lastImageSaveLocation=file:///home/ruben/Pictures/Screenshots/Screenshot_20240724_150035.png
 translatedScreenshotsFolder=Screenshots
 
 [VideoSave]

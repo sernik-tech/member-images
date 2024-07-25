@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/usr/bin/unfuck_music
+Icon=application-x-shellscript
+Name=unfuck_music
+Type=Application
+X-KDE-AutostartScript=true

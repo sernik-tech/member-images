@@ -6,8 +6,8 @@ RightButton;NoModifier=org.kde.contextmenu
 
 [Containments][1]
 ItemGeometries-1366x768=Applet-49:16,0,432,432,0;
-ItemGeometries-1920x1080=Applet-49:16,0,432,432,0;
-ItemGeometriesHorizontal=Applet-49:16,0,432,432,0;
+ItemGeometries-1920x1080=
+ItemGeometriesHorizontal=
 activityId=2c7438b6-79df-48f8-a275-976ac890325e
 formfactor=0
 immutability=1
@@ -15,20 +15,6 @@ lastScreen=0
 location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.slideshow
-
-[Containments][1][Applets][49]
-immutability=1
-plugin=org.kde.plasma.notes
-
-[Containments][1][Applets][49][Configuration][ConfigDialog]
-DialogHeight=510
-DialogWidth=680
-
-[Containments][1][Applets][49][Configuration][General]
-color=black
-cursorPosition=165
-fontSize=16
-noteId=b24d8331-5f74-4d85-aa75-c623ed01af
 
 [Containments][1][ConfigDialog]
 DialogHeight=510
@@ -40,7 +26,7 @@ ToolBoxButtonX=374
 ToolBoxButtonY=46
 
 [Containments][1][Wallpaper][org.kde.slideshow][General]
-Image=file:///usr/share/backgrounds/catppuccin/Cassettes/Dark/SAMSUNG HQS T-120_DARK_5K.png
+Image=file:///usr/share/backgrounds/catppuccin/Cassettes/Dark/SONY Dynamicron E-180 DARK_5K.png
 SlideInterval=1800
 SlidePaths=/usr/share/backgrounds/catppuccin/Cassettes/
 
@@ -59,7 +45,7 @@ DialogHeight=510
 DialogWidth=680
 
 [Containments][2][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/ruben/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes/Dark/Certron T-120_Dark_5K.png
+Image=file:///home/ruben/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes/Dark/Quasar Video Cassette 60_ALT_5K.png
 SlideInterval=1800
 SlidePaths=/home/ruben/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes/
 
@@ -197,7 +183,7 @@ DialogHeight=510
 DialogWidth=680
 
 [Containments][29][Applets][6][Configuration][General]
-launchers=preferred://filemanager,applications:org.wezfurlong.wezterm.desktop,preferred://browser,applications:org.kde.kmail2.desktop,applications:org.kde.akregator.desktop,applications:webapp-LeasDungeon7024.desktop,applications:org.signal.Signal.desktop,applications:dev.vencord.Vesktop.desktop,applications:chat.revolt.RevoltDesktop.desktop,applications:org.gajim.Gajim.desktop,applications:org.kde.neochat.desktop,applications:com.bitwarden.desktop.desktop,applications:page.kramo.Cartridges.desktop,applications:virt-manager.desktop,applications:codium.desktop
+launchers=preferred://filemanager,applications:org.wezfurlong.wezterm.desktop,preferred://browser,applications:org.kde.kmail2.desktop,applications:org.kde.akregator.desktop,applications:webapp-LeasDungeon7024.desktop,applications:org.signal.Signal.desktop,applications:dev.vencord.Vesktop.desktop,applications:chat.revolt.RevoltDesktop.desktop,applications:org.gajim.Gajim.desktop,applications:org.kde.neochat.desktop,applications:com.bitwarden.desktop.desktop,applications:page.kramo.Cartridges.desktop,applications:virt-manager.desktop,applications:org.kde.kate.desktop
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=false
 
@@ -218,7 +204,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][3][Applets][22][Configuration]
-PreloadWeight=70
+PreloadWeight=80
 popupHeight=425
 popupWidth=560
 
@@ -279,17 +265,6 @@ albumCoverRadius=25
 sourceIndex=4
 sources=any,spotify,vlc,mpd,mpdris2,mpdris2 kdeconnect,kdeconnect,kdeconnect.mpris_83be2c845b1648eeac8baa20fb39733b
 
-[Containments][3][Applets][35]
-immutability=1
-plugin=org.kde.netspeedWidget
-
-[Containments][3][Applets][35][Configuration][ConfigDialog]
-DialogHeight=510
-DialogWidth=680
-
-[Containments][3][Applets][35][Configuration][General]
-updateInterval=8
-
 [Containments][3][Applets][36]
 immutability=1
 plugin=org.kde.plasma.colorpicker
@@ -300,23 +275,11 @@ popupHeight=306
 popupWidth=306
 
 [Containments][3][Applets][36][Configuration][General]
-history=#9b9b9b,#404040,#ffffff,#c2e6ff,#4d4d4d,#252525,#4d4d4d,#ce570f,#1e1e1e
+history=#95f7b2,#999999,#95f7b1,#93f3af,#999999,#95f7b2,#f8f7fb,#ffffff,#d83e42
 
 [Containments][3][Applets][37]
 immutability=1
 plugin=org.kde.plasma.panelspacer
-
-[Containments][3][Applets][38]
-immutability=1
-plugin=org.kde.plasma.catwalk
-
-[Containments][3][Applets][38][Configuration][ConfigDialog]
-DialogHeight=510
-DialogWidth=680
-
-[Containments][3][Applets][38][Configuration][General]
-type=1
-updateRateLimit=15000
 
 [Containments][3][Applets][39]
 immutability=1
@@ -344,7 +307,7 @@ marginRules=org.kde.plasma.kickoff,0,-1|org.kde.plasma.colorpicker,0,0|org.kde.p
 normalPreset=Normal
 opacity=1
 panelWidgets=org.kde.windowtitle,Window Title,preferences-desktop|org.kde.plasma.colorpicker,Color Picker,color-picker|org.kde.plasma.catwalk,CatWalk,animal-symbolic|org.kde.netspeedWidget,Netspeed Widget,network-connect|org.kde.plasma.panelspacer,Panel Spacer,|plasmusic-toolbar,PlasMusic Toolbar,view-media-track|luisbocanegra.panel.colorizer,Panel colorizer,desktop|org.kde.plasma.notifications,Notifications,notification-inactive-symbolic|org.kde.plasma.clipboard,Clipboard,klipper-symbolic|org.kde.plasma.systemtray,System Tray,preferences-desktop-notification|org.kde.plasma.digitalclock,Digital Clock,preferences-system-time|org.kde.plasma.weather,Weather Report,weather-none-available-symbolic
-panelWidgetsWithTray=org.kde.windowtitle,Window Title,preferences-desktop|org.kde.plasma.colorpicker,Color Picker,color-picker|org.kde.plasma.catwalk,CatWalk,animal-symbolic|org.kde.netspeedWidget,Netspeed Widget,network-connect|org.kde.plasma.panelspacer,Panel Spacer,|plasmusic-toolbar,PlasMusic Toolbar,view-media-track|luisbocanegra.panel.colorizer,Panel colorizer,desktop|org.kde.plasma.notifications,Notifications,notification-inactive-symbolic|org.kde.plasma.clipboard,Clipboard,klipper-symbolic|,,|Discover Notifier_org.kde.DiscoverNotifier,Updates,update-low|org.kde.plasma.volume,Audio Volume,audio-volume-muted|org.kde.plasma.bluetooth,Bluetooth,network-bluetooth-symbolic|org.kde.plasma.networkmanagement,Networks,network-wireless-80|org.kde.plasma.battery,Power and Battery,battery-full-symbolic|org.kde.plasma.digitalclock,Digital Clock,preferences-system-time|org.kde.plasma.weather,Weather Report,weather-none-available-symbolic
+panelWidgetsWithTray=org.kde.windowtitle,Window Title,preferences-desktop|org.kde.plasma.colorpicker,Color Picker,color-picker|org.kde.plasma.catwalk,CatWalk,animal-symbolic|org.kde.netspeedWidget,Netspeed Widget,network-connect|org.kde.plasma.panelspacer,Panel Spacer,|plasmusic-toolbar,PlasMusic Toolbar,view-media-track|luisbocanegra.panel.colorizer,Panel colorizer,desktop|org.kde.plasma.notifications,Notifications,notification-inactive-symbolic|org.kde.plasma.clipboard,Clipboard,klipper-symbolic|Discover Notifier_org.kde.DiscoverNotifier,Updates,update-low|org.kde.plasma.volume,Audio Volume,audio-volume-muted-symbolic|org.kde.plasma.bluetooth,Bluetooth,network-bluetooth-symbolic|org.kde.plasma.networkmanagement,Networks,network-wireless-100-symbolic|org.kde.plasma.battery,Power and Battery,battery-full-symbolic|org.kde.plasma.digitalclock,Digital Clock,preferences-system-time|org.kde.plasma.weather,Weather Report,weather-none-available-symbolic
 widgetBgEnabled=true
 widgetBgHMargin=2
 
@@ -361,7 +324,7 @@ immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][3][Applets][42][Configuration]
-PreloadWeight=60
+PreloadWeight=70
 popupHeight=408
 popupWidth=408
 
@@ -374,6 +337,30 @@ PreloadWeight=100
 popupHeight=588
 popupWidth=572
 
+[Containments][3][Applets][49]
+immutability=1
+plugin=org.kde.plasma.catwalk
+
+[Containments][3][Applets][49][Configuration][ConfigDialog]
+DialogHeight=510
+DialogWidth=680
+
+[Containments][3][Applets][49][Configuration][General]
+idle=20
+type=1
+updateRateLimit=5000
+
+[Containments][3][Applets][50]
+immutability=1
+plugin=org.kde.netspeedWidget
+
+[Containments][3][Applets][50][Configuration][ConfigDialog]
+DialogHeight=510
+DialogWidth=680
+
+[Containments][3][Applets][50][Configuration][General]
+updateInterval=5
+
 [Containments][3][Applets][8]
 immutability=1
 plugin=org.kde.plasma.systemtray
@@ -383,7 +370,7 @@ PreloadWeight=100
 SystrayContainmentId=9
 
 [Containments][3][General]
-AppletOrder=41;36;38;35;37;34;32;39;43;42;8;22;33
+AppletOrder=41;36;49;50;37;34;32;39;43;42;8;22;33
 
 [Containments][9]
 activityId=
@@ -392,8 +379,8 @@ immutability=1
 lastScreen=0
 location=3
 plugin=org.kde.plasma.private.systemtray
-popupHeight=408
-popupWidth=408
+popupHeight=432
+popupWidth=432
 wallpaperplugin=org.kde.image
 
 [Containments][9][Applets][10]
@@ -459,7 +446,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][9][Applets][24][Configuration]
-PreloadWeight=5
+PreloadWeight=24
 
 [Containments][9][Applets][24][Configuration][General]
 showPercentage=true
@@ -471,19 +458,23 @@ plugin=org.kde.plasma.brightness
 [Containments][9][Applets][25][Configuration]
 PreloadWeight=0
 
+[Containments][9][Applets][25][Configuration][ConfigDialog]
+DialogHeight=510
+DialogWidth=680
+
 [Containments][9][Applets][26]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][9][Applets][26][Configuration]
-PreloadWeight=20
+PreloadWeight=0
 
 [Containments][9][Applets][27]
 immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][9][Applets][27][Configuration]
-PreloadWeight=22
+PreloadWeight=44
 
 [Containments][9][Applets][28][Configuration]
 PreloadWeight=42

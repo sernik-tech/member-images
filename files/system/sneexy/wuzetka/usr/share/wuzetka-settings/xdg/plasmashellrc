@@ -5,7 +5,7 @@ plugin=org.kde.plasma.weather
 [Applets][33][Configuration]
 PreloadWeight=0
 configMigrated=true
-popupHeight=250
+popupHeight=301
 popupWidth=374
 
 [Applets][33][Configuration][Appearance]
