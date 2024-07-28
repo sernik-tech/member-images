@@ -12,9 +12,9 @@ Map Leader=\\
 Normal Mode Mapping Keys=
 Normal Mode Mappings=
 Normal Mode Mappings Recursion=
-ViRegisterContents=\n# unfuck_music\nchmod +x /usr/bin/unfuck_music,    - org.freedesktop.Platform.VulkanLayer.MangoHud//23.08,scripts/build-scripts /tmp/build-scripts\n\nRUN chmod +x /tmp/build-scripts/kde-extras.sh && \\\\\n    /tmp/build-scripts/kde-extras.sh\n\n# Joystickwake\n#FROM fedora:${IMAGE_MAJOR_VERSION} as joystickwake\n#\n#COPY config/scripts/build-scripts /tmp/build-scripts\n#\n#RUN chmod +x /tmp/build-scripts/joystickwake.sh && \\\\\n#    /tmp/build-scripts/joystickwake.sh\n\n# Catppuccin\nFROM fedora:${IMAGE_MAJOR_VERSION} as catppuccin\n\n# GTK Theme\nCOPY files/scripts/build-scripts /tmp/build-scripts\n\nRUN chmod +x /tmp/build-scripts/catppuccin-gtk.sh && \\\\\n    /tmp/build-scripts/catppuccin-gtk.sh\n\n# Papirus Icons Repatched\n#RUN chmod +x /tmp/build-scripts/catppuccin-papirus.sh && \\\\\n#    /tmp/build-scripts/catppuccin-papirus.sh
-ViRegisterFlags=0,0,0
-ViRegisterNames=",-,^
+ViRegisterContents=\s   - org.freedesktop.Platform.VulkanLayer.MangoHud//23.08,>\n            <a href=""><img loading="lazy" src="./assets/buttons/friends/
+ViRegisterFlags=0,0
+ViRegisterNames=-,^
 Visual Mode Mapping Keys=
 Visual Mode Mappings=
 Visual Mode Mappings Recursion=

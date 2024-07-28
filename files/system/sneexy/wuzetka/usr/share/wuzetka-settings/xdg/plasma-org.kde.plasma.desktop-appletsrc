@@ -5,7 +5,7 @@ RightButton;NoModifier=org.kde.contextmenu
 RightButton;NoModifier=org.kde.contextmenu
 
 [Containments][1]
-ItemGeometries-1366x768=Applet-49:16,0,432,432,0;
+ItemGeometries-1366x768=
 ItemGeometries-1920x1080=
 ItemGeometriesHorizontal=
 activityId=2c7438b6-79df-48f8-a275-976ac890325e
@@ -26,7 +26,7 @@ ToolBoxButtonX=374
 ToolBoxButtonY=46
 
 [Containments][1][Wallpaper][org.kde.slideshow][General]
-Image=file:///usr/share/backgrounds/catppuccin/Cassettes/Dark/SONY Dynamicron E-180 DARK_5K.png
+Image=file:///usr/share/backgrounds/catppuccin/Cassettes/TDK E-HG_5K.png
 SlideInterval=1800
 SlidePaths=/usr/share/backgrounds/catppuccin/Cassettes/
 
@@ -45,7 +45,7 @@ DialogHeight=510
 DialogWidth=680
 
 [Containments][2][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/ruben/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes/Dark/Quasar Video Cassette 60_ALT_5K.png
+Image=file:///home/ruben/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes/Dark/FUJIFILM HQ 120 6 Hours_5K.png
 SlideInterval=1800
 SlidePaths=/home/ruben/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes/
 
@@ -228,7 +228,7 @@ plugin=org.kde.plasma.weather
 [Containments][3][Applets][33][Configuration]
 PreloadWeight=0
 configMigrated=true
-popupHeight=250
+popupHeight=301
 popupWidth=374
 
 [Containments][3][Applets][33][Configuration][Appearance]
@@ -307,7 +307,7 @@ marginRules=org.kde.plasma.kickoff,0,-1|org.kde.plasma.colorpicker,0,0|org.kde.p
 normalPreset=Normal
 opacity=1
 panelWidgets=org.kde.windowtitle,Window Title,preferences-desktop|org.kde.plasma.colorpicker,Color Picker,color-picker|org.kde.plasma.catwalk,CatWalk,animal-symbolic|org.kde.netspeedWidget,Netspeed Widget,network-connect|org.kde.plasma.panelspacer,Panel Spacer,|plasmusic-toolbar,PlasMusic Toolbar,view-media-track|luisbocanegra.panel.colorizer,Panel colorizer,desktop|org.kde.plasma.notifications,Notifications,notification-inactive-symbolic|org.kde.plasma.clipboard,Clipboard,klipper-symbolic|org.kde.plasma.systemtray,System Tray,preferences-desktop-notification|org.kde.plasma.digitalclock,Digital Clock,preferences-system-time|org.kde.plasma.weather,Weather Report,weather-none-available-symbolic
-panelWidgetsWithTray=org.kde.windowtitle,Window Title,preferences-desktop|org.kde.plasma.colorpicker,Color Picker,color-picker|org.kde.plasma.catwalk,CatWalk,animal-symbolic|org.kde.netspeedWidget,Netspeed Widget,network-connect|org.kde.plasma.panelspacer,Panel Spacer,|plasmusic-toolbar,PlasMusic Toolbar,view-media-track|luisbocanegra.panel.colorizer,Panel colorizer,desktop|org.kde.plasma.notifications,Notifications,notification-inactive-symbolic|org.kde.plasma.clipboard,Clipboard,klipper-symbolic|Discover Notifier_org.kde.DiscoverNotifier,Updates,update-low|org.kde.plasma.volume,Audio Volume,audio-volume-muted-symbolic|org.kde.plasma.bluetooth,Bluetooth,network-bluetooth-symbolic|org.kde.plasma.networkmanagement,Networks,network-wireless-100-symbolic|org.kde.plasma.battery,Power and Battery,battery-full-symbolic|org.kde.plasma.digitalclock,Digital Clock,preferences-system-time|org.kde.plasma.weather,Weather Report,weather-none-available-symbolic
+panelWidgetsWithTray=org.kde.windowtitle,Window Title,preferences-desktop|org.kde.plasma.colorpicker,Color Picker,color-picker|org.kde.plasma.catwalk,CatWalk,animal-symbolic|org.kde.netspeedWidget,Netspeed Widget,network-connect|org.kde.plasma.panelspacer,Panel Spacer,|plasmusic-toolbar,PlasMusic Toolbar,view-media-track|luisbocanegra.panel.colorizer,Panel colorizer,desktop|org.kde.plasma.notifications,Notifications,notification-inactive-symbolic|org.kde.plasma.clipboard,Clipboard,klipper-symbolic|,,|org.kde.plasma.volume,Audio Volume,audio-volume-muted-symbolic|org.kde.plasma.bluetooth,Bluetooth,network-bluetooth-symbolic|org.kde.plasma.networkmanagement,Networks,network-wireless-80-symbolic|org.kde.plasma.battery,Power and Battery,battery-full-symbolic|org.kde.plasma.digitalclock,Digital Clock,preferences-system-time|org.kde.plasma.weather,Weather Report,weather-none-available-symbolic
 widgetBgEnabled=true
 widgetBgHMargin=2
 
@@ -315,9 +315,15 @@ widgetBgHMargin=2
 immutability=1
 plugin=org.kde.windowtitle
 
+[Containments][3][Applets][41][Configuration][Appearance]
+isBold=true
+lastSpace=3
+midSpace=4
+txt=%a
+
 [Containments][3][Applets][41][Configuration][ConfigDialog]
-DialogHeight=510
-DialogWidth=680
+DialogHeight=540
+DialogWidth=720
 
 [Containments][3][Applets][42]
 immutability=1
@@ -446,7 +452,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][9][Applets][24][Configuration]
-PreloadWeight=24
+PreloadWeight=17
 
 [Containments][9][Applets][24][Configuration][General]
 showPercentage=true

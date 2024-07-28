@@ -7,6 +7,12 @@ Switch to Last-Used Keyboard Layout=Meta+Alt+L,Meta+Alt+L,Switch to Last-Used Ke
 Switch to Next Keyboard Layout=Meta+Alt+K,Meta+Alt+K,Switch to Next Keyboard Layout
 _k_friendly_name=Keyboard Layout Switcher
 
+[com.dec05eba.gpu_screen_recordergpu_screen_recorder_gtk]
+_k_friendly_name=com.dec05eba.gpu_screen_recordergpu_screen_recorder_gtk
+gpu_screen_recorder_pause_unpause_recording=Meta+F2,Meta+F2,Pause/unpause recording
+gpu_screen_recorder_save_replay=Meta+F3,Meta+F3,Save replay
+gpu_screen_recorder_start_stop_recording=Meta+F1,Meta+F1,Start/stop recording/replay/streaming
+
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off
 _k_friendly_name=Accessibility
