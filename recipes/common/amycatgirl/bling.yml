@@ -3,4 +3,4 @@ type: bling
 install:
     # a service unit that updates the dconf db on boot
     - dconf-update-service
-    - laptop
+    #- laptop
