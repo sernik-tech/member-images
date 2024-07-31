@@ -6,8 +6,7 @@ system:
   repo-title: "Flathub (system-wide)"
   install:
     # internet and chat
-    - org.mozilla.Thunderbird
-    - com.ulduzsoft.Birdtray
+    - eu.betterbird.Betterbird
     - org.qbittorrent.qBittorrent
     - org.nicotine_plus.Nicotine
     - org.gajim.Gajim
