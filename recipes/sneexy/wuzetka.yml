@@ -41,5 +41,5 @@ modules:
       include:
         - zz1-wuzetka.gschema.override
 
-    #- from-file: common/sneexy/akmods.yml
+    - from-file: common/sneexy/akmods.yml
     - type: signing
