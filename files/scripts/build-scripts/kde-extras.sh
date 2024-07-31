@@ -144,3 +144,14 @@ cd plasma6-desktop-indicator
 mv contents /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.plasma.plasm6desktopindicator
 mv LICENSE /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.plasma.plasm6desktopindicator
 mv metadata.json /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.plasma.plasm6desktopindicator
+
+#
+# Ginti
+#
+mkdir -p /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.plasma.ginti
+cd /tmp
+git clone https://github.com/dhruv8sh/plasma6-desktopindicator-gnome.git
+cd plasma6-desktopindicator-gnome
+mv contents /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.plasma.ginti
+mv LICENSE /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.plasma.ginti
+mv metadata.json /tmp/kde-extras-built/usr/share/plasma/plasmoids/org.kde.plasma.ginti
