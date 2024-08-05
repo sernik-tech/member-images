@@ -88,6 +88,9 @@ system:
     - com.github.tchx84.Flatseal
     - org.gustavoperedo.FontDownloader
     - io.github.thetumultuousunicornofdarkness.cpu-x
+
+    # theme
+    - org.gtk.Gtk3theme.Breeze
 user:
   repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
   repo-name: flathub-user
