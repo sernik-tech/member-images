@@ -1,7 +1,8 @@
 [Context]
-filesystems=xdg-config/fontconfig:ro;xdg-config/Kvantum:ro;xdg-run/.flatpak/dev.vencord.Vesktop:create;xdg-run/discord-ipc-*;xdg-config/gtk-3.0:ro;xdg-config/gtk-4.0:ro
+filesystems=xdg-config/gtk-4.0:ro;xdg-config/gtk-3.0:ro;xdg-run/discord-ipc-*;xdg-run/.flatpak/dev.vencord.Vesktop:create;xdg-config/Kvantum:ro;xdg-config/fontconfig:ro;/etc/wuzetka-system:ro;~/.themes:ro;~/.local/share/themes:ro;/usr/share/icons/:ro
 
 [Environment]
+GTK_THEME=catppuccin-mocha-green-standard+default
 ICON_THEME=Papirus-Dark
 XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
 XCURSOR_SIZE=24

@@ -26,7 +26,7 @@ ToolBoxButtonX=374
 ToolBoxButtonY=46
 
 [Containments][1][Wallpaper][org.kde.slideshow][General]
-Image=file:///usr/share/backgrounds/catppuccin/Cassettes/Dark/Philips HG E180_5K.png
+Image=file:///usr/share/backgrounds/catppuccin/Cassettes/TDK E-HG_5K.png
 SlideInterval=1800
 SlidePaths=/usr/share/backgrounds/catppuccin/Cassettes/
 
@@ -45,7 +45,7 @@ DialogHeight=510
 DialogWidth=680
 
 [Containments][2][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/ruben/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes/Dark/TDK E-180 SUPER AVILYN_DARK_5K.png
+Image=file:///home/ruben/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes/Dark/FUJIFILM HQ 120 6 Hours_5K.png
 SlideInterval=1800
 SlidePaths=/home/ruben/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes/
 
@@ -183,7 +183,7 @@ DialogHeight=510
 DialogWidth=680
 
 [Containments][29][Applets][6][Configuration][General]
-launchers=preferred://filemanager,applications:org.wezfurlong.wezterm.desktop,preferred://browser,applications:eu.betterbird.Betterbird.desktop,applications:org.mozilla.Thunderbird.desktop,applications:org.kde.kmail2.desktop,applications:org.kde.akregator.desktop,applications:webapp-LeasDungeon7024.desktop,applications:org.signal.Signal.desktop,applications:dev.vencord.Vesktop.desktop,applications:chat.revolt.RevoltDesktop.desktop,applications:org.gajim.Gajim.desktop,applications:org.kde.neochat.desktop,applications:com.bitwarden.desktop.desktop,applications:page.kramo.Cartridges.desktop,applications:virt-manager.desktop,applications:org.kde.kate.desktop
+launchers=preferred://filemanager,applications:org.wezfurlong.wezterm.desktop,preferred://browser,applications:org.kde.kmail2.desktop,applications:org.kde.akregator.desktop,applications:webapp-LeasDungeon7024.desktop,applications:org.signal.Signal.desktop,applications:dev.vencord.Vesktop.desktop,applications:chat.revolt.RevoltDesktop.desktop,applications:org.gajim.Gajim.desktop,applications:org.kde.neochat.desktop,applications:com.bitwarden.desktop.desktop,applications:page.kramo.Cartridges.desktop,applications:virt-manager.desktop,applications:org.kde.kate.desktop
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=false
 
@@ -271,11 +271,11 @@ plugin=org.kde.plasma.colorpicker
 
 [Containments][3][Applets][36][Configuration]
 PreloadWeight=100
-popupHeight=324
-popupWidth=324
+popupHeight=306
+popupWidth=306
 
 [Containments][3][Applets][36][Configuration][General]
-history=#fcfcfa,#95f7b2,#999999,#95f7b1,#93f3af,#999999,#95f7b2,#f8f7fb,#ffffff
+history=#95f7b2,#999999,#95f7b1,#93f3af,#999999,#95f7b2,#f8f7fb,#ffffff,#d83e42
 
 [Containments][3][Applets][37]
 immutability=1
@@ -306,8 +306,8 @@ lastPreset=Normal
 marginRules=org.kde.plasma.kickoff,0,-1|org.kde.plasma.colorpicker,0,0|org.kde.plasma.catwalk,0,2|org.kde.netspeedWidget,0,0|org.kde.windowtitle,0,2|org.kde.plasma.panelspacer,0,0|luisbocanegra.panel.colorizer,0,0|org.kde.plasma.notifications,0,0|org.kde.plasma.clipboard,0,0|org.kde.plasma.systemtray,0,0|Minimal.chaac.weather,0,2|org.kde.plasma.digitalclock,0,2|com.github.boraerciyas.controlcentre,0,-1|plasmusic-toolbar,0,0|org.kde.plasma.weather,0,0
 normalPreset=Normal
 opacity=1
-panelWidgets=org.kde.windowtitle,Window Title,preferences-desktop|org.kde.plasma.colorpicker,Color Picker,color-picker|org.kde.plasma.catwalk,CatWalk,animal-symbolic|org.kde.netspeedWidget,Netspeed Widget,network-connect|org.kde.plasma.panelspacer,Panel Spacer,|plasmusic-toolbar,PlasMusic Toolbar,view-media-track|luisbocanegra.panel.colorizer,Panel colorizer,desktop|org.kde.plasma.notifications,Notifications,notification-active-symbolic|org.kde.plasma.clipboard,Clipboard,klipper-symbolic|org.kde.plasma.systemtray,System Tray,preferences-desktop-notification|org.kde.plasma.digitalclock,Digital Clock,preferences-system-time|org.kde.plasma.weather,Weather Report,weather-clear-symbolic
-panelWidgetsWithTray=org.kde.windowtitle,Window Title,preferences-desktop|org.kde.plasma.colorpicker,Color Picker,color-picker|org.kde.plasma.catwalk,CatWalk,animal-symbolic|org.kde.netspeedWidget,Netspeed Widget,network-connect|org.kde.plasma.panelspacer,Panel Spacer,|plasmusic-toolbar,PlasMusic Toolbar,view-media-track|luisbocanegra.panel.colorizer,Panel colorizer,desktop|org.kde.plasma.notifications,Notifications,notification-active-symbolic|org.kde.plasma.clipboard,Clipboard,klipper-symbolic|birdtray,birdtray,|org.kde.plasma.volume,Audio Volume,audio-volume-low-symbolic|org.kde.plasma.bluetooth,Bluetooth,network-bluetooth-symbolic|org.kde.plasma.networkmanagement,Networks,network-wireless-80-symbolic|org.kde.plasma.battery,Power and Battery,battery-full-symbolic|org.kde.plasma.digitalclock,Digital Clock,preferences-system-time|org.kde.plasma.weather,Weather Report,weather-clear-symbolic
+panelWidgets=org.kde.windowtitle,Window Title,preferences-desktop|org.kde.plasma.colorpicker,Color Picker,color-picker|org.kde.plasma.catwalk,CatWalk,animal-symbolic|org.kde.netspeedWidget,Netspeed Widget,network-connect|org.kde.plasma.panelspacer,Panel Spacer,|plasmusic-toolbar,PlasMusic Toolbar,view-media-track|luisbocanegra.panel.colorizer,Panel colorizer,desktop|org.kde.plasma.notifications,Notifications,notification-inactive-symbolic|org.kde.plasma.clipboard,Clipboard,klipper-symbolic|org.kde.plasma.systemtray,System Tray,preferences-desktop-notification|org.kde.plasma.digitalclock,Digital Clock,preferences-system-time|org.kde.plasma.weather,Weather Report,weather-none-available-symbolic
+panelWidgetsWithTray=org.kde.windowtitle,Window Title,preferences-desktop|org.kde.plasma.colorpicker,Color Picker,color-picker|org.kde.plasma.catwalk,CatWalk,animal-symbolic|org.kde.netspeedWidget,Netspeed Widget,network-connect|org.kde.plasma.panelspacer,Panel Spacer,|plasmusic-toolbar,PlasMusic Toolbar,view-media-track|luisbocanegra.panel.colorizer,Panel colorizer,desktop|org.kde.plasma.notifications,Notifications,notification-inactive-symbolic|org.kde.plasma.clipboard,Clipboard,klipper-symbolic|,,|org.kde.plasma.volume,Audio Volume,audio-volume-muted-symbolic|org.kde.plasma.bluetooth,Bluetooth,network-bluetooth-symbolic|org.kde.plasma.networkmanagement,Networks,network-wireless-80-symbolic|org.kde.plasma.battery,Power and Battery,battery-full-symbolic|org.kde.plasma.digitalclock,Digital Clock,preferences-system-time|org.kde.plasma.weather,Weather Report,weather-none-available-symbolic
 widgetBgEnabled=true
 widgetBgHMargin=2
 
@@ -330,9 +330,9 @@ immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][3][Applets][42][Configuration]
-PreloadWeight=75
-popupHeight=432
-popupWidth=432
+PreloadWeight=70
+popupHeight=408
+popupWidth=408
 
 [Containments][3][Applets][43]
 immutability=1
@@ -452,7 +452,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][9][Applets][24][Configuration]
-PreloadWeight=8
+PreloadWeight=17
 
 [Containments][9][Applets][24][Configuration][General]
 showPercentage=true
