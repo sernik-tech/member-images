@@ -165,9 +165,9 @@ SetEditor=false
 
 [MainWindow]
 1366x768 screen: Window-Maximized=true
-2 screens: Height=1046
-2 screens: Width=959
-2 screens: Window-Maximized=true
+2 screens: Height=860
+2 screens: Width=1397
+2 screens: Window-Maximized=false
 
 [filetree]
 editShade=110,80,65

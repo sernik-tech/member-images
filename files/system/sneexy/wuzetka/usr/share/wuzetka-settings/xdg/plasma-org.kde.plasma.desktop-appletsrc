@@ -26,7 +26,7 @@ ToolBoxButtonX=374
 ToolBoxButtonY=46
 
 [Containments][1][Wallpaper][org.kde.slideshow][General]
-Image=file:///usr/share/backgrounds/catppuccin/Cassettes/TDK E-HG_5K.png
+Image=file:///usr/share/backgrounds/catppuccin/Cassettes/TDK SUPER AVILYN_5K.png
 SlideInterval=1800
 SlidePaths=/usr/share/backgrounds/catppuccin/Cassettes/
 
@@ -45,7 +45,7 @@ DialogHeight=510
 DialogWidth=680
 
 [Containments][2][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/ruben/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes/Dark/FUJIFILM HQ 120 6 Hours_5K.png
+Image=file:///home/ruben/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes/Dark/Quasar Video Cassette 60_ALT_5K.png
 SlideInterval=1800
 SlidePaths=/home/ruben/Pictures/Wallpapers/Desktop/Catppuccin/Cassettes/
 
@@ -183,7 +183,7 @@ DialogHeight=510
 DialogWidth=680
 
 [Containments][29][Applets][6][Configuration][General]
-launchers=preferred://filemanager,applications:org.wezfurlong.wezterm.desktop,preferred://browser,applications:org.kde.kmail2.desktop,applications:org.kde.akregator.desktop,applications:webapp-LeasDungeon7024.desktop,applications:org.signal.Signal.desktop,applications:dev.vencord.Vesktop.desktop,applications:chat.revolt.RevoltDesktop.desktop,applications:org.gajim.Gajim.desktop,applications:org.kde.neochat.desktop,applications:com.bitwarden.desktop.desktop,applications:page.kramo.Cartridges.desktop,applications:virt-manager.desktop,applications:org.kde.kate.desktop
+launchers=preferred://filemanager,applications:org.wezfurlong.wezterm.desktop,preferred://browser,applications:eu.betterbird.Betterbird.desktop,applications:org.kde.kmail2.desktop,applications:org.kde.akregator.desktop,applications:webapp-LeasDungeon7024.desktop,applications:org.signal.Signal.desktop,applications:dev.vencord.Vesktop.desktop,applications:chat.revolt.RevoltDesktop.desktop,applications:org.gajim.Gajim.desktop,applications:org.kde.neochat.desktop,applications:com.bitwarden.desktop.desktop,applications:page.kramo.Cartridges.desktop,applications:virt-manager.desktop,applications:org.kde.kate.desktop
 showOnlyCurrentActivity=false
 showOnlyCurrentDesktop=false
 
@@ -227,24 +227,36 @@ plugin=org.kde.plasma.weather
 
 [Containments][3][Applets][33][Configuration]
 PreloadWeight=0
+PreloadWeight=0
 configMigrated=true
+configMigrated=true
+popupHeight=303
 popupHeight=301
+popupWidth=374
 popupWidth=374
 
 [Containments][3][Applets][33][Configuration][Appearance]
 showTemperatureInCompactMode=true
+showTemperatureInCompactMode=true
 
 [Containments][3][Applets][33][Configuration][ConfigDialog]
 DialogHeight=510
+DialogHeight=510
+DialogWidth=680
 DialogWidth=680
 
 [Containments][3][Applets][33][Configuration][Units]
 pressureUnit=5028
+pressureUnit=5028
+speedUnit=9002
 speedUnit=9002
 temperatureUnit=6002
+temperatureUnit=6002
+visibilityUnit=2024
 visibilityUnit=2024
 
 [Containments][3][Applets][33][Configuration][WeatherStation]
+source=wettercom|weather|McAllen, Texas, US|US0TX0852;McAllen
 source=wettercom|weather|McAllen, Texas, US|US0TX0852;McAllen
 
 [Containments][3][Applets][34]
@@ -271,11 +283,11 @@ plugin=org.kde.plasma.colorpicker
 
 [Containments][3][Applets][36][Configuration]
 PreloadWeight=100
-popupHeight=306
-popupWidth=306
+popupHeight=324
+popupWidth=324
 
 [Containments][3][Applets][36][Configuration][General]
-history=#95f7b2,#999999,#95f7b1,#93f3af,#999999,#95f7b2,#f8f7fb,#ffffff,#d83e42
+history=#a6d089,#282c3c,#fcfcfa,#95f7b2,#999999,#95f7b1,#93f3af,#999999,#95f7b2
 
 [Containments][3][Applets][37]
 immutability=1
@@ -307,7 +319,7 @@ marginRules=org.kde.plasma.kickoff,0,-1|org.kde.plasma.colorpicker,0,0|org.kde.p
 normalPreset=Normal
 opacity=1
 panelWidgets=org.kde.windowtitle,Window Title,preferences-desktop|org.kde.plasma.colorpicker,Color Picker,color-picker|org.kde.plasma.catwalk,CatWalk,animal-symbolic|org.kde.netspeedWidget,Netspeed Widget,network-connect|org.kde.plasma.panelspacer,Panel Spacer,|plasmusic-toolbar,PlasMusic Toolbar,view-media-track|luisbocanegra.panel.colorizer,Panel colorizer,desktop|org.kde.plasma.notifications,Notifications,notification-inactive-symbolic|org.kde.plasma.clipboard,Clipboard,klipper-symbolic|org.kde.plasma.systemtray,System Tray,preferences-desktop-notification|org.kde.plasma.digitalclock,Digital Clock,preferences-system-time|org.kde.plasma.weather,Weather Report,weather-none-available-symbolic
-panelWidgetsWithTray=org.kde.windowtitle,Window Title,preferences-desktop|org.kde.plasma.colorpicker,Color Picker,color-picker|org.kde.plasma.catwalk,CatWalk,animal-symbolic|org.kde.netspeedWidget,Netspeed Widget,network-connect|org.kde.plasma.panelspacer,Panel Spacer,|plasmusic-toolbar,PlasMusic Toolbar,view-media-track|luisbocanegra.panel.colorizer,Panel colorizer,desktop|org.kde.plasma.notifications,Notifications,notification-inactive-symbolic|org.kde.plasma.clipboard,Clipboard,klipper-symbolic|,,|org.kde.plasma.volume,Audio Volume,audio-volume-muted-symbolic|org.kde.plasma.bluetooth,Bluetooth,network-bluetooth-symbolic|org.kde.plasma.networkmanagement,Networks,network-wireless-80-symbolic|org.kde.plasma.battery,Power and Battery,battery-full-symbolic|org.kde.plasma.digitalclock,Digital Clock,preferences-system-time|org.kde.plasma.weather,Weather Report,weather-none-available-symbolic
+panelWidgetsWithTray=org.kde.windowtitle,Window Title,preferences-desktop|org.kde.plasma.colorpicker,Color Picker,color-picker|org.kde.plasma.catwalk,CatWalk,animal-symbolic|org.kde.netspeedWidget,Netspeed Widget,network-connect|org.kde.plasma.panelspacer,Panel Spacer,|plasmusic-toolbar,PlasMusic Toolbar,view-media-track|luisbocanegra.panel.colorizer,Panel colorizer,desktop|org.kde.plasma.notifications,Notifications,notification-inactive-symbolic|org.kde.plasma.clipboard,Clipboard,klipper-symbolic|org.kde.plasma.volume,Audio Volume,audio-volume-muted-symbolic|org.kde.plasma.bluetooth,Bluetooth,network-bluetooth-symbolic|org.kde.plasma.networkmanagement,Networks,network-wireless-80-symbolic|org.kde.plasma.battery,Power and Battery,battery-full-symbolic|org.kde.plasma.digitalclock,Digital Clock,preferences-system-time|org.kde.plasma.weather,Weather Report,weather-none-available-symbolic
 widgetBgEnabled=true
 widgetBgHMargin=2
 
@@ -330,9 +342,9 @@ immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][3][Applets][42][Configuration]
-PreloadWeight=70
-popupHeight=408
-popupWidth=408
+PreloadWeight=75
+popupHeight=432
+popupWidth=432
 
 [Containments][3][Applets][43]
 immutability=1
@@ -452,7 +464,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][9][Applets][24][Configuration]
-PreloadWeight=17
+PreloadWeight=0
 
 [Containments][9][Applets][24][Configuration][General]
 showPercentage=true
