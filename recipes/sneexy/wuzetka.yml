@@ -32,6 +32,7 @@ modules:
         - RUN chmod +x /usr/bin/unfuck_music
         # Copy self compiled software and allat
         - COPY --from=ghcr.io/sernik-tech/wuzetka-helper /artifacts/usr /usr
+        - COPY --from=ghcr.io/sernik-tech/wuzetka-helper /artifacts/etc /etc
 
     - from-file: common/sneexy/wuzetka/flatpaks.yml
     - from-file: common/sneexy/bling.yml
