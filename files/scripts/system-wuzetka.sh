@@ -40,14 +40,14 @@ sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite-multil
 # wgcf
 #
 WGCF_VER=$(curl -sL https://api.github.com/repos/ViRb3/wgcf/releases/latest | jq -r '.assets[] | select(.name? | match(".*_linux_amd64$")) | .browser_download_url')
-curl -sL -o /usr/bin/wgcf ${WGCF_VER}
+curl -sL -o /usr/bin/wgcf "${WGCF_VER}"
 chmod +x /usr/bin/wgcf
 
 #
 # Thorium browser
 #
 THORIUM_VER=$(curl -sL https://api.github.com/repos/Alex313031/thorium/releases/latest | jq -r '.assets[] | select(.name? | match(".*_AVX2.rpm$")) | .browser_download_url')
-curl -sL -o /tmp/thorium.rpm ${THORIUM_VER}
+curl -sL -o /tmp/thorium.rpm "${THORIUM_VER}"
 rpm-ostree install /tmp/thorium.rpm
 ln -sf /usr/lib/opt/chromium.org/thorium/thorium-browser /usr/bin/thorium-browser
 sed -i 's@/opt/chromium.org/thorium/thorium_shell@/usr/lib/opt/chromium.org/thorium/thorium_shell@g' /usr/bin/thorium-shell
