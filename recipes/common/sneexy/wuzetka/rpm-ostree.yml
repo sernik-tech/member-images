@@ -112,6 +112,8 @@ install:
   - ffmpeg
   - yt-dlp
   - figlet
+  - gdisk
+  - pv
 
   # kde applications and utilities (some probably already installed but /shrug)
   - ark
