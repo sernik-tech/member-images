@@ -16,6 +16,7 @@ system:
     - dev.vencord.Vesktop
     - dev.geopjr.Tuba
     - org.kde.tokodon
+    - io.github.kukuruzka165.materialgram
 
     # office
     - md.obsidian.Obsidian
