@@ -149,6 +149,7 @@ install:
   - qt6-qtwayland
 optfix:
   - floorp
+  - zen
   - chromium.org
 remove:
   # default editors installed with fedora
