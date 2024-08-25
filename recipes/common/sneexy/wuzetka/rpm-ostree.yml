@@ -3,6 +3,9 @@ repos:
   # floorp browser
   - https://copr.fedorainfracloud.org/coprs/sneexy/floorp/repo/fedora-%OS_VERSION%/sneexy-floorp-fedora-%OS_VERSION%.repo
 
+  # zen browser
+  - https://copr.fedorainfracloud.org/coprs/sneexy/zen-browser/repo/fedora-%OS_VERSION%/sneexy-zen-browser-fedora-%OS_VERSION%.repo
+
   # hblock
   - https://copr.fedorainfracloud.org/coprs/pesader/hblock/repo/fedora-%OS_VERSION%/pesader-hblock-fedora-%OS_VERSION%.repo
 
@@ -24,6 +27,7 @@ install:
   # web browsers, related web utilities (layered directly because its both less of a hassle and also currently more secure than flatpak)
   - firefox
   - floorp
+  - zen-browser
   - torbrowser-launcher
   - webapp-manager
 

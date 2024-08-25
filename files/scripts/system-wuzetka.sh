@@ -23,6 +23,16 @@ ln -sf /lib/opt/floorp/browser/chrome/icons/default/default32.png /usr/share/ico
 ln -sf /lib/opt/floorp/browser/chrome/icons/default/default16.png /usr/share/icons/hicolor/16x16/apps/floorp.png
 
 #
+# Zen Browser fixes
+#
+sed -i 's@/opt/zen/zen@/usr/lib/opt/zen/zen@g' /usr/bin/zen
+ln -sf /lib/opt/zen/browser/chrome/icons/default/default128.png /usr/share/icons/hicolor/128x128/apps/zen-browser.png
+ln -sf /lib/opt/zen/browser/chrome/icons/default/default64.png /usr/share/icons/hicolor/64x64/apps/zen-browser.png
+ln -sf /lib/opt/zen/browser/chrome/icons/default/default48.png /usr/share/icons/hicolor/48x48/apps/zen-browser.png
+ln -sf /lib/opt/zen/browser/chrome/icons/default/default32.png /usr/share/icons/hicolor/32x32/apps/zen-browser.png
+ln -sf /lib/opt/zen/browser/chrome/icons/default/default16.png /usr/share/icons/hicolor/16x16/apps/zen-browser.png
+
+#
 # Blender fixes
 #
 sed -i 's@Exec=blender %f@Exec=env INTEL_DEBUG=reemit blender %f@g' /usr/share/applications/blender.desktop
@@ -47,12 +57,12 @@ chmod +x /usr/bin/wgcf
 
 #
 # Thorium browser
-#
-THORIUM_VER=$(curl -sL https://api.github.com/repos/Alex313031/thorium/releases/latest | jq -r '.assets[] | select(.name? | match(".*_AVX2.rpm$")) | .browser_download_url')
-curl -sL -o /tmp/thorium.rpm ${THORIUM_VER}
-rpm-ostree install /tmp/thorium.rpm
-ln -sf /usr/lib/opt/chromium.org/thorium/thorium-browser /usr/bin/thorium-browser
-sed -i 's@/opt/chromium.org/thorium/thorium_shell@/usr/lib/opt/chromium.org/thorium/thorium_shell@g' /usr/bin/thorium-shell
+# NOTE: This breaks a lot because the developer tends to mark other releases as "latest". This causes this to break because it usually means the RPM we actually want isn't there.
+#THORIUM_VER=$(curl -sL https://api.github.com/repos/Alex313031/thorium/releases/latest | jq -r '.assets[] | select(.name? | match(".*_AVX2.rpm$")) | .browser_download_url')
+#curl -sL -o /tmp/thorium.rpm ${THORIUM_VER}
+#rpm-ostree install /tmp/thorium.rpm
+#ln -sf /usr/lib/opt/chromium.org/thorium/thorium-browser /usr/bin/thorium-browser
+#sed -i 's@/opt/chromium.org/thorium/thorium_shell@/usr/lib/opt/chromium.org/thorium/thorium_shell@g' /usr/bin/thorium-shell
 
 #
 # flac2opus
