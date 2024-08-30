@@ -27,7 +27,7 @@ install:
   # web browsers, related web utilities (layered directly because its both less of a hassle and also currently more secure than flatpak)
   - firefox
   - floorp
-  - zen-browser
+  - zen-browser-avx2
   - torbrowser-launcher
   - webapp-manager
 
