@@ -50,13 +50,13 @@ install:
 
     # office
     - libreoffice
-    - merkuro
 
     # other software
     - blender
     - mpv
     - nextcloud-client
     - hblock
+    - tailscale
   
     # beets
     - beets
@@ -91,6 +91,7 @@ install:
     - google-noto-emoji-fonts
     - gnome-disk-utility
     - gtk-layer-shell
+    - trash-cli
     - ddcutil
     - gamescope
     - mangohud
@@ -186,3 +187,17 @@ install:
     - hunspell-en
     - gnome-themes-extra
     - lzip
+optfix:
+    - floorp
+    - zen
+    - chromium.org
+remove:
+    # default editors installed with fedora
+    - vim-data
+    - vim-minimal
+    - vim-filesystem
+    - vim-common
+    - vim-enhanced
+    - nano
+    - nano-default-editor
+    - default-editor
