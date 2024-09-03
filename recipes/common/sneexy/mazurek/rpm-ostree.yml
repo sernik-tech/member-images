@@ -35,6 +35,7 @@ repos:
 install:
     # window manager and related utilities
     - niri
+    - wofi
     - waybar
     - SwayNotificationCenter
     - nwg-look
@@ -78,6 +79,8 @@ install:
     - dbus-tools
     - dbus-daemon
     - wl-clipboard
+    - wayland-utils
+    - egl-wayland
     - pavucontrol
     - playerctl
     - qt5-qtwayland
@@ -89,6 +92,7 @@ install:
     - ddcutil
     - gamescope
     - mangohud
+    - mesa-libEGL
   
     # sound
     - wireplumber
