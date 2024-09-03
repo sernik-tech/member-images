@@ -35,10 +35,6 @@ cargo build --release
 scdoc < man/wpaperd-output.5.scd > man/wpaperd-output.5
 rinstall install -D "/tmp/wayland-built" -y
 
-cd target/release
-cp wpaperd /tmp/wayland-built/usr/bin
-cp wpaperctl /tmp/wayland-built/usr/bin
-
 # SwayOSD - https://github.com/ErikReider/SwayOSD
 cd /tmp
 git clone https://github.com/ErikReider/SwayOSD
