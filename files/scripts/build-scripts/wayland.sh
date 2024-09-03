@@ -8,7 +8,7 @@ dnf install -y git gcc gcc-c++ cmake openssl protobuf protobuf-devel protobuf-co
     rustup cargo meson ninja-build \
     wayland-protocols-devel rust-libpulse-binding-devel rust-wayland-client-devel rust-wayland-protocols+wayland-client-devel \
     egl-wayland-devel egl-wayland egl-utils mesa-libEGL mesa-libEGL-devel \
-    sassc rust-gdk0.17+v3_24-devel rust-libudev-devel gtk-layer-shell-devel libevdev-devel
+    sassc rust-gdk0.17+v3_24-devel rust-libudev-devel gtk-layer-shell-devel libevdev-devel libinput-devel
 mkdir -p /tmp/wayland-built/usr/bin
 
 # SwayAudioIdleInhibit - https://github.com/ErikReider/SwayAudioIdleInhibit

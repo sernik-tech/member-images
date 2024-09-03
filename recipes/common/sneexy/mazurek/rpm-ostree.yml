@@ -94,6 +94,7 @@ install:
     - gamescope
     - mangohud
     - libevdev
+    - libinput
     - mesa-libEGL
   
     # sound
