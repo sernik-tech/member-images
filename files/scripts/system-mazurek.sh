@@ -2,150 +2,173 @@
 
 # Tell build process to exit if there are any errors.
 set -euo pipefail
+# if shit breaks i at least know where it is
+set -x
 
-# bazzite repositories and packages
+# systemd services to enable on the system
+systemctl enable hblock.timer
+systemctl enable tailscaled.service
+
+# Ensure all required/used folders are created
+mkdir -p /usr/share/sddm/themes
+
+#
+# Floorp fixes
+#
+sed -i 's@/opt/floorp/floorp@/usr/lib/opt/floorp/floorp@g' /usr/bin/floorp
+ln -sf /lib/opt/floorp/browser/chrome/icons/default/default128.png /usr/share/icons/hicolor/128x128/apps/floorp.png
+ln -sf /lib/opt/floorp/browser/chrome/icons/default/default64.png /usr/share/icons/hicolor/64x64/apps/floorp.png
+ln -sf /lib/opt/floorp/browser/chrome/icons/default/default48.png /usr/share/icons/hicolor/48x48/apps/floorp.png
+ln -sf /lib/opt/floorp/browser/chrome/icons/default/default32.png /usr/share/icons/hicolor/32x32/apps/floorp.png
+ln -sf /lib/opt/floorp/browser/chrome/icons/default/default16.png /usr/share/icons/hicolor/16x16/apps/floorp.png
+
+#
+# Zen Browser fixes
+#
+sed -i 's@/opt/zen/zen@/usr/lib/opt/zen/zen@g' /usr/bin/zen-browser
+ln -sf /lib/opt/zen/browser/chrome/icons/default/default128.png /usr/share/icons/hicolor/128x128/apps/zen-browser.png
+ln -sf /lib/opt/zen/browser/chrome/icons/default/default64.png /usr/share/icons/hicolor/64x64/apps/zen-browser.png
+ln -sf /lib/opt/zen/browser/chrome/icons/default/default48.png /usr/share/icons/hicolor/48x48/apps/zen-browser.png
+ln -sf /lib/opt/zen/browser/chrome/icons/default/default32.png /usr/share/icons/hicolor/32x32/apps/zen-browser.png
+ln -sf /lib/opt/zen/browser/chrome/icons/default/default16.png /usr/share/icons/hicolor/16x16/apps/zen-browser.png
+
+#
+# Blender fixes
+#
+sed -i 's@Exec=blender %f@Exec=env INTEL_DEBUG=reemit blender %f@g' /usr/share/applications/blender.desktop
+
+#
+# Bazzite packages
+# Enables bazzite repositories to install extra software then disables them afterwards to prevent installing software from their repos
 wget "https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-$(rpm -E %fedora)/kylegospo-bazzite-fedora-$(rpm -E %fedora).repo" -O "/etc/yum.repos.d/_copr_kylegospo-bazzite.repo"
 wget "https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-$(rpm -E %fedora)/kylegospo-bazzite-multilib-fedora-$(rpm -E %fedora).repo" -O "/etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo"
-rpm-ostree install joystickwake xwiimote-ng
-
-mkdir -p /usr/share/Kvantum
-mkdir -p /usr/share/qt5ct/colors
-mkdir -p /usr/share/qt6ct/colors
-mkdir -p /usr/share/icons
-#mkdir -p /usr/share/gnome-shell/extensions/paperwm@paperwm.github.com
-mkdir -p /usr/share/gnome-shell/extensions/pip-on-top@rafostar.github.com
-mkdir -p /usr/share/gnome-shell/extensions/dock-from-dash@fthx
-mkdir -p /usr/share/gnome-shell/extensions/useless-gaps@pimsnel.com
-mkdir -p /usr/share/gnome-shell/extensions/quick-settings-tweaks@qwreey
-mkdir -p /usr/share/gnome-shell/extensions/unite@hardpixel.eu
-mkdir -p /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
-mkdir -p /usr/share/gnome-shell/extensions/desktop-cube@schneegans.github.com
-mkdir -p /usr/share/gnome-shell/extensions/compiz-alike-magic-lamp-effect@hermes83.github.com.zip
-mkdir -p /usr/share/gnome-shell/extensions/compiz-windows-effect@hermes83.github.com
-mkdir -p /usr/share/gnome-shell/extensions/pano@elhan.io
-mkdir -p /usr/share/gnome-shell/extensions/Vitals@CoreCoding.com
-mkdir -p /usr/etc/skel/.local/share/themes
-mkdir -p /usr/etc/skel/.var/app/org.gnome.gedit/data/gedit/styles
-mkdir -p /usr/etc/skel/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/themes
-
-# Catppuccin GTK Theme
-rpm-ostree install sassc inkscape optipng
-git clone --recurse-submodules https://github.com/catppuccin/gtk.git /tmp/gtk
-python3 -m venv /tmp/gtk/venv
-source /tmp/gtk/venv/bin/activate && pip install -r /tmp/gtk/requirements.txt
-cd /tmp/gtk && source /tmp/gtk/venv/bin/activate && python3 /tmp/gtk/install.py mocha -a green -s compact --tweaks float -d /usr/etc/skel/.local/share/themes
-rpm-ostree override remove GraphicsMagick GraphicsMagick-c++ boost-atomic boost-filesystem flexiblas flexiblas-netlib flexiblas-openblas-openmp gsl gtksourceview4 inkscape inkscape-libs lib2geom libcdr libgfortran libquadmath librevenge libsass libvisio libwpd libwpg mkfontscale openblas openblas-openmp optipng potrace python3-cssselect python3-inkex python3-lxml python3-numpy python3-pyparsing python3-pyserial python3-scour python3-six sassc urw-base35-fonts-legacy
-
-# Catppuccin QT(5/6CT) Theme
-git clone https://github.com/ItsEthra/qt5ct.git /tmp/qt5ct
-cp /tmp/qt5ct/themes/* /usr/share/qt5ct/colors
-cp /tmp/qt5ct/themes/* /usr/share/qt6ct/colors
-
-# Papirus (Folders)
-# remember you need the package to be installed
-git clone https://github.com/catppuccin/papirus-folders.git /tmp/papirus-folders
-cp -r /tmp/papirus-folders/src/* /usr/share/icons/Papirus
-chmod +x /tmp/papirus-folders/papirus-folders
-/tmp/papirus-folders/papirus-folders -t Papirus-Dark -C cat-mocha-green
-
-# Gedit
-git clone https://github.com/catppuccin/gedit.git /tmp/gedit
-cp -r /tmp/gedit/themes/* /usr/etc/skel/.var/app/org.gnome.gedit/data/gedit/styles
-
-# PrismLauncher
-git clone https://github.com/catppuccin/prismlauncher.git /tmp/prismlauncher
-mv /tmp/prismlauncher/themes/* /usr/etc/skel/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/themes
-
-# Configure bluez/bluetooth to not automatically enable itself
-sed -i 's@#AutoEnable=true@AutoEnable=false@g' /etc/bluetooth/main.conf
-
-# GNOME Extensions
-
-# PiP on top (Source)
-git clone https://github.com/Rafostar/gnome-shell-extension-pip-on-top.git /tmp/pipontop
-chmod +x /tmp/pipontop/translate.sh
-chmod +x /tmp/pipontop/bundle.sh
-cd /tmp/pipontop && /tmp/pipontop/translate.sh
-cd /tmp/pipontop && /tmp/pipontop/bundle.sh
-unzip /tmp/pipontop/pip-on-top@rafostar.github.com.zip -d /usr/share/gnome-shell/extensions/pip-on-top@rafostar.github.com
-
-# Dock from Dash (Source)
-git clone https://github.com/fthx/dock-from-dash.git /tmp/dfd
-rm -rf /tmp/dfd/README.md
-cp -r /tmp/dfd/* /usr/share/gnome-shell/extensions/dock-from-dash@fthx
-
-# Useless Gaps (Source)
-git clone https://github.com/mipmip/gnome-shell-extensions-useless-gaps.git /tmp/uselessgaps
-glib-compile-schemas --targetdir=/tmp/uselessgaps/src/schemas /tmp/uselessgaps/src/schemas
-cd /tmp/uselessgaps && gnome-extensions pack src --force --podir="../po" --extra-source="ui.js" --extra-source="../LICENSE" --extra-source="../CHANGELOG.md"
-unzip /tmp/uselessgaps/useless-gaps@pimsnel.com.shell-extension.zip -d /usr/share/gnome-shell/extensions/useless-gaps@pimsnel.com
-
-# Quick Settings Tweaks (Source)
-git clone https://github.com/qwreey/quick-settings-tweaks.git /tmp/qst
-glib-compile-schemas --targetdir=/tmp/qst/src/schemas /tmp/qst/src/schemas
-cd /tmp/qst && gnome-extensions pack src --extra-source=../LICENSE --extra-source=../LICENSE-gnome-volume-mixer --extra-source=features --extra-source=libs --extra-source=prefPages --extra-source=media --extra-source=contributors --podir=../po --force
-unzip /tmp/qst/quick-settings-tweaks@qwreey.shell-extension.zip -d /usr/share/gnome-shell/extensions/quick-settings-tweaks@qwreey
-
-# Pano (Releases)
-curl -sL -o /tmp/pano.zip https://github.com/oae/gnome-shell-pano/releases/latest/download/pano@elhan.io.zip
-unzip /tmp/pano.zip -d /usr/share/gnome-shell/extensions/pano@elhan.io
-
-# Unite (Releases)
-VER=$(curl --silent -qI https://github.com/hardpixel/unite-shell/releases/latest | awk -F '/' '/^location/ {print  substr($NF, 1, length($NF)-1)}'); \
-curl -sL -o /tmp/unite.zip https://github.com/hardpixel/unite-shell/releases/download/${VER}/unite-${VER}.zip 
-unzip /tmp/unite.zip -d /usr/share/gnome-shell/extensions/unite@hardpixel.eu
-glib-compile-schemas --targetdir=/usr/share/gnome-shell/extensions/unite@hardpixel.eu/schemas /usr/share/gnome-shell/extensions/unite@hardpixel.eu/schemas
-
-# PaperWM (Source)
-#git clone https://github.com/paperwm/PaperWM.git /tmp/paperwm
-#rm -rf /tmp/paperwm/.git
-#rm -rf /tmp/paperwm/.github
-#rm -rf /tmp/paperwm/.gitignore
-#rm -rf /tmp/paperwm/.eslintrc.yml
-#rm -rf /tmp/paperwm/media
-#rm -rf /tmp/paperwm/README.md
-#rm -rf /tmp/paperwm/CONTRIBUTING.md
-#rm -rf /tmp/paperwm/install.sh
-#rm -rf /tmp/paperwm/uninstall.sh
-#cp -r /tmp/paperwm/* /usr/share/gnome-shell/extensions/paperwm@paperwm.github.com
-
-# Desktop Cube (Releases)
-curl -sL -o /tmp/desktopcube.zip https://github.com/Schneegans/Desktop-Cube/releases/latest/download/desktop-cube@schneegans.github.com.zip
-unzip /tmp/desktopcube.zip -d /usr/share/gnome-shell/extensions/desktop-cube@schneegans.github.com
-glib-compile-schemas --targetdir=/usr/share/gnome-shell/extensions/desktop-cube@schneegans.github.com/schemas /usr/share/gnome-shell/extensions/desktop-cube@schneegans.github.com/schemas
-
-# Burn My Windows (Source)
-git clone https://github.com/Schneegans/Burn-My-Windows.git /tmp/bmw
-cd /tmp/bmw && make zip
-unzip /tmp/bmw/burn-my-windows@schneegans.github.com.zip -d /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
-glib-compile-schemas --targetdir=/usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com/schemas /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com/schemas
-
-# Compiz alike magic lamp effect for GNOME Shell (Source)
-git clone https://github.com/hermes83/compiz-alike-magic-lamp-effect.git /tmp/compiz-magic-lamp
-chmod +x /tmp/compiz-magic-lamp/zip.sh
-cd /tmp/compiz-magic-lamp && /tmp/compiz-magic-lamp/zip.sh
-unzip /tmp/compiz-magic-lamp/compiz-alike-magic-lamp-effect@hermes83.github.com.zip -d /usr/share/gnome-shell/extensions/compiz-alike-magic-lamp-effect@hermes83.github.com
-
-# Compiz windows effect (Source)
-git clone https://github.com/hermes83/compiz-windows-effect.git /tmp/compiz-windows
-rm -rf /tmp/compiz-windows/assets
-rm -rf /tmp/compiz-windows/README.md
-cp -r /tmp/compiz-windows/* /usr/share/gnome-shell/extensions/compiz-windows-effect@hermes83.github.com
-
-# Wallpaper Slideshow (Source)
-git clone https://gitlab.com/AndrewZaech/azwallpaper.git /tmp/azwall
-cd /tmp/azwall && make zip-file
-unzip /tmp/azwall/azwallpaper@azwallpaper.gitlab.com.zip -d /usr/share/gnome-shell/extensions/azwallpaper@azwallpaper.gitlab.com
-
-# Vitals (Source)
-git clone https://github.com/corecoding/Vitals.git /tmp/vitals
-rm -rf /tmp/vitals/.git
-rm -rf /tmp/vitals/.github
-rm -rf /tmp/vitals/README.md
-cp -r /tmp/vitals/* /usr/share/gnome-shell/extensions/Vitals@CoreCoding.com
-
-# disabling the repositories for the booted system
-sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/atim-starship-fedora-$(rpm -E %fedora).repo
-sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/wezfurlong-wezterm-nightly-fedora-$(rpm -E %fedora).repo
+rpm-ostree install \
+    joystickwake \
+    xwiimote-ng
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite.repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo
+
+#
+# wgcf
+#
+WGCF_VER=$(curl -sL https://api.github.com/repos/ViRb3/wgcf/releases/latest | jq -r '.assets[] | select(.name? | match(".*_linux_amd64$")) | .browser_download_url')
+curl -sL -o /usr/bin/wgcf ${WGCF_VER}
+chmod +x /usr/bin/wgcf
+
+#
+# Thorium browser
+# NOTE: This breaks a lot because the developer tends to mark other releases as "latest". This causes this to break because it usually means the RPM we actually want isn't there.
+#THORIUM_VER=$(curl -sL https://api.github.com/repos/Alex313031/thorium/releases/latest | jq -r '.assets[] | select(.name? | match(".*_AVX2.rpm$")) | .browser_download_url')
+#curl -sL -o /tmp/thorium.rpm ${THORIUM_VER}
+#rpm-ostree install /tmp/thorium.rpm
+#ln -sf /usr/lib/opt/chromium.org/thorium/thorium-browser /usr/bin/thorium-browser
+#sed -i 's@/opt/chromium.org/thorium/thorium_shell@/usr/lib/opt/chromium.org/thorium/thorium_shell@g' /usr/bin/thorium-shell
+
+#
+# flac2opus
+#
+curl -sL -o /usr/bin/flac2opus "https://raw.githubusercontent.com/SimonTeixidor/flac2opus/master/flac2opus.sh"
+chmod +x /usr/bin/flac2opus
+
+#
+# VSCodium
+#
+tee -a /etc/yum.repos.d/vscodium.repo << 'EOF'
+[gitlab.com_paulcarroty_vscodium_repo]
+name=gitlab.com_paulcarroty_vscodium_repo
+baseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
+metadata_expire=1h
+EOF
+rpm-ostree install codium
+
+#
+# MPD Discord RPC systemd service
+#
+curl -sL -o /usr/lib/systemd/user/mpd-discord-rpc.service https://raw.githubusercontent.com/JakeStanger/mpd-discord-rpc/master/mpd-discord-rpc.service
+
+#
+# Rescrobbled systemd service
+#
+curl -sL -o /usr/lib/systemd/user/rescrobbled.service https://raw.githubusercontent.com/InputUsername/rescrobbled/master/rescrobbled.service
+sed -i 's@ExecStart=%h/.cargo/bin/rescrobbled@ExecStart=/usr/bin/rescrobbled@g' /usr/lib/systemd/user/rescrobbled.service
+
+#
+# tlrc files
+#
+curl -sL -o /usr/share/bash-completion/completions/tldr https://raw.githubusercontent.com/tldr-pages/tlrc/main/completions/tldr.bash
+curl -sL -o /usr/share/zsh/site-functions/_tldr https://raw.githubusercontent.com/tldr-pages/tlrc/main/completions/_tldr
+curl -sL -o /usr/share/fish/vendor_completions.d/tldr.fish https://raw.githubusercontent.com/tldr-pages/tlrc/main/completions/tldr.fish
+curl -sL -o /usr/share/man/man1/tldr.1 https://raw.githubusercontent.com/tldr-pages/tlrc/main/tldr.1
+
+#
+# Globally enable systemd user services
+#
+systemctl --global enable mpd.service \
+    mpDris2.service \
+    mpd-discord-rpc.service \
+    rescrobbled.service
+
+#
+# SDDM Theme
+#
+cd /tmp
+git clone https://github.com/Keyitdev/sddm-astronaut-theme.git /usr/share/sddm/themes/sddm-astronaut-theme
+rm -f /usr/share/sddm/themes/sddm-astronaut-theme/background.png
+rm -f /usr/share/sddm/themes/sddm-astronaut-theme/README.md
+rm -rf /usr/share/sddm/themes/sddm-astronaut-theme/Previews
+rm -rf /usr/share/sddm/themes/sddm-astronaut-theme/Fonts
+sed -i 's/ScreenWidth="1920"//' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+sed -i 's/ScreenHeight="1080"//' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+sed -i 's/## Adjust to your resolution to help SDDM speed up on calculations//' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+sed -i 's@PartialBlur="true"@PartialBlur="false"@g' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+sed -i 's@FullBlur="false"@FullBlur="true"@g' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+sed -i 's@Font="Open Sans"@Font="Lexend"@g' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+# catppuccinify
+sed -i 's@MainColor="#F8F8F2"@MainColor="#cdd6f4"@g' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+sed -i 's@AccentColor="#343746"@AccentColor="#a6e3a1"@g' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+sed -i 's@BackgroundColor="#21222C"@BackgroundColor="#1e1e2e"@g' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+sed -i 's@placeholderColor="#bbbbbb"@placeholderColor="#6c7086"@g' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+sed -i 's@IconColor="#ffffff"@IconColor="#cdd6f4"@g' /usr/share/sddm/themes/sddm-astronaut-theme/theme.conf
+
+#
+# KDE Theme
+#
+#cd /tmp
+#git clone https://github.com/catppuccin/kde.git catppuccinkde
+#cd catppuccinkde
+#rm -f install.sh
+#curl -sL -o /tmp/catppuccinkde/install.sh https://raw.githubusercontent.com/sernik-tech/member-images/main/files/scripts/catppuccin-plasma.sh
+#chmod +x install.sh
+# Latte
+#cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 1 9 1
+# Mocha
+#cd /tmp/catppuccinkde && /tmp/catppuccinkde/install.sh 4 9 1
+
+#
+# Papirus icon pack (From source)
+#
+cd /tmp
+wget -qO- https://git.io/papirus-icon-theme-install | sh
+
+#
+# Catppuccin Papirus-folders
+#
+cd /tmp
+git clone https://github.com/catppuccin/papirus-folders.git catppuccin-papirus-folders
+cp -r /tmp/catppuccin-papirus-folders/src/* /usr/share/icons/Papirus
+git clone https://github.com/PapirusDevelopmentTeam/papirus-folders
+cd papirus-folders
+chmod +x papirus-folders
+./papirus-folders -t Papirus-Light -C cat-latte-green
+./papirus-folders -t Papirus-Dark -C cat-mocha-green
+
+#
+# Justfiles
+#
+wget "https://raw.githubusercontent.com/ublue-os/bazzite/main/system_files/desktop/shared/usr/share/ublue-os/just/82-bazzite-waydroid.just" -O "/usr/share/ublue-os/just/31-waydroid.just"
+wget "https://github.com/ublue-os/bazzite/blob/main/system_files/desktop/shared/usr/share/ublue-os/just/81-bazzite-fixes.just" -O "/usr/share/ublue-os/just/62-bazzite-fixes.just"
+wget "https://raw.githubusercontent.com/ublue-os/bazzite/main/system_files/desktop/shared/usr/share/ublue-os/just/83-bazzite-audio.just" -O "/usr/share/ublue-os/just/41-audio.just"

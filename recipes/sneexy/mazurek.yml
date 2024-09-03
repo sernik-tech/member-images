@@ -31,8 +31,8 @@ modules:
       - RUN chmod +x /usr/bin/unfuck_music
       - RUN chmod +x /etc/sddm/sddm-useradd
       # Copy self compiled software and allat
-      - COPY --from=ghcr.io/sernik-tech/wuzetka-helper /artifacts/usr /usr
-      - COPY --from=ghcr.io/sernik-tech/wuzetka-helper /artifacts/etc /etc
+      - COPY --from=ghcr.io/sernik-tech/mazurek-helper /artifacts/usr /usr
+      - COPY --from=ghcr.io/sernik-tech/mazurek-helper /artifacts/etc /etc
 
   - from-file: common/sneexy/mazurek/flatpaks.yml
   - from-file: common/sneexy/bling.yml
