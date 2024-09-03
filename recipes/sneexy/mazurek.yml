@@ -34,6 +34,11 @@ modules:
       - COPY --from=ghcr.io/sernik-tech/mazurek-helper /artifacts/usr /usr
       - COPY --from=ghcr.io/sernik-tech/mazurek-helper /artifacts/etc /etc
 
+  - type: systemd
+    system:
+      enabled:
+        - sddm-boot.service
+
   - from-file: common/sneexy/mazurek/flatpaks.yml
   - from-file: common/sneexy/bling.yml
   - from-file: common/sneexy/fonts.yml
