@@ -33,7 +33,7 @@ git clone https://github.com/danyspin97/wpaperd
 cd wpaperd
 cargo build --release
 scdoc < man/wpaperd-output.5.scd > man/wpaperd-output.5
-rinstall --destdir "/tmp/wayland-built" --yes
+rinstall -y -D "/tmp/wayland-built"
 
 cd target/release
 cp wpaperd /tmp/wayland-built/usr/bin
