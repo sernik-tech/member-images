@@ -1,13 +1,5 @@
 ARG IMAGE_MAJOR_VERSION=40
 
-# KDE/Kwin Extras/Addons
-FROM fedora:${IMAGE_MAJOR_VERSION} as kde-extras
-
-COPY files/scripts/build-scripts /tmp/build-scripts
-
-RUN chmod +x /tmp/build-scripts/kde-extras.sh && \
-    /tmp/build-scripts/kde-extras.sh
-
 # Joystickwake
 #FROM fedora:${IMAGE_MAJOR_VERSION} as joystickwake
 #
@@ -33,6 +25,14 @@ COPY files/scripts/build-scripts /tmp/build-scripts
 RUN chmod +x /tmp/build-scripts/cargo.sh && \
     /tmp/build-scripts/cargo.sh
 
+# Packages build for wayland window manager setups
+FROM fedora:${IMAGE_MAJOR_VERSION} as wayland
+
+COPY files/scripts/build-scripts /tmp/build-scripts
+
+RUN chmod +x /tmp/build-scripts/wayland.sh && \
+    /tmp/build-scripts/wayland.sh
+
 # Packages built with go
 FROM fedora:${IMAGE_MAJOR_VERSION} as go
 
@@ -51,4 +51,4 @@ COPY --from=go /tmp/go-built/usr /artifacts/usr
 COPY --from=cargo /tmp/cargo-built/usr /artifacts/usr
 COPY --from=catppuccin /tmp/catppuccin-gtk/usr /artifacts/usr
 COPY --from=catppuccin /tmp/catppuccin-gtk/etc /artifacts/etc
-COPY --from=kde-extras /tmp/kde-extras-built/usr /artifacts/usr
+COPY --from=wayland /tmp/wayland-built/usr /artifacts/usr
