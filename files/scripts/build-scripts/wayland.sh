@@ -4,7 +4,7 @@
 set -euo pipefail
 
 # Dependency and folder
-dnf install -y git gcc gcc-c++ cmake openssl protobuf protobuf-devel protobuf-compiler openssl-devel dbus-devel pkgconf-pkg-config rustup cargo meson ninja-build wayland-protocols-devel rust-libpulse-binding-devel rust-wayland-client-devel rust-wayland-protocols+wayland-client-devel egl-wayland-devel egl-wayland egl-utils mesa
+dnf install -y git gcc gcc-c++ cmake openssl protobuf protobuf-devel protobuf-compiler openssl-devel dbus-devel pkgconf-pkg-config rustup cargo meson ninja-build wayland-protocols-devel rust-libpulse-binding-devel rust-wayland-client-devel rust-wayland-protocols+wayland-client-devel egl-wayland-devel egl-wayland egl-utils mesa-libEGL mesa-libEGL-devel
 mkdir -p /tmp/wayland-built/usr/bin
 
 # SwayAudioIdleInhibit - https://github.com/ErikReider/SwayAudioIdleInhibit
