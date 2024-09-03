@@ -89,9 +89,11 @@ install:
     - vulkan-tools
     - google-noto-emoji-fonts
     - gnome-disk-utility
+    - gtk-layer-shell
     - ddcutil
     - gamescope
     - mangohud
+    - libevdev
     - mesa-libEGL
   
     # sound
