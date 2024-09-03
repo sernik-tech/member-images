@@ -17,8 +17,8 @@ git clone https://github.com/ErikReider/SwayAudioIdleInhibit
 cd SwayAudioIdleInhibit
 meson build
 ninja -C build
-meson install -C build
-cp build/sway-audio-idle-inhibit /tmp/wayland-built/usr/bin
+meson install -C build --destdir "/tmp/wayland-built/usr"
+#cp build/sway-audio-idle-inhibit /tmp/wayland-built/usr/bin
 
 # wpaperd - https://github.com/danyspin97/wpaperd
 cd /tmp
@@ -35,4 +35,4 @@ git clone https://github.com/ErikReider/SwayOSD
 cd SwayOSD
 meson setup build
 ninja -C build
-meson install -C build
+meson install -C build --destdir "/tmp/wayland-built/usr"
