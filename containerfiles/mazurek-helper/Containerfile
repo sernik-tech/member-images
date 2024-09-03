@@ -1,5 +1,13 @@
 ARG IMAGE_MAJOR_VERSION=40
 
+# Packages build for wayland window manager setups
+FROM fedora:${IMAGE_MAJOR_VERSION} as wayland
+
+COPY files/scripts/build-scripts /tmp/build-scripts
+
+RUN chmod +x /tmp/build-scripts/wayland.sh && \
+    /tmp/build-scripts/wayland.sh
+
 # Joystickwake
 #FROM fedora:${IMAGE_MAJOR_VERSION} as joystickwake
 #
@@ -24,14 +32,6 @@ COPY files/scripts/build-scripts /tmp/build-scripts
 
 RUN chmod +x /tmp/build-scripts/cargo.sh && \
     /tmp/build-scripts/cargo.sh
-
-# Packages build for wayland window manager setups
-FROM fedora:${IMAGE_MAJOR_VERSION} as wayland
-
-COPY files/scripts/build-scripts /tmp/build-scripts
-
-RUN chmod +x /tmp/build-scripts/wayland.sh && \
-    /tmp/build-scripts/wayland.sh
 
 # Packages built with go
 FROM fedora:${IMAGE_MAJOR_VERSION} as go
