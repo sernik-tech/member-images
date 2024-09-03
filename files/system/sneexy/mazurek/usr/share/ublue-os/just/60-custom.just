@@ -1,127 +1,88 @@
-alias mazurek := configure-mazurek
+# vim: set ft=make :
 
-configure-mazurek:
-    #!/usr/bin/bash
-    source /usr/lib/ujust/ujust.sh
-    OPTION={{ ACTION }}
-    if [ "$OPTION" == "prompt" ]; then
-      echo "${bold}Mazurek Configurations${normal}"
-      echo 'Custom set of commands for easier post-install management. Usually the one most used by the image maintainer.'
-      echo 'Also check out ${u}just themes${normal} for changing your GNOME theme! Compatibility and general maintenance not guaranteed.'
-      OPTION=$(ugum choose "Set up basic distrobox containers" "Test CUDA support" "Enable Nvidia VAAPI in Firefox Flatpak")
-    elif [ "$OPTION" == "help" ]; then
-      echo "Usage: just configure-mazurek <option>"
-      echo "  <option>: Specify the quick option - 'distrobox-setup', 'test-cuda' or 'firefox-vaapi'"
-      echo "  Use 'distrobox-setup' to quickly set up customized distrobox containers (Fedora and Arch)"
-      echo "  Use 'test-cuda' to Test CUDA support"
-      echo "  Use 'firefox-vaapi' to Enable Nvidia VAAPI in Firefox Flatpak."
-      exit 0
-    fi
-    if [ "$OPTION" == "Set up basic distrobox containers" ] || [ "${OPTION,,}" == "distrobox-setup" ]; then
-      echo "Now starting the installation of Distrobox containers."
-      echo "Fedora will be installed and configured with tools and utilities that a common user would need (yt-dlp, adb, etc.)"
-      echo "Arch will be installed and configured to be the gaming (Steam) and development (VSCodium) container."
-      echo "This will take a while, especially "
-      if command -v distrobox; then
-        # Install fedora, install process based on mazurek.
-        if distrobox ls | grep "fedora"; then
-          echo "Fedora container detected. We will not modify it just for the sake of preventing any unnecessary issues."
-        else
-          echo "Installing Fedora..."
-          distrobox-create --image ghcr.io/ublue-os/fedora-toolbox:latest --name fedora --additional-packages "bat \
-	    duf \
-	    fastfetch \
-	    fd-find \
-	    fzf \
-	    git-delta \
-	    lsd \
-	    neovim \
-	    ripgrep \
-	    sd \
-	    zoxide \
-	    zsh \
-	    cargo \
-	    kitty-shell-integration \
-	    kitty-terminfo"
-	fi
-	# Install Arch container. Install process inspired by bazzite-arch but I/we aren't using it specifically because it comes with OBS which I don't need/has a dedicated container for it. Also for more control over what is installed.
-	if distrobox ls | grep "arch"; then
-	  echo "Arch container detected. We will not modify it just for the sake of preventing any unnecessary issues."
-        else
-          echo "Installing Arch..."
-	  distrobox-create --image ghcr.io/ublue-os/arch-distrobox --name arch --additional-packages "lib32-vulkan-radeon \
-            libva-mesa-driver \
-            intel-media-driver \
-            vulkan-mesa-layers \
-            lib32-vulkan-mesa-layers \
-            lib32-libnm \
-            openal \
-            pipewire \
-            pipewire-pulse \
-            pipewire-alsa \
-            pipewire-jack \
-            wireplumber \
-            lib32-pipewire \
-            lib32-pipewire-jack \
-            lib32-libpulse \
-            lib32-openal \
-            xdg-desktop-portal-gnome \
-            xdg-desktop-portal-gtk \
-            neovim \
-            hyfetch \
-            zsh \
-            yad \
-            xdg-user-dirs \
-            xdotool \
-            xorg-xwininfo \
-            wmctrl \
-            wxwidgets-gtk3 \
-            rocm-opencl-runtime \
-            rocm-hip-runtime \
-            libbsd \
-            noto-fonts-cjk \
-            qt6-multimedia-ffmpeg"
-          distrobox-enter --name arch -- sudo pacman -Syu steam mangohud lib32-mangohud --noconfirm
-          distrobox-enter --name arch -- sudo wget https://raw.githubusercontent.com/Shringe/LatencyFleX-Installer/main/install.sh -O /usr/bin/latencyflex
-          distrobox-enter --name arch -- sudo mkdir -p /usr/share/latencyflex/
-	  distrobox-enter --name arch -- sudo wget https://raw.githubusercontent.com/ublue-os/bazzite-arch/main/system_files/usr/share/latencyflex/dxvk.conf -O /usr/share/latencyflex/dxvk.conf
-	  distrobox-enter --name arch -- sudo sed -i 's@"dxvk.conf"@"/usr/share/latencyflex/dxvk.conf"@g' /usr/bin/latencyflex
-	  distrobox-enter --name arch -- sudo chmod +x /usr/bin/latencyflex
-	  distrobox-enter --name arch -- paru -S aur/protontricks \
-	    aur/vkbasalt \
-	    aur/lib32-vkbasalt \
-	    aur/lib32-gperftools \
-	    aur/steamcmd \
-	    --noconfirm
-        fi
-      else
-        echo 'Strange. Distrobox isn't installed... Try to reinstall, or layer the package onto your system.'
-      fi
-    elif [ "$OPTION" == "Test CUDA support" ] || [ "${OPTION,,}" == "test-cuda" ]; then
-      if lsmod | grep -wq "nvidia"; then
-        podman run \
-          --user 1000:1000 \
-          --security-opt=no-new-privileges \
-          --cap-drop=ALL \
-          --security-opt label=type:nvidia_container_t  \
-          --device=nvidia.com/gpu=all \
-          docker.io/nvidia/samples:vectoradd-cuda11.2.1
-      else
-        echo 'The Nvidia kernel module is not loaded. You may be using secure boot without the needed signing key, lacking the needed kargs, or may not be on a Nvidia image. See "just enroll-secure-boot-key" and "just nvidia-set-kargs".'
-      fi
-    elif [ "$OPTION" == "Enable Nvidia VAAPI in Firefox Flatpak" ] || [ "${OPTION,,}" == "firefox-vaapi" ]; then
-      if lsmod | grep -wq "nvidia"; then
-        flatpak override \
-          --user \
-          --filesystem=host-os \
-          --env=LIBVA_DRIVER_NAME=nvidia \
-          --env=LIBVA_DRIVERS_PATH=/run/host/usr/lib64/dri \
-          --env=LIBVA_MESSAGING_LEVEL=1 \
-          --env=MOZ_DISABLE_RDD_SANDBOX=1 \
-          --env=NVD_BACKEND=direct \
-          --env=MOZ_ENABLE_WAYLAND=1 \
-          org.mozilla.firefox
-      else
-        echo 'The Nvidia kernel module is not loaded. You may be using secure boot without the needed signing key, lacking the needed kargs, or may not be on a Nvidia image. See "just enroll-secure-boot-key" and "just nvidia-set-kargs".'
-      fi
-    fi
+wuzetka-setup:
+    # Wuzetka setup !!! sneexy ah setu p!!! real reeal real!!!!
+    echo 'This script will set up everything that I (Sneexy) use and consider for a good experience setup.'
+    echo 'Also fixes some things that may be broken out of the box or require additional setup.'
+    echo
+    echo 'You have 8 seconds to press CTRL + C and stop this script from running. Thanks for using Wuzetka!'
+    sleep 8
+    # Symlink relative theme folders to fix certain issues
+    echo 'Symlinking themes...'
+    THEME_DIR=${HOME}/.local/share/themes/Catppuccin-Mocha-Compact-Green-Dark
+    mkdir -p "${HOME}/.config/gtk-4.0"
+    ln -sf "${THEME_DIR}/gtk-4.0/assets" "${HOME}/.config/gtk-4.0/assets"
+    ln -sf "${THEME_DIR}/gtk-4.0/gtk.css" "${HOME}/.config/gtk-4.0/gtk.css"
+    ln -sf "${THEME_DIR}/gtk-4.0/gtk-dark.css" "${HOME}/.config/gtk-4.0/gtk-dark.css"
+    ln -sf "${HOME}/.local/share/themes" "${HOME}/.themes"
+    ln -sf "${HOME}/.local/share/icons" "${HOME}/.icons"
+    # Create an Arch distrobox container with everything properly configured and installed
+    echo 'Creating Arch distrobox...'
+    distrobox-create --image ghcr.io/ublue-os/arch-distrobox --name arch -Y
+    # Install all software I use.
+    # Software I used to layer manually before realizing I didn't have to and was too much for being on the base system.
+    # We only use an Arch container since Arch is both the most up-to-date and widely available for many packages.
+    # TODO: The package "bat" and below are reinstalled for Arch, taken from whats installed on the host side.
+    # TODO: Maybe we can just use distrobox-host-exec instead of reinstalling the packages inside of the Arch container?
+    distrobox-enter -n arch -- sh -c "paru -Syu vscodium-bin \
+        vscodium-bin-marketplace \
+        android-tools \
+        scrcpy \
+        beets \
+        chromaprint \
+        ffmpeg \
+        gst-libav \
+        gst-plugins-bad \
+        gst-plugins-good \
+        gst-plugins-ugly \
+        gst-python \
+        imagemagick \
+        python-beautifulsoup4 \
+        python-discogs-client \
+        python-flask \
+        python-pyacoustid \
+        python-pylast \
+        python-requests \
+        python-requests-oauthlib \
+        python-pyxdg \
+        bat \
+        duf \
+        fastfetch \
+        fd \
+        fzf \
+        git-delta \
+        eza \
+        neovim \
+        python-pynvim \
+        wl-clipboard \
+        ripgrep \
+        sd \
+        zoxide \
+        zsh \
+        sheldon \
+        atuin \
+        starship \
+        krabby-bin \
+        kitty-shell-integration \
+        kitty-terminfo \
+        --noconfirm && \
+        distrobox-export --app codium && \
+        distrobox-export --bin /usr/bin/codium && \
+        distrobox-export --bin /usr/bin/adb && \
+        distrobox-export --bin /usr/bin/fastboot && \
+        distrobox-export --bin /usr/bin/scrcpy && \
+        distrobox-export --bin /usr/bin/beet"
+    # Create an Bazzite-Arch distrobox container for gaming. Just create the box and export the applications I use
+    echo 'Creating Bazzite-Arch distrobox...'
+    distrobox-create --unshare-netns --image ghcr.io/ublue-os/bazzite-arch --name bazzite-arch -Y
+    distrobox-enter -n bazzite-arch -- sh -c "distrobox-export --app steam && \
+        distrobox-export --app lutris && \
+        distrobox-export --app protontricks && \
+        distrobox-export --bin /usr/bin/steam && \
+        distrobox-export --bin /usr/bin/steam-runtime && \
+        distrobox-export --bin /usr/bin/steamcmd && \
+        distrobox-export --bin /usr/bin/lutris && \
+        distrobox-export --bin /usr/bin/protontricks && \
+        distrobox-export --bin /usr/bin/protontricks-desktop-install && \
+        distrobox-export --bin /usr/bin/protontricks-launch && \
+        mkdir -p ~/.steam && distrobox-export --bin /usr/bin/steamcmd --export-path ~/.steam && mv ~/.steam/steamcmd ~/.steam/steamcmd.sh'"
