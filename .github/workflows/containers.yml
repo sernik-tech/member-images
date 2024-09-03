@@ -25,6 +25,7 @@ jobs:
             matrix:
                 containerfile:
                     - containerfiles/wuzetka-helper/Containerfile
+                    - containerfiles/mazurek-helper/Containerfile
 
         steps:
             # Checkout push-to-registry action GitHub repository
