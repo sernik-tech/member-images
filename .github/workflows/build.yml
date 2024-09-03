@@ -24,7 +24,7 @@ jobs:
         recipe:
           # !! Add your recipes here 
           - sneexy/wuzetka.yml
-          #- sneexy/mazurek.yml
+          - sneexy/mazurek.yml
           - rexogamer/recipe.yml
           - amycatgirl/recipe.yml
     steps:

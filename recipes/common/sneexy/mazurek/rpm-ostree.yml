@@ -1,73 +1,180 @@
 type: rpm-ostree
 repos:
-    # starship prompt
-    - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+    # niri
+    - https://copr.fedorainfracloud.org/coprs/yalter/niri/repo/fedora-%OS_VERSION%/yalter-niri-fedora-%OS_VERSION%.repo
 
-    # wezterm
+    # swaync
+    - https://copr.fedorainfracloud.org/coprs/erikreider/SwayNotificationCenter/repo/fedora-%OS_VERSION%/erikreider-SwayNotificationCenter-fedora-%OS_VERSION%.repo
+
+    # nwg-shell
+    - https://copr.fedorainfracloud.org/coprs/tofik/nwg-shell/repo/fedora-%OS_VERSION%/tofik-nwg-shell-fedora-%OS_VERSION%.repo
+
+    # floorp browser
+    - https://copr.fedorainfracloud.org/coprs/sneexy/floorp/repo/fedora-%OS_VERSION%/sneexy-floorp-fedora-%OS_VERSION%.repo
+
+    # zen browser
+    - https://copr.fedorainfracloud.org/coprs/sneexy/zen-browser/repo/fedora-%OS_VERSION%/sneexy-zen-browser-fedora-%OS_VERSION%.repo
+
+    # hblock
+    - https://copr.fedorainfracloud.org/coprs/pesader/hblock/repo/fedora-%OS_VERSION%/pesader-hblock-fedora-%OS_VERSION%.repo
+
+    # wezterm terminal
     - https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-%OS_VERSION%/wezfurlong-wezterm-nightly-fedora-%OS_VERSION%.repo
+  
+    # cursors
+    - https://copr.fedorainfracloud.org/coprs/peterwu/rendezvous/repo/fedora-%OS_VERSION%/peterwu-rendezvous-fedora-%OS_VERSION%.repo
+
+    # rom properties
+    - https://copr.fedorainfracloud.org/coprs/kylegospo/rom-properties/repo/fedora-%OS_VERSION%/kylegospo-rom-properties-fedora-%OS_VERSION%.repo
+
+    # tailscale
+    - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+
+    # linux mint's webapp/pwa manager
+    - https://copr.fedorainfracloud.org/coprs/kylegospo/webapp-manager/repo/fedora-%OS_VERSION%/kylegospo-webapp-manager-fedora-%OS_VERSION%.repo
 install:
-    # environment
-    - brightnessctl
-    - pavucontrol
-    - playerctl
-    - qt6-qtwayland
-    - google-noto-emoji-fonts
-    - power-profiles-daemon
-    - powertop
-    - gamescope
-    - mangohud
-    - waydroid
+    # window manager and related utilities
+    - niri
+    - waybar
+    - SwayNotificationCenter
+    - nwg-look
+    - nwg-bar
+
+    # web browsers, related web utilities (layered directly because its both less of a hassle and also currently more secure than flatpak)
+    - firefox
+    - floorp
+    - zen-browser-avx2
+    - torbrowser-launcher
+    - webapp-manager
+
+    # office
+    - libreoffice
+    - merkuro
+
+    # other software
+    - blender
     - mpv
     - nextcloud-client
-    - gpaste
-    - libgda
-    - libgda-sqlite
-    - jq
-    - xprop
+  
+    # beets
+    - beets
+    - beets-plugins
+    - beets-doc
+    - python3-requests
+    - python3-pylast
+    - python3-acoustid
+    - chromaprint-tools
+
+    # flac2opus
+    - flac
+    - opus-tools
+
+    # environment
+    - power-profiles-daemon
+    - xorg-x11-server-Xwayland
+    - polkit
+    - xfce-polkit 
+    - xdg-user-dirs
+    - dbus-tools
+    - dbus-daemon
+    - wl-clipboard
+    - pavucontrol
+    - playerctl
+    - qt5-qtwayland
+    - qt6-qtwayland
+    - vulkan-validation-layers
+    - vulkan-tools
+    - google-noto-emoji-fonts
+    - gnome-disk-utility
+    - ddcutil
+    - gamescope
+    - mangohud
+  
+    # sound
+    - wireplumber
+    - pipewire
+    - pamixer
+    - pulseaudio-utils
+
+    # networking
+    - network-manager-applet
+    - NetworkManager-openvpn
+    - NetworkManager-openconnect
+    - bluez
+    - bluez-tools
+    - blueman
+
+    # display
+    - wlr-randr
+    - wlsunset
+    - brightnessctl
+    - swaylock
+    - swayidle
+    - kanshi
+
+    # screenshot
+    - slurp
+    - grim
 
     # file management things
     - udiskie
     - p7zip
     - unrar-free
 
-    # terminal & utilities
-    - kitty
+    # virtualization software
+    - qemu
+    - qemu-user-binfmt
+    - virt-manager
+    - libvirt
+    - edk2-ovmf
+    - genisoimage
+    - qemu-img
+    - qemu-system-x86-core
+    - qemu-char-spice
+    - qemu-device-usb-redirect
+    - qemu-device-display-virtio-vga
+    - qemu-device-display-virtio-gpu
+
+    # waydroid and android
+    - waydroid
+    - android-tools
+
+    # mpd
+    - mpd
+    - mpdris2
+    - ncmpcpp
+
+    # terminals and some modern unix utilities
     - wezterm
+    - kitty
     - bat
     - duf
     - fastfetch
     - fd-find
     - fzf
     - git-delta
-    - lsd
+    - eza
     - neovim
     - ripgrep
     - sd
-    - starship
     - zoxide
     - zsh
-    - crontabs
+    - ImageMagick
 
-    # gnome extensions
-    - lm_sensors
-    - libgtop2-devel
-    - gnome-shell-extension-forge
-    - gnome-shell-extension-openweather
-    - gnome-shell-extension-appindicator
-    - gnome-shell-extension-gsconnect
-    - gnome-shell-extension-blur-my-shell
-    - gnome-shell-extension-just-perfection
-    - gnome-shell-extension-dash-to-dock
-    - gnome-shell-extension-user-theme
+    # console utilities
+    - btop
+    - ffmpeg
+    - yt-dlp
+    - figlet
+    - gdisk
 
     # themes and GUI
     - papirus-icon-theme
     - qt5ct
     - qt6ct
-remove:
-    - firefox
-    - firefox-langpacks
-    - gnome-classic-session
-    - gnome-software-rpm-ostree
-    #- gnome-terminal
-    #- gnome-terminal-nautilus
+
+    # libraries and tools, misc.
+    - fontconfig
+    - hunspell-en
+    - gnome-themes-extra
+    - lzip

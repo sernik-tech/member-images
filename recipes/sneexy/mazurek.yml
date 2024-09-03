@@ -1,11 +1,11 @@
 # image will be published to ghcr.io/sernik-tech/<name>
 name: mazurek
 # description will be included in the image's metadata
-description: sneexy's personal and opinionated silverblue image
+description: sneexy's entirely customized niri image
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 39 # latest is also supported if you want new updates ASAP
+base-image: ghcr.io/ublue-os/base-main
+image-version: 40 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -14,13 +14,25 @@ modules:
 
   - type: script
     scripts:
-        - ld.sh
-        - system-mazurek.sh
+      - ld.sh
+      - posy-cursors.sh
+      - system-mazurek.sh
 
   - type: files
     files:
-        - source: system/sneexy/mazurek
-          destination: /
+      - source: system/sneexy/mazurek
+        destination: /
+
+  - type: containerfile
+    snippets:
+      # Replace default sddm background
+      - RUN ln -sf /usr/share/backgrounds/catppuccin/black-hole-mocha.png /usr/share/sddm/themes/sddm-astronaut-theme/background.png
+      # ensure unfuck_music and sddm-useradd script is executable
+      - RUN chmod +x /usr/bin/unfuck_music
+      - RUN chmod +x /etc/sddm/sddm-useradd
+      # Copy self compiled software and allat
+      - COPY --from=ghcr.io/sernik-tech/wuzetka-helper /artifacts/usr /usr
+      - COPY --from=ghcr.io/sernik-tech/wuzetka-helper /artifacts/etc /etc
 
   - from-file: common/sneexy/mazurek/flatpaks.yml
   - from-file: common/sneexy/bling.yml
@@ -30,5 +42,5 @@ modules:
     include:
       - zz1-mazurek.gschema.override
 
-  #- from-file: common/sneexy/akmods.yml
+  - from-file: common/sneexy/akmods.yml
   - type: signing
