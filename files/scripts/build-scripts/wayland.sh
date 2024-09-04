@@ -17,7 +17,6 @@ git clone https://github.com/DanySpin97/rinstall
 cd rinstall
 cargo build --release
 chmod +x ./target/release/rinstall
-./target/release/rinstall install -y    
 
 # SwayAudioIdleInhibit - https://github.com/ErikReider/SwayAudioIdleInhibit
 cd /tmp
@@ -35,7 +34,7 @@ git clone https://github.com/danyspin97/wpaperd
 cd wpaperd
 cargo build --release
 scdoc < man/wpaperd-output.5.scd > man/wpaperd-output.5
-rinstall install -D "/tmp/wayland-built" -y
+/tmp/rinstall/target/release/rinstall install -D "/tmp/wayland-built" -y
 
 # SwayOSD - https://github.com/ErikReider/SwayOSD
 cd /tmp
