@@ -52,3 +52,7 @@ COPY --from=cargo /tmp/cargo-built/usr /artifacts/usr
 COPY --from=catppuccin /tmp/catppuccin-gtk/usr /artifacts/usr
 COPY --from=catppuccin /tmp/catppuccin-gtk/etc /artifacts/etc
 COPY --from=wayland /tmp/wayland-built/usr /artifacts/usr
+
+# ensure this directories don't exist because they cause issues
+RUN rm -rf /var
+RUN rm -rf /usr/local
