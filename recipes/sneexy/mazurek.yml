@@ -32,8 +32,6 @@ modules:
       - RUN chmod +x /usr/bin/unfuck_music
       - RUN chmod +x /etc/sddm/sddm-useradd
       # Copy self compiled software and allat
-      - RUN mkdir -p /usr/bin
-      - RUN mkdir -p /etc   
       - COPY --from=ghcr.io/sernik-tech/mazurek-helper /artifacts/usr /usr
       - COPY --from=ghcr.io/sernik-tech/mazurek-helper /artifacts/etc /etc
 

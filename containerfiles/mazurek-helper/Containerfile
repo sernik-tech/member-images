@@ -51,5 +51,4 @@ COPY --from=go /tmp/go-built/usr /artifacts/usr
 COPY --from=cargo /tmp/cargo-built/usr /artifacts/usr
 COPY --from=catppuccin /tmp/catppuccin-gtk/usr /artifacts/usr
 COPY --from=catppuccin /tmp/catppuccin-gtk/etc /artifacts/etc
-RUN --from=wayland rm -rf /tmp/wayland-built/usr/local/
 COPY --from=wayland /tmp/wayland-built/usr /artifacts/usr

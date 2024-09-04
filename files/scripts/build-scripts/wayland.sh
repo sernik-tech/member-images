@@ -24,8 +24,8 @@ git clone https://github.com/ErikReider/SwayAudioIdleInhibit
 cd SwayAudioIdleInhibit
 meson build
 ninja -C build
-meson install -C build --destdir "/tmp/wayland-built"
-mv /tmp/wayland-built/usr/local/bin/sway-audio-idle-inhibit /tmp/wayland-built/usr/bin
+meson install -C build
+mv /tmp/SwayAudioIdleInhibit/build/sway-audio-idle-inhibit /usr/bin
 
 # wpaperd - https://github.com/danyspin97/wpaperd
 cd /tmp
