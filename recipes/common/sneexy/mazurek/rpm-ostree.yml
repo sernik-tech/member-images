@@ -9,6 +9,9 @@ repos:
     # nwg-shell
     - https://copr.fedorainfracloud.org/coprs/tofik/nwg-shell/repo/fedora-%OS_VERSION%/tofik-nwg-shell-fedora-%OS_VERSION%.repo
 
+    # xwayland-satellite (and some other packages)
+    - https://copr.fedorainfracloud.org/coprs/errornointernet/packages/repo/fedora-%OS_VERSION%/errornointernet-packages-fedora-%OS_VERSION%.repo
+
     # floorp browser
     - https://copr.fedorainfracloud.org/coprs/sneexy/floorp/repo/fedora-%OS_VERSION%/sneexy-floorp-fedora-%OS_VERSION%.repo
 
@@ -74,14 +77,17 @@ install:
     # environment
     - power-profiles-daemon
     - xorg-x11-server-Xwayland
+    - xdg-desktop-portal-gnome
+    - gnome-keyring
     - polkit
-    - xfce-polkit 
+    - polkit-kde
     - xdg-user-dirs
     - dbus-tools
     - dbus-daemon
     - wl-clipboard
     - wayland-utils
     - egl-wayland
+    - xwayland-satellite
     - pavucontrol
     - playerctl
     - qt5-qtwayland
