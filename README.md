@@ -1,3 +1,9 @@
+# Repository Archived
+
+Since I'm (Sneexy) the only one who actually uses this, it's kind of a waste to try and keep this specific repository existing, especially since the setup here is a mess to keep working whenever bluebuild makes a change.
+
+If you're still interested in my images, I've migrated mine to my repository, [bluebuild-custom](https://github.com/sneexy-boi/bluebuild-custom).
+
 <div align="center">
     <h1>Images</h1>
     <h3>By members of Sernik</h3>
